@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate RPG Character Groups - Introduction to Narrative Dynamics</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Fate RPG Character Groups</h1>
+        <h2>Mastering Narrative Dynamics and Collaborative Storytelling</h2>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h3>Welcome to the World of Collaborative Fiction</h3>
+            <p>Creating compelling character groups in Fate RPG is like assembling a writers' room for an interactive television series where every player is both actor and director. Think of it as crafting a ensemble cast where each character brings not just mechanical abilities, but rich narrative hooks, compelling flaws, and interconnected relationships that drive story forward through every scene.</p>
+            
+            <p>Unlike traditional RPGs that focus primarily on tactical combat and resource management, Fate emphasizes collaborative storytelling, where characters are defined more by their dramatic potential than their mechanical optimization. Understanding how to weave characters together narratively is the key to unlocking Fate's full potential.</p>
+        </section>
+
+        <section class="fate-philosophy">
+            <h3>The Fate Storytelling Philosophy</h3>
+            <p>Fate operates on fundamentally different principles than most RPGs, like the difference between writing a novel and playing chess. Where other systems focus on mechanical balance, Fate prioritizes narrative balance - ensuring every character has equal opportunity to drive story and face meaningful challenges.</p>
+
+            <div class="mermaid">
+                graph TD
+                    A[Collaborative Storytelling] --> B[Shared Narrative Control]
+                    A --> C[Proactive Characters]
+                    A --> D[Interconnected Relationships]
+                    B --> E[Player Agency]
+                    B --> F[GM Facilitation]
+                    C --> G[Personal Stakes]
+                    C --> H[Character Goals]
+                    D --> I[Group Aspects]
+                    D --> J[Relationship Dynamics]
+                    K[Fate Point Economy] --> L[Compels Drive Drama]
+                    K --> M[Invocations Enable Success]
+                    K --> N[Collaborative Resource Management]
+            </div>
+        </section>
+
+        <section class="narrative-roles">
+            <h3>Narrative Archetypes in Fate</h3>
+            <p>In Fate, character roles are defined not by combat function but by narrative function - how they drive story, create drama, and interact with both the world and each other. These roles can overlap and shift as the story evolves.</p>
+
+            <h4>The Five Pillars of Narrative Function</h4>
+            <div class="role-grid">
+                <div class="role-card protagonist">
+                    <h5>The Protagonist - Heart of Action</h5>
+                    <p>The character who drives the main plot forward through decisive action and personal investment. Like Luke Skywalker or Harry Potter, they make things happen through determination and choice.</p>
+                    <div class="aspect-examples">
+                        <strong>Example High Concepts:</strong>
+                        <br>• "Chosen One with a Destiny to Fulfill"
+                        <br>• "Reluctant Hero Rising to the Challenge"
+                        <br>• "Last Hope of a Dying Cause"
+                    </div>
+                </div>
+                <div class="role-card catalyst">
+                    <h5>The Catalyst - Engine of Change</h5>
+                    <p>The character whose presence or actions transform situations and other characters. They create opportunities and complications that push the story in new directions.</p>
+                    <div class="aspect-examples">
+                        <strong>Example High Concepts:</strong>
+                        <br>• "Chaos Magnet Who Changes Everything"
+                        <br>• "Revolutionary Inspiring Others to Act"
+                        <br>• "Wild Card No One Can Predict"
+                    </div>
+                </div>
+                <div class="role-card anchor">
+                    <h5>The Anchor - Foundation of Stability</h5>
+                    <p>The character who provides emotional grounding, wisdom, or practical solutions. They're the rock others depend on when everything goes wrong.</p>
+                    <div class="aspect-examples">
+                        <strong>Example High Concepts:</strong>
+                        <br>• "Wise Mentor with Hidden Depths"
+                        <br>• "Steady Hand in Any Crisis"
+                        <br>• "Loyal Friend Who Never Gives Up"
+                    </div>
+                </div>
+                <div class="role-card wildcard">
+                    <h5>The Wildcard - Source of Surprise</h5>
+                    <p>The unpredictable element whose choices and abilities can completely change the game. They bring unexpected solutions and delightful complications.</p>
+                    <div class="aspect-examples">
+                        <strong>Example High Concepts:</strong>
+                        <br>• "Trickster with a Heart of Gold"
+                        <br>• "Genius Inventor of Impossible Things"
+                        <br>• "Former Enemy with Complex Loyalties"
+                    </div>
+                </div>
+                <div class="role-card connector">
+                    <h5>The Connector - Web of Relationships</h5>
+                    <p>The character whose relationships and social connections drive plot development. They know everyone and everything, creating opportunities through their network.</p>
+                    <div class="aspect-examples">
+                        <strong>Example High Concepts:</strong>
+                        <br>• "Information Broker with Too Many Secrets"
+                        <br>• "Diplomat Balancing Competing Interests"
+                        <br>• "Former Insider Knowing Where Bodies are Buried"
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="aspect-weaving">
+            <h3>The Art of Aspect Weaving</h3>
+            <p>Creating a Fate group is like weaving a tapestry where individual threads become beautiful only when interwoven with others. Aspects are the primary tool for creating these connections, linking characters to each other and the world in meaningful ways.</p>
+
+            <canvas id="aspectWeb" width="800" height="600"></canvas>
+            
+            <div class="weaving-explanations">
+                <h4>Types of Aspect Connections</h4>
+                <div class="connection-detail">
+                    <h5>Shared History Aspects</h5>
+                    <p>Aspects that reference common experiences, creating instant bonds and conflicts. "Survivors of the Great Fire" or "Academy Rivals Turned Reluctant Allies" establish immediate dramatic potential.</p>
+                </div>
+                <div class="connection-detail">
+                    <h5>Complementary Aspects</h5>
+                    <p>Aspects that work together to create interesting dynamics. "Hothead Who Acts First" pairs beautifully with "Cautious Planner Who Thinks Too Much," creating natural tension and teamwork opportunities.</p>
+                </div>
+                <div class="connection-detail">
+                    <h5>Conflicting Aspects</h5>
+                    <p>Aspects that create internal party drama and character growth. "Pacifist in a Violent World" working alongside "Violence Solves Everything" generates constant compelling choices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="example-groups">
+            <h3>Exemplary Fate Groups</h3>
+            
+            <div class="group-example pulp">
+                <h4>The Lost World Expedition (Pulp Adventure)</h4>
+                <p>A classic pulp adventure group where each character embodies a different aspect of 1930s adventure fiction, like the cast of an Indiana Jones movie brought to life.</p>
+                
+                <div class="character-list">
+                    <div class="character">
+                        <strong>Dr. Victoria Sterling</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Brilliant Archaeologist with More Courage than Sense"</div>
+                            <div class="aspect trouble">Trouble: "The University Board Wants Me Discredited"</div>
+                            <div class="aspect other">Other: "I Never Leave a Team Member Behind"</div>
+                        </div>
+                        <p>The group's moral center and expedition leader, whose academic theories drive the adventure while her protective instincts create dramatic complications.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Captain "Iron Jack" Morrison</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Veteran Pilot Who Can Fly Anything"</div>
+                            <div class="aspect trouble">Trouble: "The Bottle is My Only Friend"</div>
+                            <div class="aspect other">Other: "Victoria Saved My Life Once"</div>
+                        </div>
+                        <p>The group's transportation and practical knowledge expert, whose drinking problem and loyalty to Victoria create ongoing tension and heroic moments.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Elena Vasquez</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Cat Burglar Seeking Redemption"</div>
+                            <div class="aspect trouble">Trouble: "The Syndicate Wants Their Property Back"</div>
+                            <div class="aspect other">Other: "Jack's Plane is My Sanctuary"</div>
+                        </div>
+                        <p>The group's infiltration specialist whose criminal past provides both useful skills and dangerous complications, while her connection to Jack creates emotional depth.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Professor Nigel Ashworth</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Absent-Minded Genius with Incredible Theories"</div>
+                            <div class="aspect trouble">Trouble: "I Trust Everyone, Even When I Shouldn't"</div>
+                            <div class="aspect other">Other: "Victoria is the Daughter I Never Had"</div>
+                        </div>
+                        <p>The group's knowledge base and unwitting plot device, whose brilliant theories open doors while his naivety creates vulnerabilities that others must protect.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-example urban">
+                <h4>The Midnight Agency (Urban Fantasy)</h4>
+                <p>A supernatural investigation team operating in the hidden world beneath modern city life, like the cast of a paranormal TV series where personal drama matters as much as monster hunting.</p>
+                
+                <div class="character-list">
+                    <div class="character">
+                        <strong>Detective Sarah Chen</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Cop Who Sees Through the Supernatural Veil"</div>
+                            <div class="aspect trouble">Trouble: "Internal Affairs is Watching My Every Move"</div>
+                            <div class="aspect other">Other: "Marcus Opened My Eyes to the Truth"</div>
+                        </div>
+                        <p>The group's connection to official law enforcement, whose police resources and moral compass guide the team while her precarious position creates ongoing tension.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Marcus Blackwood</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Reformed Warlock Seeking Atonement"</div>
+                            <div class="aspect trouble">Trouble: "My Dark Past Keeps Catching Up"</div>
+                            <div class="aspect other">Other: "I Owe Sarah Everything"</div>
+                        </div>
+                        <p>The group's magical expertise and moral complexity, whose powerful abilities and guilty conscience create both solutions and complications for every case.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Luna Rodriguez</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Hacker Who Digitized Her Own Ghost"</div>
+                            <div class="aspect trouble">Trouble: "My Corporate Body is Looking for Me"</div>
+                            <div class="aspect other">Other: "Zoe is My Anchor to Humanity"</div>
+                        </div>
+                        <p>The group's information specialist whose unique undead-digital existence provides incredible capabilities while her disconnection from physical reality creates vulnerability.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Zoe Park</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "EMT Who Patches Up Both Body and Soul"</div>
+                            <div class="aspect trouble">Trouble: "I Feel Everyone's Pain as My Own"</div>
+                            <div class="aspect other">Other: "Luna Needs Someone Who Believes in Her"</div>
+                        </div>
+                        <p>The group's heart and healer, whose empathic abilities provide both emotional support and practical aid, while her sensitivity to others' pain creates personal challenges.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-example space">
+                <h4>The Far Horizon Crew (Space Opera)</h4>
+                <p>A starship crew navigating the political complexities of galactic civilization, like Firefly meets Star Trek where personal relationships drive the greater narrative.</p>
+                
+                <div class="character-list">
+                    <div class="character">
+                        <strong>Commander Zara Nel</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Disgraced Navy Officer Seeking Redemption"</div>
+                            <div class="aspect trouble">Trouble: "The Admiralty Wants Me to Disappear"</div>
+                            <div class="aspect other">Other: "This Crew is My New Family"</div>
+                        </div>
+                        <p>The group's leader and tactical mind, whose military background provides structure while her disgrace creates ongoing complications and drives the crew's outsider status.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Dr. Kepler-7</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "AI Philosopher Seeking to Understand Organics"</div>
+                            <div class="aspect trouble">Trouble: "My Creators Programmed Hidden Directives"</div>
+                            <div class="aspect other">Other: "Zara Treats Me as Equals, Not Property"</div>
+                        </div>
+                        <p>The group's science officer and philosophical voice, whose artificial nature provides unique perspectives while hidden programming creates uncertainty about true loyalties.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Rex "Stardust" Valencia</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Charming Smuggler with Contacts Everywhere"</div>
+                            <div class="aspect trouble">Trouble: "I Owe Favors to Half the Galaxy"</div>
+                            <div class="aspect other">Other: "Kepler is Teaching Me to Think Deeper"</div>
+                        </div>
+                        <p>The group's face and connection to the underworld, whose network of contacts opens doors while his accumulated debts and obligations create ongoing complications.</p>
+                    </div>
+                    <div class="character">
+                        <strong>Thrust</strong>
+                        <div class="aspects">
+                            <div class="aspect high-concept">High Concept: "Warrior-Poet from a Honor-Bound Culture"</div>
+                            <div class="aspect trouble">Trouble: "My People Consider Me Exile and Traitor"</div>
+                            <div class="aspect other">Other: "Rex's Humor Helps Me Forget My Shame"</div>
+                        </div>
+                        <p>The group's muscle and moral compass, whose warrior culture provides both combat expertise and ethical frameworks while his exile status creates personal pain and plot complications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="creation-framework">
+            <h3>The Collaborative Creation Process</h3>
+            <p>Building a Fate group is like hosting a writers' room where everyone contributes to creating a shared fictional universe. The process is as important as the result, establishing relationships and story potential before play begins.</p>
+
+            <div class="mermaid">
+                flowchart TD
+                    A[Game Creation Session] --> B[Define Setting Tone]
+                    B --> C[Establish Group Concept]
+                    C --> D[Create Individual Characters]
+                    D --> E[Establish Relationships]
+                    E --> F[Define Group Aspects]
+                    F --> G[Create Shared Locations/NPCs]
+                    G --> H[Establish Threats/Opposition]
+                    H --> I[Plan Story Arc Hooks]
+            </div>
+
+            <div class="framework-details">
+                <h4>Detailed Creation Steps</h4>
+                
+                <div class="step">
+                    <h5>Setting and Tone Establishment</h5>
+                    <p>Collaborate to define not just where and when your story takes place, but how it feels. Is this gritty noir, lighthearted adventure, serious drama, or pulpy action? The tone determines how aspects get invoked and compelled, shaping the entire play experience.</p>
+                </div>
+
+                <div class="step">
+                    <h5>Group Concept Development</h5>
+                    <p>Answer the fundamental question: "What brings these characters together?" Are you a military unit, a investigation team, a family business, or a group of friends? This concept provides the foundation for all individual character decisions.</p>
+                </div>
+
+                <div class="step">
+                    <h5>Collaborative Character Creation</h5>
+                    <p>Create characters together, not in isolation. Share ideas, build on each other's concepts, and ensure every character has strong connections to others. Each character should care about at least two others and have potential conflicts with different members.</p>
+                </div>
+
+                <div class="step">
+                    <h5>Relationship Web Building</h5>
+                    <p>Explicitly map relationships between characters. Who trusts whom? Who has unresolved tensions? Who shares a secret? These relationships provide the emotional fuel that powers Fate's dramatic engine.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="practical-exercises">
+            <h3>Collaborative Creation Workshop</h3>
+            <p>Understanding Fate principles intellectually is like reading about swimming - helpful, but no substitute for jumping in the water. These exercises will help you master collaborative character creation.</p>
+
+            <div class="exercise">
+                <h4>Exercise One: The Aspect Web Challenge</h4>
+                <p>Create four characters where every character has at least one aspect that directly references or connects to two other characters. Map these connections visually. How do the resulting relationships create dramatic potential? What story hooks emerge naturally from the web?</p>
+            </div>
+
+            <div class="exercise">
+                <h4>Exercise Two: Genre Flexibility Test</h4>
+                <p>Take the same group concept ("elite investigation team") and create character groups for three different genres:
+                <br>• Cyberpunk corporate espionage
+                <br>• Victorian supernatural mystery
+                <br>• Post-apocalyptic survivor community
+                <br>How do the aspects and relationships change while maintaining core group dynamics?</p>
+            </div>
+
+            <div class="exercise">
+                <h4>Exercise Three: Trouble Aspect Interconnection</h4>
+                <p>Design a group where each character's Trouble aspect creates problems that other characters are naturally positioned to help with or make worse. How does this create ongoing dramatic tension? What happens when helping one character's trouble exacerbates another's?</p>
+            </div>
+        </section>
+
+        <section class="advanced-concepts">
+            <h3>Mastering Narrative Architecture</h3>
+            <p>Expert Fate groups understand that character creation is really about creating the foundational narrative architecture for an ongoing collaborative story. These advanced concepts help build groups that generate endless dramatic potential.</p>
+
+            <h4>Dynamic Relationship Evolution</h4>
+            <p>Plan how relationships will change over time. The mentor-student dynamic evolves into equals, rivals learn to respect each other, and initial trust might be betrayed and rebuilt. Build aspects that can evolve through play, creating character growth opportunities.</p>
+
+            <h4>Layered Aspect Meanings</h4>
+            <p>Craft aspects with multiple interpretation layers. "The Last of My Kind" works as both a source of unique abilities and a Trouble aspect representing loneliness. These multifaceted aspects provide rich material for both players and GMs to invoke creatively.</p>
+
+            <h4>Group Identity and Evolution</h4>
+            <p>Develop group aspects that can change as the story progresses. A group that starts as "Desperate Refugees Seeking Sanctuary" might evolve into "Hardened Veterans Fighting for Justice." Plan this evolution to reflect character growth and story development.</p>
+
+            <h4>Symmetrical Vulnerability</h4>
+            <p>Ensure every character has aspects that create vulnerability balanced with empowerment. No one should be purely powerful or purely problematic. This balance ensures everyone gets both heroic moments and compelling complications.</p>
+        </section>
+
+        <section class="fate-specific-considerations">
+            <h3>Unique Fate Considerations</h3>
+            <p>Fate's mechanics serve the narrative in ways that require different thinking than traditional RPGs. Understanding these unique elements helps create groups that work with the system's strengths.</p>
+
+            <div class="consideration">
+                <h4>Fate Point Circulation</h4>
+                <p><strong>Concept:</strong> Fate points flow between players and GM based on aspect invocations and compels.</p>
+                <p><strong>Group Implication:</strong> Create aspects that naturally create both positive (invocable) and negative (compellable) situations. Characters with only positive aspects or only negative aspects disrupt the economic flow.</p>
+            </div>
+
+            <div class="consideration">
+                <h4>Narrative Permission vs. Mechanical Balance</h4>
+                <p><strong>Concept:</strong> Fate grants capabilities based on fictional justification rather than mechanical optimization.</p>
+                <p><strong>Group Implication:</strong> Focus on ensuring every character has unique narrative permissions rather than balanced mechanical capabilities. The hacker's computer skills and the warrior's combat prowess are equally valuable in different contexts.</p>
+            </div>
+
+            <div class="consideration">
+                <h4>Proactive Character Design</h4>
+                <p><strong>Concept:</strong> Fate works best with characters who pursue goals rather than react to events.</p>
+                <p><strong>Group Implication:</strong> Every character needs personal stakes and objectives that drive them to action. Purely reactive characters create narrative dead weight.</p>
+            </div>
+        </section>
+
+        <section class="troubleshooting">
+            <h3>Common Collaborative Challenges</h3>
+            <p>Even experienced groups encounter obstacles when embracing Fate's collaborative approach. Recognizing these patterns helps create smoother creative processes.</p>
+
+            <div class="problem-solution">
+                <h4>Problem: Analysis Paralysis in Creation</h4>
+                <p><strong>Issue:</strong> Players spend too much time trying to optimize or perfect characters instead of starting play.</p>
+                <p><strong>Solution:</strong> Set time limits for creation sessions and embrace the fact that characters will evolve through play. Perfect is the enemy of good in collaborative storytelling.</p>
+            </div>
+
+            <div class="problem-solution">
+                <h4>Problem: Unbalanced Investment</h4>
+                <p><strong>Issue:</strong> Some characters have many connections while others feel isolated.</p>
+                <p><strong>Solution:</strong> Use a structured relationship creation process where every character must define relationships with at least two others before anyone defines a third relationship.</p>
+            </div>
+
+            <div class="problem-solution">
+                <h4>Problem: Conflict Avoidance</h4>
+                <p><strong>Issue:</strong> Players create only harmonious relationships, avoiding dramatic tension.</p>
+                <p><strong>Solution:</strong> Emphasize that conflict creates story, not problems. Model how productive conflict enhances rather than threatens character relationships.</p>
+            </div>
+        </section>
+
+        <section class="next-steps">
+            <h3>Beginning Your Collaborative Journey</h3>
+            <p>You now understand the foundational principles for creating compelling character groups in Fate RPG. Unlike traditional RPGs where optimal builds exist independently, Fate groups succeed through the strength of their interconnections and collaborative story potential.</p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Remember: In Fate, the most powerful ability is creating a compelling story together. Every aspect is an invitation to collaborative fiction, and every relationship is a promise of dramatic potential.</p>
+    </footer>
+
+    <script>
+        // Aspect Web Visualization
+        const canvas = document.getElementById('aspectWeb');
+        const ctx = canvas.getContext('2d');
+        
+        // Set up the background
+        ctx.fillStyle = '#1a1a2e';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Add subtle texture
+        for(let i = 0; i < 300; i++) {
+            ctx.fillStyle = `rgba(100, 149, 237, ${Math.random() * 0.1})`;
+            const size = Math.random() * 2 + 1;
+            ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, size, size);
+        }
+        
+        // Define characters and their aspects
+        const characters = [
+            {
+                name: 'Sarah',
+                x: 200, y: 150,
+                aspects: ['Cop with Supernatural Sight', 'IA is Watching', 'Marcus Opened My Eyes'],
+                color: '#FF6B6B'
+            },
+            {
+                name: 'Marcus', 
+                x: 600, y: 150,
+                aspects: ['Reformed Warlock', 'Dark Past Haunts Me', 'I Owe Sarah Everything'],
+                color: '#4ECDC4'
+            },
+            {
+                name: 'Luna',
+                x: 200, y: 450,
+                aspects: ['Digital Ghost Hacker', 'Corporate Body Hunts Me', 'Zoe Anchors My Humanity'],
+                color: '#45B7D1'
+            },
+            {
+                name: 'Zoe',
+                x: 600, y: 450,
+                aspects: ['EMT Who Heals Souls', 'I Feel Everyone\'s Pain', 'Luna Needs My Belief'],
+                color: '#96CEB4'
+            }
+        ];
+        
+        // Define connections based on aspect relationships
+        const connections = [
+            { from: 'Sarah', to: 'Marcus', strength: 'strong', label: 'Trust/Debt' },
+            { from: 'Luna', to: 'Zoe', strength: 'strong', label: 'Anchor/Faith' },
+            { from: 'Sarah', to: 'Luna', strength: 'moderate', label: 'Investigation' },
+            { from: 'Marcus', to: 'Zoe', strength: 'moderate', label: 'Redemption' },
+            { from: 'Sarah', to: 'Zoe', strength: 'weak', label: 'Professional' },
+            { from: 'Marcus', to: 'Luna', strength: 'weak', label: 'Outsiders' }
+        ];
+        
+        // Draw connections first (so they appear behind characters)
+        connections.forEach(conn => {
+            const char1 = characters.find(c => c.name === conn.from);
+            const char2 = characters.find(c => c.name === conn.to);
+            
+            if (char1 && char2) {
+                ctx.strokeStyle = conn.strength === 'strong' ? 'rgba(255, 215, 0, 0.8)' :
+                                conn.strength === 'moderate' ? 'rgba(255, 215, 0, 0.5)' :
+                                'rgba(255, 215, 0, 0.3)';
+                ctx.lineWidth = conn.strength === 'strong' ? 4 :
+                              conn.strength === 'moderate' ? 3 : 2;
+                
+                ctx.beginPath();
+                ctx.moveTo(char1.x, char1.y);
+                ctx.lineTo(char2.x, char2.y);
+                ctx.stroke();
+                
+                // Add connection label
+                const midX = (char1.x + char2.x) / 2;
+                const midY = (char1.y + char2.y) / 2;
+                
+                ctx.fillStyle = '#FFD700';
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(conn.label, midX, midY - 5);
+            }
+        });
+        
+        // Draw characters
+        characters.forEach(char => {
+            // Draw character circle
+            ctx.fillStyle = char.color;
+            ctx.beginPath();
+            ctx.arc(char.x, char.y, 40, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw border
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Add character name
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(char.name, char.x, char.y + 5);
+            
+            // Add aspects around character
+            char.aspects.forEach((aspect, index) => {
+                const angle = (index * 2 * Math.PI / char.aspects.length) - Math.PI/2;
+                const aspectX = char.x + Math.cos(angle) * 80;
+                const aspectY = char.y + Math.sin(angle) * 80;
+                
+                // Draw aspect box
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                ctx.fillRect(aspectX - 60, aspectY - 10, 120, 20);
+                
+                ctx.strokeStyle = char.color;
+                ctx.lineWidth = 1;
+                ctx.strokeRect(aspectX - 60, aspectY - 10, 120, 20);
+                
+                // Add aspect text
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '10px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(aspect, aspectX, aspectY + 3);
+                
+                // Draw line from character to aspect
+                ctx.strokeStyle = char.color;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(char.x + Math.cos(angle) * 40, char.y + Math.sin(angle) * 40);
+                ctx.lineTo(aspectX, aspectY);
+                ctx.stroke();
+            });
+        });
+        
+        // Add title
+        ctx.fillStyle = '#FFD700';
+        ctx.font = 'bold 24px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('Fate Character Aspect Web', canvas.width / 2, 30);
+        
+        // Add legend
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '14px Arial';
+        ctx.fillText('Character aspects create narrative hooks and relationship opportunities', canvas.width / 2, canvas.height - 20);
+        
+        // Reset text alignment
+        ctx.textAlign = 'start';
+    </script>
+
+    <!-- <style>
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .role-card {
+            padding: 25px;
+            border-radius: 15px;
+            border: 3px solid #6495ED;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .role-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        
+        .role-card.protagonist {
+            background: linear-gradient(135deg, #FF6B6B, #FF5252);
+            color: white;
+            border-color: #FF6B6B;
+        }
+        
+        .role-card.catalyst {
+            background: linear-gradient(135deg, #4ECDC4, #26C6DA);
+            color: white;
+            border-color: #4ECDC4;
+        }
+        
+        .role-card.anchor {
+            background: linear-gradient(135deg, #45B7D1, #2196F3);
+            color: white;
+            border-color: #45B7D1;
+        }
+        
+        .role-card.wildcard {
+            background: linear-gradient(135deg, #96CEB4, #4CAF50);
+            color: white;
+            border-color: #96CEB4;
+        }
+        
+        .role-card.connector {
+            background: linear-gradient(135deg, #FFEAA7, #FDCB6E);
+            color: #333;
+            border-color: #FFEAA7;
+        }
+        
+        .aspect-examples {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .group-example {
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 3px solid #6495ED;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .group-example.pulp {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            border-color: #DAA520;
+        }
+        
+        .group-example.urban {
+            background: linear-gradient(135deg, #2F2F2F, #1C1C1C);
+            color: white;
+            border-color: #4ECDC4;
+        }
+        
+        .group-example.space {
+            background: linear-gradient(135deg, #191970, #000080);
+            color: white;
+            border-color: #6495ED;
+        }
+        
+        .character-list {
+            display: grid;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .character {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #6495ED;
+            transition: transform 0.2s ease;
+        }
+        
+        .character:hover {
+            transform: translateX(8px);
+        }
+        
+        .aspects {
+            margin: 15px 0;
+        }
+        
+        .aspect {
+            margin: 8px 0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .aspect.high-concept {
+            background: linear-gradient(135deg, #FF6B6B, #FFE5E5);
+            border-left: 4px solid #FF6B6B;
+        }
+        
+        .aspect.trouble {
+            background: linear-gradient(135deg, #FFA500, #FFF5E5);
+            border-left: 4px solid #FFA500;
+        }
+        
+        .aspect.other {
+            background: linear-gradient(135deg, #4ECDC4, #E5F9F7);
+            border-left: 4px solid #4ECDC4;
+        }
+        
+        .connection-detail {
+            margin: 25px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #6495ED;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .step {
+            margin: 25px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .exercise {
+            background: linear-gradient(135deg, #FFF8DC, #F5DEB3);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border: 3px solid #DAA520;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .consideration {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 5px solid #9c27b0;
+        }
+        
+        .problem-solution {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 5px solid #f44336;
+        }
+        
+        .preview {
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            padding: 25px;
+            border-radius: 15px;
+            border: 3px solid #4CAF50;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        canvas {
+            border: 4px solid #6495ED;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .framework-details {
+            margin-top: 30px;
+        }
+        
+        /* Add Fate-themed styling */
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #FFD700, #4ECDC4, #FFD700, #4ECDC4);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .role-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* Narrative-focused styling */
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+        }
+        
+        main {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            color: #2c3e50;
+        }
+        
+        .weaving-explanations {
+            margin-top: 30px;
+        }
+    </style> -->
+</body>
+</html>

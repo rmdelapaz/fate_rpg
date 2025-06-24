@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>150 Fate RPG Character Names</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: 
+                linear-gradient(45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%),
+                linear-gradient(-45deg, #43e97b 0%, #38f9d7 50%, #96e6a1 100%);
+            background-size: 400% 400%, 200% 200%;
+            animation: aspectShift 12s ease infinite;
+            color: #2c3e50;
+            position: relative;
+        }
+        @keyframes aspectShift {
+            0%, 100% { 
+                background-position: 0% 50%, 0% 50%;
+                filter: hue-rotate(0deg);
+            }
+            25% { 
+                background-position: 100% 50%, 100% 0%;
+                filter: hue-rotate(90deg);
+            }
+            50% { 
+                background-position: 100% 100%, 0% 100%;
+                filter: hue-rotate(180deg);
+            }
+            75% { 
+                background-position: 0% 100%, 100% 50%;
+                filter: hue-rotate(270deg);
+            }
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.1),
+                0 5px 15px rgba(0,0,0,0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.6em;
+            margin-bottom: 25px;
+            text-shadow: 
+                2px 2px 4px rgba(0,0,0,0.1),
+                0 0 20px rgba(102, 126, 234, 0.3);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-weight: 400;
+            font-size: 1.6em;
+        }
+        .name-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .name-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.9));
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            box-shadow: 
+                0 4px 15px rgba(0,0,0,0.08),
+                0 1px 3px rgba(0,0,0,0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .name-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(102, 126, 234, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .name-card:hover::before {
+            transform: translateX(100%);
+        }
+        .name-card:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 8px 25px rgba(102, 126, 234, 0.15),
+                0 3px 10px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-left-color: #f5576c;
+        }
+        .name-card:nth-child(3n+1) {
+            border-left-color: #f5576c;
+        }
+        .name-card:nth-child(3n+2) {
+            border-left-color: #43e97b;
+        }
+        .name-card:nth-child(3n+3) {
+            border-left-color: #4facfe;
+        }
+        .name {
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .concept {
+            font-size: 0.9em;
+            color: #667eea;
+            font-style: italic;
+            margin-bottom: 5px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        .aspect-suggestion {
+            font-size: 0.85em;
+            color: #34495e;
+            margin-top: 10px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        .setting-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            margin-top: 8px;
+            margin-right: 5px;
+            display: inline-block;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        .story-tag {
+            background: linear-gradient(45deg, #f5576c, #f093fb);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.65em;
+            margin-left: 3px;
+            display: inline-block;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        .tips-section {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .example-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .analogy-box {
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.1), rgba(240, 147, 251, 0.1));
+            border: 2px solid #f5576c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .fate-box {
+            background: linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(56, 249, 215, 0.1));
+            border: 2px solid #43e97b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .canvas-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        canvas {
+            border: 3px solid #667eea;
+            border-radius: 12px;
+            max-width: 100%;
+            box-shadow: 
+                0 8px 20px rgba(102, 126, 234, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        .aspect-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .aspect-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.9));
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .aspect-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        .proactive-text {
+            color: #f5576c;
+            font-weight: 600;
+        }
+        .reactive-text {
+            color: #43e97b;
+            font-weight: 600;
+        }
+        .narrative-text {
+            color: #4facfe;
+            font-weight: 600;
+        }
+        .collaborative-text {
+            color: #764ba2;
+            font-weight: 600;
+        }
+        .fate-dice {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            background: #2c3e50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 0 2px;
+        }
+        .aspect-examples {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        .story-ladder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .ladder-rung {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin: 3px 0;
+            font-weight: 500;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 150 Fate RPG Character Names 🎲</h1>
+        
+        <div class="tips-section">
+            <h2>🌟 Fate: Names That Tell Stories</h2>
+            <p>In Fate RPG, characters are defined by their <span class="narrative-text">Aspects</span> - short phrases that describe who they are, what they care about, and what makes them interesting. Names in Fate should be <span class="proactive-text">proactive and competent</span>, suggesting characters who can drive stories forward and face challenges head-on. Whether you're playing <span class="collaborative-text">Dresden Files</span>, <span class="reactive-text">Spirit of the Century</span>, or a custom setting, names should spark imagination and hint at the dramatic potential within.</p>
+            
+            <div class="story-ladder">
+                <div class="ladder-rung">Legendary</div>
+                <div class="ladder-rung">Epic</div>
+                <div class="ladder-rung">Fantastic</div>
+                <div class="ladder-rung">Superb</div>
+                <div class="ladder-rung">Great</div>
+                <div class="ladder-rung">Good</div>
+                <div class="ladder-rung">Fair</div>
+                <div class="ladder-rung">Average</div>
+                <div class="ladder-rung">Mediocre</div>
+            </div>
+
+            <div class="aspect-legend">
+                <div class="aspect-item"><strong>HIGH CONCEPT</strong><br>Who You Are</div>
+                <div class="aspect-item"><strong>TROUBLE</strong><br>What Complicates Life</div>
+                <div class="aspect-item"><strong>RELATIONSHIP</strong><br>Connections to Others</div>
+                <div class="aspect-item"><strong>BACKGROUND</strong><br>Where You Came From</div>
+                <div class="aspect-item"><strong>MOTIVATION</strong><br>What Drives You</div>
+                <div class="aspect-item"><strong>PERSONALITY</strong><br>How You Act</div>
+                <div class="aspect-item"><strong>EQUIPMENT</strong><br>Signature Gear</div>
+                <div class="aspect-item"><strong>REPUTATION</strong><br>What Others Think</div>
+                <div class="aspect-item"><strong>MYSTERY</strong><br>Hidden Elements</div>
+                <div class="aspect-item"><strong>GOAL</strong><br>What You Want</div>
+                <div class="aspect-item"><strong>FLAW</strong><br>Personal Weakness</div>
+                <div class="aspect-item"><strong>STRENGTH</strong><br>Core Capability</div>
+            </div>
+        </div>
+
+        <div class="mermaid">
+            graph TD
+                A[Fate Character Creation] --> B[High Concept Aspect]
+                A --> C[Trouble Aspect]
+                A --> D[Choose Name]
+                D --> E[Reflects Competence]
+                D --> F[Suggests Drama]
+                D --> G[Easy to Remember]
+                E --> H[Proactive Hero]
+                E --> I[Skilled Professional]
+                F --> J[Hidden Depths]
+                F --> K[Story Potential]
+                G --> L[Table Friendly]
+                G --> M[Genre Appropriate]
+                H --> N[Final Character]
+                I --> N
+                J --> N
+                K --> N
+                L --> N
+                M --> N
+                
+                N --> O[Phase Trio]
+                O --> P[First Adventure]
+                O --> Q[Guest Star]
+                O --> R[Guest Star Again]
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="fateWheel" width="500" height="500"></canvas>
+            <p><em>Fate Aspect Generator - Click to create character inspiration!</em></p>
+        </div>
+
+        <h2>⚔️ Male Character Names (50)</h2>
+        <div class="name-grid" id="maleNames"></div>
+
+        <h2>🌟 Female Character Names (50)</h2>
+        <div class="name-grid" id="femaleNames"></div>
+
+        <h2>🎯 Gender-Neutral Character Names (50)</h2>
+        <div class="name-grid" id="neutralNames"></div>
+
+        <div class="fate-box">
+            <h3>🎲 Fate Character Principles</h3>
+            <p><strong>Competent Characters:</strong> <span class="proactive-text">Fate characters</span> are skilled and capable, not bumbling beginners.</p>
+            <p><strong>Proactive Heroes:</strong> Characters should be able to <span class="narrative-text">drive the story forward</span> and take meaningful action.</p>
+            <p><strong>Dramatic Potential:</strong> Names should suggest <span class="reactive-text">interesting complications</span> and story opportunities.</p>
+            <p><strong>Collaborative Storytelling:</strong> Names work best when they <span class="collaborative-text">connect to other characters</span> and the setting.</p>
+        </div>
+
+        <div class="example-box">
+            <h3>🎭 Aspect-Driven Name Examples</h3>
+            <p><strong>High Concept + Name:</strong> "Marcus 'The Negotiator' Cross" suggests a diplomatic problem-solver with a reputation.</p>
+            <p><strong>Trouble + Name:</strong> "Sarah 'Deadshot' Kane - Can't Walk Away From A Fight" shows competence with a complicating flaw.</p>
+            <p><strong>Background + Name:</strong> "Dr. Elena Vasquez, Last of the Order" hints at mysterious past and current isolation.</p>
+            <p><strong>Motivation + Name:</strong> "Tommy 'Finder' Blake - Everyone Deserves the Truth" shows what drives this investigator.</p>
+        </div>
+
+        <div class="analogy-box">
+            <h3>🎬 Fate Names Like...</h3>
+            <p><strong>Like Movie Characters:</strong> Names should sound like protagonists who can carry a story, not background extras.</p>
+            <p><strong>Like TV Show Leads:</strong> Memorable enough to be the center of ongoing drama and character development.</p>
+            <p><strong>Like Novel Heroes:</strong> Names that suggest depth, capability, and the potential for growth and change.</p>
+        </div>
+
+        <div class="tips-section">
+            <h2>⚡ Fate Naming Strategies</h2>
+            
+            <h3>The Fate Character Concept</h3>
+            <p><strong class="proactive-text">Proactive Competence:</strong> Characters should feel capable of taking meaningful action</p>
+            <p><strong class="narrative-text">Narrative Potential:</strong> Names should suggest story hooks and dramatic possibilities</p>
+            <p><strong class="collaborative-text">Collaborative Elements:</strong> Consider how names connect to other PCs and NPCs</p>
+            
+            <h3>Aspect Integration</h3>
+            <p><strong>High Concept Aspects:</strong> Names that suggest professional competence or unique abilities</p>
+            <p><strong>Trouble Aspects:</strong> Names might hint at the complications that make characters interesting</p>
+            <p><strong>Relationship Aspects:</strong> Names that suggest connections to important people or organizations</p>
+
+            <div class="aspect-examples">
+                <h4>Sample Character Aspects:</h4>
+                <p><strong>High Concept:</strong> "Wizard Private Investigator" | "Reformed Cat Burglar" | "Knight of the Digital Round Table"</p>
+                <p><strong>Trouble:</strong> "Can't Resist a Mystery" | "Enemies in High Places" | "Supernatural Magnet"</p>
+                <p><strong>Other Aspects:</strong> "My Mentor's Secret Legacy" | "Gadgets for Every Occasion" | "Never Leave a Friend Behind"</p>
+            </div>
+
+            <h3>Fate Dice and Drama</h3>
+            <p>Remember that Fate uses <span class="fate-dice">[-]</span> <span class="fate-dice">[0]</span> <span class="fate-dice">[+]</span> dice, and characters succeed more often than they fail. Names should reflect this heroic competence while still suggesting the complications that make stories interesting.</p>
+        </div>
+
+        <div class="example-box">
+            <h3>🎮 Setting-Specific Applications</h3>
+            <p><strong>Dresden Files RPG:</strong> Names for modern urban fantasy practitioners dealing with supernatural politics.</p>
+            <p><strong>Spirit of the Century:</strong> Pulp adventure names for 1920s globe-trotting heroes with strange powers.</p>
+            <p><strong>Fate Core Modern:</strong> Contemporary names for characters in any genre from superheroes to space opera.</p>
+            <p><strong>Urban Shadows:</strong> Names for political players in supernatural city conflicts.</p>
+        </div>
+
+        <div class="fate-box">
+            <h3>🌟 Fate Storytelling Elements</h3>
+            <p><strong>Phase Trio:</strong> Names should work across the <span class="narrative-text">three-phase character creation</span> process.</p>
+            <p><strong>Compels and Invokes:</strong> Names can suggest when <span class="proactive-text">Aspects get activated</span> for drama or advantage.</p>
+            <p><strong>Stunts and Skills:</strong> Names might hint at <span class="reactive-text">special abilities</span> or professional competencies.</p>
+            <p><strong>Refresh and Fate Points:</strong> Names that suggest the <span class="collaborative-text">ebb and flow</span> of narrative control.</p>
+        </div>
+
+        <div class="tips-section">
+            <h2>🚀 Fate Character Development</h2>
+            <ul>
+                <li><strong>Growing Legends:</strong> Names that can evolve as characters gain <span class="narrative-text">reputation and power</span></li>
+                <li><strong>Changing Aspects:</strong> Names flexible enough to work as <span class="proactive-text">character aspects change</span></li>
+                <li><strong>Milestone Advancement:</strong> Names that support both <span class="reactive-text">minor and major milestones</span></li>
+                <li><strong>Concession and Consequences:</strong> Names that can handle both <span class="collaborative-text">victory and defeat</span></li>
+                <li><strong>Bronze Rule Applications:</strong> Names that work when using <span class="narrative-text">Fate Fractal</span> principles</li>
+                <li><strong>Setting Portability:</strong> Names that transfer between different <span class="proactive-text">Fate-powered games</span></li>
+            </ul>
+        </div>
+
+        <div class="mermaid">
+            pie title Fate Name Inspiration Sources
+                "Character Competence" : 25
+                "Dramatic Potential" : 20
+                "Aspect Integration" : 18
+                "Story Hooks" : 15
+                "Setting Appropriate" : 12
+                "Collaborative Elements" : 10
+        </div>
+
+        <div class="example-box">
+            <h3>🎲 The Power of Aspects</h3>
+            <p>In Fate, <span class="narrative-text">Aspects are true</span>. This means that character names, especially when they become Aspects, have narrative weight and mechanical impact. A character named <span class="proactive-text">"Lucky" McGillicuddy</span> with the Aspect <strong>"Luck of the Irish"</strong> doesn't just have a cool name - they have a mechanical advantage they can invoke for bonuses and a story element that can be compelled for complications. Names in Fate aren't just labels; they're <span class="collaborative-text">tools for collaborative storytelling</span>.</p>
+        </div>
+    </div>
+
+    <script>
+        // Fate RPG character name data focused on competent, dramatic potential
+        const maleNames = [
+            {name: "Marcus 'The Negotiator' Cross", concept: "Diplomatic Problem-Solver", setting: "Modern/Urban Fantasy", aspect: "Always Find Middle Ground"},
+            {name: "Viktor 'Shadowstep' Kane", concept: "Reformed Thief", setting: "Urban Fantasy", aspect: "Old Habits Die Hard"},
+            {name: "Dr. Samuel Blackwood", concept: "Occult Scholar", setting: "Modern Horror", aspect: "Knowledge Has a Price"},
+            {name: "Jack 'Lucky' Sterling", concept: "Pulp Adventure Hero", setting: "Spirit of Century", aspect: "Fortune Favors the Bold"},
+            {name: "Detective Ray Malone", concept: "Supernatural Investigator", setting: "Dresden Files", aspect: "Truth at Any Cost"},
+            {name: "Captain Rex Thunderbolt", concept: "Sky Pirate", setting: "Steampunk", aspect: "Master of Wind and Wire"},
+            {name: "Professor Kai Chen", concept: "Time Travel Researcher", setting: "Sci-Fi", aspect: "Temporal Theories, Practical Problems"},
+            {name: "Angelo 'Fingers' Rosetti", concept: "Gentleman Burglar", setting: "Crime/Heist", aspect: "Style Over Substance"},
+            {name: "Commander Steel Harrison", concept: "Military Strategist", setting: "Modern/War", aspect: "No Soldier Left Behind"},
+            {name: "Magnus 'Ironborn' Eriksson", concept: "Mythic Warrior", setting: "Urban Mythology", aspect: "Legends Never Die"},
+            {name: "Dr. Alex Quantum", concept: "Mad Scientist", setting: "Pulp/Sci-Fi", aspect: "Science is My Religion"},
+            {name: "Tommy 'Finder' Blake", concept: "Information Broker", setting: "Cyberpunk", aspect: "Everyone Deserves Truth"},
+            {name: "Lord Sebastian Vale", concept: "Occult Detective", setting: "Victorian Horror", aspect: "Duty Before Fear"},
+            {name: "Jake 'Burnout' Rodriguez", concept: "Street Racer", setting: "Modern Action", aspect: "Speed is Life"},
+            {name: "Father Michael Cross", concept: "Warrior Priest", setting: "Urban Fantasy", aspect: "Faith Conquers All"},
+            {name: "Agent Phoenix", concept: "Supernatural Operative", setting: "Modern Espionage", aspect: "Death is Just a Setback"},
+            {name: "Nathaniel 'Gears' Copper", concept: "Inventor Extraordinaire", setting: "Steampunk", aspect: "There's Always a Better Way"},
+            {name: "Dmitri 'The Wolf' Volkov", concept: "Ex-Spetsnaz Mercenary", setting: "Modern Military", aspect: "Pack Loyalty Above All"},
+            {name: "Ezra 'Prophet' Stone", concept: "Wasteland Oracle", setting: "Post-Apocalyptic", aspect: "I See What's Coming"},
+            {name: "Captain James Voidwalker", concept: "Space Explorer", setting: "Space Opera", aspect: "Beyond the Next Star"},
+            {name: "Vincent 'The Artist' Morrow", concept: "Forger and Con Man", setting: "Crime Drama", aspect: "Beauty in Deception"},
+            {name: "Sir Gareth Lightbringer", concept: "Modern Knight", setting: "Urban Fantasy", aspect: "Chivalry Isn't Dead"},
+            {name: "Max 'Datastream' Chen", concept: "Hacker Extraordinaire", setting: "Cyberpunk", aspect: "Information Wants to Be Free"},
+            {name: "Colonel Wade Ironside", concept: "Veteran Commander", setting: "Military Sci-Fi", aspect: "Honor Through Service"},
+            {name: "Rico 'Smooth' Santos", concept: "Undercover Cop", setting: "Crime Drama", aspect: "Deep Cover, Deeper Secrets"},
+            {name: "Professor Aldric Thornfield", concept: "Archaeologist Adventurer", setting: "Pulp Adventure", aspect: "Past Holds All Answers"},
+            {name: "Blaze 'Hotshot' Murphy", concept: "Test Pilot", setting: "Modern Aviation", aspect: "Pushing the Envelope"},
+            {name: "Marcus 'The Hammer' Steele", concept: "Boxing Champion", setting: "Sports Drama", aspect: "Never Stay Down"},
+            {name: "Dr. Elias Brightwater", concept: "Magical Healer", setting: "Urban Fantasy", aspect: "Life is Sacred"},
+            {name: "Jake 'Neon' Cross", concept: "Street Artist", setting: "Modern Urban", aspect: "Art is Rebellion"},
+            {name: "Admiral Storm Blackwater", concept: "Naval Commander", setting: "Age of Sail", aspect: "Master the Tempest"},
+            {name: "Leo 'The Lion' Castellano", concept: "Family Protector", setting: "Crime Family", aspect: "Blood Before Everything"},
+            {name: "Dr. Quantum Reed", concept: "Dimensional Researcher", setting: "Superhero Sci-Fi", aspect: "Reality is Flexible"},
+            {name: "Father Diego Santos", concept: "Missionary Explorer", setting: "Historical Adventure", aspect: "Faith Guides My Steps"},
+            {name: "Ace 'Lucky' Thompson", concept: "Gambling Pilot", setting: "Space Western", aspect: "Risk Everything, Win Everything"},
+            {name: "Professor Ivan Darkwood", concept: "Folklore Expert", setting: "Modern Horror", aspect: "Old Stories, Real Monsters"},
+            {name: "Captain Rex Starfire", concept: "Rebel Leader", setting: "Space Opera", aspect: "Freedom at Any Price"},
+            {name: "Johnny 'Wheels' Romano", concept: "Getaway Driver", setting: "Crime Action", aspect: "Fast Cars, Faster Escapes"},
+            {name: "Dr. Marcus Timekeeper", concept: "Clockwork Engineer", setting: "Steampunk", aspect: "Precision in All Things"},
+            {name: "Zane 'The Cleaner' Washington", concept: "Problem Solver", setting: "Modern Crime", aspect: "Every Mess Has a Solution"},
+            {name: "Lord Captain Vex", concept: "Space Noble", setting: "Space Opera", aspect: "Honor Among the Stars"},
+            {name: "Detective Frank 'Bulldog' Mason", concept: "Tenacious Investigator", setting: "Noir Detective", aspect: "Never Let Go"},
+            {name: "Professor Sage Ironwood", concept: "Druid Scholar", setting: "Modern Fantasy", aspect: "Nature's Wisdom Endures"},
+            {name: "Captain Alex Stormwind", concept: "Airship Captain", setting: "Steampunk Adventure", aspect: "Sky Roads to Freedom"},
+            {name: "Agent Sterling 'Ghost' Kane", concept: "Supernatural Spy", setting: "Modern Espionage", aspect: "Invisible in Plain Sight"},
+            {name: "Dr. Phoenix Ashworth", concept: "Resurrection Specialist", setting: "Medical Horror", aspect: "Death is Just the Beginning"},
+            {name: "Marcus 'Titan' Steelborn", concept: "Enhanced Soldier", setting: "Superhero Military", aspect: "Strength Serves Justice"},
+            {name: "Captain Sage Brightwater", concept: "Environmental Protector", setting: "Eco-Adventure", aspect: "Nature Fights Back"},
+            {name: "Professor Echo Timestream", concept: "Temporal Archaeologist", setting: "Time Travel", aspect: "History's Hidden Truths"},
+            {name: "Commander Blaze Voidheart", concept: "Dark Space Marine", setting: "Grimdark Sci-Fi", aspect: "Darkness Serves the Light"}
+        ];
+
+        const femaleNames = [
+            {name: "Sarah 'Deadshot' Kane", concept: "Supernatural Marksman", setting: "Urban Fantasy", aspect: "Never Miss What Matters"},
+            {name: "Dr. Elena Vasquez", concept: "Last of the Order", setting: "Modern Occult", aspect: "Ancient Knowledge, Modern Problems"},
+            {name: "Captain Nova Sterling", concept: "Space Smuggler", setting: "Space Opera", aspect: "Rules are Just Suggestions"},
+            {name: "Detective Luna Cross", concept: "Psychic Investigator", setting: "Modern Mystery", aspect: "I See Dead Cases"},
+            {name: "Professor Zara Blackwood", concept: "Cryptozoologist", setting: "Modern Adventure", aspect: "Myths Walk Among Us"},
+            {name: "Agent Phoenix Rain", concept: "Memory Thief", setting: "Cyberpunk", aspect: "Your Past is My Weapon"},
+            {name: "Lady Victoria Thornfield", concept: "Occult Aristocrat", setting: "Victorian Gothic", aspect: "Privilege Has Its Prices"},
+            {name: "Dr. Kai 'Lifeline' Chen", concept: "Combat Medic", setting: "Modern War", aspect: "Healing Through Chaos"},
+            {name: "Captain Storm Brightwater", concept: "Rebel Pilot", setting: "Space Rebellion", aspect: "Freedom Flies Fast"},
+            {name: "Maya 'Ghost' Rodriguez", concept: "Corporate Infiltrator", setting: "Cyberpunk", aspect: "Identity is Fluid"},
+            {name: "Dr. Sage Moonwhisper", concept: "Druidic Scientist", setting: "Urban Fantasy", aspect: "Nature and Tech Unite"},
+            {name: "Agent Vera 'Viper' Kane", concept: "Assassin with a Code", setting: "Modern Espionage", aspect: "Death Serves Life"},
+            {name: "Professor Aria Starfall", concept: "Xenoarchaeologist", setting: "Space Adventure", aspect: "Alien Secrets, Human Wisdom"},
+            {name: "Captain Rose 'Thorns' Valentine", concept: "Pirate Queen", setting: "Fantasy Seas", aspect: "Beauty Hides the Blade"},
+            {name: "Dr. Echo Voidwright", concept: "Dimensional Engineer", setting: "Superhero Sci-Fi", aspect: "Reality Needs Better Design"},
+            {name: "Detective Raven Blackstone", concept: "Supernatural Cop", setting: "Dresden Files", aspect: "Justice Knows No Boundaries"},
+            {name: "Lady Frost Ironborn", concept: "Winter Court Noble", setting: "Urban Fantasy", aspect: "Cold Beauty, Warm Heart"},
+            {name: "Captain Jade 'Stormcrow' Wu", concept: "Sky Pirate", setting: "Steampunk", aspect: "Treasure in the Clouds"},
+            {name: "Dr. Phoenix Brightforge", concept: "Alchemical Engineer", setting: "Steampunk Fantasy", aspect: "Elements Obey Will"},
+            {name: "Agent Luna 'Nightfall' Cross", concept: "Supernatural Operative", setting: "Modern Espionage", aspect: "Darkness is My Domain"},
+            {name: "Professor Vera Timekeeper", concept: "Temporal Researcher", setting: "Time Travel", aspect: "Time Heals and Wounds"},
+            {name: "Captain Storm 'Lightning' Kane", concept: "Weather Witch", setting: "Urban Fantasy", aspect: "Nature's Fury Channeled"},
+            {name: "Dr. Sage 'Mindbridge' Patel", concept: "Telepathic Therapist", setting: "Superhero Modern", aspect: "Healing Minds, Building Bridges"},
+            {name: "Agent Echo 'Shadowdancer' Volkov", concept: "Reality Spy", setting: "Dimensional Espionage", aspect: "Truth Lives in Shadows"},
+            {name: "Lady Crimson Ashworth", concept: "Vampire Detective", setting: "Urban Fantasy", aspect: "Eternal Justice"},
+            {name: "Captain Aurora 'Starlight' Chen", concept: "Space Explorer", setting: "Sci-Fi Adventure", aspect: "Light Pierces All Darkness"},
+            {name: "Dr. River 'Flowstate' Blake", concept: "Zen Warrior", setting: "Modern Martial Arts", aspect: "Peace Through Understanding"},
+            {name: "Agent Nyx 'Voidwalker' Santos", concept: "Dream Operative", setting: "Modern Supernatural", aspect: "Dreams Shape Reality"},
+            {name: "Professor Crystal 'Prism' Stone", concept: "Light Scientist", setting: "Superhero Sci-Fi", aspect: "Spectrum Reveals Truth"},
+            {name: "Captain Ember 'Wildfire' Rodriguez", concept: "Revolutionary Leader", setting: "Fantasy Rebellion", aspect: "Freedom Burns Bright"},
+            {name: "Dr. Mist 'Veilwalker' Thornfield", concept: "Between-Worlds Healer", setting: "Urban Fantasy", aspect: "Healing Crosses Boundaries"},
+            {name: "Agent Silk 'Webweaver' Nakamura", concept: "Information Spider", setting: "Cyberpunk", aspect: "All Secrets Connect"},
+            {name: "Lady Dawn 'Lightbringer' Vale", concept: "Paladin Detective", setting: "Modern Fantasy", aspect: "Hope Conquers All"},
+            {name: "Captain Iris 'Spectrum' Cross", concept: "Dimensional Pilot", setting: "Multiverse Adventure", aspect: "Every Color Has Purpose"},
+            {name: "Dr. Zen 'Harmony' Wu", concept: "Balance Keeper", setting: "Modern Mystical", aspect: "Opposing Forces Unite"},
+            {name: "Agent Nova 'Starfall' Brightwater", concept: "Cosmic Investigator", setting: "Space Mystery", aspect: "Stars Guide Justice"},
+            {name: "Professor Jade 'Wisdom' Chen", concept: "Ancient Knowledge Keeper", setting: "Modern Scholar", aspect: "Past Teaches Present"},
+            {name: "Captain Blaze 'Phoenix' Kane", concept: "Reborn Warrior", setting: "Fantasy Adventure", aspect: "Rising From Ashes"},
+            {name: "Dr. Flux 'Changeweaver' Santos", concept: "Transformation Specialist", setting: "Superhero Science", aspect: "Change is Life"},
+            {name: "Agent Rune 'Spellblade' Eriksson", concept: "Magic-Tech Warrior", setting: "Urban Fantasy", aspect: "Ancient Power, Modern Problems"},
+            {name: "Lady Echo 'Soundweaver' Volkov", concept: "Sonic Sorceress", setting: "Modern Fantasy", aspect: "Music is Magic"},
+            {name: "Captain Void 'Starless' Night", concept: "Dark Space Explorer", setting: "Gothic Sci-Fi", aspect: "Darkness Reveals Light"},
+            {name: "Dr. Pulse 'Liferhythm' Rodriguez", concept: "Bio-Engineer", setting: "Medical Sci-Fi", aspect: "Life Finds a Way"},
+            {name: "Agent Shift 'Phasewalker' Blake", concept: "Reality Bender", setting: "Superhero Espionage", aspect: "Reality is Negotiable"},
+            {name: "Professor Wave 'Tidecaller' Sterling", concept: "Oceanic Researcher", setting: "Aquatic Adventure", aspect: "Ocean's Wisdom Runs Deep"},
+            {name: "Captain Spark 'Voltaic' Chen", concept: "Electric Engineer", setting: "Steampunk Sci-Fi", aspect: "Energy Powers Progress"},
+            {name: "Dr. Shine 'Lightweaver' Ashworth", concept: "Photon Therapist", setting: "Medical Fantasy", aspect: "Light Heals All Wounds"},
+            {name: "Agent Glow 'Lumina' Cross", concept: "Light Operative", setting: "Supernatural Espionage", aspect: "Illumination is Power"},
+            {name: "Lady Flux 'Everchange' Brightforge", concept: "Adaptation Master", setting: "Evolutionary Fantasy", aspect: "Change or Perish"},
+            {name: "Captain Zen 'Stillwater' Nakamura", concept: "Peaceful Warrior", setting: "Martial Arts Drama", aspect: "Calm in the Storm"}
+        ];
+
+        const neutralNames = [
+            {name: "River 'Flowstate' Cross", concept: "Adaptive Problem Solver", setting: "Universal", aspect: "Go With the Flow"},
+            {name: "Sage 'Truthseeker' Chen", concept: "Mystical Investigator", setting: "Universal", aspect: "Wisdom Pierces Illusion"},
+            {name: "Phoenix 'Reborn' Kane", concept: "Survivor Extraordinaire", setting: "Universal", aspect: "Rising From Every Fall"},
+            {name: "Echo 'Resonance' Sterling", concept: "Communication Specialist", setting: "Universal", aspect: "Every Voice Matters"},
+            {name: "Storm 'Tempest' Blackwater", concept: "Chaos Controller", setting: "Universal", aspect: "Order From Chaos"},
+            {name: "Ash 'Renewal' Brightwood", concept: "Transformation Agent", setting: "Universal", aspect: "From Destruction, Creation"},
+            {name: "Zen 'Balance' Wu", concept: "Harmony Keeper", setting: "Universal", aspect: "All Things in Balance"},
+            {name: "Flux 'Changeweaver' Vale", concept: "Adaptation Master", setting: "Universal", aspect: "Evolution Never Stops"},
+            {name: "Void 'Starless' Night", concept: "Mystery Incarnate", setting: "Universal", aspect: "Darkness Holds Secrets"},
+            {name: "Prism 'Spectrum' Stone", concept: "Multi-Perspective Analyst", setting: "Universal", aspect: "Truth Has Many Faces"},
+            {name: "Quest 'Pathfinder' Rodriguez", concept: "Goal-Oriented Explorer", setting: "Universal", aspect: "Journey Over Destination"},
+            {name: "Drift 'Wanderer' Blake", concept: "Free Spirit", setting: "Universal", aspect: "Home is Where I Choose"},
+            {name: "Spark 'Catalyst' Chen", concept: "Change Instigator", setting: "Universal", aspect: "Small Actions, Big Results"},
+            {name: "Cipher 'Codebreaker' Cross", concept: "Pattern Recognition Expert", setting: "Universal", aspect: "Every Puzzle Has a Solution"},
+            {name: "Pulse 'Rhythm' Santos", concept: "Life Force Channeler", setting: "Universal", aspect: "Life Beats in All Things"},
+            {name: "Mist 'Veilwalker' Thornfield", concept: "Between-Worlds Traveler", setting: "Universal", aspect: "Boundaries are Illusions"},
+            {name: "Rune 'Symbolkeeper' Eriksson", concept: "Ancient Knowledge Bearer", setting: "Universal", aspect: "Old Ways, New Applications"},
+            {name: "Shift 'Phasewalker' Nakamura", concept: "Reality Dancer", setting: "Universal", aspect: "Reality Bends for Will"},
+            {name: "Wave 'Tidebringer' Sterling", concept: "Flow Master", setting: "Universal", aspect: "Ride the Current"},
+            {name: "Glow 'Lumina' Brightwater", concept: "Light Bearer", setting: "Universal", aspect: "Hope Illuminates Darkness"},
+            {name: "Code 'Matrix' Kane", concept: "System Navigator", setting: "Universal", aspect: "All Systems Have Backdoors"},
+            {name: "Edge 'Liminal' Cross", concept: "Boundary Walker", setting: "Universal", aspect: "Living on the Edge"},
+            {name: "Flow 'Current' Chen", concept: "Movement Specialist", setting: "Universal", aspect: "Motion is Life"},
+            {name: "Link 'Connection' Blake", concept: "Network Builder", setting: "Universal", aspect: "Everything is Connected"},
+            {name: "Arc 'Lightning' Rodriguez", concept: "Energy Channeler", setting: "Universal", aspect: "Power Seeks Purpose"},
+            {name: "Node 'Network' Vale", concept: "Information Hub", setting: "Universal", aspect: "Knowledge is Power"},
+            {name: "Sync 'Harmony' Wu", concept: "Coordination Expert", setting: "Universal", aspect: "Together We're Stronger"},
+            {name: "Flux 'Variable' Santos", concept: "Constant Adapter", setting: "Universal", aspect: "Change is the Only Constant"},
+            {name: "Echo 'Reflection' Thornfield", concept: "Mirror Walker", setting: "Universal", aspect: "Truth Reflects Back"},
+            {name: "Bind 'Connector' Nakamura", concept: "Relationship Forger", setting: "Universal", aspect: "Bonds Transcend Distance"},
+            {name: "Phase 'Shifter' Cross", concept: "State Changer", setting: "Universal", aspect: "Form Follows Function"},
+            {name: "Mesh 'Weaver' Blake", concept: "Pattern Creator", setting: "Universal", aspect: "All Things Interconnect"},
+            {name: "Lens 'Focus' Chen", concept: "Clarity Bringer", setting: "Universal", aspect: "Focus Reveals Truth"},
+            {name: "Gate 'Portal' Sterling", concept: "Passage Maker", setting: "Universal", aspect: "Every Door Has a Key"},
+            {name: "Path 'Wayfinder' Kane", concept: "Route Discoverer", setting: "Universal", aspect: "There's Always a Way"},
+            {name: "Bridge 'Crosser' Rodriguez", concept: "Gap Closer", setting: "Universal", aspect: "Connecting Distant Shores"},
+            {name: "Spiral 'Ascending' Vale", concept: "Growth Facilitator", setting: "Universal", aspect: "Upward and Onward"},
+            {name: "Weave 'Pattern' Wu", concept: "Thread Connector", setting: "Universal", aspect: "Life is a Tapestry"},
+            {name: "Core 'Center' Santos", concept: "Stability Anchor", setting: "Universal", aspect: "Strong Foundation, Strong Building"},
+            {name: "Shell 'Protector' Thornfield", concept: "Defense Specialist", setting: "Universal", aspect: "Safety First, Always"},
+            {name: "Grid 'Matrix' Cross", concept: "System Organizer", setting: "Universal", aspect: "Order From Chaos"},
+            {name: "Field 'Domain' Blake", concept: "Territory Manager", setting: "Universal", aspect: "This is My Space"},
+            {name: "Layer 'Depth' Chen", concept: "Complexity Navigator", setting: "Universal", aspect: "Deeper Levels Reveal More"},
+            {name: "Branch 'Extension' Nakamura", concept: "Growth Point", setting: "Universal", aspect: "Expanding Possibilities"},
+            {name: "Root 'Foundation' Sterling", concept: "Core Strength", setting: "Universal", aspect: "Deep Roots, Strong Growth"},
+            {name: "Web 'Network' Kane", concept: "Connection Specialist", setting: "Universal", aspect: "Every Thread Matters"},
+            {name: "Hub 'Central' Rodriguez", concept: "Coordination Point", setting: "Universal", aspect: "All Roads Lead Here"},
+            {name: "Seed 'Potential' Vale", concept: "Growth Catalyst", setting: "Universal", aspect: "Small Beginnings, Great Ends"},
+            {name: "Key 'Unlock' Wu", concept: "Solution Finder", setting: "Universal", aspect: "Every Lock Has Its Key"},
+            {name: "Lens 'Clarity' Santos", concept: "Vision Enhancer", setting: "Universal", aspect: "Seeing is Believing"}
+        ];
+
+        // Function to create Fate-style name cards
+        function createNameCard(nameData) {
+            const settingColors = {
+                'Modern/Urban Fantasy': '#667eea',
+                'Urban Fantasy': '#764ba2',
+                'Modern Horror': '#f5576c',
+                'Spirit of Century': '#43e97b',
+                'Dresden Files': '#4facfe',
+                'Steampunk': '#f093fb',
+                'Sci-Fi': '#38f9d7',
+                'Crime/Heist': '#f5576c',
+                'Modern/War': '#764ba2',
+                'Urban Mythology': '#667eea',
+                'Pulp/Sci-Fi': '#43e97b',
+                'Cyberpunk': '#4facfe',
+                'Victorian Horror': '#f093fb',
+                'Modern Action': '#f5576c',
+                'Modern Espionage': '#38f9d7',
+                'Post-Apocalyptic': '#764ba2',
+                'Space Opera': '#667eea',
+                'Crime Drama': '#43e97b,',
+                'Universal': '#96e6a1'
+            };
+            
+            const storyColors = {
+                'Always Find Middle Ground': '#43e97b',
+                'Old Habits Die Hard': '#f5576c',
+                'Knowledge Has a Price': '#764ba2',
+                'Fortune Favors the Bold': '#4facfe',
+                'Truth at Any Cost': '#667eea',
+                'Master of Wind and Wire': '#f093fb',
+                'Temporal Theories, Practical Problems': '#38f9d7',
+                'Style Over Substance': '#f5576c',
+                'No Soldier Left Behind': '#43e97b',
+                'Legends Never Die': '#764ba2',
+                'Science is My Religion': '#667eea',
+                'Everyone Deserves Truth': '#4facfe',
+                'Duty Before Fear': '#f093fb',
+                'Speed is Life': '#f5576c',
+                'Faith Conquers All': '#38f9d7'
+            };
+            
+            const settingColor = settingColors[nameData.setting] || '#667eea';
+            const storyColor = storyColors[nameData.aspect] || '#96e6a1';
+            
+            return `
+                <div class="name-card">
+                    <div class="name">${nameData.name}</div>
+                    <div class="concept">Concept: ${nameData.concept}</div>
+                    <div class="aspect-suggestion">Aspect: "${nameData.aspect}"</div>
+                    <div class="setting-tag" style="background: linear-gradient(45deg, ${settingColor}, #764ba2);">${nameData.setting}</div>
+                    <div class="story-tag" style="background: linear-gradient(45deg, ${storyColor}, #f093fb);">Story Hook</div>
+                </div>
+            `;
+        }
+
+        // Populate name grids
+        document.getElementById('maleNames').innerHTML = maleNames.map(createNameCard).join('');
+        document.getElementById('femaleNames').innerHTML = femaleNames.map(createNameCard).join('');
+        document.getElementById('neutralNames').innerHTML = neutralNames.map(createNameCard).join('');
+
+        // Interactive Fate aspect wheel
+        const canvas = document.getElementById('fateWheel');
+        const ctx = canvas.getContext('2d');
+        let spinning = false;
+        let rotation = 0;
+
+        const aspects = [
+            'High Concept', 'Trouble', 'Relationship', 'Background',
+            'Motivation', 'Equipment', 'Reputation', 'Mystery',
+            'Goal', 'Flaw', 'Strength', 'Quirk'
+        ];
+        
+        const aspectColors = [
+            '#667eea', '#f5576c', '#43e97b', '#4facfe',
+            '#f093fb', '#38f9d7', '#764ba2', '#96e6a1',
+            '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd'
+        ];
+
+        function drawFateWheel() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 220;
+            
+            // Draw narrative background
+            const bgGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+            bgGradient.addColorStop(0, '#ffffff');
+            bgGradient.addColorStop(0.6, '#f8f9fa');
+            bgGradient.addColorStop(1, '#e9ecef');
+            ctx.fillStyle = bgGradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(rotation);
+            
+            for (let i = 0; i < aspects.length; i++) {
+                const startAngle = (i * 2 * Math.PI) / aspects.length;
+                const endAngle = ((i + 1) * 2 * Math.PI) / aspects.length;
+                
+                // Draw aspect sector
+                ctx.beginPath();
+                ctx.arc(0, 0, radius, startAngle, endAngle);
+                ctx.lineTo(0, 0);
+                ctx.fillStyle = aspectColors[i];
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                
+                // Add glow effect
+                ctx.save();
+                ctx.globalCompositeOperation = 'lighter';
+                ctx.beginPath();
+                ctx.arc(0, 0, radius, startAngle, endAngle);
+                ctx.lineTo(0, 0);
+                ctx.fillStyle = aspectColors[i] + '30';
+                ctx.fill();
+                ctx.restore();
+                
+                // Draw aspect name
+                ctx.save();
+                ctx.rotate(startAngle + (endAngle - startAngle) / 2);
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 11px Roboto';
+                ctx.textAlign = 'center';
+                ctx.strokeStyle = '#2c3e50';
+                ctx.lineWidth = 2;
+                ctx.strokeText(aspects[i], radius * 0.75, 0);
+                ctx.fillText(aspects[i], radius * 0.75, 0);
+                ctx.restore();
+            }
+            
+            ctx.restore();
+            
+            // Draw Fate point
+            ctx.beginPath();
+            ctx.arc(centerX + radius + 35, centerY, 12, 0, 2 * Math.PI);
+            ctx.fillStyle = '#2c3e50';
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Add shine to fate point
+            ctx.beginPath();
+            ctx.arc(centerX + radius + 32, centerY - 3, 4, 0, 2 * Math.PI);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+        }
+
+        function spinFateWheel() {
+            if (spinning) return;
+            spinning = true;
+            
+            const spinAmount = Math.random() * 14 + 18;
+            const spinDuration = 4500;
+            const startTime = Date.now();
+            
+            function animate() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / spinDuration, 1);
+                const easing = 1 - Math.pow(1 - progress, 3);
+                
+                rotation += (spinAmount * (1 - easing)) * 0.07;
+                drawFateWheel();
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    spinning = false;
+                    const finalAspect = aspects[Math.floor(((rotation % (2 * Math.PI)) / (2 * Math.PI)) * aspects.length)];
+                    alert(`🎲 Focus on your character's ${finalAspect} aspect! What makes them interesting and competent in this area?`);
+                }
+            }
+            
+            animate();
+        }
+
+        canvas.addEventListener('click', spinFateWheel);
+        drawFateWheel();
+    </script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate RPG Character Examples and Adventure Groups</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fate RPG Character Examples and Adventure Groups</h1>
+            <p>A comprehensive guide to creating narrative-driven characters and collaborative storytelling groups using the Fate system</p>
+        </header>
+
+        <main>
+            <section class="character-creation-basics">
+                <h2>Understanding Fate Character Creation</h2>
+                <p>Creating a Fate character is like writing the opening chapter of a novel—aspects define who they are, skills show what they can do, and stunts reveal how they bend reality through sheer narrative force. This system prioritizes story over statistics, creating heroes whose backgrounds directly impact every scene.</p>
+                
+                <div class="mermaid">
+                    graph TD
+                        A[Character Concept] --> B[High Concept Aspect]
+                        A --> C[Trouble Aspect]
+                        B --> D[Skill Selection]
+                        C --> D
+                        D --> E[Stunts & Extras]
+                        E --> F[Phase Trio]
+                        F --> G[Three More Aspects]
+                        G --> H[Refresh & Stress]
+                        H --> I[Complete Character]
+                        
+                        style A fill:#E67E22
+                        style I fill:#27AE60
+                </div>
+
+                <p>The character creation process flows like collaborative storytelling—each phase building connections to other characters while the aspect system ensures every trait serves both mechanical and narrative purposes.</p>
+            </section>
+
+            <section class="aspects-system">
+                <h2>Aspects: The Heart of Fate</h2>
+                <p>Aspects are true statements about characters, locations, or situations that can be invoked for bonuses or compelled for complications. They bridge the gap between story and mechanics like living narrative elements that breathe life into every dice roll.</p>
+
+                <div class="aspect-types">
+                    <h3>Types of Aspects</h3>
+                    <div class="aspect-grid">
+                        <div class="aspect-item">
+                            <h4>High Concept</h4>
+                            <p>Who you are in a nutshell - your character's core identity and role in the story</p>
+                        </div>
+                        <div class="aspect-item">
+                            <h4>Trouble</h4>
+                            <p>Your character's primary complication - what makes their life interesting and difficult</p>
+                        </div>
+                        <div class="aspect-item">
+                            <h4>Additional Aspects</h4>
+                            <p>Three more aspects from your backstory and connections to other characters</p>
+                        </div>
+                        <div class="aspect-item">
+                            <h4>Situational Aspects</h4>
+                            <p>Temporary aspects created during play that reflect current circumstances</p>
+                        </div>
+                    </div>
+                </div>
+
+                <canvas id="aspectUsageChart" width="500" height="300"></canvas>
+            </section>
+
+            <section class="individual-characters">
+                <h2>Individual Character Examples</h2>
+                
+                <div class="character-example">
+                    <h3>Captain Kira "Stormbringer" Thorne</h3>
+                    <div class="character-stats">
+                        <p><strong>High Concept:</strong> Disgraced Naval Officer Turned Sky Pirate</p>
+                        <p><strong>Trouble:</strong> The Admiral's Daughter Who Knows Too Much</p>
+                        <p><strong>Other Aspects:</strong> "My Crew is My Family", "Never Leave a Friend Behind", "Haunted by the Massacre at Port Royal"</p>
+                        <p><strong>Skills:</strong> Great (+4) Pilot, Good (+3) Fight & Shoot, Fair (+2) Rapport, Athletics, Notice</p>
+                        <p><strong>Stunts:</strong> Death From Above (Pilot), Riposte (Fight), Quick Draw (Shoot)</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 3</p>
+                        <p><strong>Refresh:</strong> 3</p>
+                    </div>
+                    <p><strong>Role in Group:</strong> The daring leader—turning impossible odds into opportunities through sheer audacity and aerial mastery. Her trouble with military hierarchy creates constant complications while her loyalty to crew drives heroic sacrifices.</p>
+                    
+                    <svg width="350" height="180" viewBox="0 0 350 180">
+                        <rect x="50" y="35" width="65" height="85" fill="#2E86C1" stroke="#1B4F72" stroke-width="2"/>
+                        <circle cx="83" cy="55" r="16" fill="#DDBEA9"/>
+                        <rect x="68" y="75" width="30" height="35" fill="#5D6D7E"/>
+                        <rect x="35" y="80" width="25" height="40" fill="#2E86C1"/>
+                        <rect x="115" y="80" width="25" height="40" fill="#2E86C1"/>
+                        <path d="M 75 45 L 95 45 L 90 35 L 80 35 Z" fill="#F39C12"/>
+                        <rect x="75" y="50" width="15" height="4" fill="#E74C3C"/>
+                        <text x="160" y="60" font-family="Arial" font-size="15" fill="#2E86C1">Captain Kira "Stormbringer"</text>
+                        <text x="160" y="80" font-family="Arial" font-size="14" fill="#1B4F72">Sky Pirate Captain</text>
+                        <text x="160" y="100" font-family="Arial" font-size="12" fill="#1B4F72">Disgraced Naval Officer</text>
+                        <text x="160" y="120" font-family="Arial" font-size="12" fill="#1B4F72">Pilot: Great (+4)</text>
+                        <text x="160" y="140" font-family="Arial" font-size="12" fill="#1B4F72">Trouble: Admiral's Daughter</text>
+                    </svg>
+                </div>
+
+                <div class="character-example">
+                    <h3>Dr. Marcus "Gearhead" Chen</h3>
+                    <div class="character-stats">
+                        <p><strong>High Concept:</strong> Brilliant But Reckless Inventor</p>
+                        <p><strong>Trouble:</strong> Science Without Ethics or Restraint</p>
+                        <p><strong>Other Aspects:</strong> "Powered by Coffee and Curiosity", "My Inventions Have a Mind of Their Own", "Protecting My Research From Corporate Thieves"</p>
+                        <p><strong>Skills:</strong> Great (+4) Crafts, Good (+3) Lore & Investigation, Fair (+2) Athletics, Rapport, Will</p>
+                        <p><strong>Stunts:</strong> Gadgeteer (Crafts), Duct Tape Repairs (Crafts), Walking Library (Lore)</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 4</p>
+                        <p><strong>Refresh:</strong> 3</p>
+                    </div>
+                    <p><strong>Role in Group:</strong> The mad genius—solving problems through impossible inventions and scientific breakthroughs. His ethical blind spots create moral dilemmas while his gadgets provide miraculous solutions to impossible challenges.</p>
+                </div>
+
+                <div class="character-example">
+                    <h3>Sister Luna "Shadowstep" Voss</h3>
+                    <div class="character-stats">
+                        <p><strong>High Concept:</strong> Reformed Assassin Seeking Redemption</p>
+                        <p><strong>Trouble:</strong> The Order of Shadows Still Hunts Me</p>
+                        <p><strong>Other Aspects:</strong> "Every Life Has Value", "Deadly Grace in Motion", "Protecting the Innocent from My Past"</p>
+                        <p><strong>Skills:</strong> Great (+4) Stealth, Good (+3) Fight & Athletics, Fair (+2) Empathy, Notice, Will</p>
+                        <p><strong>Stunts:</strong> Assassin's Strike (Fight), Vanish (Stealth), Killer Instinct (Notice)</p>
+                        <p><strong>Stress:</strong> Physical 3, Mental 3</p>
+                        <p><strong>Refresh:</strong> 3</p>
+                    </div>
+                    <p><strong>Role in Group:</strong> The shadow guardian—protecting others from threats they never see coming. Her violent past provides both deadly skills and constant moral conflict as former allies become current enemies.</p>
+                </div>
+
+                <div class="character-example">
+                    <h3>Ambassador Zara "Silvertongue" Diplomatic</h3>
+                    <div class="character-stats">
+                        <p><strong>High Concept:</strong> Charismatic Diplomat Who Talks Her Way Out of Everything</p>
+                        <p><strong>Trouble:</strong> My Mouth Writes Checks My Skills Can't Cash</p>
+                        <p><strong>Other Aspects:</strong> "A Friend in Every Port", "Words Are Mightier Than Swords", "The Truth is a Luxury I Can't Afford"</p>
+                        <p><strong>Skills:</strong> Great (+4) Rapport, Good (+3) Deceive & Contacts, Fair (+2) Will, Empathy, Lore</p>
+                        <p><strong>Stunts:</strong> Best Foot Forward (Rapport), Lies Upon Lies (Deceive), The Weight of Reputation (Contacts)</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 4</p>
+                        <p><strong>Refresh:</strong> 3</p>
+                    </div>
+                    <p><strong>Role in Group:</strong> The social butterfly—turning enemies into allies through charm and manipulation. Her tendency to make promises she can't keep creates complications while her network of contacts provides crucial information and resources.</p>
+                </div>
+
+                <div class="character-example">
+                    <h3>Kai "Stormseer" Weatherborn</h3>
+                    <div class="character-stats">
+                        <p><strong>High Concept:</strong> Weather Mage Bound to Ancient Spirits</p>
+                        <p><strong>Trouble:</strong> The Storm Spirits Demand Ever Greater Sacrifices</p>
+                        <p><strong>Other Aspects:</strong> "Reading the Winds of Fate", "Child of Sky and Lightning", "The Price of Power Grows Daily"</p>
+                        <p><strong>Skills:</strong> Great (+4) Lore, Good (+3) Will & Athletics, Fair (+2) Fight, Notice, Rapport</p>
+                        <p><strong>Stunts:</strong> Weather Control (Lore), Lightning Reflexes (Athletics), Storm Sight (Notice)</p>
+                        <p><strong>Stress:</strong> Physical 3, Mental 4</p>
+                        <p><strong>Refresh:</strong> 3</p>
+                    </div>
+                    <p><strong>Role in Group:</strong> The elemental conduit—channeling nature's fury to protect allies and devastate enemies. Their spiritual obligations create ongoing tension between personal desires and cosmic responsibilities.</p>
+                </div>
+
+                <div class="character-example">
+                    <h3>Tank "Ironwall" Johnson</h3>
+                    <div class="character-stats">
+                        <p><strong>High Concept:</strong> Cybernetically Enhanced Former Soldier</p>
+                        <p><strong>Trouble:</strong> My Humanity Battles My Programming</p>
+                        <p><strong>Other Aspects:</strong> "Built to Protect and Serve", "More Machine Than Man", "The Squad Died But I Still Hear Their Voices"</p>
+                        <p><strong>Skills:</strong> Great (+4) Fight, Good (+3) Physique & Shoot, Fair (+2) Athletics, Notice, Will</p>
+                        <p><strong>Stunts:</strong> Cyber-Enhanced Strength (Physique), Tactical Database (Fight), Threat Assessment (Notice)</p>
+                        <p><strong>Stress:</strong> Physical 4, Mental 3</p>
+                        <p><strong>Refresh:</strong> 3</p>
+                    </div>
+                    <p><strong>Role in Group:</strong> The armored guardian—standing between danger and innocents like a living fortress. Their struggle between human emotion and machine logic creates internal conflict while their enhanced capabilities provide superhuman protection.</p>
+                </div>
+            </section>
+
+            <section class="adventure-groups">
+                <h2>Collaborative Adventure Groups</h2>
+                <p>A Fate adventure group operates like an ensemble cast in a compelling TV series—each character brings their own storylines and complications while their interconnected relationships create the dramatic tension that drives every episode forward.</p>
+
+                <div class="group-composition-chart">
+                    <canvas id="groupDynamicsChart" width="400" height="300"></canvas>
+                </div>
+
+                <div class="adventure-group">
+                    <h3>The Sky Pirates of the Crimson Dawn</h3>
+                    <p><em>Swashbuckling adventure in a world of floating cities and airship battles</em></p>
+                    <ul>
+                        <li><strong>Captain Kira "Stormbringer" Thorne</strong> - Airship Captain (Leadership and aerial combat)</li>
+                        <li><strong>First Mate "Grease Lightning" Rodriguez</strong> - Engineer (Ship maintenance and gadgets)</li>
+                        <li><strong>Navigator "Compass Rose" Chen</strong> - Sky Navigator (Weather reading and route planning)</li>
+                        <li><strong>"Quickdraw" McCready</strong> - Gunslinger (Ranged combat and intimidation)</li>
+                        <li><strong>Dr. "Patchwork" Voss</strong> - Ship's Doctor (Medical care and diplomatic immunity)</li>
+                    </ul>
+                    <p>United by mutual loyalty and shared outlaw status, they sail the sky lanes seeking fortune while staying ahead of imperial navy and rival pirate crews, their airship becoming home to those who value freedom over security.</p>
+                </div>
+
+                <div class="adventure-group">
+                    <h3>The Metropolitan Paranormal Society</h3>
+                    <p><em>Modern urban fantasy investigators confronting supernatural mysteries</em></p>
+                    <ul>
+                        <li><strong>Detective Sarah "Deadeye" Cross</strong> - Police Detective (Investigation and authority)</li>
+                        <li><strong>Dr. Marcus "Bookworm" Vex</strong> - Occult Scholar (Research and ancient knowledge)</li>
+                        <li><strong>Sister Luna "Blessed" Martinez</strong> - Catholic Exorcist (Faith and spiritual combat)</li>
+                        <li><strong>Zara "Mindbridge" Patel</strong> - Psychic Medium (Supernatural communication and empathy)</li>
+                        <li><strong>"Tank" Morrison</strong> - Private Security (Physical protection and heavy weapons)</li>
+                        <li><strong>Alex "Techno" Kim</strong> - Digital Investigator (Technology and information warfare)</li>
+                    </ul>
+                    <p>Operating in the shadows between mundane and magical, they investigate phenomena that official authorities refuse to acknowledge while protecting civilians from supernatural threats that hide behind corporate facades and urban legends.</p>
+                </div>
+
+                <div class="adventure-group">
+                    <h3>The Neon Runners</h3>
+                    <p><em>Cyberpunk data thieves fighting corporate oppression in a dystopian future</em></p>
+                    <ul>
+                        <li><strong>"Ghost" Chen</strong> - Netrunner Hacker (Cyberspace infiltration and data theft)</li>
+                        <li><strong>Nova "Chrome" Rodriguez</strong> - Street Samurai (Combat and protection services)</li>
+                        <li><strong>Dr. "Wire" Voss</strong> - Corporate Scientist (Technology and medical support)</li>
+                        <li><strong>"Smooth" Johnson</strong> - Corporate Fixer (Social engineering and contacts)</li>
+                        <li><strong>"Spark" O'Brien</strong> - Tech Specialist (Electronics and vehicle operation)</li>
+                    </ul>
+                    <p>Living in the cracks between corporate megastructures, they steal data and perform operations impossible for law-abiding citizens, their cybernetic enhancements and street skills making them ghosts in the corporate machine.</p>
+                </div>
+
+                <div class="adventure-group">
+                    <h3>The Stellar Exploration Initiative</h3>
+                    <p><em>Space opera adventurers pushing the boundaries of known space</em></p>
+                    <ul>
+                        <li><strong>Commander Rex "Starfighter" Vega</strong> - Ship Captain (Leadership and space combat)</li>
+                        <li><strong>Dr. Zara "Cosmos" Chen</strong> - Xenobiologist (Scientific analysis and first contact)</li>
+                        <li><strong>Chief "Warp" Rodriguez</strong> - Engineer (Ship systems and hyperspace navigation)</li>
+                        <li><strong>Lieutenant "Shield" Johnson</strong> - Security Chief (Combat operations and ship defense)</li>
+                        <li><strong>Ambassador "Unity" Patel</strong> - Diplomatic Corps (Alien relations and treaty negotiation)</li>
+                        <li><strong>"Scout" O'Brien</strong> - Survey Specialist (Exploration and environmental assessment)</li>
+                    </ul>
+                    <p>Charting unknown space for the United Earth Alliance, they encounter alien civilizations and cosmic phenomena while their diverse expertise helps humanity expand its understanding of the universe and its place within it.</p>
+                </div>
+
+                <div class="adventure-group">
+                    <h3>The Arcane Scholars Guild</h3>
+                    <p><em>Fantasy magic users protecting ancient knowledge from those who would abuse it</em></p>
+                    <ul>
+                        <li><strong>Archmagus Elena "Stormcaller" Brightblade</strong> - Battle Mage (Elemental magic and combat leadership)</li>
+                        <li><strong>Master Kael "Truthseeker" Voss</strong> - Divination Wizard (Prophecy and magical investigation)</li>
+                        <li><strong>Sister Lyra "Lightbringer" Santos</strong> - Healing Priestess (Divine magic and moral guidance)</li>
+                        <li><strong>Thornwick "Shapeshifter" Green</strong> - Druid Guardian (Nature magic and wilderness survival)</li>
+                        <li><strong>Whisper "Voidwalker" Shadow</strong> - Enchanter Spy (Illusion magic and infiltration)</li>
+                    </ul>
+                    <p>Dedicated to preserving magical knowledge and preventing its misuse, they operate across kingdoms and planes of existence while their different magical traditions create both powerful synergies and philosophical conflicts.</p>
+                </div>
+
+                <div class="adventure-group">
+                    <h3>The Time Brigade</h3>
+                    <p><em>Temporal agents protecting the timeline from paradoxes and alterations</em></p>
+                    <ul>
+                        <li><strong>Agent Prime "Chronos" Alpha</strong> - Team Leader (Temporal mechanics and leadership)</li>
+                        <li><strong>Historian "Archive" Beta</strong> - Research Specialist (Historical knowledge and analysis)</li>
+                        <li><strong>Operative "Paradox" Gamma</strong> - Field Agent (Infiltration and temporal combat)</li>
+                        <li><strong>Engineer "Flux" Delta</strong> - Technology Expert (Time machine maintenance and temporal shields)</li>
+                        <li><strong>Medic "Stasis" Epsilon</strong> - Medical Officer (Healing and temporal physiology)</li>
+                    </ul>
+                    <p>Operating across all of history to prevent timeline corruption, each agent specializes in different eras while working together to maintain temporal stability against time-traveling threats and accidental paradoxes.</p>
+                </div>
+            </section>
+
+            <section class="fate-dice-system">
+                <h2>Fate Dice and The Ladder</h2>
+                <p>Fate uses four-sided dice (dF) that show +, -, or blank faces, creating results from -4 to +4 that modify skills on the adjective ladder. This system emphasizes narrative outcomes over mathematical precision, making every roll a story beat.</p>
+
+                <div class="ladder-system">
+                    <h3>The Fate Ladder</h3>
+                    <div class="ladder-grid">
+                        <div class="ladder-rung">
+                            <h4>+8 Legendary</h4>
+                            <p>Achievements that echo through history</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+7 Epic</h4>
+                            <p>Deeds worthy of songs and stories</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+6 Fantastic</h4>
+                            <p>Beyond normal human capability</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+5 Superb</h4>
+                            <p>World-class professional level</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+4 Great</h4>
+                            <p>Highly skilled and experienced</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+3 Good</h4>
+                            <p>Professional competence</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+2 Fair</h4>
+                            <p>Trained and capable</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+1 Average</h4>
+                            <p>Basic competence</p>
+                        </div>
+                        <div class="ladder-rung">
+                            <h4>+0 Mediocre</h4>
+                            <p>Untrained or poor ability</p>
+                        </div>
+                    </div>
+                </div>
+
+                <canvas id="fateDistributionChart" width="500" height="300"></canvas>
+            </section>
+
+            <section class="stunts-extras">
+                <h2>Stunts and Extras</h2>
+                <p>Stunts bend the rules in small but significant ways, while extras add special abilities, equipment, or even organizational memberships that expand character capabilities beyond the basic skill system.</p>
+
+                <div class="stunt-examples">
+                    <h3>Stunt Categories and Examples</h3>
+                    <div class="stunt-category">
+                        <h4>Skill Bonus Stunts</h4>
+                        <p><strong>Knife Fighter:</strong> +2 to Fight when using knives or daggers</p>
+                        <p><strong>Computer Specialist:</strong> +2 to Lore when dealing with computer systems</p>
+                        <p><strong>Fast Talk:</strong> +2 to Deceive when trying to distract someone</p>
+                    </div>
+                    
+                    <div class="stunt-category">
+                        <h4>Rule Exception Stunts</h4>
+                        <p><strong>Riposte:</strong> Use Fight to defend, then immediately attack on success</p>
+                        <p><strong>Lies Upon Lies:</strong> Use Deceive instead of Rapport for first impressions</p>
+                        <p><strong>Danger Sense:</strong> Use Notice instead of Athletics to defend against ambushes</p>
+                    </div>
+                    
+                    <div class="stunt-category">
+                        <h4>Narrative Declaration Stunts</h4>
+                        <p><strong>Popular:</strong> Declare that you have a fan in any social situation</p>
+                        <p><strong>Well-Connected:</strong> Declare an important contact in any organization</p>
+                        <p><strong>Prepared for Anything:</strong> Declare that you have just the right tool</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="collaborative-creation">
+                <h2>Collaborative Character and World Creation</h2>
+                <p>Fate encourages players to build characters and setting together, creating a shared narrative where everyone contributes to the world's details and each character's backstory connects to others in meaningful ways.</p>
+
+                <div class="mermaid">
+                    graph TB
+                        A[Campaign Setup] --> B[Setting Creation]
+                        A --> C[Character Concepts]
+                        
+                        B --> D[Issues & Threats]
+                        B --> E[Locations & NPCs]
+                        
+                        C --> F[Phase One: Background]
+                        C --> G[Phase Two: Adventure]
+                        C --> H[Phase Three: Crossover]
+                        
+                        F --> I[Character Connections]
+                        G --> I
+                        H --> I
+                        
+                        D --> J[Ongoing Campaign]
+                        E --> J
+                        I --> J
+                        
+                        style A fill:#E67E22
+                        style J fill:#27AE60
+                </div>
+
+                <div class="phase-trio">
+                    <h3>The Phase Trio Process</h3>
+                    <div class="phase">
+                        <h4>Phase One: Your Adventure</h4>
+                        <p>Describe your character's first adventure - what made them a protagonist worthy of the story. This creates your third aspect and establishes your place in the world.</p>
+                    </div>
+                    
+                    <div class="phase">
+                        <h4>Phase Two: Crossing Paths</h4>
+                        <p>Your character appears in another character's Phase One adventure as supporting cast. This creates connections between characters and your fourth aspect.</p>
+                    </div>
+                    
+                    <div class="phase">
+                        <h4>Phase Three: Crossing Paths Again</h4>
+                        <p>Your character appears in yet another character's adventure, further weaving the web of relationships. This creates your fifth and final aspect.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="compels-invokes">
+                <h2>Compels and Invokes: The Engine of Drama</h2>
+                <p>Aspects create story through compels (when they cause trouble) and invokes (when they provide benefits). This system ensures that character traits actively contribute to dramatic tension and narrative momentum.</p>
+
+                <div class="aspect-mechanics">
+                    <h3>How Aspects Drive Story</h3>
+                    <div class="aspect-mechanic">
+                        <h4>Invoking Aspects</h4>
+                        <p><strong>For Yourself:</strong> Spend a fate point to get +2 or reroll dice when an aspect helps</p>
+                        <p><strong>For Others:</strong> Spend a fate point to help another character when your aspect assists</p>
+                        <p><strong>Free Invokes:</strong> Use aspects you've created or discovered without spending fate points</p>
+                    </div>
+                    
+                    <div class="aspect-mechanic">
+                        <h4>Compelling Aspects</h4>
+                        <p><strong>Event Compels:</strong> The world responds to your aspects, creating complications</p>
+                        <p><strong>Decision Compels:</strong> Your aspects influence choices, often toward trouble</p>
+                        <p><strong>Accepting Compels:</strong> Gain a fate point when complications make life interesting</p>
+                    </div>
+                </div>
+
+                <div class="compel-examples">
+                    <h3>Compel Examples in Action</h3>
+                    <div class="compel-example">
+                        <h4>"Disgraced Naval Officer" Compel</h4>
+                        <p><strong>Situation:</strong> The party needs to dock at a major port for supplies</p>
+                        <p><strong>Compel:</strong> "Your former colleagues recognize you and alert the authorities. You can try to talk your way out, but they're already mobilizing to arrest you."</p>
+                        <p><strong>Result:</strong> Player gains fate point, situation becomes more complex and dramatic</p>
+                    </div>
+                    
+                    <div class="compel-example">
+                        <h4>"Never Leave a Friend Behind" Compel</h4>
+                        <p><strong>Situation:</strong> Enemy captures team member during escape</p>
+                        <p><strong>Compel:</strong> "You know the smart play is to abandon them and complete the mission, but that's not who you are. You're going back, aren't you?"</p>
+                        <p><strong>Result:</strong> Character follows their nature, creates rescue subplot</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tips-and-tricks">
+                <h2>Fate Character Creation Tips</h2>
+                
+                <div class="tip">
+                    <h3>Make Aspects Double-Edged</h3>
+                    <p>The best aspects help and hinder in equal measure. "Loyal to a Fault" suggests both unwavering dedication and potential manipulation through friends in danger.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3>Connect to Other Characters</h3>
+                    <p>Use the Phase Trio to create meaningful relationships. Characters who share history have built-in drama and cooperation opportunities that drive story forward.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3>Pick Skills that Tell Stories</h3>
+                    <p>Your skill selection should reflect your character's background and interests. A Great (+4) Rapport suggests different stories than Great (+4) Fight, even for similar concepts.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3>Embrace Failure and Complications</h3>
+                    <p>Fate rewards failure with story development. Don't fear compels or failed rolls—they create the dramatic tension that makes victories meaningful.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3>Think in Story Terms</h3>
+                    <p>Aspects should sound like story elements, not game mechanics. "Haunted by Visions of the Future" is better than "Precognitive Abilities +2."</p>
+                </div>
+                
+                <div class="tip">
+                    <h3>Leave Room for Growth</h3>
+                    <p>Don't over-define your character initially. Leave some aspects and background details flexible so they can develop through play and respond to story needs.</p>
+                </div>
+            </section>
+
+            <footer>
+                <p>Remember: Fate is about collaborative storytelling where every character contributes to dramatic tension and narrative momentum. The best characters are those whose aspects create both opportunities for heroism and complications that drive the story ever forward.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Aspect Usage Distribution Chart
+        const aspectCanvas = document.getElementById('aspectUsageChart');
+        const aspectCtx = aspectCanvas.getContext('2d');
+        
+        // Usage types for aspects during play
+        const usageTypes = ['Invoke for Bonus', 'Invoke to Reroll', 'Create Advantage', 'Compel for Drama', 'Free Invoke'];
+        const frequency = [35, 20, 25, 15, 5];
+        const colors = ['#E67E22', '#27AE60', '#3498DB', '#E74C3C', '#9B59B6'];
+        
+        // Draw bars
+        usageTypes.forEach((type, index) => {
+            const barHeight = (frequency[index] / 40) * 200;
+            const x = 50 + (index * 80);
+            const y = 250 - barHeight;
+            
+            aspectCtx.fillStyle = colors[index];
+            aspectCtx.fillRect(x, y, 60, barHeight);
+            
+            // Add percentage labels
+            aspectCtx.fillStyle = '#2C3E50';
+            aspectCtx.font = '12px Arial';
+            aspectCtx.textAlign = 'center';
+            aspectCtx.fillText(frequency[index] + '%', x + 30, y - 5);
+        });
+        
+        // Draw axes
+        aspectCtx.strokeStyle = '#2C3E50';
+        aspectCtx.lineWidth = 2;
+        aspectCtx.beginPath();
+        aspectCtx.moveTo(40, 250);
+        aspectCtx.lineTo(480, 250);
+        aspectCtx.moveTo(40, 50);
+        aspectCtx.lineTo(40, 250);
+        aspectCtx.stroke();
+        
+        // Add usage type labels
+        aspectCtx.fillStyle = '#2C3E50';
+        aspectCtx.font = '10px Arial';
+        aspectCtx.textAlign = 'center';
+        usageTypes.forEach((type, index) => {
+            const x = 80 + (index * 80);
+            const words = type.split(' ');
+            words.forEach((word, wordIndex) => {
+                aspectCtx.fillText(word, x, 270 + (wordIndex * 12));
+            });
+        });
+        
+        // Add title and axis labels
+        aspectCtx.fillStyle = '#2C3E50';
+        aspectCtx.font = '14px Arial';
+        aspectCtx.textAlign = 'center';
+        aspectCtx.fillText('Aspect Usage During Play', 260, 30);
+        aspectCtx.save();
+        aspectCtx.translate(15, 150);
+        aspectCtx.rotate(-Math.PI/2);
+        aspectCtx.fillText('Frequency (%)', 0, 0);
+        aspectCtx.restore();
+        
+        // Group Dynamics Chart
+        const groupCanvas = document.getElementById('groupDynamicsChart');
+        const groupCtx = groupCanvas.getContext('2d');
+        
+        // Draw network diagram for character relationships
+        const characters = [
+            { name: 'Leader', x: 200, y: 80, connections: [1, 2, 3, 4] },
+            { name: 'Specialist 1', x: 120, y: 140, connections: [0, 2] },
+            { name: 'Specialist 2', x: 280, y: 140, connections: [0, 3] },
+            { name: 'Support 1', x: 120, y: 220, connections: [0, 1, 4] },
+            { name: 'Support 2', x: 280, y: 220, connections: [0, 2, 3] }
+        ];
+        
+        // Draw connections
+        groupCtx.strokeStyle = '#BDC3C7';
+        groupCtx.lineWidth = 2;
+        characters.forEach((char, index) => {
+            char.connections.forEach(connIndex => {
+                if (connIndex > index) { // Only draw each connection once
+                    groupCtx.beginPath();
+                    groupCtx.moveTo(char.x, char.y);
+                    groupCtx.lineTo(characters[connIndex].x, characters[connIndex].y);
+                    groupCtx.stroke();
+                }
+            });
+        });
+        
+        // Draw character nodes
+        characters.forEach((char, index) => {
+            // Node circle
+            groupCtx.fillStyle = colors[index % colors.length];
+            groupCtx.beginPath();
+            groupCtx.arc(char.x, char.y, 20, 0, 2 * Math.PI);
+            groupCtx.fill();
+            
+            // Node border
+            groupCtx.strokeStyle = '#2C3E50';
+            groupCtx.lineWidth = 2;
+            groupCtx.stroke();
+            
+            // Character label
+            groupCtx.fillStyle = '#2C3E50';
+            groupCtx.font = '12px Arial';
+            groupCtx.textAlign = 'center';
+            groupCtx.fillText(char.name, char.x, char.y + 35);
+        });
+        
+        // Fate Dice Distribution Chart
+        const fateCanvas = document.getElementById('fateDistributionChart');
+        const fateCtx = fateCanvas.getContext('2d');
+        
+        // Fate dice probability distribution
+        const diceResults = ['-4', '-3', '-2', '-1', '0', '+1', '+2', '+3', '+4'];
+        const probabilities = [1.2, 4.9, 12.3, 19.8, 23.5, 19.8, 12.3, 4.9, 1.2];
+        
+        // Draw bars
+        diceResults.forEach((result, index) => {
+            const barHeight = (probabilities[index] / 25) * 180;
+            const x = 60 + (index * 45);
+            const y = 220 - barHeight;
+            
+            fateCtx.fillStyle = '#E67E22';
+            fateCtx.fillRect(x, y, 35, barHeight);
+            
+            // Add probability labels
+            fateCtx.fillStyle = '#2C3E50';
+            fateCtx.font = '10px Arial';
+            fateCtx.textAlign = 'center';
+            fateCtx.fillText(probabilities[index].toFixed(1) + '%', x + 17, y - 5);
+        });
+        
+        // Draw axes
+        fateCtx.strokeStyle = '#2C3E50';
+        fateCtx.lineWidth = 2;
+        fateCtx.beginPath();
+        fateCtx.moveTo(50, 220);
+        fateCtx.lineTo(470, 220);
+        fateCtx.moveTo(50, 40);
+        fateCtx.lineTo(50, 220);
+        fateCtx.stroke();
+        
+        // Add result labels
+        fateCtx.fillStyle = '#2C3E50';
+        fateCtx.font = '12px Arial';
+        fateCtx.textAlign = 'center';
+        diceResults.forEach((result, index) => {
+            const x = 77 + (index * 45);
+            fateCtx.fillText(result, x, 240);
+        });
+        
+        // Add title and axis labels
+        fateCtx.fillStyle = '#2C3E50';
+        fateCtx.font = '14px Arial';
+        fateCtx.textAlign = 'center';
+        fateCtx.fillText('Fate Dice (4dF) Probability Distribution', 260, 25);
+        fateCtx.fillText('Dice Result', 260, 265);
+        fateCtx.save();
+        fateCtx.translate(15, 130);
+        fateCtx.rotate(-Math.PI/2);
+        fateCtx.fillText('Probability (%)', 0, 0);
+        fateCtx.restore();
+    </script>
+</body>
+</html>

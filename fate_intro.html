@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Core Fundamentals: Collaborative Storytelling Made Simple</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Fate Core Fundamentals: Collaborative Storytelling Made Simple</h1>
+        <p class="subtitle">Where Fiction Drives Mechanics and Everyone Tells the Story</p>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h2>Welcome to the World of Fate</h2>
+            <p>Imagine sitting around a table with friends, not just playing characters in a story, but actively shaping that story together—where the mechanics don't fight against narrative flow but enhance it. Fate Core is like improvisational theater with dice and rules, where everyone at the table contributes to creating dramatic, engaging stories that emerge naturally from play rather than being forced by complex systems.</p>
+            
+            <div class="analogy-box">
+                <h3>The Television Writers' Room Analogy</h3>
+                <p>Think of Fate Core like a collaborative television writers' room. Everyone has input on the story, characters can drive plot developments, and the "showrunner" (GM) facilitates rather than dictates. The rules are like the show's format and genre conventions—they provide structure and consistency while encouraging creativity within that framework. Unlike traditional RPGs where you're actors following a script, in Fate you're co-writers crafting the story as it unfolds.</p>
+            </div>
+        </section>
+
+        <section class="fate-philosophy">
+            <h2>The Fate Difference: Fiction First, Always</h2>
+            
+            <p>Fate Core operates on fundamentally different principles from traditional RPGs. Instead of starting with mechanics and justifying them with fiction, Fate starts with fiction and uses mechanics to support dramatic storytelling.</p>
+
+            <div class="mermaid">
+                graph TD
+                    A[Traditional RPG Flow] --> B[Mechanics First]
+                    B --> C[Apply Rules]
+                    C --> D[Justify with Fiction]
+                    
+                    E[Fate Core Flow] --> F[Fiction First]
+                    F --> G[Determine Dramatic Stakes]
+                    G --> H[Use Mechanics to Resolve]
+                    H --> I[Return to Fiction]
+                    
+                    style A fill:#ffebee
+                    style E fill:#e8f5e8
+                    style F fill:#e1f5fe
+                    style I fill:#f3e5f5
+            </div>
+
+            <h3>Core Design Principles</h3>
+            
+            <div class="design-principles">
+                <div class="principle">
+                    <h4>Proactive, Competent, Dramatic</h4>
+                    <p>Fate characters are heroes who take action, succeed at what they do, and face meaningful choices</p>
+                    <p><strong>Example:</strong> You're not "Bob the Level 3 Fighter"—you're "Detective Sarah Chen, Hard-Boiled Investigator who Never Backs Down from the Truth"</p>
+                </div>
+
+                <div class="principle">
+                    <h4>The Golden Rule</h4>
+                    <p>Decide what you're trying to accomplish first, then consult the rules to help you do it</p>
+                    <p><strong>Example:</strong> "I want to intimidate the crime boss by shooting the glass out of his hand" comes before worrying about attack rolls or difficulty numbers</p>
+                </div>
+
+                <div class="principle">
+                    <h4>Fiction Positioning</h4>
+                    <p>What you can do mechanically depends on what makes sense in the story</p>
+                    <p><strong>Example:</strong> You can't attack someone with a sword if you've been established as being across the room—fiction creates mechanical constraints</p>
+                </div>
+
+                <div class="principle">
+                    <h4>Collaborative Truth</h4>
+                    <p>Everyone at the table contributes to creating the story and world</p>
+                    <p><strong>Example:</strong> Player suggests "My contact at the newspaper might know about this," and the GM incorporates that contact into the ongoing story</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="character_fundamentals">
+            <h2>Characters as Living Stories: Aspects and Skills</h2>
+            
+            <h3>Aspects: The Heart of Your Character</h3>
+            <p>Aspects are short phrases that describe something important and interesting about your character, situation, or the world. They're like character traits that have mechanical teeth—they can help you when relevant and complicate your life when dramatically appropriate.</p>
+
+            <div class="aspect_examples">
+                <h4>High Concept: Who You Are</h4>
+                <p>Your character's "elevator pitch"—the fundamental core of who they are</p>
+                <div class="example_aspects">
+                    <ul>
+                        <li><strong>"Reformed Cat Burglar Turned Private Eye"</strong> - Establishes skills, background, and potential conflicts</li>
+                        <li><strong>"Wizard of the White Council"</strong> - Magical power but also institutional obligations</li>
+                        <li><strong>"Hotshot Starfighter Pilot"</strong> - Combat skills and cocky attitude in one package</li>
+                        <li><strong>"Small Town Sheriff in Over Her Head"</strong> - Authority but also limitations and stress</li>
+                    </ul>
+                </div>
+
+                <h4>Trouble: Your Interesting Problems</h4>
+                <p>What makes your character's life complicated and dramatically interesting</p>
+                <div class="example_aspects">
+                    <ul>
+                        <li><strong>"The Mob Wants Me Dead"</strong> - Ongoing threat that creates story opportunities</li>
+                        <li><strong>"Sucker for a Pretty Face"</strong> - Personal weakness that leads to complications</li>
+                        <li><strong>"My Magic is Tied to My Emotions"</strong> - Power source that's also a liability</li>
+                        <li><strong>"Can't Say No to Someone in Need"</strong> - Heroic trait that creates problems</li>
+                    </ul>
+                </div>
+
+                <h4>Other Aspects: Flavor and Depth</h4>
+                <p>Additional details that round out your character and provide story hooks</p>
+                <div class="example_aspects">
+                    <ul>
+                        <li><strong>"I Know This City Like the Back of My Hand"</strong> - Local knowledge and connections</li>
+                        <li><strong>"My Sword Was Forged in Dragon Fire"</strong> - Special equipment with history</li>
+                        <li><strong>"Honor Above All Else"</strong> - Moral code that creates difficult choices</li>
+                        <li><strong>"The Network Owes Me Favors"</strong> - Resources but also obligations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Skills: What You Can Do</h3>
+            <p>Skills in Fate represent broad areas of competence rather than narrow specializations. They describe what your character is good at in general terms that leave room for creative application.</p>
+
+            <div class="skill_pyramid">
+                <h4>The Skill Pyramid Structure</h4>
+                <svg width="500" height="300" style="margin: 20px auto; display: block;">
+                    <!-- Great (+4) -->
+                    <rect x="200" y="50" width="100" height="40" fill="#FF6B6B" stroke="black" stroke-width="2"/>
+                    <text x="250" y="75" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Great (+4)</text>
+                    
+                    <!-- Good (+3) -->
+                    <rect x="150" y="100" width="80" height="35" fill="#4ECDC4" stroke="black" stroke-width="2"/>
+                    <rect x="270" y="100" width="80" height="35" fill="#4ECDC4" stroke="black" stroke-width="2"/>
+                    <text x="190" y="120" text-anchor="middle" font-size="11">Good (+3)</text>
+                    <text x="310" y="120" text-anchor="middle" font-size="11">Good (+3)</text>
+                    
+                    <!-- Fair (+2) -->
+                    <rect x="100" y="145" width="70" height="30" fill="#45B7D1" stroke="black" stroke-width="2"/>
+                    <rect x="180" y="145" width="70" height="30" fill="#45B7D1" stroke="black" stroke-width="2"/>
+                    <rect x="260" y="145" width="70" height="30" fill="#45B7D1" stroke="black" stroke-width="2"/>
+                    <text x="135" y="163" text-anchor="middle" font-size="10">Fair (+2)</text>
+                    <text x="215" y="163" text-anchor="middle" font-size="10">Fair (+2)</text>
+                    <text x="295" y="163" text-anchor="middle" font-size="10">Fair (+2)</text>
+                    
+                    <!-- Average (+1) -->
+                    <rect x="60" y="185" width="60" height="25" fill="#96CEB4" stroke="black" stroke-width="2"/>
+                    <rect x="130" y="185" width="60" height="25" fill="#96CEB4" stroke="black" stroke-width="2"/>
+                    <rect x="200" y="185" width="60" height="25" fill="#96CEB4" stroke="black" stroke-width="2"/>
+                    <rect x="270" y="185" width="60" height="25" fill="#96CEB4" stroke="black" stroke-width="2"/>
+                    <text x="90" y="200" text-anchor="middle" font-size="9">Average (+1)</text>
+                    <text x="160" y="200" text-anchor="middle" font-size="9">Average (+1)</text>
+                    <text x="230" y="200" text-anchor="middle" font-size="9">Average (+1)</text>
+                    <text x="300" y="200" text-anchor="middle" font-size="9">Average (+1)</text>
+                    
+                    <!-- Labels -->
+                    <text x="250" y="30" text-anchor="middle" font-size="16" font-weight="bold">Fate Core Skill Pyramid</text>
+                    <text x="250" y="250" text-anchor="middle" font-size="12">1 Great, 2 Good, 3 Fair, 4 Average</text>
+                </svg>
+            </div>
+
+            <h3>Example Skills and Their Broad Applications</h3>
+
+            <div class="skill_applications">
+                <div class="skill_example">
+                    <h4>Investigate</h4>
+                    <p><strong>Broad Description:</strong> Finding hidden things and piecing together clues</p>
+                    <p><strong>Applications:</strong> Crime scene analysis, research, noticing details, following paper trails, archaeological examination</p>
+                    <p><strong>Creative Use:</strong> "I use Investigate to analyze the pattern of magical energy residue and deduce what spell was cast here"</p>
+                </div>
+
+                <div class="skill_example">
+                    <h4>Rapport</h4>
+                    <p><strong>Broad Description:</strong> Building positive relationships and social connections</p>
+                    <p><strong>Applications:</strong> Making friends, networking, being likeable, reading social situations, diplomacy</p>
+                    <p><strong>Creative Use:</strong> "I use Rapport to make the guard feel comfortable enough to let slip information about security procedures"</p>
+                </div>
+
+                <div class="skill_example">
+                    <h4>Athletics</h4>
+                    <p><strong>Broad Description:</strong> Physical movement, fitness, and bodily coordination</p>
+                    <p><strong>Applications:</strong> Climbing, running, jumping, swimming, dodging, parkour, acrobatics</p>
+                    <p><strong>Creative Use:</strong> "I use Athletics to gracefully vault over the café counter, making it look like I belong here"</p>
+                </div>
+
+                <div class="skill_example">
+                    <h4>Deceive</h4>
+                    <p><strong>Broad Description:</strong> Misleading others through lies, misdirection, or false impressions</p>
+                    <p><strong>Applications:</strong> Lying, bluffing, disguises, sleight of hand, creating false identities</p>
+                    <p><strong>Creative Use:</strong> "I use Deceive to make my magical ritual look like I'm just doing stretching exercises"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fate_dice_system">
+            <h2>The Fate Dice: Randomness with Meaning</h2>
+            
+            <p>Fate uses special dice (Fate dice or Fudge dice) that generate results from -4 to +4, but with a strong tendency toward the middle. This creates a system where competence matters more than luck, but dramatic swings are still possible.</p>
+
+            <h3>Understanding Fate Dice</h3>
+            <div class="dice_explanation">
+                <h4>Fate Dice Symbols</h4>
+                <ul>
+                    <li><strong>+ (Plus):</strong> Positive result, adds +1</li>
+                    <li><strong>- (Minus):</strong> Negative result, subtracts -1</li>
+                    <li><strong>□ (Blank):</strong> Neutral result, adds 0</li>
+                </ul>
+
+                <h4>Rolling 4 Fate Dice</h4>
+                <p>Roll four dice, count the symbols, and add them up:</p>
+                <div class="dice_examples">
+                    <p><strong>Example 1:</strong> + + □ - = (+1) + (+1) + (0) + (-1) = +1</p>
+                    <p><strong>Example 2:</strong> + - - □ = (+1) + (-1) + (-1) + (0) = -1</p>
+                    <p><strong>Example 3:</strong> + + + + = (+1) + (+1) + (+1) + (+1) = +4 (Legendary luck!)</p>
+                </div>
+            </div>
+
+            <h3>The Ladder: Making Sense of Numbers</h3>
+            <p>Fate uses a descriptive ladder instead of just numbers, making results immediately meaningful:</p>
+
+            <div class="fate_ladder">
+                <table class="ladder_table">
+                    <tr>
+                        <th>Number</th>
+                        <th>Adjective</th>
+                        <th>Meaning</th>
+                    </tr>
+                    <tr>
+                        <td>+8</td>
+                        <td>Legendary</td>
+                        <td>Once-in-a-lifetime, mythic achievement</td>
+                    </tr>
+                    <tr>
+                        <td>+7</td>
+                        <td>Epic</td>
+                        <td>Heroic, story-defining moment</td>
+                    </tr>
+                    <tr>
+                        <td>+6</td>
+                        <td>Fantastic</td>
+                        <td>Amazing success, clearly superhuman</td>
+                    </tr>
+                    <tr>
+                        <td>+5</td>
+                        <td>Superb</td>
+                        <td>Excellent performance, peak human</td>
+                    </tr>
+                    <tr style="background-color: #e8f5e8;">
+                        <td>+4</td>
+                        <td>Great</td>
+                        <td>Very good, professional level</td>
+                    </tr>
+                    <tr style="background-color: #e1f5fe;">
+                        <td>+3</td>
+                        <td>Good</td>
+                        <td>Above average, competent</td>
+                    </tr>
+                    <tr style="background-color: #fff3e0;">
+                        <td>+2</td>
+                        <td>Fair</td>
+                        <td>Decent, getting by</td>
+                    </tr>
+                    <tr style="background-color: #f3e5f5;">
+                        <td>+1</td>
+                        <td>Average</td>
+                        <td>Below average, struggling</td>
+                    </tr>
+                    <tr>
+                        <td>+0</td>
+                        <td>Mediocre</td>
+                        <td>Just barely adequate</td>
+                    </tr>
+                    <tr>
+                        <td>-1</td>
+                        <td>Poor</td>
+                        <td>Below standard, clearly failing</td>
+                    </tr>
+                    <tr>
+                        <td>-2</td>
+                        <td>Terrible</td>
+                        <td>Bad failure, embarrassing</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Basic Resolution: The Heart of Fate</h3>
+            <p>All Fate actions follow the same simple pattern:</p>
+
+            <div class="resolution_formula">
+                <h4>The Fate Resolution Formula</h4>
+                <div class="formula_box">
+                    <p><strong>Skill Rating + Dice Roll + Modifiers vs. Opposition</strong></p>
+                </div>
+
+                <div class="resolution_example">
+                    <h4>Example: Sneaking Past Guards</h4>
+                    <p><strong>Character:</strong> Detective Sarah Chen wants to sneak into a warehouse</p>
+                    <p><strong>Skill:</strong> Stealth at Good (+3)</p>
+                    <p><strong>Dice Roll:</strong> + □ - + = +1</p>
+                    <p><strong>Total:</strong> +3 (skill) + 1 (dice) = +4 (Great)</p>
+                    <p><strong>Opposition:</strong> Guards' Notice at Fair (+2)</p>
+                    <p><strong>Result:</strong> Great (+4) vs Fair (+2) = Success with 2 shifts</p>
+                    <p><strong>Fiction:</strong> Sarah not only sneaks past undetected, but finds an ideal hiding spot with a perfect view of the criminal meeting</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="four_actions">
+            <h2>The Four Actions: Everything You Can Do</h2>
+            
+            <p>Fate distills all possible character actions into four fundamental types. This simplicity means you always know what mechanics to use, regardless of what creative action you're attempting.</p>
+
+            <div class="mermaid">
+                graph TD
+                    A[Character Action] --> B{What are you trying to do?}
+                    B -->|Find out information| C[Overcome]
+                    B -->|Change or create something| D[Create Advantage]
+                    B -->|Hurt someone/something| E[Attack]
+                    B -->|Protect yourself| F[Defend]
+                    
+                    C --> C1[Roll skill vs. difficulty<br/>Success = you learn/achieve<br/>Failure = complication]
+                    D --> D1[Roll skill vs. difficulty<br/>Success = create aspect<br/>Failure = opponent gets aspect]
+                    E --> E1[Roll skill vs. defense<br/>Success = deal stress<br/>Failure = no effect]
+                    F --> F1[Roll skill vs. attack<br/>Success = prevent damage<br/>Failure = take stress]
+                    
+                    style C fill:#e8f5e8
+                    style D fill:#e1f5fe
+                    style E fill:#ffebee
+                    style F fill:#fff3e0
+            </div>
+
+            <h3>Overcome: Getting Past Obstacles</h3>
+            <p>Use Overcome when you want to get past something that stands in your way or when you need to find out information.</p>
+
+            <div class="action_examples">
+                <h4>Overcome Examples</h4>
+                <ul>
+                    <li><strong>Physical:</strong> Climbing a wall, picking a lock, hacking a computer</li>
+                    <li><strong>Mental:</strong> Researching ancient lore, solving a puzzle, resisting mind control</li>
+                    <li><strong>Social:</strong> Fast-talking past a guard, convincing someone to help you</li>
+                    <li><strong>Magical:</strong> Dispelling a barrier, understanding mystical symbols</li>
+                </ul>
+
+                <div class="overcome_resolution">
+                    <h5>Overcome Outcomes</h5>
+                    <ul>
+                        <li><strong>Success:</strong> You achieve your goal cleanly</li>
+                        <li><strong>Success at a Cost:</strong> You achieve your goal, but there's a complication</li>
+                        <li><strong>Failure:</strong> You don't achieve your goal, and there are consequences</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Create Advantage: Setting Up Success</h3>
+            <p>Use Create Advantage when you want to change the situation to your benefit or discover useful information.</p>
+
+            <div class="action_examples">
+                <h4>Create Advantage Examples</h4>
+                <ul>
+                    <li><strong>Environmental:</strong> Setting something on fire to create "Blazing Inferno"</li>
+                    <li><strong>Social:</strong> Charming someone to make them "Favorably Disposed"</li>
+                    <li><strong>Tactical:</strong> Taking high ground to gain "Superior Position"</li>
+                    <li><strong>Informational:</strong> Studying an opponent to discover they're "Afraid of Water"</li>
+                </ul>
+
+                <div class="advantage_mechanics">
+                    <h5>Aspect Creation and Free Invokes</h5>
+                    <p>When you successfully create an advantage, you create a situational aspect and get a <strong>free invoke</strong>—a one-time bonus you can use later for dramatic effect.</p>
+                </div>
+            </div>
+
+            <h3>Attack: Dealing Harm</h3>
+            <p>Use Attack when you want to harm someone, whether physically, mentally, or socially.</p>
+
+            <div class="action_examples">
+                <h4>Attack Examples</h4>
+                <ul>
+                    <li><strong>Physical Combat:</strong> Sword strikes, gunshots, martial arts</li>
+                    <li><strong>Mental Assault:</strong> Psychological manipulation, fear tactics</li>
+                    <li><strong>Social Destruction:</strong> Public humiliation, reputation damage</li>
+                    <li><strong>Magical Harm:</strong> Fireballs, mind blasts, curse spells</li>
+                </ul>
+            </div>
+
+            <h3>Defend: Protecting Yourself</h3>
+            <p>Use Defend when reacting to someone else's action against you.</p>
+
+            <div class="action_examples">
+                <h4>Defense Examples</h4>
+                <ul>
+                    <li><strong>Physical Defense:</strong> Dodging, blocking, armor absorption</li>
+                    <li><strong>Mental Defense:</strong> Willpower, mental barriers, focus</li>
+                    <li><strong>Social Defense:</strong> Maintaining composure, deflecting insults</li>
+                    <li><strong>Magical Defense:</strong> Counter-spells, protective wards</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="fate_points_system">
+            <h2>Fate Points: The Engine of Drama</h2>
+            
+            <p>Fate Points are the currency that drives Fate's collaborative storytelling engine. They represent your character's ability to be awesome at crucial moments, but spending them means accepting complications when dramatically appropriate.</p>
+
+            <h3>The Fate Point Economy</h3>
+            <p>Think of Fate Points like dramatic timing—you spend them when you need to be awesome, and you earn them by letting your character's flaws create interesting problems.</p>
+
+            <div class="fate_point_cycle">
+                <canvas id="fatePointChart" width="600" height="400"></canvas>
+                <script>
+                    const canvas = document.getElementById('fatePointChart');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Draw the cycle
+                    const centerX = 300;
+                    const centerY = 200;
+                    const radius = 120;
+                    
+                    // Draw arrows and labels for the cycle
+                    const steps = [
+                        {angle: 0, label: 'Start with\nFate Points', color: '#4ECDC4'},
+                        {angle: Math.PI/2, label: 'Spend for\nAwesome', color: '#FF6B6B'},
+                        {angle: Math.PI, label: 'Accept\nComplications', color: '#FFD93D'},
+                        {angle: 3*Math.PI/2, label: 'Earn More\nPoints', color: '#6BCF7F'}
+                    ];
+                    
+                    // Draw connecting arrows
+                    steps.forEach((step, index) => {
+                        const nextIndex = (index + 1) % steps.length;
+                        const startAngle = step.angle;
+                        const endAngle = steps[nextIndex].angle;
+                        
+                        // Calculate arrow positions
+                        const startX = centerX + Math.cos(startAngle) * radius;
+                        const startY = centerY + Math.sin(startAngle) * radius;
+                        const endX = centerX + Math.cos(endAngle) * radius;
+                        const endY = centerY + Math.sin(endAngle) * radius;
+                        
+                        // Draw arrow
+                        ctx.beginPath();
+                        ctx.moveTo(startX, startY);
+                        ctx.lineTo(endX, endY);
+                        ctx.strokeStyle = '#333';
+                        ctx.lineWidth = 3;
+                        ctx.stroke();
+                        
+                        // Draw arrowhead
+                        const arrowAngle = Math.atan2(endY - startY, endX - startX);
+                        const arrowLength = 15;
+                        ctx.beginPath();
+                        ctx.moveTo(endX, endY);
+                        ctx.lineTo(endX - arrowLength * Math.cos(arrowAngle - 0.3), endY - arrowLength * Math.sin(arrowAngle - 0.3));
+                        ctx.moveTo(endX, endY);
+                        ctx.lineTo(endX - arrowLength * Math.cos(arrowAngle + 0.3), endY - arrowLength * Math.sin(arrowAngle + 0.3));
+                        ctx.stroke();
+                    });
+                    
+                    // Draw step circles and labels
+                    steps.forEach(step => {
+                        const x = centerX + Math.cos(step.angle) * radius;
+                        const y = centerY + Math.sin(step.angle) * radius;
+                        
+                        // Draw circle
+                        ctx.beginPath();
+                        ctx.arc(x, y, 35, 0, 2 * Math.PI);
+                        ctx.fillStyle = step.color;
+                        ctx.fill();
+                        ctx.strokeStyle = 'black';
+                        ctx.lineWidth = 2;
+                        ctx.stroke();
+                        
+                        // Add label
+                        ctx.fillStyle = 'black';
+                        ctx.font = '12px Arial';
+                        ctx.textAlign = 'center';
+                        const lines = step.label.split('\n');
+                        lines.forEach((line, lineIndex) => {
+                            ctx.fillText(line, x, y - 5 + lineIndex * 14);
+                        });
+                    });
+                    
+                    // Title
+                    ctx.fillStyle = 'black';
+                    ctx.font = '16px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('The Fate Point Cycle', centerX, 50);
+                </script>
+            </div>
+
+            <h3>Spending Fate Points: Being Awesome</h3>
+            <p>You can spend Fate Points to:</p>
+
+            <div class="fate_point_uses">
+                <div class="spending_option">
+                    <h4>Invoke an Aspect (+2 or Reroll)</h4>
+                    <p>Use one of your character's aspects or a situational aspect to get a bonus</p>
+                    <p><strong>Example:</strong> "I'm a 'Reformed Cat Burglar,' so I spend a Fate Point to get +2 on this lock-picking roll"</p>
+                </div>
+
+                <div class="spending_option">
+                    <h4>Declare a Story Detail</h4>
+                    <p>Add a minor detail to the story that fits your character's aspects</p>
+                    <p><strong>Example:</strong> "Since I 'Know This City Like the Back of My Hand,' I spend a Fate Point to declare there's a hidden alley entrance here"</p>
+                </div>
+
+                <div class="spending_option">
+                    <h4>Compel Someone Else</h4>
+                    <p>Suggest that another character's aspect should complicate their life right now</p>
+                    <p><strong>Example:</strong> "Since you're 'Honor Bound,' shouldn't you challenge this villain to single combat instead of ambushing him?"</p>
+                </div>
+            </div>
+
+            <h3>Earning Fate Points: Accepting Drama</h3>
+            <p>You earn Fate Points when:</p>
+
+            <div class="earning_options">
+                <div class="earning_method">
+                    <h4>Accept a Compel</h4>
+                    <p>When the GM or another player suggests your aspect should complicate your life, and you agree</p>
+                    <p><strong>Example:</strong> GM: "Your 'Sucker for a Pretty Face' means you believe her story despite the obvious lies. Take a Fate Point?"</p>
+                </div>
+
+                <div class="earning_method">
+                    <h4>Have Your Aspects Invoked Against You</h4>
+                    <p>When opponents use your character's aspects to make your life harder</p>
+                    <p><strong>Example:</strong> The villain invokes your "Protect the Innocent" aspect to force you into a disadvantageous position</p>
+                </div>
+
+                <div class="earning_method">
+                    <h4>Concede a Conflict</h4>
+                    <p>When you voluntarily give up in a conflict before being taken out</p>
+                    <p><strong>Example:</strong> "I'm outmatched. I surrender, but I declare that I managed to send a warning to my allies first"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="practical_example">
+            <h2>Putting It All Together: A Complete Scene</h2>
+            
+            <p>Let's see how all these elements work together in actual play:</p>
+
+            <div class="scene_example">
+                <h3>Scene: The Corporate Infiltration</h3>
+                <p><strong>Characters:</strong></p>
+                <ul>
+                    <li><strong>Alex Rivera:</strong> "Corporate Spy with a Conscience" (Trouble: "The Company Owns My Soul")</li>
+                    <li><strong>Maya Chen:</strong> "Ace Hacker Fighting the System" (Trouble: "Paranoid About Government Surveillance")</li>
+                </ul>
+
+                <h4>Setting the Scene</h4>
+                <p><strong>GM:</strong> "You're on the 47th floor of NeoTech Tower. The executive's office is just down the hall, but there are security cameras and at least two guards between you and the files you need. What do you do?"</p>
+
+                <h4>Create Advantage: Setting Up Success</h4>
+                <p><strong>Maya:</strong> "I want to hack into the security system to create a distraction. I'll use my Computers skill to create the aspect 'Security System Glitching.'"</p>
+                <p><strong>GM:</strong> "Roll Computers against Great (+4) difficulty—their security is top-notch."</p>
+                <p><strong>Maya:</strong> "I have Good (+3) Computers, and I'll invoke my 'Ace Hacker Fighting the System' aspect for +2. That's +5 total, plus my dice roll of +1 = +6 Fantastic!"</p>
+                <p><strong>GM:</strong> "Incredible success! Not only do you create 'Security System Glitching,' but you get two free invokes. The cameras start showing old footage, and the guards' radios are full of static."</p>
+
+                <h4>Overcome: Getting Past Obstacles</h4>
+                <p><strong>Alex:</strong> "While Maya has the guards distracted, I'll use Stealth to sneak past them to the office."</p>
+                <p><strong>GM:</strong> "Normally this would be Good (+3) difficulty, but with the security glitching, it's only Fair (+2)."</p>
+                <p><strong>Alex:</strong> "I have Fair (+2) Stealth, and Maya lets me use one of her free invokes on 'Security System Glitching' for +2. My dice show 0, so that's +4 total vs +2—easy success!"</p>
+                <p><strong>GM:</strong> "You slip past the confused guards like a shadow. You're in the office with the filing cabinet right in front of you."</p>
+
+                <h4>Compel: Drama Strikes</h4>
+                <p><strong>GM:</strong> "Alex, as you're searching the files, you find something unexpected—evidence that your handler, the person who sent you on this mission, is working with NeoTech. Your 'Corporate Spy with a Conscience' aspect is really relevant here. You could just grab the original files and leave, but shouldn't your conscience demand you do something about this betrayal? I'll give you a Fate Point if you accept this complication."</p>
+                <p><strong>Alex:</strong> "Absolutely! Alex is horrified. Instead of just taking the evidence about the weapons deal, I start copying everything that shows how deep this conspiracy goes. But that's going to take time..."</p>
+
+                <h4>Overcome with Complications</h4>
+                <p><strong>GM:</strong> "While Alex is copying files, the guards have figured out something's wrong. Maya, they're doing a floor-by-floor search. You need to buy Alex more time."</p>
+                <p><strong>Maya:</strong> "I'll use Deceive to impersonate building maintenance over the radio system, sending them to check the wrong floors first."</p>
+                <p><strong>Maya:</strong> "I have Average (+1) Deceive, but I'll spend a Fate Point to invoke my 'Paranoid About Government Surveillance'—my paranoia means I've studied exactly how these security protocols work. Plus my dice give me +2, so that's +5 total!"</p>
+                <p><strong>GM:</strong> "Perfect! You send them on a wild goose chase to the 32nd floor. Alex, you get the files you need, plus evidence of the deeper conspiracy. But Maya, your radio trick means they'll be upgrading their communication security—your 'Paranoid About Government Surveillance' might become a bigger problem later."</p>
+            </div>
+
+            <h3>What Made This Scene Work</h3>
+            <div class="scene_analysis">
+                <ul>
+                    <li><strong>Fiction First:</strong> Players described what they wanted to accomplish before worrying about mechanics</li>
+                    <li><strong>Aspects Mattered:</strong> Character traits drove both success and complications</li>
+                    <li><strong>Collaborative Storytelling:</strong> GM and players built on each other's ideas</li>
+                    <li><strong>Fate Points Flowed:</strong> Spending and earning points created dramatic momentum</li>
+                    <li><strong>Actions Had Consequences:</strong> Success created new advantages, complications created future plot hooks</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="when_to_use_fate">
+            <h2>When to Choose Fate Core</h2>
+            
+            <h3>Fate Excels When You Want:</h3>
+            <div class="fate_strengths">
+                <div class="strength">
+                    <h4>Collaborative Storytelling</h4>
+                    <p>Everyone at the table contributes to creating the story and world</p>
+                    <p><strong>Example Genres:</strong> Urban fantasy, space opera, pulp adventure, supernatural investigation</p>
+                </div>
+
+                <div class="strength">
+                    <h4>Competent, Proactive Characters</h4>
+                    <p>Heroes who are good at what they do and drive the story forward</p>
+                    <p><strong>Example Genres:</strong> Superhero stories, spy thrillers, adventuring parties, professional teams</p>
+                </div>
+
+                <div class="strength">
+                    <h4>Drama and Character Development</h4>
+                    <p>Personal flaws and relationships that create story complications</p>
+                    <p><strong>Example Genres:</strong> Character-driven fantasy, modern supernatural, social intrigue</p>
+                </div>
+
+                <div class="strength">
+                    <h4>Flexible, Genre-Neutral Gaming</h4>
+                    <p>Easy adaptation to any setting or story type</p>
+                    <p><strong>Example Genres:</strong> Historical fiction, science fiction, modern day, fantasy, horror</p>
+                </div>
+            </div>
+
+            <h3>Consider Other Systems When You Want:</h3>
+            <div class="fate_limitations">
+                <ul>
+                    <li><strong>Detailed Simulation:</strong> Complex rules for specific activities (combat tactics, magic systems, etc.)</li>
+                    <li><strong>Character Optimization:</strong> Mechanical complexity and build choices</li>
+                    <li><strong>Traditional Power Progression:</strong> Level-based advancement and clear power tiers</li>
+                    <li><strong>GM-Controlled Narrative:</strong> Stories where players don't contribute to world-building</li>
+                    <li><strong>Gritty Realism:</strong> Systems where failure means serious consequences without narrative control</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="practice_activities">
+            <h2>Practice Activities</h2>
+            
+            <div class="activity">
+                <h3>Activity 1: Aspect Creation Workshop</h3>
+                <p>Create three different characters by writing only their five aspects:</p>
+                <ul>
+                    <li><strong>High Concept:</strong> What's their "elevator pitch"?</li>
+                    <li><strong>Trouble:</strong> What makes their life dramatically interesting?</li>
+                    <li><strong>Three Other Aspects:</strong> Relationships, beliefs, possessions, or background details</li>
+                </ul>
+                <p>For each character, explain how their aspects could be both helpful and problematic in different situations.</p>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 2: Four Actions Practice</h3>
+                <p>For each scenario, identify which of the four actions would be most appropriate and why:</p>
+                <ul>
+                    <li>Climbing a sheer cliff face to reach a castle</li>
+                    <li>Convincing a guard that you belong in a restricted area</li>
+                    <li>Studying an ancient text to learn about a demon's weaknesses</li>
+                    <li>Shooting at an enemy soldier</li>
+                    <li>Diving behind cover as bullets fly overhead</li>
+                    <li>Setting up a distraction to help your team's infiltration</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 3: Fate Point Economics</h3>
+                <p>Design a scene where a character would want to spend Fate Points and another where they'd be willing to accept a compel:</p>
+                <ul>
+                    <li>Create a character with a clear High Concept and Trouble</li>
+                    <li>Describe a situation where spending a Fate Point to invoke an aspect would be dramatically satisfying</li>
+                    <li>Describe a different situation where accepting a compel based on their Trouble would create interesting complications</li>
+                    <li>Explain how both moments would enhance the story</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 4: Skill Application Creativity</h3>
+                <p>Take the skill "Athletics" and brainstorm five different creative applications beyond obvious physical activities:</p>
+                <ul>
+                    <li>Consider social situations where physical grace might matter</li>
+                    <li>Think about how Athletics might help with non-combat problems</li>
+                    <li>Imagine how Athletics could be used to Create Advantage</li>
+                    <li>Consider how Athletics might work in different genres (sci-fi, fantasy, modern)</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 5: Scene Conversion</h3>
+                <p>Take a favorite scene from a movie, book, or TV show and convert it to Fate:</p>
+                <ul>
+                    <li>Identify the main characters and their likely aspects</li>
+                    <li>Break down the action into the four action types</li>
+                    <li>Identify moments where Fate Points would be spent or earned</li>
+                    <li>Explain how the Fate version would maintain the scene's dramatic tension</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="further_exploration">
+            <h2>Topics for Further Exploration</h2>
+            
+            <ul>
+                <li><strong>Advanced Character Creation:</strong> Stunts, refresh, and character advancement</li>
+                <li><strong>Conflict and Competition:</strong> Detailed rules for fights, contests, and challenges</li>
+                <li><strong>The Fate Fractal:</strong> Using Fate rules for organizations, vehicles, and locations</li>
+                <li><strong>Game Creation:</strong> Building custom settings and modifying rules for specific genres</li>
+                <li><strong>Advanced GM Techniques:</strong> Scene framing, pacing, and collaborative world-building</li>
+                <li><strong>Stress and Consequences:</strong> How characters take and recover from harm</li>
+                <li><strong>Zones and Movement:</strong> Handling space and positioning in conflicts</li>
+                <li><strong>Magic and Supernatural Powers:</strong> Creating and managing fantastic abilities</li>
+            </ul>
+        </section>
+
+        <section class="conclusion">
+            <h2>Conclusion: Your Fate Awaits</h2>
+            
+            <p>Fate Core represents a fundamental shift in how we think about tabletop roleplaying. Instead of fighting against the system to tell your story, Fate's mechanics actively support and enhance dramatic storytelling. The system trusts you to be creative, collaborative, and invested in creating great stories together.</p>
+
+            <p>What makes Fate special isn't just its mechanical simplicity—it's how those simple mechanics create space for complex, emotionally resonant stories. When your character's aspects can both save the day and create problems, when everyone at the table can contribute to the world and story, when the system rewards taking dramatic risks, you get gaming experiences that feel more like the best collaborative fiction than traditional RPGs.</p>
+
+            <div class="next_steps">
+                <h3>Ready for More?</h3>
+                <p>In our next lecture, we'll dive deep into character creation—how to build compelling aspects that drive story, how to choose skills that reflect your character concept, and how stunts can make your character unique. You'll learn to create characters that are mechanically effective and narratively compelling.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Next:<a href="/fate_char.html">Fate Character Creation and Development</a></p>
+        <p>Remember: In Fate, the story you tell together is more important than the rules!</p>
+    </footer>
+</body>
+</html>

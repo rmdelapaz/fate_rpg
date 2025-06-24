@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Techniques and Customization: Making Fate Your Own</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Advanced Techniques and Customization: Making Fate Your Own</h1>
+        <p class="subtitle">From Genre Adaptation to System Innovation</p>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h2>Fate as a Toolkit: Beyond the Core</h2>
+            <p>Fate Core is like a master craftsperson's workshop—it provides excellent tools and fundamental techniques, but the real artistry comes from knowing how to adapt, modify, and combine those tools to create exactly what you need. Unlike game systems that lock you into specific genres or play styles, Fate is designed to be customized. Every rule can be modified, every assumption can be challenged, and every element can be tailored to support your unique vision of collaborative storytelling.</p>
+            
+            <div class="analogy-box">
+                <h3>The Modular Synthesizer Analogy</h3>
+                <p>Think of Fate like a modular synthesizer. The core rules are your basic oscillators and filters—essential components that work great on their own. But the real magic happens when you start patching them together in new ways, adding modules that create unique sounds, and experimenting with configurations that produce something nobody has heard before. Each campaign becomes a unique instrument, perfectly tuned to create the specific type of music (story) you want to make together.</p>
+            </div>
+        </section>
+
+        <section class="fate-fractal">
+            <h2>The Fate Fractal: Everything is a Character</h2>
+            
+            <p>The Fate Fractal is Fate's most powerful conceptual tool—the idea that everything important in your game can be treated like a character with aspects, skills, and stress tracks. This principle allows you to model anything from individual items to entire civilizations using the same basic mechanics.</p>
+
+            <div class="mermaid">
+                graph TD
+                    A[Fate Fractal Applications] --> B[Characters]
+                    A --> C[Organizations]
+                    A --> D[Locations]
+                    A --> E[Vehicles]
+                    A --> F[Supernatural Powers]
+                    A --> G[Abstract Concepts]
+                    
+                    B --> B1[Traditional PCs and NPCs<br/>Aspects, skills, stress]
+                    C --> C1[Corporations, governments<br/>Institutional aspects and resources]
+                    D --> D1[Cities, buildings, realms<br/>Environmental traits and dangers]
+                    E --> E1[Cars, ships, mechs<br/>Performance and damage]
+                    F --> F1[Magic systems, psionics<br/>Power aspects and limitations]
+                    G --> G1[Relationships, reputations<br/>Social dynamics and influence]
+                    
+                    style A fill:#e1f5fe
+                    style B fill:#e8f5e8
+                    style C fill:#fff3e0
+                    style D fill:#f3e5f5
+                    style E fill:#fffde7
+                    style F fill:#fce4ec
+                    style G fill:#e0f2f1
+            </div>
+
+            <h3>Organizations as Characters</h3>
+            <p>Treat important organizations like characters to model their influence and capabilities.</p>
+
+            <div class="organization-example">
+                <h4>Example: NeoTech Corporation</h4>
+                
+                <div class="organization-stats">
+                    <h5>Aspects</h5>
+                    <ul>
+                        <li><strong>High Concept:</strong> "Cutting-Edge Technology Conglomerate"</li>
+                        <li><strong>Trouble:</strong> "Ethics Are Just Guidelines"</li>
+                        <li><strong>Other Aspects:</strong> "Global Reach and Influence," "Experimental Division," "Corporate Espionage Network"</li>
+                    </ul>
+                </div>
+
+                <div class="organization-stats">
+                    <h5>Skills</h5>
+                    <ul>
+                        <li><strong>Resources:</strong> Superb (+5) - Massive financial power</li>
+                        <li><strong>Contacts:</strong> Great (+4) - Connections in government and industry</li>
+                        <li><strong>Investigate:</strong> Great (+4) - Corporate intelligence gathering</li>
+                        <li><strong>Deceive:</strong> Good (+3) - Public relations and cover-ups</li>
+                        <li><strong>Fight:</strong> Good (+3) - Private security forces</li>
+                    </ul>
+                </div>
+
+                <div class="organization-stats">
+                    <h5>Stress and Consequences</h5>
+                    <ul>
+                        <li><strong>Stress Track:</strong> Four boxes (represents institutional resilience)</li>
+                        <li><strong>Consequences:</strong> Mild/Moderate/Severe (public scandals, legal troubles, internal conflicts)</li>
+                    </ul>
+                </div>
+
+                <div class="organization-usage">
+                    <h5>In Play</h5>
+                    <p>NeoTech can take actions like a character—launching investigations, pressuring politicians, or deploying security teams. When player characters oppose the corporation, they attack its stress track through public exposure, legal challenges, or sabotage operations.</p>
+                </div>
+            </div>
+
+            <h3>Locations as Characters</h3>
+            <p>Give important locations aspects and mechanical presence to make them active parts of the story.</p>
+
+            <div class="location-example">
+                <h4>Example: The Abandoned Subway Station</h4>
+                
+                <div class="location-aspects">
+                    <h5>Location Aspects</h5>
+                    <ul>
+                        <li><strong>"Forgotten by the City Above"</strong> - Hard to find, authorities don't patrol</li>
+                        <li><strong>"Homeless Community Haven"</strong> - Protected by local inhabitants</li>
+                        <li><strong>"Echoes and Shadows"</strong> - Sound carries strangely, lots of hiding spots</li>
+                        <li><strong>"Old Infrastructure"</strong> - Unstable, dangerous, but functional</li>
+                    </ul>
+                </div>
+
+                <div class="location-mechanics">
+                    <h5>Mechanical Effects</h5>
+                    <ul>
+                        <li><strong>Active Aspects:</strong> Can be invoked or compelled like character aspects</li>
+                        <li><strong>Environmental Challenges:</strong> Overcome actions to navigate safely</li>
+                        <li><strong>Hidden Resources:</strong> Useful tools or information can be discovered</li>
+                        <li><strong>Story Generator:</strong> Aspects suggest plot complications and opportunities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Vehicles and Equipment</h3>
+            <p>Give important vehicles and equipment aspects to make them feel distinctive and mechanically relevant.</p>
+
+            <div class="vehicle-example">
+                <h4>Example: Marcus's Modified Sedan</h4>
+                
+                <div class="vehicle-stats">
+                    <h5>Vehicle Aspects</h5>
+                    <ul>
+                        <li><strong>"Armored and Reinforced"</strong> - Extra protection, slower acceleration</li>
+                        <li><strong>"Sleeper Car"</strong> - Looks ordinary but hides performance modifications</li>
+                        <li><strong>"Corporate Tracker Installed"</strong> - His former employer can locate it</li>
+                    </ul>
+                </div>
+
+                <div class="vehicle-mechanics">
+                    <h5>Mechanical Integration</h5>
+                    <ul>
+                        <li><strong>Aspect Invocation:</strong> Spend Fate Points for bonuses to driving rolls</li>
+                        <li><strong>Compel Opportunities:</strong> Tracker creates story complications</li>
+                        <li><strong>Stress Track:</strong> Vehicle can take damage in chases and crashes</li>
+                        <li><strong>Repair and Upgrade:</strong> Aspects can change through maintenance and modification</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="extras-system">
+            <h2>Extras: Supernatural Powers and Special Abilities</h2>
+            
+            <p>Extras are Fate's way of handling anything that goes beyond normal human capability—magic, superpowers, advanced technology, or any other special abilities that define your genre and setting.</p>
+
+            <h3>Types of Extras</h3>
+
+            <div class="extras-types">
+                <div class="extra-type">
+                    <h4>Aspect-Only Extras</h4>
+                    <p>Special abilities that work entirely through aspect invocation and compelling</p>
+                    <p><strong>Best For:</strong> Subtle powers, background supernatural elements</p>
+                    
+                    <div class="extra-example">
+                        <h5>Example: Psychic Sensitivity</h5>
+                        <p><strong>Aspect:</strong> "I See Dead People"</p>
+                        <p><strong>Function:</strong> Invoke for bonuses when dealing with supernatural mysteries, compel when ghostly visions create problems</p>
+                        <p><strong>No Extra Mechanics:</strong> Just narrative permission and aspect use</p>
+                    </div>
+                </div>
+
+                <div class="extra-type">
+                    <h4>Stunt-Based Extras</h4>
+                    <p>Powers that function like enhanced stunts with additional capabilities</p>
+                    <p><strong>Best For:</strong> Moderate supernatural abilities, special training</p>
+                    
+                    <div class="extra-example">
+                        <h5>Example: Telepathy</h5>
+                        <p><strong>Stunt:</strong> "Mind Reader" - You can use Empathy to read surface thoughts by making eye contact</p>
+                        <p><strong>Enhanced Version:</strong> "Deep Telepathy" - You can use Empathy to communicate mentally with willing targets at any range</p>
+                    </div>
+                </div>
+
+                <div class="extra-type">
+                    <h4>Skill-Based Extras</h4>
+                    <p>New skills that represent supernatural or unusual capabilities</p>
+                    <p><strong>Best For:</strong> Magic systems, extensive supernatural abilities</p>
+                    
+                    <div class="extra-example">
+                        <h5>Example: Sorcery Skill</h5>
+                        <p><strong>Function:</strong> Use Sorcery instead of other skills for supernatural effects</p>
+                        <p><strong>Overcome:</strong> Break enchantments, dispel illusions</p>
+                        <p><strong>Create Advantage:</strong> Cast preparatory spells, enchant objects</p>
+                        <p><strong>Attack:</strong> Direct magical attacks</p>
+                        <p><strong>Defend:</strong> Magical shields and wards</p>
+                    </div>
+                </div>
+
+                <div class="extra-type">
+                    <h4>Stress Track Extras</h4>
+                    <p>Special stress tracks that represent unusual resources or vulnerabilities</p>
+                    <p><strong>Best For:</strong> Magic points, sanity, reputation systems</p>
+                    
+                    <div class="extra-example">
+                        <h5>Example: Magic Stress Track</h5>
+                        <p><strong>Function:</strong> Take magic stress when casting powerful spells</p>
+                        <p><strong>Recovery:</strong> Meditation, rest, or special rituals</p>
+                        <p><strong>Consequences:</strong> "Magically Drained," "Spell Feedback," "Arcane Overload"</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Designing Custom Magic Systems</h3>
+            <p>Create magic systems that fit your setting's tone and mechanical needs.</p>
+
+            <div class="magic-system-framework">
+                <h4>Magic System Design Questions</h4>
+                
+                <div class="design-question">
+                    <h5>What is the Cost?</h5>
+                    <ul>
+                        <li><strong>Fate Points:</strong> Limited but renewable resource</li>
+                        <li><strong>Stress:</strong> Fatigue that recovers after conflicts</li>
+                        <li><strong>Consequences:</strong> Lasting harm from overuse</li>
+                        <li><strong>Aspects:</strong> Temporary or permanent complications</li>
+                    </ul>
+                </div>
+
+                <div class="design-question">
+                    <h5>What are the Limitations?</h5>
+                    <ul>
+                        <li><strong>Skill Requirements:</strong> Need specific skill ratings</li>
+                        <li><strong>Preparation Time:</strong> Rituals take time to perform</li>
+                        <li><strong>Material Components:</strong> Need specific items or locations</li>
+                        <li><strong>Emotional State:</strong> Magic tied to character's mental condition</li>
+                    </ul>
+                </div>
+
+                <div class="design-question">
+                    <h5>What Can Go Wrong?</h5>
+                    <ul>
+                        <li><strong>Backlash:</strong> Failed magic hurts the caster</li>
+                        <li><strong>Attention:</strong> Magic use attracts unwanted notice</li>
+                        <li><strong>Corruption:</strong> Magic slowly changes the user</li>
+                        <li><strong>Unpredictability:</strong> Magic sometimes does unexpected things</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="magic-system-example">
+                <h4>Complete Magic System Example: Urban Shamanism</h4>
+                
+                <div class="shamanism-overview">
+                    <h5>Concept</h5>
+                    <p>Modern shamans who communicate with the spirits of urban environments—building spirits, traffic flow entities, electrical grid consciousness.</p>
+                </div>
+
+                <div class="shamanism-mechanics">
+                    <h5>Mechanical Implementation</h5>
+                    
+                    <h6>Spirit Communication Skill</h6>
+                    <ul>
+                        <li><strong>Overcome:</strong> Navigate city efficiently, find hidden things</li>
+                        <li><strong>Create Advantage:</strong> Ask spirits for information or favors</li>
+                        <li><strong>Attack:</strong> Turn urban environment against enemies</li>
+                        <li><strong>Defend:</strong> Spirits warn of danger or provide protection</li>
+                    </ul>
+
+                    <h6>Spirit Favor Track</h6>
+                    <ul>
+                        <li><strong>Function:</strong> Special stress track representing spirit goodwill</li>
+                        <li><strong>Spending:</strong> Take spirit favor stress for more powerful effects</li>
+                        <li><strong>Recovery:</strong> Perform services for spirits, make offerings</li>
+                        <li><strong>Consequences:</strong> "Spirits Are Angry," "Cut Off from the Grid," "Marked by Dark Spirits"</li>
+                    </ul>
+
+                    <h6>Required Aspects</h6>
+                    <ul>
+                        <li>Must have at least one aspect reflecting connection to urban spirits</li>
+                        <li><strong>Examples:</strong> "The City Speaks to Me," "Servant of the Traffic Lights," "Friend to Building Spirits"</li>
+                    </ul>
+
+                    <h6>Limitations and Costs</h6>
+                    <ul>
+                        <li><strong>Urban Only:</strong> Powers don't work in natural environments</li>
+                        <li><strong>Respect Required:</strong> Dismissive or exploitative behavior angers spirits</li>
+                        <li><strong>Attention:</strong> Other supernatural entities notice spirit communication</li>
+                        <li><strong>Technology Dependence:</strong> Powers weaker where technology fails</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="genre-adaptation">
+            <h2>Genre Adaptation: Tailoring Fate to Different Stories</h2>
+            
+            <h3>Genre Modification Framework</h3>
+            <p>Different genres require different emphases and mechanical adjustments to feel authentic.</p>
+
+            <div class="genre-adaptations">
+                <div class="genre-adaptation">
+                    <h4>Horror Gaming</h4>
+                    <p><strong>Goal:</strong> Create atmosphere of dread and vulnerability</p>
+                    
+                    <div class="horror-modifications">
+                        <h5>Mechanical Changes</h5>
+                        <ul>
+                            <li><strong>Sanity Stress Track:</strong> Mental damage from witnessing horrors</li>
+                            <li><strong>Corruption Aspects:</strong> Temporary aspects that represent growing madness</li>
+                            <li><strong>Limited Resources:</strong> Fewer refresh, more restrictive equipment</li>
+                            <li><strong>Unknown Opposition:</strong> Many difficulties and NPC stats hidden from players</li>
+                        </ul>
+
+                        <h5>Aspect Guidelines</h5>
+                        <ul>
+                            <li>Encourage aspects that create vulnerability and moral complications</li>
+                            <li>Troubles should be genuinely troubling, not just inconvenient</li>
+                            <li>Include aspects that connect characters to potential victims</li>
+                        </ul>
+
+                        <h5>Compel Philosophy</h5>
+                        <ul>
+                            <li>Compels should increase tension and isolation</li>
+                            <li>Make characters choose between safety and morality</li>
+                            <li>Use horror tropes as compel opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="genre-adaptation">
+                    <h4>Superhero Gaming</h4>
+                    <p><strong>Goal:</strong> Epic scope with larger-than-life characters and dramatic moral choices</p>
+                    
+                    <div class="superhero-modifications">
+                        <h5>Mechanical Changes</h5>
+                        <ul>
+                            <li><strong>Higher Refresh:</strong> 5-7 refresh for extensive powers</li>
+                            <li><strong>Power Stunts:</strong> Supernatural abilities as enhanced stunts</li>
+                            <li><strong>Collateral Damage:</strong> Failed attacks might harm innocent bystanders</li>
+                            <li><strong>Secret Identity Stress:</strong> Special track for maintaining dual lives</li>
+                        </ul>
+
+                        <h5>Scale Considerations</h5>
+                        <ul>
+                            <li>Higher skill caps to represent superhuman abilities</li>
+                            <li>Epic consequences for world-threatening scenarios</li>
+                            <li>Multiple stress tracks for different types of challenges</li>
+                        </ul>
+
+                        <h5>Aspect Guidelines</h5>
+                        <ul>
+                            <li>High concepts should sound like comic book titles</li>
+                            <li>Troubles often involve responsibility and sacrifice</li>
+                            <li>Include aspects about secret identities and supporting cast</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="genre-adaptation">
+                    <h4>Hard Science Fiction</h4>
+                    <p><strong>Goal:</strong> Realistic technology and scientific problem-solving</p>
+                    
+                    <div class="scifi-modifications">
+                        <h5>Mechanical Changes</h5>
+                        <ul>
+                            <li><strong>Equipment Stress:</strong> Technology can malfunction under stress</li>
+                            <li><strong>Research Challenges:</strong> Extended scientific investigation mechanics</li>
+                            <li><strong>Resource Management:</strong> Limited air, power, fuel in space</li>
+                            <li><strong>Communications Delays:</strong> Time lag affects coordination</li>
+                        </ul>
+
+                        <h5>Skill Modifications</h5>
+                        <ul>
+                            <li>Rename skills to reflect technological focus</li>
+                            <li>Add specialized skills for spaceflight, engineering</li>
+                            <li>Emphasize investigation and problem-solving skills</li>
+                        </ul>
+
+                        <h5>Aspect Guidelines</h5>
+                        <ul>
+                            <li>Focus on scientific specializations and technological connections</li>
+                            <li>Troubles often involve equipment failure or resource scarcity</li>
+                            <li>Include aspects about home planets, organizations, or research projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="genre-adaptation">
+                    <h4>Historical Gaming</h4>
+                    <p><strong>Goal:</strong> Authentic period atmosphere with appropriate social constraints</p>
+                    
+                    <div class="historical-modifications">
+                        <h5>Mechanical Changes</h5>
+                        <ul>
+                            <li><strong>Social Status Track:</strong> Reputation and standing in society</li>
+                            <li><strong>Period-Appropriate Skills:</strong> Rename and modify skills for the era</li>
+                            <li><strong>Limited Technology:</strong> Restrictions based on historical availability</li>
+                            <li><strong>Social Conventions:</strong> Mechanical effects of breaking social norms</li>
+                        </ul>
+
+                        <h5>Research Requirements</h5>
+                        <ul>
+                            <li>Accurate historical details for setting and NPCs</li>
+                            <li>Period-appropriate language and concerns</li>
+                            <li>Understanding of social hierarchies and limitations</li>
+                        </ul>
+
+                        <h5>Aspect Guidelines</h5>
+                        <ul>
+                            <li>Reflect social class, profession, and family connections</li>
+                            <li>Include period-appropriate troubles and opportunities</li>
+                            <li>Consider how historical events affect character backgrounds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Custom Skill Lists</h3>
+            <p>Modify the skill list to reflect your setting's unique requirements and tone.</p>
+
+            <div class="skill-customization">
+                <h4>Skill Modification Techniques</h4>
+                
+                <div class="modification-technique">
+                    <h5>Renaming for Flavor</h5>
+                    <p>Keep the same mechanical function but change names to fit setting</p>
+                    <ul>
+                        <li><strong>Cyberpunk:</strong> "Athletics" becomes "Body Modification"</li>
+                        <li><strong>Fantasy:</strong> "Shoot" becomes "Archery"</li>
+                        <li><strong>Space Opera:</strong> "Drive" becomes "Pilot"</li>
+                    </ul>
+                </div>
+
+                <div class="modification-technique">
+                    <h5>Splitting Skills</h5>
+                    <p>Divide broad skills into specialized categories</p>
+                    <ul>
+                        <li><strong>Combat Focus:</strong> Split "Fight" into "Melee" and "Martial Arts"</li>
+                        <li><strong>Technical Focus:</strong> Split "Crafts" into "Engineering" and "Art"</li>
+                        <li><strong>Social Focus:</strong> Split "Rapport" into "Etiquette" and "Charm"</li>
+                    </ul>
+                </div>
+
+                <div class="modification-technique">
+                    <h5>Adding New Skills</h5>
+                    <p>Create entirely new skills for genre-specific needs</p>
+                    <ul>
+                        <li><strong>Magic:</strong> Add "Sorcery" or "Thaumaturgy"</li>
+                        <li><strong>Horror:</strong> Add "Occult" or "Sanity"</li>
+                        <li><strong>Sci-Fi:</strong> Add "Xenobiology" or "Quantum Physics"</li>
+                    </ul>
+                </div>
+
+                <div class="modification-technique">
+                    <h5>Combining Skills</h5>
+                    <p>Merge similar skills to streamline the system</p>
+                    <ul>
+                        <li><strong>Simple Campaigns:</strong> Combine "Burglary" and "Stealth" into "Infiltration"</li>
+                        <li><strong>Action Focus:</strong> Combine all mental skills into "Intellect"</li>
+                        <li><strong>Social Focus:</strong> Combine all physical skills into "Physicality"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="custom-skill-example">
+                <h4>Example: Cyberpunk Skill List</h4>
+                
+                <div class="cyberpunk-skills">
+                    <h5>Modified Core Skills</h5>
+                    <ul>
+                        <li><strong>Athletics</strong> → <strong>Body Modification:</strong> Enhanced reflexes, cyborg athleticism</li>
+                        <li><strong>Burglary</strong> → <strong>Intrusion:</strong> Physical and digital breaking and entering</li>
+                        <li><strong>Contacts</strong> → <strong>Network:</strong> Digital and street connections</li>
+                        <li><strong>Crafts</strong> → <strong>Tech:</strong> Building and repairing technology</li>
+                        <li><strong>Deceive</strong> → <strong>Persona:</strong> Digital and physical identity manipulation</li>
+                    </ul>
+                </div>
+
+                <div class="cyberpunk-skills">
+                    <h5>New Skills</h5>
+                    <ul>
+                        <li><strong>Hacking:</strong> Digital intrusion and cyber-warfare</li>
+                        <li><strong>Corporate:</strong> Understanding and navigating mega-corp politics</li>
+                        <li><strong>Biotech:</strong> Biological enhancement and medical technology</li>
+                        <li><strong>Street:</strong> Survival in the urban underground</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="collaborative-setting-creation">
+            <h2>Collaborative Setting Creation</h2>
+            
+            <h3>The Diamond City Method</h3>
+            <p>A structured approach to building campaign settings collaboratively with your players.</p>
+
+            <div class="diamond-city-process">
+                <h4>Step-by-Step Setting Creation</h4>
+                
+                <div class="creation-step">
+                    <h5>Step 1: Establish the Big Picture</h5>
+                    <ul>
+                        <li><strong>Genre and Tone:</strong> What kind of story are we telling?</li>
+                        <li><strong>Scale and Scope:</strong> Local community or global conspiracy?</li>
+                        <li><strong>Power Level:</strong> Street-level or epic?</li>
+                        <li><strong>Technology Level:</strong> Medieval, modern, futuristic?</li>
+                    </ul>
+                </div>
+
+                <div class="creation-step">
+                    <h5>Step 2: Define Issues</h5>
+                    <p>Two major problems or tensions that drive stories in this setting</p>
+                    <ul>
+                        <li><strong>Current Issue:</strong> Something happening right now</li>
+                        <li><strong>Impending Issue:</strong> Something building toward crisis</li>
+                        <li><strong>Player Input:</strong> Each player suggests elements or complications</li>
+                    </ul>
+                </div>
+
+                <div class="creation-step">
+                    <h5>Step 3: Create Faces</h5>
+                    <p>Important NPCs who represent different aspects of the setting</p>
+                    <ul>
+                        <li><strong>Authority Figure:</strong> Who has official power?</li>
+                        <li><strong>Information Source:</strong> Who knows what's really happening?</li>
+                        <li><strong>Trouble Maker:</strong> Who causes problems for heroes?</li>
+                        <li><strong>Neutral Party:</strong> Who might be ally or enemy?</li>
+                    </ul>
+                </div>
+
+                <div class="creation-step">
+                    <h5>Step 4: Map Important Places</h5>
+                    <p>Locations where stories will unfold</p>
+                    <ul>
+                        <li><strong>Safe Haven:</strong> Where heroes can rest and plan</li>
+                        <li><strong>Neutral Ground:</strong> Where different factions meet</li>
+                        <li><strong>Dangerous Area:</strong> Where threats and mysteries lurk</li>
+                        <li><strong>Power Center:</strong> Where important decisions are made</li>
+                    </ul>
+                </div>
+
+                <div class="creation-step">
+                    <h5>Step 5: Connect Characters</h5>
+                    <p>Ensure every character has meaningful connections to the setting</p>
+                    <ul>
+                        <li><strong>Personal Stakes:</strong> How do issues affect each character?</li>
+                        <li><strong>Relationships:</strong> Which NPCs does each character know?</li>
+                        <li><strong>Locations:</strong> Where does each character have history?</li>
+                        <li><strong>Resources:</strong> What does each character contribute to the group?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="setting-example">
+                <h4>Example: New Port City</h4>
+                
+                <div class="setting-overview">
+                    <h5>Big Picture</h5>
+                    <p><strong>Concept:</strong> Modern supernatural investigation in a port city where the supernatural world is hidden but increasingly active</p>
+                    <p><strong>Scale:</strong> City-wide with occasional regional connections</p>
+                    <p><strong>Power Level:</strong> Competent humans with some supernatural elements</p>
+                </div>
+
+                <div class="setting-issues">
+                    <h5>Issues</h5>
+                    <ul>
+                        <li><strong>Current Issue:</strong> "Supernatural Crimes on the Rise"</li>
+                        <li><strong>Impending Issue:</strong> "The Masquerade is Breaking Down"</li>
+                    </ul>
+                </div>
+
+                <div class="setting-faces">
+                    <h5>Faces</h5>
+                    <ul>
+                        <li><strong>Captain Rodriguez (Authority):</strong> Police captain who suspects something supernatural is happening</li>
+                        <li><strong>Professor Blackwood (Information):</strong> Occult scholar at the university</li>
+                        <li><strong>The Broker (Trouble):</strong> Mysterious figure who trades in supernatural artifacts</li>
+                        <li><strong>Maria Santos (Neutral):</strong> Reporter investigating strange stories</li>
+                    </ul>
+                </div>
+
+                <div class="setting-places">
+                    <h5>Places</h5>
+                    <ul>
+                        <li><strong>The Dockside Café (Safe Haven):</strong> 24-hour diner where supernatural investigators meet</li>
+                        <li><strong>Riverside Park (Neutral Ground):</strong> Where different supernatural factions negotiate</li>
+                        <li><strong>The Old Warehouse District (Dangerous):</strong> Where supernatural threats hide</li>
+                        <li><strong>City Hall (Power Center):</strong> Where political decisions affecting the supernatural are made</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="advanced-mechanics">
+            <h2>Advanced Mechanical Techniques</h2>
+            
+            <h3>Alternative Stress and Consequence Systems</h3>
+            <p>Modify how characters handle harm to better fit your genre and story needs.</p>
+
+            <div class="alternative-systems">
+                <div class="alternative-system">
+                    <h4>Condition-Based Damage</h4>
+                    <p>Instead of abstract stress, use specific conditions that affect character capabilities</p>
+                    
+                    <div class="condition-system">
+                        <h5>Example: Superhero Conditions</h5>
+                        <ul>
+                            <li><strong>Angry:</strong> +2 to attacks, -2 to careful actions</li>
+                            <li><strong>Tired:</strong> -1 to all physical actions</li>
+                            <li><strong>Hurt:</strong> -2 to all actions until treated</li>
+                            <li><strong>Afraid:</strong> Cannot take attacks actions against source of fear</li>
+                            <li><strong>Guilty:</strong> Compelled to make amends or self-sacrifice</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alternative-system">
+                    <h4>Resource Depletion</h4>
+                    <p>Track specific resources instead of abstract hit points</p>
+                    
+                    <div class="resource-system">
+                        <h5>Example: Survival Horror Resources</h5>
+                        <ul>
+                            <li><strong>Sanity Track:</strong> Mental stability, lost through horror</li>
+                            <li><strong>Supplies Track:</strong> Food, water, ammunition</li>
+                            <li><strong>Energy Track:</strong> Physical exhaustion from stress and exertion</li>
+                            <li><strong>Trust Track:</strong> Group cohesion, lost through betrayal and conflict</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alternative-system">
+                    <h4>Escalating Complications</h4>
+                    <p>Instead of taking characters out, accumulate problems that make life difficult</p>
+                    
+                    <div class="complication-system">
+                        <h5>Example: Social Intrigue Complications</h5>
+                        <ul>
+                            <li><strong>Minor Scandal:</strong> -1 to social actions with certain groups</li>
+                            <li><strong>Financial Trouble:</strong> Reduced Resources rating</li>
+                            <li><strong>Legal Problems:</strong> Ongoing investigations and court dates</li>
+                            <li><strong>Social Ostracism:</strong> Loss of important contacts and invitations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Custom Contest and Challenge Mechanics</h3>
+            <p>Create specialized mechanics for activities central to your genre.</p>
+
+            <div class="custom-mechanics">
+                <div class="custom-mechanic">
+                    <h4>Investigation Challenges</h4>
+                    <p>For mystery and detective genres</p>
+                    
+                    <div class="investigation-mechanics">
+                        <h5>Clue Tracks</h5>
+                        <ul>
+                            <li><strong>Core Clues:</strong> Essential information, multiple ways to discover</li>
+                            <li><strong>Supporting Clues:</strong> Additional context, single discovery method</li>
+                            <li><strong>Red Herrings:</strong> False leads that waste time but feel legitimate</li>
+                            <li><strong>Time Pressure:</strong> Investigation becomes harder as time passes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="custom-mechanic">
+                    <h4>Research and Development</h4>
+                    <p>For scientific and magical advancement</p>
+                    
+                    <div class="research-mechanics">
+                        <h5>Progress Tracks</h5>
+                        <ul>
+                            <li><strong>Breakthrough Points:</strong> Major advances that unlock new capabilities</li>
+                            <li><strong>Setback Risks:</strong> Failed rolls can undo previous progress</li>
+                            <li><strong>Resource Requirements:</strong> Different phases need different materials or assistance</li>
+                            <li><strong>Ethical Dilemmas:</strong> Progress may require morally questionable choices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="custom-mechanic">
+                    <h4>Mass Combat</h4>
+                    <p>For large-scale battles and warfare</p>
+                    
+                    <div class="mass-combat-mechanics">
+                        <h5>Unit-Based Combat</h5>
+                        <ul>
+                            <li><strong>Unit Aspects:</strong> Military units have aspects like characters</li>
+                            <li><strong>Command Actions:</strong> PCs give orders rather than fight directly</li>
+                            <li><strong>Morale Tracks:</strong> Units can break before being eliminated</li>
+                            <li><strong>Strategic Objectives:</strong> Victory conditions beyond eliminating enemies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Time and Scale Modifications</h3>
+            <p>Adjust how Fate handles time to support different types of stories.</p>
+
+            <div class="time-modifications">
+                <div class="time-scale">
+                    <h4>Extended Time Mechanics</h4>
+                    <p>For stories that unfold over weeks, months, or years</p>
+                    <ul>
+                        <li><strong>Seasonal Milestones:</strong> Character advancement tied to story time passage</li>
+                        <li><strong>Relationship Evolution:</strong> NPCs change based on time and character actions</li>
+                        <li><strong>Organizational Growth:</strong> Groups and institutions develop over time</li>
+                        <li><strong>Long-Term Consequences:</strong> Actions have effects that manifest later</li>
+                    </ul>
+                </div>
+
+                <div class="time-scale">
+                    <h4>Compressed Time Mechanics</h4>
+                    <p>For intense, real-time scenarios</p>
+                    <ul>
+                        <li><strong>Action Economy:</strong> Limited actions per character per turn</li>
+                        <li><strong>Simultaneous Resolution:</strong> All actions resolved at once</li>
+                        <li><strong>Escalating Pressure:</strong> Difficulties increase as time runs out</li>
+                        <li><strong>Fatigue Accumulation:</strong> Stress builds from sustained intense activity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="practice-activities">
+            <h2>Practice Activities</h2>
+            
+            <div class="activity">
+                <h3>Activity 1: Custom Magic System Design</h3>
+                <p>Create a complete magic system for a specific genre:</p>
+                <ul>
+                    <li>Choose your genre (urban fantasy, steampunk, space opera, etc.)</li>
+                    <li>Answer all the magic system design questions (cost, limitations, failure modes)</li>
+                    <li>Design 3-4 specific mechanical elements (skills, stress tracks, stunts, aspects)</li>
+                    <li>Create example spells or powers showing how the system works</li>
+                    <li>Explain how this magic system reinforces your chosen genre's themes</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 2: Fate Fractal Application</h3>
+                <p>Use the Fate Fractal to model a non-character element:</p>
+                <ul>
+                    <li>Choose something to model (organization, location, vehicle, relationship, etc.)</li>
+                    <li>Give it appropriate aspects that define its nature and complications</li>
+                    <li>Assign relevant skills that represent its capabilities</li>
+                    <li>Design stress tracks and consequences appropriate to what you're modeling</li>
+                    <li>Show how this element would interact with player characters mechanically</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 3: Genre Adaptation</h3>
+                <p>Adapt Fate Core for a specific genre not covered in the examples:</p>
+                <ul>
+                    <li>Choose your genre (noir detective, post-apocalyptic, romantic comedy, etc.)</li>
+                    <li>Identify what mechanical changes would best support the genre's themes</li>
+                    <li>Modify the skill list to better fit the setting</li>
+                    <li>Create 2-3 custom rules or mechanics specific to your genre</li>
+                    <li>Design guidelines for aspects that fit the genre's tone</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 4: Collaborative Setting Creation</h3>
+                <p>Use the Diamond City method to create a campaign setting:</p>
+                <ul>
+                    <li>Define the big picture (genre, scope, power level)</li>
+                    <li>Create two compelling issues that could drive multiple storylines</li>
+                    <li>Design 4-5 important NPCs representing different setting elements</li>
+                    <li>Map 3-4 significant locations with their own aspects</li>
+                    <li>Show how player characters would connect to this setting</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 5: Custom Mechanic Design</h3>
+                <p>Create a specialized mechanic for an activity central to your chosen genre:</p>
+                <ul>
+                    <li>Identify an activity that happens frequently in your genre</li>
+                    <li>Design custom rules that make this activity more interesting than basic skill rolls</li>
+                    <li>Include multiple possible outcomes and complication types</li>
+                    <li>Show how the mechanic integrates with core Fate systems</li>
+                    <li>Provide examples of the mechanic in use</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="toolkit-resources">
+            <h2>Advanced Fate Resources</h2>
+            
+            <h3>Official Fate Publications</h3>
+            <ul>
+                <li><strong>Fate System Toolkit:</strong> Official guide to customizing Fate</li>
+                <li><strong>Fate Adversary Toolkit:</strong> Creating compelling opposition</li>
+                <li><strong>Fate Space Toolkit:</strong> Science fiction adaptations</li>
+                <li><strong>Atomic Robo:</strong> Science action with custom mechanics</li>
+                <li><strong>Dresden Files Accelerated:</strong> Urban fantasy with simplified rules</li>
+                <li><strong>War of Ashes:</strong> Fantasy with fate dice alternatives</li>
+            </ul>
+
+            <h3>Community Resources</h3>
+            <ul>
+                <li><strong>Fate SRD:</strong> Complete rules reference online</li>
+                <li><strong>Fate Community:</strong> Forums, blogs, and discussion groups</li>
+                <li><strong>Actual Play Podcasts:</strong> Listen to Fate in action</li>
+                <li><strong>Convention Games:</strong> Experience different Fate variants</li>
+                <li><strong>Online Tools:</strong> Character builders and reference apps</li>
+            </ul>
+
+            <h3>Design Philosophy Resources</h3>
+            <ul>
+                <li><strong>Game design blogs:</strong> Understanding narrative game principles</li>
+                <li><strong>Improvisational theater:</strong> Techniques for collaborative storytelling</li>
+                <li><strong>Screenwriting guides:</strong> Story structure and pacing</li>
+                <li><strong>Genre fiction analysis:</strong> Understanding different story types</li>
+            </ul>
+        </section>
+
+        <section class="troubleshooting-advanced">
+            <h2>Advanced Troubleshooting</h2>
+            
+            <div class="advanced-problem">
+                <h3>Problem: "Custom Rules Feel Disconnected"</h3>
+                <p><strong>Symptoms:</strong> New mechanics don't integrate well with core Fate</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Ensure custom rules use the same action types (Overcome, Create Advantage, etc.)</li>
+                    <li>Make sure aspects remain central to new mechanics</li>
+                    <li>Test custom rules in isolation before combining them</li>
+                    <li>Start with simpler modifications and build complexity gradually</li>
+                </ul>
+            </div>
+
+            <div class="advanced-problem">
+                <h3>Problem: "Magic System is Too Powerful"</h3>
+                <p><strong>Symptoms:</strong> Supernatural abilities overshadow regular skills</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Increase costs or add more limitations</li>
+                    <li>Create situations where magic doesn't help or makes things worse</li>
+                    <li>Add social consequences for obvious magic use</li>
+                    <li>Ensure non-magical characters have their own unique advantages</li>
+                </ul>
+            </div>
+
+            <div class="advanced-problem">
+                <h3>Problem: "Genre Adaptation Feels Forced"</h3>
+                <p><strong>Symptoms:</strong> Modifications don't support the desired story feel</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Focus on what makes the genre unique, not just surface elements</li>
+                    <li>Study successful examples in your chosen genre</li>
+                    <li>Playtest with genre-appropriate scenarios</li>
+                    <li>Be willing to abandon modifications that don't work</li>
+                </ul>
+            </div>
+
+            <div class="advanced-problem">
+                <h3>Problem: "Too Many Custom Rules"</h3>
+                <p><strong>Symptoms:</strong> System becomes complex and hard to remember</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Prioritize the most important modifications</li>
+                    <li>Combine similar custom rules into unified systems</li>
+                    <li>Create reference materials for complex mechanics</li>
+                    <li>Consider using Fate Accelerated as a simpler base</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="further-exploration">
+            <h2>Beyond Core Fate</h2>
+            
+            <ul>
+                <li><strong>Fate Accelerated Edition:</strong> Streamlined version focusing on approaches instead of skills</li>
+                <li><strong>Fate Condensed:</strong> Updated, compressed version of Fate Core</li>
+                <li><strong>Powered by Fate:</strong> Commercial games using Fate as their engine</li>
+                <li><strong>Fate Worlds:</strong> Setting collections showcasing different adaptations</li>
+                <li><strong>Community Variants:</strong> Fan-created modifications and alternate rules</li>
+                <li><strong>Cross-Pollination:</strong> Techniques borrowed from other narrative games</li>
+                <li><strong>Design Theory:</strong> Understanding why Fate works the way it does</li>
+                <li><strong>Cultural Adaptation:</strong> Modifying Fate for different cultural contexts</li>
+            </ul>
+        </section>
+
+        <section class="conclusion">
+            <h2>Conclusion: Fate as a Living System</h2>
+            
+            <p>The true power of Fate lies not in its rules as written, but in its adaptability and modularity. Every technique we've covered—from simple aspect modifications to complete system overhauls—demonstrates that Fate is designed to grow and change with your needs. The system's creators intended it to be modified, customized, and reimagined for countless different stories and gaming styles.</p>
+
+            <p>As you experiment with these advanced techniques, remember that the goal isn't to use every possible modification or create the most complex system. The goal is to create the perfect tool for the specific stories you want to tell with your specific group of players. Sometimes that means adding elaborate magic systems; sometimes it means stripping away rules to focus on pure narrative. Fate gives you permission to make those choices.</p>
+
+            <div class="customization-philosophy">
+                <h3>Principles of Successful Customization</h3>
+                <ul>
+                    <li><strong>Start with story needs:</strong> What kind of experience do you want to create?</li>
+                    <li><strong>Understand the core:</strong> Know why Fate's basic mechanics work before changing them</li>
+                    <li><strong>Test incrementally:</strong> Add one modification at a time and see how it plays</li>
+                    <li><strong>Maintain aspect centrality:</strong> Keep character aspects as the heart of the system</li>
+                    <li><strong>Preserve collaboration:</strong> Ensure modifications support shared storytelling</li>
+                    <li><strong>Document your changes:</strong> Keep track of what works and what doesn't</li>
+                    <li><strong>Share your innovations:</strong> The Fate community thrives on shared creativity</li>
+                </ul>
+            </div>
+
+            <div class="next-steps">
+                <h3>Your Fate Journey Continues</h3>
+                <p>In our final lecture, we'll explore the future of Fate gaming—emerging trends in narrative gaming, how to build lasting gaming communities, and techniques for becoming a better collaborative storyteller. You'll learn to think beyond individual campaigns to create ongoing gaming experiences that evolve and grow over years of shared creativity.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Next:<a href="/fate_future.html">The Future of Fate Gaming</a></p>
+        <p>Remember: The best rule is the one that helps tell your story!</p>
+    </footer>
+</body>
+</html>

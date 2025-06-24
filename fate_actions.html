@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actions, Outcomes, and Conflicts: The Mechanics of Drama</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Actions, Outcomes, and Conflicts: The Mechanics of Drama</h1>
+        <p class="subtitle">From Simple Rolls to Epic Confrontations</p>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h2>The Engine of Interactive Storytelling</h2>
+            <p>Fate's action resolution system is like the grammar of dramatic storytelling—it provides the structure that lets you communicate complex ideas simply and clearly. Unlike systems that focus on simulation or tactical complexity, Fate's mechanics are designed to maintain narrative momentum while creating meaningful choices and dramatic tension. Every roll should either advance the story or complicate it in interesting ways.</p>
+            
+            <div class="analogy-box">
+                <h3>The Improvisation Framework Analogy</h3>
+                <p>Think of Fate's action system like the "Yes, and..." principle of improvisational theater. The dice don't just tell you whether you succeed or fail—they tell you how the story continues. A failed roll doesn't stop the narrative; it redirects it in a more complicated direction. Success doesn't end the scene; it empowers the character to push the story forward. The mechanics exist to create dramatic moments, not to simulate reality in detail.</p>
+            </div>
+        </section>
+
+        <section class="outcomes-framework">
+            <h2>The Four Outcomes: Beyond Success and Failure</h2>
+            
+            <p>Fate uses four possible outcomes that create rich, nuanced results instead of simple binary success/failure. This system ensures that every roll contributes to the story in meaningful ways.</p>
+
+            <div class="mermaid">
+                graph TD
+                    A[Roll Result] --> B{Compare to Opposition}
+                    B -->|Tie or 1 over| C[Success at a Cost]
+                    B -->|2-3 over| D[Success]
+                    B -->|4+ over| E[Success with Style]
+                    B -->|Any under| F[Failure]
+                    
+                    C --> C1[You get what you want<br/>But something goes wrong<br/>GM chooses consequence]
+                    D --> D1[You achieve your goal<br/>Clean success<br/>Story moves forward]
+                    E --> E1[You achieve your goal<br/>Plus get a bonus<br/>Boost or extra effect]
+                    F --> F1[You don't get what you want<br/>GM makes a move<br/>Story complicates]
+                    
+                    style C fill:#fff3e0
+                    style D fill:#e8f5e8
+                    style E fill:#e1f5fe
+                    style F fill:#ffebee
+            </div>
+
+            <h3>Failure: Complications, Not Dead Ends</h3>
+            <p>Failure in Fate means the story becomes more complicated, not that it stops. The GM has several tools to make failure interesting:</p>
+
+            <div class="failure-options">
+                <div class="failure-type">
+                    <h4>Simple Failure</h4>
+                    <p>You don't accomplish what you set out to do, and the situation remains unchanged or gets worse</p>
+                    <p><strong>Example:</strong> You fail to pick the lock, and now you hear footsteps approaching</p>
+                </div>
+
+                <div class="failure-type">
+                    <h4>Success at a Serious Cost</h4>
+                    <p>You achieve your goal, but something significant goes wrong</p>
+                    <p><strong>Example:</strong> You pick the lock, but you break your tools and set off a silent alarm</p>
+                </div>
+
+                <div class="failure-type">
+                    <h4>Aspect Creation</h4>
+                    <p>The GM creates a new situational aspect that complicates the scene</p>
+                    <p><strong>Example:</strong> You fail to stay hidden, creating the aspect "Guards on High Alert"</p>
+                </div>
+            </div>
+
+            <h3>Success: Achievement with Momentum</h3>
+            <p>Success means you accomplish what you set out to do and the story moves forward in your favor.</p>
+
+            <div class="success-examples">
+                <h4>Success Examples by Action Type</h4>
+                <ul>
+                    <li><strong>Overcome:</strong> You bypass the obstacle and continue with your plan</li>
+                    <li><strong>Create Advantage:</strong> You establish a beneficial aspect with one free invoke</li>
+                    <li><strong>Attack:</strong> You deal stress to your target</li>
+                    <li><strong>Defend:</strong> You avoid the incoming attack or effect</li>
+                </ul>
+            </div>
+
+            <h3>Success with Style: Excellence Rewarded</h3>
+            <p>When you succeed by 3 or more shifts, you don't just accomplish your goal—you do it so well that you gain an additional benefit.</p>
+
+            <div class="style-benefits">
+                <h4>Success with Style Benefits</h4>
+                <ul>
+                    <li><strong>Overcome:</strong> You get a boost aspect in addition to overcoming the obstacle</li>
+                    <li><strong>Create Advantage:</strong> You get an extra free invoke on the aspect you created</li>
+                    <li><strong>Attack:</strong> You deal normal stress and get a boost</li>
+                    <li><strong>Defend:</strong> You defend successfully and get a boost</li>
+                </ul>
+            </div>
+
+            <h3>Success at a Cost: Drama from Difficult Choices</h3>
+            <p>This outcome creates some of Fate's most dramatic moments—you get what you want, but there's a price to pay.</p>
+
+            <div class="cost-examples">
+                <h4>Types of Costs</h4>
+                <div class="cost-type">
+                    <h5>Resource Cost</h5>
+                    <p>Spend something valuable to succeed</p>
+                    <p><strong>Example:</strong> You convince the guard to let you pass, but you have to give him your last bribe money</p>
+                </div>
+
+                <div class="cost-type">
+                    <h5>Complication</h5>
+                    <p>Create a new problem or aspect</p>
+                    <p><strong>Example:</strong> You hack the computer, but you're now "Traced by Corporate Security"</p>
+                </div>
+
+                <div class="cost-type">
+                    <h5>Escalation</h5>
+                    <p>The situation becomes more intense or dangerous</p>
+                    <p><strong>Example:</strong> You disarm the bomb, but the timer speeds up on the other bombs</p>
+                </div>
+
+                <div class="cost-type">
+                    <h5>Delay</h5>
+                    <p>Success takes longer than expected</p>
+                    <p><strong>Example:</strong> You pick the lock, but it takes so long that you miss your rendezvous</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="difficulty-and-opposition">
+            <h2>Setting Difficulty: The Art of Appropriate Challenge</h2>
+            
+            <h3>The Difficulty Ladder in Practice</h3>
+            <p>Difficulty in Fate should reflect both the inherent challenge of the task and its dramatic importance to the story.</p>
+
+            <div class="difficulty-guidelines">
+                <table class="difficulty-table">
+                    <tr>
+                        <th>Difficulty</th>
+                        <th>When to Use</th>
+                        <th>Examples</th>
+                        <th>Narrative Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>Poor (-1)</td>
+                        <td>Extremely easy tasks</td>
+                        <td>Climbing a ladder, opening an unlocked door</td>
+                        <td>Show competence, build confidence</td>
+                    </tr>
+                    <tr>
+                        <td>Mediocre (0)</td>
+                        <td>Simple but not trivial</td>
+                        <td>Driving in traffic, basic research</td>
+                        <td>Basic competency check</td>
+                    </tr>
+                    <tr>
+                        <td>Average (+1)</td>
+                        <td>Routine professional tasks</td>
+                        <td>Picking a simple lock, hacking a home computer</td>
+                        <td>Standard difficulty for trained individuals</td>
+                    </tr>
+                    <tr>
+                        <td>Fair (+2)</td>
+                        <td>Challenging but achievable</td>
+                        <td>Convincing a suspicious guard, complex research</td>
+                        <td>Requires effort and possibly aspects</td>
+                    </tr>
+                    <tr>
+                        <td>Good (+3)</td>
+                        <td>Difficult professional challenges</td>
+                        <td>Infiltrating secure facility, expert-level tasks</td>
+                        <td>Significant obstacle requiring planning</td>
+                    </tr>
+                    <tr>
+                        <td>Great (+4)</td>
+                        <td>Very challenging tasks</td>
+                        <td>Convincing an enemy to switch sides</td>
+                        <td>Major story obstacle</td>
+                    </tr>
+                    <tr>
+                        <td>Superb (+5)</td>
+                        <td>Legendary challenges</td>
+                        <td>Talking your way out of execution</td>
+                        <td>Climactic moment requiring heroic effort</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Active vs. Passive Opposition</h3>
+            <p>Understanding when to use passive difficulties versus active opposition helps create appropriate dramatic tension.</p>
+
+            <div class="opposition-types">
+                <div class="opposition-type">
+                    <h4>Passive Opposition (Set Difficulties)</h4>
+                    <p>Use when the challenge comes from circumstances, not conscious resistance</p>
+                    <ul>
+                        <li><strong>Environmental:</strong> Climbing a cliff, surviving a storm</li>
+                        <li><strong>Technical:</strong> Hacking a computer, disarming a bomb</li>
+                        <li><strong>Social:</strong> Researching information, making a good impression</li>
+                        <li><strong>Physical:</strong> Picking a lock, sneaking past sleeping guards</li>
+                    </ul>
+                </div>
+
+                <div class="opposition-type">
+                    <h4>Active Opposition (Contested Rolls)</h4>
+                    <p>Use when another character is actively trying to stop you</p>
+                    <ul>
+                        <li><strong>Combat:</strong> Attack vs. Defense rolls</li>
+                        <li><strong>Social Conflict:</strong> Debate, negotiation, interrogation</li>
+                        <li><strong>Chases:</strong> Pursuit through dangerous terrain</li>
+                        <li><strong>Mental Conflicts:</strong> Psychological manipulation, willpower contests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Difficulty Modification: When Circumstances Matter</h3>
+            <p>Base difficulties can be modified by circumstances, equipment, and preparation.</p>
+
+            <div class="difficulty-modifiers">
+                <h4>Common Difficulty Modifiers</h4>
+                <canvas id="difficultyChart" width="700" height="400"></canvas>
+                <script>
+                    const canvas = document.getElementById('difficultyChart');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Draw difficulty scale
+                    const baseY = 200;
+                    const scaleLength = 600;
+                    const startX = 50;
+                    
+                    // Draw main scale line
+                    ctx.beginPath();
+                    ctx.moveTo(startX, baseY);
+                    ctx.lineTo(startX + scaleLength, baseY);
+                    ctx.strokeStyle = 'black';
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                    
+                    // Define difficulty points
+                    const difficulties = [
+                        {value: -2, label: 'Terrible', x: 50, color: '#FF6B6B'},
+                        {value: -1, label: 'Poor', x: 125, color: '#FF8E8E'},
+                        {value: 0, label: 'Mediocre', x: 200, color: '#FFD93D'},
+                        {value: 1, label: 'Average', x: 275, color: '#A8E6CF'},
+                        {value: 2, label: 'Fair', x: 350, color: '#88D8C0'},
+                        {value: 3, label: 'Good', x: 425, color: '#4ECDC4'},
+                        {value: 4, label: 'Great', x: 500, color: '#45B7D1'},
+                        {value: 5, label: 'Superb', x: 575, color: '#96CEB4'},
+                        {value: 6, label: 'Fantastic', x: 650, color: '#FFEAA7'}
+                    ];
+                    
+                    // Draw difficulty markers
+                    difficulties.forEach(diff => {
+                        // Vertical line
+                        ctx.beginPath();
+                        ctx.moveTo(diff.x, baseY - 20);
+                        ctx.lineTo(diff.x, baseY + 20);
+                        ctx.strokeStyle = 'black';
+                        ctx.lineWidth = 2;
+                        ctx.stroke();
+                        
+                        // Label below
+                        ctx.fillStyle = 'black';
+                        ctx.font = '10px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(diff.label, diff.x, baseY + 35);
+                        ctx.fillText(`(${diff.value > 0 ? '+' : ''}${diff.value})`, diff.x, baseY + 47);
+                        
+                        // Colored circle
+                        ctx.beginPath();
+                        ctx.arc(diff.x, baseY - 40, 8, 0, 2 * Math.PI);
+                        ctx.fillStyle = diff.color;
+                        ctx.fill();
+                        ctx.strokeStyle = 'black';
+                        ctx.stroke();
+                    });
+                    
+                    // Add modifier examples
+                    const modifiers = [
+                        {text: 'Perfect Equipment (+2)', x: 100, y: 100, color: 'green'},
+                        {text: 'Ideal Conditions (+1)', x: 200, y: 120, color: 'green'},
+                        {text: 'Base Difficulty', x: 350, y: 80, color: 'black'},
+                        {text: 'Poor Conditions (-1)', x: 500, y: 120, color: 'red'},
+                        {text: 'Active Opposition (-2)', x: 600, y: 100, color: 'red'}
+                    ];
+                    
+                    modifiers.forEach(mod => {
+                        ctx.fillStyle = mod.color;
+                        ctx.font = '11px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(mod.text, mod.x, mod.y);
+                        
+                        // Arrow pointing to scale
+                        ctx.beginPath();
+                        ctx.moveTo(mod.x, mod.y + 10);
+                        ctx.lineTo(mod.x, baseY - 60);
+                        ctx.strokeStyle = mod.color;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    });
+                    
+                    // Title
+                    ctx.fillStyle = 'black';
+                    ctx.font = '16px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('Fate Difficulty Scale with Modifiers', 350, 30);
+                </script>
+            </div>
+
+            <div class="modifier-examples">
+                <h4>Situational Modifiers</h4>
+                <ul>
+                    <li><strong>Equipment Quality:</strong> +/-1 to +/-2 based on tools available</li>
+                    <li><strong>Environmental Conditions:</strong> Weather, lighting, noise levels</li>
+                    <li><strong>Time Pressure:</strong> +1 for plenty of time, -1 to -3 for rushing</li>
+                    <li><strong>Preparation:</strong> +1 to +2 for research and planning</li>
+                    <li><strong>Assistance:</strong> +1 for helpful allies or teamwork</li>
+                    <li><strong>Opposition Awareness:</strong> -1 to -3 if opponents are actively watching</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="extended-actions">
+            <h2>Challenges and Contests: When Single Rolls Aren't Enough</h2>
+            
+            <h3>Challenges: Complex Tasks Requiring Multiple Skills</h3>
+            <p>Challenges represent complex situations that require multiple different approaches or skills to resolve completely.</p>
+
+            <div class="challenge-structure">
+                <h4>Anatomy of a Challenge</h4>
+                <ul>
+                    <li><strong>Multiple Skills Required:</strong> Different aspects of the problem need different approaches</li>
+                    <li><strong>Escalating Consequences:</strong> Failures make subsequent attempts harder</li>
+                    <li><strong>Time Pressure:</strong> Limited number of attempts before consequences</li>
+                    <li><strong>Collaborative Solutions:</strong> Different characters can contribute different skills</li>
+                </ul>
+            </div>
+
+            <div class="challenge-example">
+                <h4>Challenge Example: Infiltrating the Corporate Gala</h4>
+                <p><strong>Situation:</strong> The team needs to infiltrate a high-security corporate party to steal data from the CEO's personal computer.</p>
+                
+                <div class="challenge-breakdown">
+                    <h5>Required Elements (Need 4 successes before 3 failures)</h5>
+                    <ul>
+                        <li><strong>Getting Invitations:</strong> Contacts or Deceive vs. Good (+3) - acquire legitimate covers</li>
+                        <li><strong>Physical Infiltration:</strong> Burglary or Athletics vs. Fair (+2) - bypass physical security</li>
+                        <li><strong>Social Camouflage:</strong> Rapport or Deceive vs. Fair (+2) - blend in with the elite</li>
+                        <li><strong>Technical Access:</strong> Computers vs. Great (+4) - hack the CEO's computer</li>
+                        <li><strong>Exit Strategy:</strong> Notice or Drive vs. Fair (+2) - escape without detection</li>
+                    </ul>
+                </div>
+
+                <div class="challenge-progression">
+                    <h5>Example Progression</h5>
+                    <p><strong>Round 1:</strong> Marcus uses Contacts to get invitations (Success) - "We're art dealers from Switzerland"</p>
+                    <p><strong>Round 2:</strong> Sarah uses Burglary to disable the office alarms (Failure) - Security systems are more advanced than expected, creating "Enhanced Security Protocols"</p>
+                    <p><strong>Round 3:</strong> Elena uses Rapport at the party (Success at a Cost) - She charms the CEO but he becomes romantically interested, complicating the mission</p>
+                    <p><strong>Round 4:</strong> Maya uses Computers to hack the system (Success with Style) - Not only gets the data but plants false evidence</p>
+                    <p><strong>Result:</strong> Mission succeeds, but Elena now has an unwanted admirer, and enhanced security will make future infiltrations harder</p>
+                </div>
+            </div>
+
+            <h3>Contests: Head-to-Head Competition</h3>
+            <p>Contests represent direct competition between characters where both sides are actively trying to achieve the same goal or prevent the other from succeeding.</p>
+
+            <div class="contest-mechanics">
+                <h4>Contest Structure</h4>
+                <ul>
+                    <li><strong>Opposing Goals:</strong> Both sides want mutually exclusive outcomes</li>
+                    <li><strong>Victory Conditions:</strong> First to accumulate a certain number of victories wins</li>
+                    <li><strong>Escalating Stakes:</strong> Each exchange can raise the tension</li>
+                    <li><strong>Narrative Focus:</strong> Emphasize the back-and-forth struggle</li>
+                </ul>
+            </div>
+
+            <div class="contest-example">
+                <h4>Contest Example: The Rooftop Chase</h4>
+                <p><strong>Situation:</strong> Marcus is pursuing an assassin across the rooftops of downtown. First to three victories wins.</p>
+                
+                <div class="contest-exchange">
+                    <h5>Exchange 1: Initial Pursuit</h5>
+                    <p><strong>Marcus (Athletics +2):</strong> Rolls +1 = Total 3</p>
+                    <p><strong>Assassin (Athletics +3):</strong> Rolls -1 = Total 2</p>
+                    <p><strong>Result:</strong> Marcus 1, Assassin 0. "Marcus vaults over an air conditioning unit and gains ground"</p>
+                </div>
+
+                <div class="contest-exchange">
+                    <h5>Exchange 2: Dangerous Obstacles</h5>
+                    <p><strong>Marcus:</strong> Rolls 0 = Total 2</p>
+                    <p><strong>Assassin:</strong> Rolls +2 = Total 5</p>
+                    <p><strong>Result:</strong> Marcus 1, Assassin 1. "The assassin makes a death-defying leap across a wide gap, forcing Marcus to take a safer but slower route"</p>
+                </div>
+
+                <div class="contest-exchange">
+                    <h5>Exchange 3: Environmental Hazards</h5>
+                    <p><strong>Marcus (spends Fate Point on "Corporate Security Training"):</strong> Rolls +1 +2 (aspect) = Total 5</p>
+                    <p><strong>Assassin:</strong> Rolls -2 = Total 1</p>
+                    <p><strong>Result:</strong> Marcus 2, Assassin 1. "Marcus uses his tactical training to anticipate the assassin's route and cut them off"</p>
+                </div>
+
+                <div class="contest-exchange">
+                    <h5>Exchange 4: The Climax</h5>
+                    <p><strong>Marcus:</strong> Rolls +3 = Total 5</p>
+                    <p><strong>Assassin:</strong> Rolls 0 = Total 3</p>
+                    <p><strong>Result:</strong> Marcus 3, Assassin 1. Marcus wins! "Marcus tackles the assassin just as they reach the fire escape, bringing them both down in a controlled fall onto the emergency platform"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="conflicts-system">
+            <h2>Conflicts: When Violence and Drama Collide</h2>
+            
+            <p>Conflicts are Fate's most structured scenes, used when characters are trying to harm each other or when the situation is dangerous enough that failure could result in being taken out of the scene.</p>
+
+            <h3>Types of Conflicts</h3>
+
+            <div class="conflict-types">
+                <div class="conflict-type">
+                    <h4>Physical Conflicts</h4>
+                    <p>Traditional fighting, car chases, action sequences</p>
+                    <p><strong>Stress Track:</strong> Physical</p>
+                    <p><strong>Skills:</strong> Fight, Shoot, Athletics, Drive</p>
+                    <p><strong>Example:</strong> Sword fight, gunbattle, parkour chase through the city</p>
+                </div>
+
+                <div class="conflict-type">
+                    <h4>Mental Conflicts</h4>
+                    <p>Psychological warfare, interrogation, willpower battles</p>
+                    <p><strong>Stress Track:</strong> Mental</p>
+                    <p><strong>Skills:</strong> Provoke, Empathy, Rapport, Will</p>
+                    <p><strong>Example:</strong> Psychic attack, breaking someone's spirit, resisting mind control</p>
+                </div>
+
+                <div class="conflict-type">
+                    <h4>Social Conflicts</h4>
+                    <p>Debates, reputation warfare, social dominance</p>
+                    <p><strong>Stress Track:</strong> Usually Mental, sometimes custom</p>
+                    <p><strong>Skills:</strong> Rapport, Deceive, Provoke, Contacts</p>
+                    <p><strong>Example:</strong> Courtroom drama, political debate, social media campaign</p>
+                </div>
+            </div>
+
+            <h3>Conflict Structure and Flow</h3>
+
+            <div class="mermaid">
+                flowchart TD
+                    A[Conflict Begins] --> B[Determine Turn Order]
+                    B --> C[Character's Turn]
+                    C --> D[Choose Action]
+                    D --> E[Roll Dice]
+                    E --> F[Resolve Outcome]
+                    F --> G{Anyone Taken Out?}
+                    G -->|No| H{All Turns Complete?}
+                    G -->|Yes| I[Conflict Ends]
+                    H -->|No| C
+                    H -->|Yes| J[New Exchange Begins]
+                    J --> C
+                    I --> K[Determine Consequences]
+                    
+                    style A fill:#e1f5fe
+                    style I fill:#e8f5e8
+                    style K fill:#fff3e0
+            </div>
+
+            <h3>Stress and Consequences: Taking Damage</h3>
+            <p>When characters are attacked successfully, they must absorb the damage through stress and consequences.</p>
+
+            <div class="stress-system">
+                <h4>Stress Tracks</h4>
+                <p>Stress represents fatigue, minor injuries, and temporary setbacks. It goes away after the conflict ends.</p>
+                
+                <div class="stress-track-visual">
+                    <h5>Physical Stress Track Example</h5>
+                    <div class="stress-boxes">
+                        <span class="stress-box filled">1</span>
+                        <span class="stress-box filled">2</span>
+                        <span class="stress-box empty">3</span>
+                        <span class="stress-box empty">4</span>
+                    </div>
+                    <p>Character has taken 3 points of physical stress (boxes 1 and 2 marked)</p>
+                </div>
+
+                <style>
+                    .stress-boxes {
+                        display: flex;
+                        gap: 10px;
+                        margin: 10px 0;
+                    }
+                    .stress-box {
+                        width: 30px;
+                        height: 30px;
+                        border: 2px solid #333;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                    }
+                    .stress-box.filled {
+                        background-color: #FF6B6B;
+                        color: white;
+                    }
+                    .stress-box.empty {
+                        background-color: white;
+                        color: #333;
+                    }
+                </style>
+            </div>
+
+            <h4>Consequences: Lasting Harm</h4>
+            <p>Consequences represent serious injuries, psychological trauma, or social damage that persists beyond the immediate conflict.</p>
+
+            <div class="consequence-severity">
+                <h5>Consequence Severity Levels</h5>
+                <ul>
+                    <li><strong>Mild Consequence (2 stress):</strong> Minor injuries, bruises, momentary embarrassment</li>
+                    <li><strong>Moderate Consequence (4 stress):</strong> Serious wounds, psychological stress, damaged reputation</li>
+                    <li><strong>Severe Consequence (6 stress):</strong> Crippling injuries, major trauma, social disgrace</li>
+                </ul>
+            </div>
+
+            <div class="consequence-examples">
+                <h5>Consequence Examples by Conflict Type</h5>
+                
+                <div class="consequence-category">
+                    <h6>Physical Conflict Consequences</h6>
+                    <ul>
+                        <li><strong>Mild:</strong> "Bruised Ribs," "Twisted Ankle," "Scratched and Bleeding"</li>
+                        <li><strong>Moderate:</strong> "Broken Arm," "Concussed," "Severe Burns"</li>
+                        <li><strong>Severe:</strong> "Crippled Leg," "Traumatic Brain Injury," "Disfigured"</li>
+                    </ul>
+                </div>
+
+                <div class="consequence-category">
+                    <h6>Mental Conflict Consequences</h6>
+                    <ul>
+                        <li><strong>Mild:</strong> "Shaken Confidence," "Nagging Doubt," "Embarrassed"</li>
+                        <li><strong>Moderate:</strong> "Panic Attacks," "Deep Depression," "Paranoid Thoughts"</li>
+                        <li><strong>Severe:</strong> "Complete Breakdown," "Catatonic," "Split Personality"</li>
+                    </ul>
+                </div>
+
+                <div class="consequence-category">
+                    <h6>Social Conflict Consequences</h6>
+                    <ul>
+                        <li><strong>Mild:</strong> "Slightly Embarrassed," "Minor Gaffe," "Awkward Moment"</li>
+                        <li><strong>Moderate:</strong> "Publicly Humiliated," "Lost Professional Standing," "Social Outcast"</li>
+                        <li><strong>Severe:</strong> "Complete Social Ruin," "Persona Non Grata," "Blacklisted"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Taking Someone Out vs. Conceding</h3>
+            <p>Conflicts can end in two ways: being taken out or conceding voluntarily.</p>
+
+            <div class="conflict-endings">
+                <div class="ending-type">
+                    <h4>Being Taken Out</h4>
+                    <p>When you can't absorb an attack's stress, your opponent decides what happens to you</p>
+                    <ul>
+                        <li><strong>Physical:</strong> Knocked unconscious, killed, captured</li>
+                        <li><strong>Mental:</strong> Mind broken, memory wiped, driven insane</li>
+                        <li><strong>Social:</strong> Reputation destroyed, socially ostracized, publicly humiliated</li>
+                    </ul>
+                </div>
+
+                <div class="ending-type">
+                    <h4>Conceding</h4>
+                    <p>You voluntarily give up before being taken out, but you get to define how you lose</p>
+                    <ul>
+                        <li><strong>Control:</strong> You describe how you exit the conflict</li>
+                        <li><strong>Fate Points:</strong> Earn one Fate Point, plus one per consequence taken this conflict</li>
+                        <li><strong>Dignity:</strong> Lose on your terms rather than your opponent's</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="zones-and-movement">
+            <h2>Zones and Movement: Space in Conflicts</h2>
+            
+            <p>Fate uses zones to represent space in a way that's narratively meaningful rather than precisely measured. Zones define what you can interact with and where the action takes place.</p>
+
+            <h3>Defining Zones</h3>
+            <p>Zones should be based on narrative significance and tactical considerations, not exact measurements.</p>
+
+            <div class="zone-guidelines">
+                <h4>Zone Creation Guidelines</h4>
+                <ul>
+                    <li><strong>Communication:</strong> People in the same zone can talk normally</li>
+                    <li><strong>Movement:</strong> You can move one zone with a regular action</li>
+                    <li><strong>Interaction:</strong> You can interact with anything in your zone</li>
+                    <li><strong>Range:</strong> Ranged attacks work across zones, melee requires same zone</li>
+                    <li><strong>Obstacles:</strong> Barriers between zones might require overcome actions</li>
+                </ul>
+            </div>
+
+            <div class="zone-example">
+                <h4>Zone Map Example: The Warehouse Fight</h4>
+                <svg width="700" height="400" style="margin: 20px auto; display: block;">
+                    <!-- Define zones -->
+                    <!-- Loading Dock -->
+                    <rect x="50" y="50" width="150" height="100" fill="#FFE5E5" stroke="black" stroke-width="2"/>
+                    <text x="125" y="80" text-anchor="middle" font-size="12" font-weight="bold">Loading Dock</text>
+                    <text x="125" y="95" text-anchor="middle" font-size="10">High ground (+1)</text>
+                    <text x="125" y="110" text-anchor="middle" font-size="10">Cover from crates</text>
+                    
+                    <!-- Main Floor -->
+                    <rect x="220" y="50" width="200" height="150" fill="#E5F3FF" stroke="black" stroke-width="2"/>
+                    <text x="320" y="80" text-anchor="middle" font-size="12" font-weight="bold">Main Floor</text>
+                    <text x="320" y="95" text-anchor="middle" font-size="10">Open space</text>
+                    <text x="320" y="110" text-anchor="middle" font-size="10">Good movement</text>
+                    
+                    <!-- Office Area -->
+                    <rect x="440" y="50" width="150" height="100" fill="#E5FFE5" stroke="black" stroke-width="2"/>
+                    <text x="515" y="80" text-anchor="middle" font-size="12" font-weight="bold">Office Area</text>
+                    <text x="515" y="95" text-anchor="middle" font-size="10">Computers</text>
+                    <text x="515" y="110" text-anchor="middle" font-size="10">Limited access</text>
+                    
+                    <!-- Catwalk -->
+                    <rect x="220" y="220" width="200" height="80" fill="#FFF5E5" stroke="black" stroke-width="2"/>
+                    <text x="320" y="245" text-anchor="middle" font-size="12" font-weight="bold">Catwalk</text>
+                    <text x="320" y="260" text-anchor="middle" font-size="10">High ground (+1)</text>
+                    <text x="320" y="275" text-anchor="middle" font-size="10">Narrow, dangerous</text>
+                    
+                    <!-- Basement Access -->
+                    <rect x="50" y="220" width="150" height="80" fill="#F0E5FF" stroke="black" stroke-width="2"/>
+                    <text x="125" y="245" text-anchor="middle" font-size="12" font-weight="bold">Basement Access</text>
+                    <text x="125" y="260" text-anchor="middle" font-size="10">Stairs down</text>
+                    <text x="125" y="275" text-anchor="middle" font-size="10">Escape route</text>
+                    
+                    <!-- Connections -->
+                    <line x1="200" y1="100" x2="220" y2="100" stroke="green" stroke-width="3"/>
+                    <line x1="420" y1="100" x2="440" y2="100" stroke="green" stroke-width="3"/>
+                    <line x1="320" y1="200" x2="320" y2="220" stroke="green" stroke-width="3"/>
+                    <line x1="200" y1="150" x2="220" y2="180" stroke="red" stroke-width="3" stroke-dasharray="5,5"/>
+                    <line x1="200" y1="220" x2="220" y2="250" stroke="green" stroke-width="3"/>
+                    
+                    <!-- Legend -->
+                    <text x="50" y="330" font-size="14" font-weight="bold">Zone Connections:</text>
+                    <line x1="50" y1="340" x2="80" y2="340" stroke="green" stroke-width="3"/>
+                    <text x="90" y="345" font-size="12">Free movement</text>
+                    <line x1="50" y1="355" x2="80" y2="355" stroke="red" stroke-width="3" stroke-dasharray="5,5"/>
+                    <text x="90" y="360" font-size="12">Athletics roll required</text>
+                    
+                    <!-- Character positions -->
+                    <circle cx="320" cy="130" r="8" fill="blue"/>
+                    <text x="320" y="140" text-anchor="middle" font-size="10" fill="white">PC</text>
+                    <circle cx="125" cy="130" r="8" fill="red"/>
+                    <text x="125" y="140" text-anchor="middle" font-size="10" fill="white">NPC</text>
+                    <circle cx="515" cy="130" r="8" fill="red"/>
+                    <text x="515" y="140" text-anchor="middle" font-size="10" fill="white">NPC</text>
+                </svg>
+            </div>
+
+            <h3>Movement Actions</h3>
+            <p>Characters can move in several ways during conflicts:</p>
+
+            <div class="movement-options">
+                <ul>
+                    <li><strong>Free Movement:</strong> Move one zone as part of another action</li>
+                    <li><strong>Sprint:</strong> Use your entire action to move multiple zones</li>
+                    <li><strong>Overcome Obstacles:</strong> Roll to move through difficult terrain or barriers</li>
+                    <li><strong>Create Advantage:</strong> Use movement to gain better positioning</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="teamwork-mechanics">
+            <h2>Teamwork: When Heroes Work Together</h2>
+            
+            <h3>Teamwork Actions</h3>
+            <p>Fate provides several ways for characters to work together effectively:</p>
+
+            <div class="teamwork-types">
+                <div class="teamwork-type">
+                    <h4>Advantages for Allies</h4>
+                    <p>Create situational aspects that teammates can invoke</p>
+                    <p><strong>Example:</strong> Sarah creates "Suppressing Fire" that Marcus can invoke for his infiltration attempt</p>
+                </div>
+
+                <div class="teamwork-type">
+                    <h4>Passing Boosts</h4>
+                    <p>Give your success with style boost to an ally</p>
+                    <p><strong>Example:</strong> Elena's research creates a boost that she gives to Maya for her hacking attempt</p>
+                </div>
+
+                <div class="teamwork-type">
+                    <h4>Combined Actions</h4>
+                    <p>Multiple characters contribute to the same task</p>
+                    <p><strong>Example:</strong> Marcus provides muscle while Sarah provides technical expertise to break into a safe</p>
+                </div>
+
+                <div class="teamwork-type">
+                    <h4>Splitting Shifts</h4>
+                    <p>Distribute the results of a successful attack among multiple targets</p>
+                    <p><strong>Example:</strong> A successful Provoke attack embarrasses multiple opponents at once</p>
+                </div>
+            </div>
+
+            <h3>Teamwork Example: The Data Heist</h3>
+            <div class="teamwork-scenario">
+                <h4>Scenario: Stealing Corporate Secrets</h4>
+                <p>The team needs to break into a server room, copy the data, and escape before security arrives.</p>
+
+                <div class="teamwork-round">
+                    <h5>Round 1: Setup</h5>
+                    <p><strong>Elena (Create Advantage with Contacts):</strong> Calls in a favor to get building schematics, creating "Detailed Floor Plans" aspect</p>
+                    <p><strong>Marcus (Create Advantage with Notice):</strong> Studies security patterns, creating "Guard Rotation Timing" aspect</p>
+                    <p><strong>Sarah (Create Advantage with Burglary):</strong> Prepares specialized tools, creating "Professional Equipment" aspect</p>
+                </div>
+
+                <div class="teamwork-round">
+                    <h5>Round 2: Infiltration</h5>
+                    <p><strong>Marcus (Overcome with Stealth):</strong> Sneaks past guards, invoking "Guard Rotation Timing" for +2</p>
+                    <p><strong>Sarah (Overcome with Burglary):</strong> Picks the server room lock, invoking "Professional Equipment" for +2</p>
+                    <p><strong>Elena (Create Advantage with Computers):</strong> Begins downloading data, creating "Data Transfer in Progress"</p>
+                </div>
+
+                <div class="teamwork-round">
+                    <h5>Round 3: Complications</h5>
+                    <p><strong>GM:</strong> Security detects the breach! Guards are converging on your location.</p>
+                    <p><strong>Marcus (Defend with Fight):</strong> Delays the guards in hand-to-hand combat</p>
+                    <p><strong>Sarah (Create Advantage with Deceive):</strong> Triggers false alarms throughout the building, creating "Security Confusion"</p>
+                    <p><strong>Elena (Overcome with Computers):</strong> Completes the download, invoking "Data Transfer in Progress" to finish faster</p>
+                </div>
+
+                <p><strong>Result:</strong> The team's coordinated efforts allow them to succeed despite the complications, with each character's abilities contributing to the overall success.</p>
+            </div>
+        </section>
+
+        <section class="practical-examples">
+            <h2>Putting It All Together: Complete Scene Examples</h2>
+            
+            <h3>Example 1: The Negotiation (Social Conflict)</h3>
+            <div class="scene-example">
+                <h4>Scene Setup</h4>
+                <p>Elena needs to convince the University Board to fund her controversial Atlantis expedition. The Board Chair, Dr. Whitman, is skeptical and has the support of other conservative board members.</p>
+
+                <div class="conflict-setup">
+                    <h5>Participants</h5>
+                    <ul>
+                        <li><strong>Elena:</strong> Mental Stress Track (1)(2)(3), Rapport +3, Academics +3</li>
+                        <li><strong>Dr. Whitman:</strong> Mental Stress Track (1)(2)(3), Intimidate +3, Academics +4</li>
+                    </ul>
+                </div>
+
+                <div class="conflict-exchange">
+                    <h5>Exchange 1</h5>
+                    <p><strong>Elena (Attack with Rapport):</strong> Presents passionate argument about historical significance</p>
+                    <p><strong>Roll:</strong> +3 (Rapport) + 2 (dice) = +5</p>
+                    <p><strong>Dr. Whitman (Defend with Will):</strong> Tries to remain objective</p>
+                    <p><strong>Roll:</strong> +2 (Will) + 0 (dice) = +2</p>
+                    <p><strong>Result:</strong> Elena succeeds by 3, dealing 3 mental stress. Dr. Whitman marks stress box (3)</p>
+                    <p><strong>Narration:</strong> "Elena's passion and expertise clearly impress several board members, putting Dr. Whitman on the defensive"</p>
+                </div>
+
+                <div class="conflict-exchange">
+                    <h5>Exchange 2</h5>
+                    <p><strong>Dr. Whitman (Attack with Provoke):</strong> Attacks Elena's academic credibility</p>
+                    <p><strong>Roll:</strong> +3 (Provoke) + 1 (dice) = +4</p>
+                    <p><strong>Elena (Defend with Will):</strong> Maintains professional composure</p>
+                    <p><strong>Roll:</strong> +2 (Will) + 1 (dice) = +3</p>
+                    <p><strong>Result:</strong> Dr. Whitman succeeds by 1, dealing 1 mental stress. Elena marks stress box (1)</p>
+                    <p><strong>Narration:</strong> "Dr. Whitman brings up Elena's previous 'unsubstantiated claims,' causing some doubt in the room"</p>
+                </div>
+
+                <div class="conflict-exchange">
+                    <h5>Exchange 3</h5>
+                    <p><strong>Elena (Create Advantage with Academics):</strong> Presents hard evidence</p>
+                    <p><strong>Roll:</strong> +3 (Academics) + 2 (dice) = +5 vs. Fair (+2) difficulty</p>
+                    <p><strong>Result:</strong> Success with Style! Creates "Undeniable Evidence" aspect with 2 free invokes</p>
+                    <p><strong>Narration:</strong> "Elena produces the Atlantis fragments and detailed analysis, stunning the room into silence"</p>
+                </div>
+
+                <div class="conflict-exchange">
+                    <h5>Exchange 4</h5>
+                    <p><strong>Elena (Attack with Rapport):</strong> Final persuasive push</p>
+                    <p><strong>Roll:</strong> +3 (Rapport) + 0 (dice) + 4 (two free invokes) = +7</p>
+                    <p><strong>Dr. Whitman (Defend with Will):</strong> Tries to maintain opposition</p>
+                    <p><strong>Roll:</strong> +2 (Will) - 1 (dice) = +1</p>
+                    <p><strong>Result:</strong> Elena succeeds by 6! Dr. Whitman can't absorb this much stress and is taken out</p>
+                    <p><strong>Outcome:</strong> Elena wins! The board approves her expedition funding</p>
+                </div>
+            </div>
+
+            <h3>Example 2: The Warehouse Fight (Physical Conflict)</h3>
+            <div class="scene-example">
+                <h4>Scene Setup</h4>
+                <p>Marcus and Sarah are ambushed by corporate security while investigating a warehouse. They're outnumbered but need to fight their way to the exit.</p>
+
+                <div class="conflict-participants">
+                    <h5>Participants</h5>
+                    <ul>
+                        <li><strong>Marcus:</strong> Physical Stress (1)(2)(3)(4), Fight +4, Athletics +2</li>
+                        <li><strong>Sarah:</strong> Physical Stress (1)(2)(3), Shoot +3, Athletics +2</li>
+                        <li><strong>Security Team (3 guards):</strong> Each has Physical Stress (1)(2), Fight +2, Shoot +2</li>
+                    </ul>
+                </div>
+
+                <div class="combat-round">
+                    <h5>Round 1: Opening Moves</h5>
+                    <p><strong>Sarah (Create Advantage with Shoot):</strong> Suppressing fire to pin down guards</p>
+                    <p><strong>Roll:</strong> +3 (Shoot) + 1 (dice) = +4 vs. Fair (+2)</p>
+                    <p><strong>Result:</strong> Success! Creates "Pinned Down" aspect on the guards</p>
+                    
+                    <p><strong>Marcus (Attack with Fight):</strong> Closes distance and attacks Guard 1</p>
+                    <p><strong>Roll:</strong> +4 (Fight) + 0 (dice) = +4</p>
+                    <p><strong>Guard 1 (Defend with Fight):</strong> +2 (Fight) - 2 (dice) = 0</p>
+                    <p><strong>Result:</strong> Marcus succeeds by 4, dealing 4 physical stress. Guard 1 takes stress (1)(2) and a Mild Consequence "Bloodied Nose"</p>
+                    
+                    <p><strong>Guards 2&3 (Attack with Shoot):</strong> Return fire at Sarah</p>
+                    <p><strong>Guard 2 Roll:</strong> +2 (Shoot) - 1 (dice) - 2 (Pinned Down) = -1</p>
+                    <p><strong>Guard 3 Roll:</strong> +2 (Shoot) + 1 (dice) - 2 (Pinned Down) = +1</p>
+                    <p><strong>Sarah (Defend with Athletics):</strong> +2 (Athletics) + 2 (dice) = +4</p>
+                    <p><strong>Result:</strong> Sarah easily avoids the poorly-aimed shots</p>
+                </div>
+
+                <div class="combat-round">
+                    <h5>Round 2: Escalation</h5>
+                    <p><strong>Marcus (Attack with Fight):</strong> Continues assault on Guard 1</p>
+                    <p><strong>Roll:</strong> +4 (Fight) + 1 (dice) = +5</p>
+                    <p><strong>Guard 1 (Defend):</strong> +2 (Fight) + 0 (dice) = +2</p>
+                    <p><strong>Result:</strong> Succeeds by 3, Guard 1 can't absorb more stress and is taken out</p>
+                    <p><strong>Narration:</strong> "Marcus's combat training shows as he systematically dismantles his opponent"</p>
+                    
+                    <p><strong>Sarah (Attack with Shoot):</strong> Targets Guard 2</p>
+                    <p><strong>Roll:</strong> +3 (Shoot) + 2 (dice) = +5</p>
+                    <p><strong>Guard 2 (Defend with Athletics):</strong> +1 (Athletics) - 1 (dice) = 0</p>
+                    <p><strong>Result:</strong> Succeeds by 5! Guard 2 takes severe damage and is also taken out</p>
+                    
+                    <p><strong>Guard 3 (Concede):</strong> "I surrender! Don't shoot!"</p>
+                    <p><strong>Result:</strong> Guard 3 earns a Fate Point and gets to describe how he surrenders</p>
+                </div>
+
+                <p><strong>Outcome:</strong> Marcus and Sarah win the fight quickly through superior tactics and teamwork. Guard 3's surrender provides an opportunity for interrogation.</p>
+            </div>
+        </section>
+
+        <section class="practice-activities">
+            <h2>Practice Activities</h2>
+            
+            <div class="activity">
+                <h3>Activity 1: Outcome Variation</h3>
+                <p>Take this scenario and describe all four possible outcomes:</p>
+                <p><strong>Scenario:</strong> A hacker trying to break into a corporate server while security is closing in.</p>
+                <ul>
+                    <li>Failure: What goes wrong and how does it complicate the situation?</li>
+                    <li>Success at a Cost: They get in, but what's the price?</li>
+                    <li>Success: Clean accomplishment of the goal</li>
+                    <li>Success with Style: Not only do they succeed, but what extra benefit do they get?</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 2: Challenge Design</h3>
+                <p>Design a challenge for infiltrating a high-security research facility:</p>
+                <ul>
+                    <li>Identify 4-5 different elements that need to be overcome</li>
+                    <li>Assign appropriate skills and difficulties to each element</li>
+                    <li>Determine what happens when characters fail at specific elements</li>
+                    <li>Set the overall victory/failure conditions</li>
+                    <li>Consider how different character types could contribute</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 3: Zone Mapping</h3>
+                <p>Create a zone map for one of these locations:</p>
+                <ul>
+                    <li>A three-story nightclub during a chase scene</li>
+                    <li>A space station under attack</li>
+                    <li>A medieval castle during a siege</li>
+                    <li>A modern office building during a heist</li>
+                </ul>
+                <p>Include zone aspects, movement requirements, and tactical considerations for each area.</p>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 4: Conflict Resolution</h3>
+                <p>Run through a complete physical conflict:</p>
+                <ul>
+                    <li>Two characters with different combat styles</li>
+                    <li>Set up the scene and determine turn order</li>
+                    <li>Play through at least 3 exchanges</li>
+                    <li>Use stress, consequences, and aspects appropriately</li>
+                    <li>End with either a takeout or a concession</li>
+                </ul>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 5: Teamwork Scenario</h3>
+                <p>Design a scene where 3-4 characters must work together:</p>
+                <ul>
+                    <li>Create a situation requiring multiple different skills</li>
+                    <li>Show how characters can create advantages for each other</li>
+                    <li>Demonstrate boost passing and combined actions</li>
+                    <li>Explain how failure by one character affects the team</li>
+                    <li>Show the final collaborative resolution</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="troubleshooting">
+            <h2>Common Action Resolution Problems</h2>
+            
+            <div class="problem-solution">
+                <h3>Problem: "Every Roll Feels the Same"</h3>
+                <p><strong>Symptoms:</strong> Success/failure outcomes are boring and predictable</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Use success at a cost more frequently to create interesting dilemmas</li>
+                    <li>Make failures redirect the story rather than stop it</li>
+                    <li>Ensure success with style provides meaningful extra benefits</li>
+                    <li>Connect outcomes to character aspects and ongoing plot threads</li>
+                </ul>
+            </div>
+
+            <div class="problem-solution">
+                <h3>Problem: "Conflicts Drag On Too Long"</h3>
+                <p><strong>Symptoms:</strong> Physical conflicts take many rounds without resolution</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Encourage concessions when characters are clearly losing</li>
+                    <li>Use environmental hazards and time pressure</li>
+                    <li>Make consequences more severe to end conflicts faster</li>
+                    <li>Consider using challenges or contests instead of conflicts</li>
+                </ul>
+            </div>
+
+            <div class="problem-solution">
+                <h3>Problem: "Players Ignore Teamwork"</h3>
+                <p><strong>Symptoms:</strong> Characters act independently instead of working together</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Design challenges that require multiple skills</li>
+                    <li>Reward cooperation with mechanical benefits</li>
+                    <li>Create situations where individual action leads to failure</li>
+                    <li>Highlight successful teamwork examples</li>
+                </ul>
+            </div>
+
+            <div class="problem-solution">
+                <h3>Problem: "Aspects Don't Matter"</h3>
+                <p><strong>Symptoms:</strong> Players rarely invoke aspects or accept compels</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Set difficulties that require aspect invocation to succeed reliably</li>
+                    <li>Offer more compelling compels tied to current situations</li>
+                    <li>Show how aspects can be used creatively for different actions</li>
+                    <li>Make sure consequences become aspects that affect future scenes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="further-exploration">
+            <h2>Advanced Action Resolution Topics</h2>
+            
+            <ul>
+                <li><strong>Advanced Conflict Mechanics:</strong> Mass conflicts, vehicle combat, and chase scenes</li>
+                <li><strong>Social Conflict Mastery:</strong> Reputation warfare and long-term social campaigns</li>
+                <li><strong>Mental Conflict Techniques:</strong> Psychological horror and mind control scenarios</li>
+                <li><strong>Environmental Storytelling:</strong> Using zones and aspects to create atmospheric scenes</li>
+                <li><strong>Pacing and Tension:</strong> When to use different resolution mechanics for maximum drama</li>
+                <li><strong>Consequence Economy:</strong> Managing long-term injury and trauma in campaigns</li>
+                <li><strong>Custom Conflict Types:</strong> Creating new conflict mechanics for specific genres</li>
+                <li><strong>Resolution Without Dice:</strong> When and how to skip rolling for dramatic effect</li>
+            </ul>
+        </section>
+
+        <section class="conclusion">
+            <h2>Conclusion: The Flow of Dramatic Action</h2>
+            
+            <p>Fate's action resolution system is designed to keep stories moving forward while creating meaningful dramatic moments. Every roll should either advance the plot or complicate it in interesting ways—never simply stop the story dead. The four outcomes ensure that dice results contribute to narrative momentum rather than fighting against it.</p>
+
+            <p>The key insight is that Fate mechanics serve the story, not the other way around. Difficulties should reflect dramatic importance, not just task complexity. Conflicts should create character moments, not just tactical puzzles. Teamwork should feel natural and rewarding because the characters' success depends on their relationships and cooperation.</p>
+
+            <div class="action-principles">
+                <h3>Core Action Resolution Principles</h3>
+                <ul>
+                    <li><strong>Fiction first:</strong> What you can attempt depends on what makes narrative sense</li>
+                    <li><strong>Failure advances:</strong> Failed rolls complicate the story, they don't stop it</li>
+                    <li><strong>Success has style:</strong> Exceptional rolls provide extra benefits</li>
+                    <li><strong>Costs create drama:</strong> Success at a cost generates difficult decisions</li>
+                    <li><strong>Teamwork matters:</strong> Characters are stronger when they work together</li>
+                    <li><strong>Aspects drive outcomes:</strong> Character traits should influence every important roll</li>
+                </ul>
+            </div>
+
+            <div class="next-steps">
+                <h3>Ready for Bigger Pictures?</h3>
+                <p>In our next lecture, we'll explore how to structure entire game sessions and campaigns—how to create compelling scenarios, manage pacing, handle player agency, and build long-term stories that showcase Fate's collaborative strengths. You'll learn to think beyond individual scenes to craft memorable gaming experiences.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Next: <a href="/fate_gm.html">Game Mastering and Campaign Structure</a></p>
+        <p>Remember: Every roll should make the story more interesting, not less!</p>
+    </footer>
+</body>
+</html>
