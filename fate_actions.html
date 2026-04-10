@@ -12,6 +12,12 @@
     </script>
 </head>
 <body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
     <header>
         <h1>Actions, Outcomes, and Conflicts: The Mechanics of Drama</h1>
         <p class="subtitle">From Simple Rolls to Epic Confrontations</p>
@@ -1000,8 +1006,23 @@
     </main>
 
     <footer>
-        <p>Next: <a href="/fate_gm.html">Game Mastering and Campaign Structure</a></p>
+<div class="page-nav">
+    <a class="prev" href="/fate_dice_roller.html">Dice Roller</a>
+    <a class="next" href="/fate_adv_techniques.html">Advanced Techniques</a>
+</div>
         <p>Remember: Every roll should make the story more interesting, not less!</p>
     </footer>
+<script>
+(function(){
+  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+  var b=document.getElementById('theme-toggle');
+  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  b.addEventListener('click',function(){
+    var d=document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
+    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
+  });}
+})();
+</script>
 </body>
 </html>

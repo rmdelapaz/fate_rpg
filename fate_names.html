@@ -301,6 +301,12 @@
     </style>
 </head>
 <body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
     <div class="container">
         <h1>🎲 150 Fate RPG Character Names 🎲</h1>
         
@@ -812,5 +818,24 @@
         canvas.addEventListener('click', spinFateWheel);
         drawFateWheel();
     </script>
+
+    <footer>
+<div class="page-nav">
+    <a class="prev" href="/fate_100.html">100 Characters</a>
+    <a class="next" href="/fate_groups.html">Character Groups</a>
+</div>
+    </footer>
+<script>
+(function(){
+  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+  var b=document.getElementById('theme-toggle');
+  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  b.addEventListener('click',function(){
+    var d=document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
+    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
+  });}
+})();
+</script>
 </body>
 </html>

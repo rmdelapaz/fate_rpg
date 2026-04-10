@@ -12,6 +12,12 @@
     </script>
 </head>
 <body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
     <header>
         <h1>Fate RPG Sample Characters</h1>
         <h2>A Complete Guide with Over 100 Ready-to-Play Characters</h2>
@@ -1238,7 +1244,23 @@
     </main>
 
     <footer>
-        <p>Created for Fate RPG enthusiasts. Remember: Character aspects are fictional and for entertainment purposes only. Always respect copyright and intellectual property when adapting characters for your games.</p>
+<div class="page-nav">
+    <a class="prev" href="/fate_character_examples.html">Character Examples</a>
+    <a class="next" href="/fate_names.html">Character Names</a>
+</div>
+        <p>Created for Fate RPG enthusiasts. Remember: Character aspects are fictional and for entertainment purposes only.</p>
     </footer>
+<script>
+(function(){
+  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+  var b=document.getElementById('theme-toggle');
+  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  b.addEventListener('click',function(){
+    var d=document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
+    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
+  });}
+})();
+</script>
 </body>
 </html>

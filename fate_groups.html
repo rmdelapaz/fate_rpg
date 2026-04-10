@@ -12,6 +12,12 @@
     </script>
 </head>
 <body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
     <header>
         <h1>Fate RPG Character Groups</h1>
         <h2>Mastering Narrative Dynamics and Collaborative Storytelling</h2>
@@ -400,7 +406,11 @@
     </main>
 
     <footer>
-        <p>Remember: In Fate, the most powerful ability is creating a compelling story together. Every aspect is an invitation to collaborative fiction, and every relationship is a promise of dramatic potential.</p>
+<div class="page-nav">
+    <a class="prev" href="/fate_names.html">Character Names</a>
+    <a class="next" href="/fate_dice_roller.html">Dice Roller</a>
+</div>
+        <p>Remember: In Fate, the most powerful ability is creating a compelling story together.</p>
     </footer>
 
     <script>
@@ -786,5 +796,17 @@
             margin-top: 30px;
         }
     </style> -->
+<script>
+(function(){
+  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+  var b=document.getElementById('theme-toggle');
+  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  b.addEventListener('click',function(){
+    var d=document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
+    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
+  });}
+})();
+</script>
 </body>
 </html>

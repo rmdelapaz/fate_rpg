@@ -12,6 +12,12 @@
     </script>
 </head>
 <body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
     <header>
         <h1>Fate Core Fundamentals: Collaborative Storytelling Made Simple</h1>
         <p class="subtitle">Where Fiction Drives Mechanics and Everyone Tells the Story</p>
@@ -32,8 +38,21 @@
                 <li><a href="/fate_adv_techniques.html">Advanced Techniques</a></li>
                 <li><a href="/fate_gm.html">Game Mastery</a></li>
                 <li><a href="/fate_future.html">Future</a></li>
+                <li><a href="/fate_mastery.html">Master Class</a></li>
                 <li><a href="/index.html">Home Page</a></li>
 
             </ul>
+<script>
+(function(){
+  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+  var b=document.getElementById('theme-toggle');
+  b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  b.addEventListener('click',function(){
+    var d=document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
+    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
+  });
+})();
+</script>
 </body>
 </html>

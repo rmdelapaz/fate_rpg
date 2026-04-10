@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Class: Advanced Fate Techniques and Campaign Mastery</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
+    <header>
+        <h1>Master Class: Advanced Fate Techniques and Campaign Mastery</h1>
+        <p><em>The Deep Mechanics and Artistry of Masterful Game Running</em></p>
+    </header>
+
+    <main>
+        <section>
+            <h2>The Philosophy of Advanced Fate</h2>
+            <p>Think of advanced Fate mastery like conducting a jazz orchestra. You know all the individual instruments intimately, you understand how they harmonize, and now you're learning to improvise complex arrangements in real time. The basic techniques become second nature, freeing you to focus on the artistry and emotional resonance of the experience.</p>
+            
+            <p>At this level, you're not just running a game – you're orchestrating a collaborative performance where every participant is simultaneously musician, composer, and audience. The mechanics fade into the background, serving the story so seamlessly that players forget they're playing a game at all.</p>
+
+            <div class="mermaid">
+                graph TB
+                    A[Basic Mastery<br/>Rules & Mechanics] --> B[Intermediate Skill<br/>Scene Management]
+                    B --> C[Advanced Artistry<br/>Emotional Orchestration]
+                    C --> D[Master Level<br/>Invisible Facilitation]
+                    
+                    style A fill:#f9f9f9
+                    style B fill:#e3f2fd
+                    style C fill:#e8f5e8
+                    style D fill:#fff3e0
+            </div>
+        </section>
+
+        <section>
+            <h2>Complex Conflicts: Beyond Simple Contests</h2>
+            <p>Basic Fate conflicts work well for straightforward opposition, but complex situations need more sophisticated tools. Think of the difference between a simple sword fight and the multi-layered climax of a heist movie where teams are simultaneously fighting security, cracking safes, managing getaway routes, and dealing with double-crosses.</p>
+
+            <h3>Fractal Conflicts</h3>
+            <p>Sometimes you need conflicts within conflicts. The main conflict might be "Escape the Corporate Fortress," but within that, you might have sub-conflicts for "Hack the Security System," "Fight the Guards," and "Convince the Inside Man Not to Betray You."</p>
+
+            <canvas id="fractalConflict" width="700" height="400"></canvas>
+            <script>
+                const canvas1 = document.getElementById('fractalConflict');
+                const ctx1 = canvas1.getContext('2d');
+                
+                // Main conflict
+                ctx1.fillStyle = '#f44336';
+                ctx1.fillRect(50, 50, 600, 100);
+                ctx1.fillStyle = 'white';
+                ctx1.font = 'bold 16px Arial';
+                ctx1.textAlign = 'center';
+                ctx1.fillText('MAIN CONFLICT: Escape the Corporate Fortress', 350, 105);
+                
+                // Sub-conflicts
+                const subConflicts = [
+                    {name: 'Hack Security', x: 75, y: 200, width: 150, color: '#2196F3'},
+                    {name: 'Fight Guards', x: 275, y: 200, width: 150, color: '#4CAF50'},
+                    {name: 'Convince Ally', x: 475, y: 200, width: 150, color: '#FF9800'}
+                ];
+                
+                subConflicts.forEach(conflict => {
+                    ctx1.fillStyle = conflict.color;
+                    ctx1.fillRect(conflict.x, conflict.y, conflict.width, 80);
+                    
+                    ctx1.fillStyle = 'white';
+                    ctx1.font = 'bold 12px Arial';
+                    ctx1.textAlign = 'center';
+                    ctx1.fillText(conflict.name, conflict.x + conflict.width/2, conflict.y + 45);
+                    
+                    // Draw connection to main conflict
+                    ctx1.strokeStyle = '#333';
+                    ctx1.lineWidth = 2;
+                    ctx1.beginPath();
+                    ctx1.moveTo(conflict.x + conflict.width/2, conflict.y);
+                    ctx1.lineTo(conflict.x + conflict.width/2, 150);
+                    ctx1.stroke();
+                });
+                
+                // Micro-conflicts
+                const microConflicts = [
+                    {name: 'Bypass Firewall', x: 85, y: 320, width: 130, parent: 0},
+                    {name: 'Disarm Opponent', x: 285, y: 320, width: 130, parent: 1},
+                    {name: 'Appeal to Family', x: 485, y: 320, width: 130, parent: 2}
+                ];
+                
+                microConflicts.forEach((micro, i) => {
+                    ctx1.fillStyle = '#9E9E9E';
+                    ctx1.fillRect(micro.x, micro.y, micro.width, 50);
+                    
+                    ctx1.fillStyle = 'white';
+                    ctx1.font = '10px Arial';
+                    ctx1.textAlign = 'center';
+                    ctx1.fillText(micro.name, micro.x + micro.width/2, micro.y + 30);
+                    
+                    // Connection to parent
+                    const parent = subConflicts[micro.parent];
+                    ctx1.strokeStyle = '#666';
+                    ctx1.lineWidth = 1;
+                    ctx1.beginPath();
+                    ctx1.moveTo(micro.x + micro.width/2, micro.y);
+                    ctx1.lineTo(parent.x + parent.width/2, parent.y + 80);
+                    ctx1.stroke();
+                });
+            </script>
+
+            <h3>Parallel Action Management</h3>
+            <p>When the team splits up to handle different aspects of a complex plan, you need to manage multiple simultaneous scenes. Think of it like cutting between different perspectives in an action movie.</p>
+
+            <div style="background-color: #e8f5e8; border: 2px solid #4CAF50; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h4>Parallel Action Technique: The Round Robin</h4>
+                <ol>
+                    <li><strong>Set the Clock:</strong> Establish how much time each team has</li>
+                    <li><strong>Quick Cuts:</strong> Spend 2-3 minutes with each group before cutting away</li>
+                    <li><strong>Cliffhanger Cuts:</strong> Always cut at a moment of tension or decision</li>
+                    <li><strong>Cross-Pollination:</strong> Let actions in one scene affect others</li>
+                    <li><strong>Convergence:</strong> Bring everyone back together for the climax</li>
+                </ol>
+                
+                <p><strong>Example:</strong> Team A is fighting their way through security while Team B races to crack the vault before the alarm brings reinforcements that will make Team A's job impossible.</p>
+            </div>
+
+            <h3>Social Conflicts as Warfare</h3>
+            <p>Treat complex social situations like military campaigns. Each participant has resources (reputation, allies, secrets), territory they're defending (public image, relationships), and strategic objectives that may not be immediately obvious.</p>
+
+            <div class="mermaid">
+                graph TB
+                    subgraph "Social Battlefield"
+                        A[CEO Martinez<br/>High Ground: Board Support] --> B[CFO Chen<br/>Territory: Financial Records]
+                        B --> C[Whistleblower Davis<br/>Weapon: Insider Knowledge]
+                        C --> D[Reporter Kim<br/>Objective: The Story]
+                        D --> E[Players<br/>Wild Cards]
+                        E --> A
+                    end
+                    
+                    F[Public Opinion] -.-> A
+                    F -.-> B
+                    F -.-> C
+                    F -.-> D
+                    F -.-> E
+                    
+                    style F fill:#f44336,color:#fff
+            </div>
+        </section>
+
+        <section>
+            <h2>Stress and Consequences: The Art of Meaningful Damage</h2>
+            <p>Novice GMs often treat stress and consequences like hit points – mechanical tracking of damage. Master-level Fate treats them as storytelling opportunities. Every point of stress taken should advance character development, and every consequence should create new story possibilities.</p>
+
+            <h3>Consequence Cascades</h3>
+            <p>The best consequences don't just affect the character who took them – they ripple outward, creating complications for the entire group and opening new narrative doors.</p>
+
+            <div style="border-left: 4px solid #f44336; padding-left: 20px; margin: 20px 0; background-color: #fff5f5;">
+                <strong>Example Consequence Cascade:</strong><br>
+                <strong>Initial:</strong> Marcus takes "Shot in the Shoulder" during a rooftop chase<br>
+                <strong>Immediate:</strong> He can't drive, forcing Sarah to take the wheel despite her "Terrible Driver" aspect<br>
+                <strong>Short-term:</strong> The shoulder wound gets infected because they can't risk going to a hospital<br>
+                <strong>Long-term:</strong> His police contact notices he's favoring one arm and starts asking uncomfortable questions
+            </div>
+
+            <h3>Stress Tracks as Emotional Meters</h3>
+            <p>Physical stress is straightforward, but mental stress opens up fascinating possibilities. Use it to track not just fear or exhaustion, but determination, hope, sanity, or social standing.</p>
+
+            <canvas id="stressTracks" width="600" height="350"></canvas>
+            <script>
+                const canvas2 = document.getElementById('stressTracks');
+                const ctx2 = canvas2.getContext('2d');
+                
+                const tracks = [
+                    {name: 'Physical', boxes: 4, filled: 2, color: '#f44336', y: 50},
+                    {name: 'Mental', boxes: 3, filled: 1, color: '#2196F3', y: 110},
+                    {name: 'Social', boxes: 3, filled: 3, color: '#4CAF50', y: 170},
+                    {name: 'Resources', boxes: 4, filled: 1, color: '#FF9800', y: 230},
+                    {name: 'Reputation', boxes: 2, filled: 0, color: '#9C27B0', y: 290}
+                ];
+                
+                tracks.forEach(track => {
+                    // Track label
+                    ctx2.fillStyle = '#333';
+                    ctx2.font = 'bold 14px Arial';
+                    ctx2.textAlign = 'left';
+                    ctx2.fillText(track.name, 50, track.y + 20);
+                    
+                    // Stress boxes
+                    for (let i = 0; i < track.boxes; i++) {
+                        const x = 200 + (i * 60);
+                        
+                        // Box outline
+                        ctx2.strokeStyle = track.color;
+                        ctx2.lineWidth = 2;
+                        ctx2.strokeRect(x, track.y, 50, 30);
+                        
+                        // Box number
+                        ctx2.fillStyle = track.color;
+                        ctx2.font = 'bold 12px Arial';
+                        ctx2.textAlign = 'center';
+                        ctx2.fillText((i + 1).toString(), x + 25, track.y + 20);
+                        
+                        // Fill if stressed
+                        if (i < track.filled) {
+                            ctx2.fillStyle = track.color + '40';
+                            ctx2.fillRect(x + 2, track.y + 2, 46, 26);
+                        }
+                    }
+                });
+                
+                // Title
+                ctx2.fillStyle = '#333';
+                ctx2.font = 'bold 16px Arial';
+                ctx2.textAlign = 'center';
+                ctx2.fillText('Custom Stress Tracks', 300, 30);
+            </script>
+
+            <h3>Voluntary Consequences</h3>
+            <p>Encourage players to take consequences voluntarily to succeed at crucial moments. This creates dramatic moments where characters push themselves beyond their limits for something they truly care about.</p>
+
+            <div style="background-color: #e3f2fd; border: 2px solid #2196F3; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>Voluntary Consequence Example:</strong><br>
+                Player: "I know this roll failed, but Sarah would never let her daughter down. I'll take a moderate consequence to succeed anyway."<br>
+                GM: "Okay, you push through your exhaustion and solve the encryption, but you're 'Running on Fumes' – you'll crash hard when this is over."
+            </div>
+        </section>
+
+        <section>
+            <h2>Custom Stunts and Extras: Expanding the Toolkit</h2>
+            <p>Standard stunts are just the beginning. Master-level Fate involves creating custom mechanics that support your specific story and genre. Think of stunts like custom instruments in your orchestra – each one should serve a specific narrative purpose.</p>
+
+            <h3>Stunt Design Philosophy</h3>
+            <p>Great stunts don't just provide mechanical bonuses – they enable story moments that wouldn't otherwise be possible. They should make players excited to use them and create interesting fictional positioning.</p>
+
+            <div class="mermaid">
+                graph TD
+                    A[Stunt Concept] --> B{Does it enable<br/>cool story moments?}
+                    B -->|Yes| C{Is it balanced<br/>with other options?}
+                    B -->|No| D[Revise or Scrap]
+                    C -->|Yes| E{Does it fit<br/>the character?}
+                    C -->|No| F[Adjust Power Level]
+                    E -->|Yes| G[Perfect Stunt!]
+                    E -->|No| H[Refine Flavor]
+                    
+                    D --> A
+                    F --> C
+                    H --> E
+                    
+                    style G fill:#4CAF50,color:#fff
+                    style D fill:#f44336,color:#fff
+                    style F fill:#FF9800
+                    style H fill:#FF9800
+            </div>
+
+            <h3>Stunt Categories for Advanced Play</h3>
+            
+            <h4>Narrative Permission Stunts</h4>
+            <p>These stunts allow characters to do things that would normally be impossible or require explanation.</p>
+            <div style="border-left: 4px solid #4CAF50; padding-left: 20px; margin: 20px 0; background-color: #f1f8e9;">
+                <strong>"Corporate Ghost":</strong> You have contacts and false identities throughout the mega-corporations. You can appear in any corporate environment without question and access basic employee areas.
+            </div>
+
+            <h4>Conditional Powerhouse Stunts</h4>
+            <p>Massive bonuses that only apply in very specific circumstances.</p>
+            <div style="border-left: 4px solid #2196F3; padding-left: 20px; margin: 20px 0; background-color: #f0f8ff;">
+                <strong>"Nowhere to Run":</strong> When you're cornered with no escape route, gain +4 to Fight instead of +2.
+            </div>
+
+            <h4>Consequence Mitigation Stunts</h4>
+            <p>These help characters deal with specific types of problems that fit their concept.</p>
+            <div style="border-left: 4px solid #FF9800; padding-left: 20px; margin: 20px 0; background-color: #fff8e1;">
+                <strong>"Mind Like a Steel Trap":</strong> You can use Will instead of Physique to resist consequences from torture, interrogation, or mental manipulation.
+            </div>
+
+            <h3>Extras: Genre-Specific Mechanics</h3>
+            <p>Extras are custom subsystems that add depth to specific elements of your campaign. They're like adding new sections to your orchestra for specific pieces.</p>
+
+            <div style="background-color: #f3e5f5; border: 2px solid #9C27B0; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h4>Example Extra: Cybernetic Implants</h4>
+                <p><strong>Concept:</strong> High-tech body modifications with benefits and drawbacks</p>
+                <p><strong>Permissions:</strong> Must have "Augmented" aspect and pay significant resources</p>
+                <p><strong>Costs:</strong> Each implant adds a mild consequence slot that can only be used for implant-related problems</p>
+                <p><strong>Benefits:</strong> Custom stunts that provide superhuman abilities</p>
+                <p><strong>Complications:</strong> Can be hacked, create dependencies, may malfunction at dramatic moments</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Genre Adaptation: Making Fate Sing in Any Setting</h2>
+            <p>Fate's flexibility is both its greatest strength and its biggest challenge. Like a master chef adapting a recipe for different cuisines, you need to understand which elements to emphasize, which to downplay, and which to add to capture the essence of your chosen genre.</p>
+
+            <h3>Genre Modification Matrix</h3>
+            <canvas id="genreMatrix" width="700" height="500"></canvas>
+            <script>
+                const canvas3 = document.getElementById('genreMatrix');
+                const ctx3 = canvas3.getContext('2d');
+                
+                // Axes
+                ctx3.strokeStyle = '#333';
+                ctx3.lineWidth = 2;
+                ctx3.beginPath();
+                ctx3.moveTo(100, 450);
+                ctx3.lineTo(650, 450); // X-axis
+                ctx3.moveTo(100, 450);
+                ctx3.lineTo(100, 50); // Y-axis
+                ctx3.stroke();
+                
+                // Axis labels
+                ctx3.fillStyle = '#333';
+                ctx3.font = '14px Arial';
+                ctx3.textAlign = 'center';
+                ctx3.fillText('Character Power Level', 375, 480);
+                
+                ctx3.save();
+                ctx3.translate(30, 250);
+                ctx3.rotate(-Math.PI/2);
+                ctx3.fillText('Consequence Severity', 0, 0);
+                ctx3.restore();
+                
+                // Grid lines
+                ctx3.strokeStyle = '#ddd';
+                ctx3.lineWidth = 1;
+                for (let i = 1; i < 5; i++) {
+                    const x = 100 + (i * 137.5);
+                    const y = 50 + (i * 100);
+                    
+                    ctx3.beginPath();
+                    ctx3.moveTo(x, 50);
+                    ctx3.lineTo(x, 450);
+                    ctx3.stroke();
+                    
+                    ctx3.beginPath();
+                    ctx3.moveTo(100, y);
+                    ctx3.lineTo(650, y);
+                    ctx3.stroke();
+                }
+                
+                // Genre points
+                const genres = [
+                    {name: 'Cosmic Horror', x: 200, y: 150, color: '#4A148C'},
+                    {name: 'Superhero', x: 550, y: 350, color: '#f44336'},
+                    {name: 'Noir Detective', x: 300, y: 250, color: '#424242'},
+                    {name: 'High Fantasy', x: 450, y: 200, color: '#4CAF50'},
+                    {name: 'Military Thriller', x: 350, y: 300, color: '#795548'},
+                    {name: 'Romantic Comedy', x: 250, y: 400, color: '#E91E63'},
+                    {name: 'Cyberpunk', x: 400, y: 180, color: '#00BCD4'},
+                    {name: 'Space Opera', x: 500, y: 250, color: '#FF5722'}
+                ];
+                
+                genres.forEach(genre => {
+                    ctx3.fillStyle = genre.color;
+                    ctx3.beginPath();
+                    ctx3.arc(genre.x, genre.y, 8, 0, 2 * Math.PI);
+                    ctx3.fill();
+                    
+                    ctx3.fillStyle = '#333';
+                    ctx3.font = '10px Arial';
+                    ctx3.textAlign = 'center';
+                    ctx3.fillText(genre.name, genre.x, genre.y - 15);
+                });
+                
+                // Quadrant labels
+                ctx3.font = 'bold 12px Arial';
+                ctx3.fillStyle = '#666';
+                ctx3.fillText('Gritty & Grounded', 200, 70);
+                ctx3.fillText('Epic & Dangerous', 550, 70);
+                ctx3.fillText('Light & Forgiving', 200, 420);
+                ctx3.fillText('Heroic & Cinematic', 550, 420);
+            </script>
+
+            <h3>Horror: Emphasizing Helplessness</h3>
+            <p>In horror games, modify Fate to create feelings of mounting dread and inevitable doom:</p>
+            <ul>
+                <li><strong>Doom Track:</strong> A campaign-wide stress track that fills as characters make mistakes or encounter horrors</li>
+                <li><strong>Sanity Consequences:</strong> Mental consequences that change character aspects permanently</li>
+                <li><strong>Limited Resources:</strong> Fewer refresh, stricter compels, consequences that don't heal easily</li>
+                <li><strong>Unknown Opposition:</strong> Players often don't know what they're rolling against</li>
+            </ul>
+
+            <h3>Superhero: Scaling Up Drama</h3>
+            <p>For superhero games, everything needs to feel larger than life:</p>
+            <ul>
+                <li><strong>Mega-Stunts:</strong> Powerful abilities that cost multiple refresh points</li>
+                <li><strong>Collateral Damage:</strong> A stress track for how much destruction the heroes cause</li>
+                <li><strong>Heroic Resolve:</strong> Extra mental stress boxes for staying true to heroic ideals</li>
+                <li><strong>Villain Monologues:</strong> Formal mechanics for dramatic reveals and threats</li>
+            </ul>
+
+            <h3>Comedy: Failure as Entertainment</h3>
+            <p>Comedy games need special mechanics to ensure failure is funny rather than frustrating:</p>
+            <ul>
+                <li><strong>Banana Peel Aspect:</strong> Failed rolls create situational aspects that can be invoked for humor</li>
+                <li><strong>Comedic Timing:</strong> Players can spend fate points to make entrances at the worst possible moment</li>
+                <li><strong>Misunderstanding Cascade:</strong> Social conflicts often result in hilarious confusion rather than animosity</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Long-Term Campaign Management</h2>
+            <p>Managing a long-term Fate campaign is like tending a garden over multiple seasons. You need to plan for growth, prepare for changes, and know when to prune old elements to make room for new ones.</p>
+
+            <h3>The Campaign Arc Structure</h3>
+            <div class="mermaid">
+                graph LR
+                    A[Setup Arc<br/>Sessions 1-4] --> B[Development Arc<br/>Sessions 5-12]
+                    B --> C[Crisis Arc<br/>Sessions 13-16]
+                    C --> D[Resolution Arc<br/>Sessions 17-20]
+                    D --> E[New Setup Arc<br/>Sessions 21-24]
+                    
+                    A1[Establish World<br/>Introduce Issues<br/>Character Bonding] -.-> A
+                    B1[Personal Plots<br/>Relationship Drama<br/>Skill Building] -.-> B
+                    C1[Major Conflicts<br/>High Stakes<br/>Consequences] -.-> C
+                    D1[Climax Battles<br/>Character Growth<br/>New Equilibrium] -.-> D
+                    E1[Evolved Characters<br/>New Challenges<br/>Fresh Perspective] -.-> E
+            </div>
+
+            <h3>Character Evolution Over Time</h3>
+            <p>In long campaigns, characters should grow and change. Their aspects should evolve to reflect their experiences, relationships should deepen or fracture, and their goals should become more complex.</p>
+
+            <div style="background-color: #fff3e0; border: 2px solid #FF9800; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h4>Character Growth Milestones:</h4>
+                <ul>
+                    <li><strong>Minor Milestone (Every 2-3 Sessions):</strong> Adjust skills, change stunts, begin aspect evolution</li>
+                    <li><strong>Significant Milestone (Every 6-8 Sessions):</strong> Raise skills, change aspects, gain new stunts</li>
+                    <li><strong>Major Milestone (Every 12-16 Sessions):</strong> Significant power increase, complete character reinvention if desired</li>
+                    <li><strong>Legendary Milestone (Campaign End):</strong> Characters become part of the world's legend</li>
+                </ul>
+            </div>
+
+            <h3>Managing Campaign Fatigue</h3>
+            <p>Even the best campaigns can feel stale after many sessions. Recognize the warning signs and have techniques ready to refresh the experience:</p>
+
+            <ul>
+                <li><strong>Perspective Shift:</strong> Let players run NPCs for a session while you play a character</li>
+                <li><strong>Genre Shift:</strong> Take a break with a few sessions in a completely different style</li>
+                <li><strong>Time Jump:</strong> Skip forward months or years and see how things have changed</li>
+                <li><strong>Flashback Sessions:</strong> Explore the characters' past to inform their present</li>
+                <li><strong>Crossover Events:</strong> Bring in characters from other campaigns or stories</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Practice Exercises: Master-Level Challenges</h2>
+            
+            <div style="background-color: #e8f5e8; border: 2px solid #4CAF50; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h3>Exercise One: Complex Conflict Design</h3>
+                <p>Design a three-layer conflict for this scenario: "The characters must stop a terrorist attack at a peace summit while dealing with a traitor in their own organization"</p>
+                
+                <ul>
+                    <li><strong>Layer 1:</strong> Physical conflict (stopping the attack)</li>
+                    <li><strong>Layer 2:</strong> Social conflict (managing the summit politics)</li>
+                    <li><strong>Layer 3:</strong> Emotional conflict (dealing with betrayal)</li>
+                </ul>
+                
+                <p><strong>Advanced Challenge:</strong> How do actions in one layer affect the others? What happens if players focus on one layer while ignoring another?</p>
+            </div>
+
+            <div style="background-color: #e3f2fd; border: 2px solid #2196F3; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h3>Exercise Two: Custom Stunt Creation</h3>
+                <p>Create three stunts for a character concept: "Reformed corporate assassin turned bodyguard"</p>
+                
+                <ul>
+                    <li><strong>Narrative Permission Stunt:</strong> What can they do that others can't?</li>
+                    <li><strong>Situational Powerhouse Stunt:</strong> When are they exceptionally dangerous?</li>
+                    <li><strong>Consequence Mitigation Stunt:</strong> What type of harm can they better handle?</li>
+                </ul>
+                
+                <p><strong>Balance Check:</strong> Would you be excited to use these stunts? Do they create interesting story moments?</p>
+            </div>
+
+            <div style="background-color: #fff3e0; border: 2px solid #FF9800; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h3>Exercise Three: Genre Modification</h3>
+                <p>Adapt Fate for a "Magical School" genre (think Harry Potter or The Magicians)</p>
+                
+                <ul>
+                    <li><strong>What stress tracks make sense?</strong> (Academic pressure? Social standing? Magical exhaustion?)</li>
+                    <li><strong>What extras would you add?</strong> (Spellcasting systems? Familiar bonds? House rivalries?)</li>
+                    <li><strong>How would consequences work?</strong> (Failed spells? Academic probation? Magical mishaps?)</li>
+                    <li><strong>What aspects capture the genre?</strong> (School house loyalty? Magical specialty? Family legacy?)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Troubleshooting Advanced Problems</h2>
+            
+            <h3>The Optimized Player</h3>
+            <p><strong>Problem:</strong> One player has mastered the system and consistently outshines others.</p>
+            <p><strong>Solutions:</strong> Give them leadership roles in planning, create challenges that require multiple characters to succeed, make their competence a story element that creates new problems.</p>
+
+            <h3>The Spotlight Hog</h3>
+            <p><strong>Problem:</strong> One player dominates every scene and pushes others into background roles.</p>
+            <p><strong>Solutions:</strong> Create scenes where other characters are the obvious protagonists, use compels to create consequences for dominating behavior, have honest conversations about shared spotlight.</p>
+
+            <h3>The Analysis Paralysis Group</h3>
+            <p><strong>Problem:</strong> Players spend too much time planning and not enough time acting.</p>
+            <p><strong>Solutions:</strong> Introduce time pressure, use countdown timers, make inaction itself a choice with consequences, reward bold action over perfect planning.</p>
+
+            <h3>The Consequence Avoiders</h3>
+            <p><strong>Problem:</strong> Players use every trick to avoid taking meaningful consequences.</p>
+            <p><strong>Solutions:</strong> Make consequences more interesting than painful, show how consequences create new story opportunities, model consequence acceptance through NPCs.</p>
+        </section>
+
+        <section>
+            <h2>The Master's Mindset</h2>
+            <p>At the master level, your focus shifts from mechanical execution to emotional orchestration. You're not just running a game – you're facilitating a shared creative experience that leaves everyone feeling like they've participated in something special.</p>
+
+            <h3>The Invisible Hand</h3>
+            <p>Master-level GMing often means guiding the experience so subtly that players don't realize you're doing it. Like a great film editor, your best work is seamless and unnoticed.</p>
+
+            <h3>The Collaborative Author</h3>
+            <p>You're not the sole creator of the story – you're the facilitator who helps everyone else create together. Your job is to provide structure, pacing, and dramatic tension while the players provide creativity, surprise, and emotional investment.</p>
+
+            <h3>The Emotional Curator</h3>
+            <p>You're managing not just mechanics and fiction, but the emotional journey of everyone at the table. You need to sense when players need triumph, when they need challenge, when they need humor, and when they need pathos.</p>
+
+            <div style="border-left: 4px solid #673AB7; padding-left: 20px; margin: 20px 0; background-color: #f3e5f5;">
+                <strong>Master's Reflection:</strong> After each session, ask yourself: "What did each player feel during this session? What emotions did we explore together? How did the experience change us?" These questions matter more than mechanical perfection.
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Invisible Mastery:</strong> The best GMing feels effortless to players while requiring deep skill</li>
+                <li><strong>Emotional Orchestra:</strong> You're conducting feelings as much as events</li>
+                <li><strong>Complex Conflicts:</strong> Layer multiple types of opposition for rich dramatic tension</li>
+                <li><strong>Meaningful Consequences:</strong> Every point of stress and every consequence should advance the story</li>
+                <li><strong>Genre Fluency:</strong> Modify Fate's emphasis to capture any genre's essence</li>
+                <li><strong>Long-Term Vision:</strong> Think in character arcs and campaign seasons, not just individual sessions</li>
+                <li><strong>Collaborative Creation:</strong> Your role is to facilitate everyone's creativity, not showcase your own</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Journey Continues</h2>
+            <p>Mastering Fate isn't a destination – it's an ongoing journey of discovery. Every session teaches you something new about storytelling, group dynamics, and human nature. The techniques in this series are your foundation, but the real mastery comes from years of practice, experimentation, and reflection.</p>
+            
+            <p>Remember that even master musicians continue to practice scales. Even legendary directors study other films. Even the best GMs learn something new from every session. Stay curious, stay humble, and never stop experimenting with new ways to create amazing stories together.</p>
+
+            <p>The greatest Fate games happen when everyone at the table – including you – is surprised by what emerges from your collaborative creativity. When you can create that magic consistently, you've truly mastered the art of Fate.</p>
+        </section>
+    </main>
+
+    <footer>
+<div class="page-nav">
+    <a class="prev" href="/fate_future.html">Future</a>
+    <a class="next" href="/index.html">Home</a>
+</div>
+        <p><em>Remember: Master-level GMing isn't about perfect execution – it's about creating spaces where amazing stories can emerge naturally from the collaboration of everyone at the table.</em></p>
+    </footer>
+<script>
+(function(){
+  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
+  var b=document.getElementById('theme-toggle');
+  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  b.addEventListener('click',function(){
+    var d=document.documentElement;
+    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
+    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
+  });}
+})();
+</script>
+</body>
+</html>

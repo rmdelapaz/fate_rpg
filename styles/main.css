@@ -367,12 +367,98 @@ svg {
 table {
   margin-left: auto;
   margin-right: auto;
-  border-collapse: collapse; /* Optional: removes double borders */
+  border-collapse: collapse;
 }
 
-/* For responsive tables that might need a container */
 .table-container {
   display: flex;
   justify-content: center;
   width: 100%;
 }
+
+/* ===== Site Nav ===== */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgb(59, 130, 246);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+.site-nav a:hover { text-decoration: underline; }
+#theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #fff;
+  line-height: 1;
+}
+#theme-toggle:hover { border-color: #fff; }
+
+/* ===== Prev / Next Nav ===== */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin: 1rem 45px;
+  border-top: 2px solid rgb(226, 232, 240);
+}
+.page-nav a {
+  font-weight: bold;
+}
+.page-nav .prev::before { content: "\2190  "; }
+.page-nav .next::after  { content: "  \2192"; }
+
+/* ===== Dark Mode ===== */
+[data-theme="dark"] body {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+  background-color: #1e3a5f;
+  color: #e0e0e0;
+}
+[data-theme="dark"] strong { color: #f0f0f0; }
+[data-theme="dark"] a { color: #60a5fa; }
+[data-theme="dark"] h3 a { color: #e0e0e0; }
+[data-theme="dark"] .site-nav { background: #1e3a5f; }
+[data-theme="dark"] .site-nav a { color: #e0e0e0; }
+[data-theme="dark"] code, [data-theme="dark"] pre {
+  background-color: #16213e;
+  color: #6ee7b7;
+}
+[data-theme="dark"] table, [data-theme="dark"] td,
+[data-theme="dark"] tr, [data-theme="dark"] th {
+  border-color: #4a5568;
+  color: #e0e0e0;
+}
+[data-theme="dark"] blockquote {
+  background-color: #16213e;
+  color: #cbd5e1;
+}
+[data-theme="dark"] .mermaid_container,
+[data-theme="dark"] .mermaid-diagram,
+[data-theme="dark"] .mermaid {
+  background-color: #16213e;
+  border-color: #4a5568;
+}
+[data-theme="dark"] .page-nav {
+  border-top-color: #4a5568;
+}
+[data-theme="dark"] img { background-color: #2a2a3e; }
