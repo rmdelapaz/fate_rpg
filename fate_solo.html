@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Fate Solo: Be Your Own GM</title>
+    <meta name="description" content="How to play Fate Core alone: a Fate-dice oracle with exact odds, scene checks, running opposition, self-compels and the fate point economy, with an interactive solo oracle.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=6"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=4">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <style>
+        /* Solo oracle tool: themed via the tokens in /styles/main.css */
+        .oracle-tool { border-top: 4px solid var(--accent); }
+        .oracle-tool h3 { margin-top: 0; }
+        .tool-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; margin: 10px 0; }
+        .tool-row label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; color: var(--heading); font-size: 0.95rem; }
+        .tool-row input[type="text"] { width: min(100%, 460px); }
+        .tool-row .grow { flex: 1 1 260px; }
+        .tool-row .grow input { width: 100%; }
+        .tool-row button { margin: 0; }
+        .oracle-result {
+            margin: 12px 0; padding: 14px 16px; border-radius: 12px; min-height: 92px;
+            background: var(--surface-2); border: 2px solid var(--border-strong);
+            display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-items: center;
+        }
+        .oracle-result .faces { display: flex; gap: 6px; grid-row: span 2; }
+        .oracle-result .face {
+            width: 38px; height: 38px; border-radius: 8px; display: grid; place-items: center;
+            font: 700 1.3rem/1 "Source Sans 3", sans-serif; background: #e7eceb; color: #1b2a33; border: 2px solid #b5c4bf;
+        }
+        .oracle-result .face.plus { background: #1f7a3d; color: #fff; border-color: #165c2d; }
+        .oracle-result .face.minus { background: #b42318; color: #fff; border-color: #8a1b12; }
+        .oracle-result .answer { font-family: "Cinzel", Georgia, serif; font-weight: 700; font-size: 1.35rem; color: var(--heading); }
+        .oracle-result .detail { color: var(--muted); font-size: 0.95rem; }
+        .oracle-result.yes { border-color: var(--success); }
+        .oracle-result.no { border-color: var(--danger); }
+        .oracle-result.mixed { border-color: var(--gold); }
+        .oracle-result .spark { grid-column: 1 / -1; color: var(--text); }
+        @media (max-width: 520px) { .oracle-result { grid-template-columns: 1fr; } .oracle-result .faces { grid-row: auto; } }
+        .oracle-log { list-style: none; padding: 0; margin: 10px 0 0; max-height: 260px; overflow-y: auto; }
+        .oracle-log li { padding: 6px 10px; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        .oracle-log li:last-child { border-bottom: 0; }
+        .odds td, .odds th { text-align: center; }
+        .odds td:first-child, .odds th:first-child { text-align: left; }
+    </style>
+</head>
+<body>
+<nav class="site-nav">
+    <a href="https://rays-home.netlify.app/">Ray's House of Fun</a>
+    <a href="/index.html">Home</a>
+    <a href="https://rays-home.netlify.app/contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+</nav>
+    <header>
+        <h1>Playing Fate Solo: Be Your Own GM</h1>
+        <p class="subtitle">Oracles, scene checks and self-compels with nothing but Fate dice</p>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h2>Why Fate Works Alone</h2>
+            <p>Fate Core is written for a group with a GM, and it has no official solo rules. Yet it is one of the friendliest systems to play by yourself. Aspects are ready-made story prompts, the four outcomes already include "success at a cost," and fate points reward you for making trouble for your own character. All a solo player really needs to add is something to answer the questions a GM would normally answer. That something is an <strong>oracle</strong>.</p>
+
+            <div class="analogy-box">
+                <h3>The Writers' Room of One</h3>
+                <p>Earlier parts compared a Fate table to a television writers' room. Playing solo, you're the whole room: player, showrunner and the voice that says "what if it goes wrong?" The oracle is that last voice. You ask it the questions you can't fairly answer yourself, and it keeps the story surprising.</p>
+            </div>
+
+            <div class="objectives">
+                <h3>What You'll Learn</h3>
+                <ul>
+                    <li>How to ask yes/no questions with a Fate-dice oracle, and the exact odds behind it</li>
+                    <li>How to start scenes that don't always go to plan</li>
+                    <li>How to run opposition, NPCs and conflicts fairly when you're also the GM</li>
+                    <li>How the fate point economy and compels work with one player</li>
+                    <li>A step-by-step routine for your first solo session</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="solo-kit">
+            <h2>Your Solo Kit</h2>
+            <p>You don't need anything Fate doesn't already use:</p>
+            <ul>
+                <li><strong>Four Fate dice</strong> (or the <a href="/fate_dice_roller.html">dice roller</a>). They run both your actions and the oracle.</li>
+                <li><strong>One character.</strong> Build them with <a href="/fate_char.html">character creation</a>. Fate Accelerated or Fate Condensed are good lighter options if you want less bookkeeping.</li>
+                <li><strong>Index cards or a notes file</strong> for situation aspects, NPCs and open questions.</li>
+                <li><strong>A journal.</strong> Writing the story down is half the fun of solo play, and it's how you remember threads between sessions.</li>
+            </ul>
+            <div class="tip">
+                <p>💡 <strong>Tip:</strong> Dedicated GM emulators such as <em>Mythic Game Master Emulator</em> (Word Mill Games) work well with Fate too. This part sticks to an oracle built from Fate's own dice, so you can start without buying anything. For solo play in general, see Ray's <a href="https://rays-solorpg.netlify.app/" target="_blank" rel="noopener noreferrer">Solo RPG Mastery guide</a>.</p>
+            </div>
+        </section>
+
+        <section class="fate-oracle">
+            <h2>The Fate Dice Oracle</h2>
+            <p>The oracle borrows Fate's own outcome ladder. Ask a yes/no question you genuinely don't know the answer to, decide how likely "yes" is, and roll 4dF against the matching difficulty. Read the result the way you'd read any Fate roll:</p>
+
+            <div class="oracle-outcomes">
+                <ul>
+                    <li><strong>Beat it by 3 or more</strong> (succeed with style) → <strong>Yes, and…</strong> Yes, plus something extra in your favor.</li>
+                    <li><strong>Beat it by 1–2</strong> (succeed) → <strong>Yes.</strong></li>
+                    <li><strong>Tie</strong> → <strong>Yes, but…</strong> Yes, with a complication or cost.</li>
+                    <li><strong>Miss by 1–2</strong> (fail) → <strong>No.</strong></li>
+                    <li><strong>Miss by 3 or more</strong> → <strong>No, and…</strong> No, and things get worse.</li>
+                </ul>
+            </div>
+
+            <h3>Setting the Odds</h3>
+            <p>Pick the difficulty from how likely the answer seems in the fiction. These are the exact odds with four Fate dice (rounded, so rows may not add to exactly 100%):</p>
+            <table class="odds">
+                <thead>
+                    <tr><th>Likelihood</th><th>Difficulty</th><th>No, and…</th><th>No</th><th>Yes, but…</th><th>Yes</th><th>Yes, and…</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Very likely</td><td>−2</td><td>0%</td><td>6%</td><td>12%</td><td>43%</td><td>38%</td></tr>
+                    <tr><td>Likely</td><td>−1</td><td>1%</td><td>17%</td><td>20%</td><td>43%</td><td>19%</td></tr>
+                    <tr><td>Toss-up</td><td>+0</td><td>6%</td><td>32%</td><td>23%</td><td>32%</td><td>6%</td></tr>
+                    <tr><td>Unlikely</td><td>+1</td><td>19%</td><td>43%</td><td>20%</td><td>17%</td><td>1%</td></tr>
+                    <tr><td>Very unlikely</td><td>+2</td><td>38%</td><td>43%</td><td>12%</td><td>6%</td><td>0%</td></tr>
+                </tbody>
+            </table>
+            <p>Notice that a toss-up leans slightly toward yes, because a tie counts as "Yes, but…". That's deliberate: complications keep a solo story moving, while a flat "no" can stall it.</p>
+
+            <div class="oracle-tool" id="oracle">
+                <h3>🎲 Try the Oracle</h3>
+                <div class="tool-row">
+                    <label class="grow">Your question
+                        <input type="text" id="oracle-question" placeholder="Is the warehouse guarded?" maxlength="160">
+                    </label>
+                    <label>Likelihood
+                        <select id="oracle-odds">
+                            <option value="-2">Very likely</option>
+                            <option value="-1">Likely</option>
+                            <option value="0" selected>Toss-up</option>
+                            <option value="1">Unlikely</option>
+                            <option value="2">Very unlikely</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="tool-row">
+                    <button type="button" id="oracle-ask">Ask the Oracle</button>
+                    <button type="button" id="scene-check">Scene Check</button>
+                    <button type="button" id="spark-btn">Random Spark</button>
+                </div>
+                <div class="oracle-result" id="oracle-result" aria-live="polite">
+                    <div class="faces" id="oracle-faces" aria-hidden="true"></div>
+                    <div class="answer" id="oracle-answer">Ask a question to begin</div>
+                    <div class="detail" id="oracle-detail">Pick a likelihood, then press Ask the Oracle.</div>
+                    <div class="spark" id="oracle-spark"></div>
+                </div>
+                <h4>Session Log</h4>
+                <ul class="oracle-log" id="oracle-log"><li>Your rolls will appear here.</li></ul>
+                <div class="tool-row">
+                    <button type="button" id="log-copy">Copy Log</button>
+                    <button type="button" id="log-clear">Clear Log</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="solo-scenes">
+            <h2>Running Scenes Solo</h2>
+            <p>A solo session is a chain of scenes. Each one starts with what you expect to happen and ends when its question is answered.</p>
+
+            <div class="mermaid">
+graph TD
+    A[Frame the scene you expect] --> B{Scene check}
+    B -->|As expected| C[Play the scene]
+    B -->|Altered| D[Change one detail&lt;br/&gt;then play]
+    B -->|Interrupted| E[Something else happens&lt;br/&gt;use a random spark]
+    D --> C
+    E --> C
+    C --> F[Ask the oracle when unsure]
+    F --> G[Roll skills for actions]
+    G --> H[Note new aspects and threads]
+    H --> A
+            </div>
+
+            <h3>The Scene Check</h3>
+            <p>Before each scene, decide what you expect to happen, then roll 4dF once. This is a simple house rule inspired by GM emulators, not a Fate Core rule:</p>
+            <ul>
+                <li><strong>−3 or −4 (about 6%): Interrupted.</strong> Something different happens. Use a random spark or your trouble aspect for inspiration.</li>
+                <li><strong>−1 or −2 (about 32%): Altered.</strong> The scene happens, but one detail is different: someone extra is there, the location has changed, or the timing is off.</li>
+                <li><strong>0 or higher (about 62%): As expected.</strong> Play it as you imagined.</li>
+            </ul>
+
+            <h3>Situation Aspects Do the Heavy Lifting</h3>
+            <p>Give every scene two or three situation aspects, just as a GM would ("Rain-Slick Rooftops", "Too Many Witnesses"). When you're unsure what something looks like, ask the oracle about an aspect instead of inventing everything. "Is the alley <em>Dimly Lit</em>?" is a perfect oracle question, and a "yes" gives you an aspect to invoke later.</p>
+        </section>
+
+        <section class="solo-opposition">
+            <h2>Running the Opposition</h2>
+            <p>The hardest part of solo play is staying fair to the other side. Fate gives you tools that make this easier.</p>
+
+            <h3>Pick Difficulties from the Ladder</h3>
+            <p>Use passive opposition the way Fate Core suggests: Fair (+2) for an ordinary obstacle, Good (+3) or Great (+4) for something your character should struggle with, and Mediocre (+0) or Average (+1) for things that are only hard because of time pressure. Decide the number <em>before</em> you roll, and don't change it after.</p>
+
+            <h3>Let NPCs Roll for Themselves</h3>
+            <p>When an NPC actively opposes you, roll 4dF and add their skill, exactly as a GM would. Rough guides from Fate Core's NPC types:</p>
+            <ul>
+                <li><strong>Nameless NPCs</strong> (thugs, guards): one or two skills at Average (+1) or Fair (+2), and little or no stress.</li>
+                <li><strong>Supporting NPCs</strong>: a few skills up to Good (+3), a couple of aspects and a mild consequence.</li>
+                <li><strong>Main NPCs</strong>: built like a player character, often with a peak skill matching or exceeding yours.</li>
+            </ul>
+
+            <h3>Let the Oracle Decide What NPCs Do</h3>
+            <p>When you're unsure how an NPC reacts, ask: "Does the guard believe me?" "Does she attack first?" Set the likelihood from their aspects. A character with <em>Paranoid About Everything</em> makes "Does he trust me?" Unlikely or Very unlikely.</p>
+
+            <h3>Conflicts, Contests and Challenges</h3>
+            <p>These work exactly as written. Roll for both sides, track stress and consequences honestly, and let concessions happen. Playing solo, it can be tempting to fight to the last box; conceding early to keep a story going is often the better choice.</p>
+        </section>
+
+        <section class="solo-fate-points">
+            <h2>Fate Points with One Player</h2>
+            <p>The fate point economy is what makes Fate feel like Fate, so keep it running even when you're alone.</p>
+            <ul>
+                <li><strong>Start each session at your refresh</strong> (or keep any extra points from last session, as Fate Core allows).</li>
+                <li><strong>Compel yourself.</strong> When your trouble or another aspect would naturally make life harder, accept the complication and take a fate point. If you'd rather avoid it, pay a fate point to refuse, just as at a table.</li>
+                <li><strong>Use the oracle for compels.</strong> If you aren't sure an aspect should complicate things, ask: "Does my <em>Can't Let Go of Unsolved Mysteries</em> pull me off course here?"</li>
+                <li><strong>Give the opposition a pool.</strong> In Fate Core the GM starts each scene with fate points equal to the number of PCs. Solo, that's one per scene. Spend it on main NPCs' aspects when it makes the story more interesting.</li>
+            </ul>
+            <div class="tip">
+                <p>⚠️ <strong>Watch out:</strong> The most common solo mistake is never compelling yourself. If your fate points only ever go down, you're playing it too safe. Lean into your trouble.</p>
+            </div>
+        </section>
+
+        <section class="solo-howto">
+            <h2>🛠️ How To: Your First Solo Session</h2>
+            <ol>
+                <li><strong>Make one character.</strong> High concept, trouble, three more aspects, a skill pyramid and a few stunts. Keep it simple.</li>
+                <li><strong>Write a one-line problem.</strong> "Someone is stealing artifacts using my research." Turn it into an aspect for the session.</li>
+                <li><strong>Frame the opening scene.</strong> Where are you, what do you want right now, and what's in the way? Add two situation aspects.</li>
+                <li><strong>Make a scene check.</strong> Adjust the scene if it's altered or interrupted.</li>
+                <li><strong>Play.</strong> Roll skills for actions, ask the oracle for unknowns, roll for NPCs who push back.</li>
+                <li><strong>Close the scene</strong> when its question is answered. Note new aspects, NPCs and open questions.</li>
+                <li><strong>Repeat</strong> until the session's problem is resolved or you reach a good cliffhanger. Then write a short journal entry.</li>
+            </ol>
+        </section>
+
+        <section class="solo-example">
+            <h2>Example of Play</h2>
+            <p>Dr. Rita Anderson is chasing whoever is using her research to find artifacts.</p>
+            <div class="example-box">
+                <p><strong>Scene:</strong> Rita expects to search a rival's office after hours. <strong>Scene check:</strong> −1, <em>Altered</em>. She decides the office isn't empty: a cleaner is still working.</p>
+                <p><strong>Question:</strong> "Does the cleaner recognize me?" Rita has given talks here, so it's <em>Likely</em> (difficulty −1). <strong>Roll:</strong> +0, beating it by 1: <strong>Yes.</strong></p>
+                <p><strong>Action:</strong> Rita tries to talk her way in with Rapport against the cleaner's Will, which Rita sets at Average (+1). She rolls +2 on top of Rapport Good (+3) for Superb (+5), beating the cleaner by 4: success with style. The cleaner lets her in and mentions that "the American with the old maps" was here yesterday, which becomes a new situation aspect, <em>A Visitor With Old Maps</em>, with a free invoke.</p>
+                <p><strong>Compel:</strong> Searching the desk, Rita finds her own stolen notes. Her trouble, <em>Can't Let Go of Unsolved Mysteries</em>, says she stays to read them instead of leaving quietly. She accepts the compel and takes a fate point, and security walks in a minute later.</p>
+            </div>
+        </section>
+
+        <section class="solo-faq">
+            <h2>Common Questions</h2>
+            <h4>Isn't it boring to know everything already?</h4>
+            <p>You won't. The oracle, scene checks and NPC rolls answer the questions you'd normally leave to a GM, so you're discovering the story as you play. Only decide what you would decide as a player.</p>
+            <h4>What if the oracle gives an answer that makes no sense?</h4>
+            <p>Reinterpret it before you reroll. A "yes" that seems impossible often hides a twist. If it truly breaks the story, it's fine to treat it as "Yes, but…" or ask a smaller question.</p>
+            <h4>Should I play one character or a group?</h4>
+            <p>Start with one. Two or three characters can work, but every extra character adds bookkeeping. A single character with strong relationships to NPCs is usually enough.</p>
+            <h4>How do I avoid "fudging" for my character?</h4>
+            <p>Set difficulties and NPC skills before you roll, roll in the open (even if only you can see), and honor concessions and consequences. When in doubt, ask the oracle rather than choosing.</p>
+        </section>
+
+        <section class="conclusion">
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Fate has no official solo rules, but its aspects and outcomes make it easy to play alone with a simple oracle.</li>
+                <li>The Fate dice oracle uses the familiar ladder: set a difficulty from how likely "yes" is, then read fail, tie, succeed or succeed with style.</li>
+                <li>Scene checks and random sparks stop you from writing a story you already know.</li>
+                <li>Decide difficulties and NPC skills before rolling, and let NPCs roll for themselves.</li>
+                <li>Keep the fate point economy alive by compelling your own aspects.</li>
+            </ul>
+
+            <div class="journal">
+                <h3>📓 Learning Journal</h3>
+                <p>After your first solo session, jot down:</p>
+                <ul>
+                    <li>Which oracle answer surprised you most, and what it changed?</li>
+                    <li>Did you compel yourself? If not, where could you have?</li>
+                    <li>Were any difficulties too easy or too hard?</li>
+                    <li>What open questions or threads do you want to pick up next time?</li>
+                </ul>
+            </div>
+
+            <div class="next-steps">
+                <h3>Looking Ahead</h3>
+                <p>In the next part, we'll step back from the table and look at Fate as a community practice: building gaming groups, Fate in education and other settings, and where collaborative storytelling might be heading.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+<div class="page-nav">
+    <a class="prev" href="/fate_gm.html">Game Mastery</a>
+    <a class="next" href="/fate_future.html">Future</a>
+</div>
+        <p>Remember: playing solo, you're the whole table. Let the dice surprise you.</p>
+    </footer>
+
+    <script>
+        (function () {
+            const $ = (id) => document.getElementById(id);
+            const roll4dF = () => Array.from({ length: 4 }, () => Math.floor(Math.random() * 3) - 1);
+            const sign = (n) => (n > 0 ? '+' + n : n < 0 ? '−' + Math.abs(n) : '+0');
+            const ODDS = { '-2': 'Very likely', '-1': 'Likely', '0': 'Toss-up', '1': 'Unlikely', '2': 'Very unlikely' };
+            const ACTIONS = ['Betray', 'Reveal', 'Pursue', 'Protect', 'Steal', 'Delay', 'Bargain', 'Hide', 'Warn', 'Abandon', 'Recruit', 'Expose', 'Break', 'Follow', 'Threaten', 'Rescue'];
+            const SUBJECTS = ['a secret', 'an old ally', 'a rival', 'the authorities', 'a debt', 'a map', 'a stranger', 'a promise', 'the weather', 'a hidden door', 'a rumor', 'family', 'money', 'a weapon', 'a letter', 'the past'];
+            const pick = (a) => a[Math.floor(Math.random() * a.length)];
+
+            function showFaces(dice) {
+                const box = $('oracle-faces');
+                box.innerHTML = '';
+                dice.forEach((d) => {
+                    const f = document.createElement('span');
+                    f.className = 'face' + (d > 0 ? ' plus' : d < 0 ? ' minus' : '');
+                    f.textContent = d > 0 ? '+' : d < 0 ? '−' : '0';
+                    box.appendChild(f);
+                });
+            }
+            function setResult(kind, answer, detail, spark) {
+                const r = $('oracle-result');
+                r.className = 'oracle-result ' + kind;
+                $('oracle-answer').textContent = answer;
+                $('oracle-detail').textContent = detail;
+                $('oracle-spark').textContent = spark || '';
+            }
+            function log(text) {
+                const list = $('oracle-log');
+                if (list.dataset.started !== '1') { list.innerHTML = ''; list.dataset.started = '1'; }
+                const li = document.createElement('li');
+                li.textContent = text;
+                list.prepend(li);
+                while (list.children.length > 200) list.lastElementChild.remove();
+            }
+            const spark = () => `${pick(ACTIONS)} ${pick(SUBJECTS)}`;
+
+            $('oracle-ask').addEventListener('click', () => {
+                const q = $('oracle-question').value.trim();
+                const diff = parseInt($('oracle-odds').value, 10);
+                const dice = roll4dF();
+                const total = dice.reduce((a, b) => a + b, 0);
+                const margin = total - diff;
+                let kind, answer;
+                if (margin >= 3) { kind = 'yes'; answer = 'Yes, and…'; }
+                else if (margin >= 1) { kind = 'yes'; answer = 'Yes'; }
+                else if (margin === 0) { kind = 'mixed'; answer = 'Yes, but…'; }
+                else if (margin >= -2) { kind = 'no'; answer = 'No'; }
+                else { kind = 'no'; answer = 'No, and…'; }
+                const extra = (answer.endsWith('…')) ? 'Spark: ' + spark() : '';
+                showFaces(dice);
+                setResult(kind, answer, `Rolled ${sign(total)} vs ${ODDS[diff]} (${sign(diff)})`, extra);
+                log(`${q ? '“' + q + '” ' : ''}${ODDS[diff]}: ${answer} (${sign(total)})${extra ? ' — ' + extra : ''}`);
+            });
+
+            $('scene-check').addEventListener('click', () => {
+                const dice = roll4dF();
+                const total = dice.reduce((a, b) => a + b, 0);
+                let kind, answer, detail;
+                if (total <= -3) { kind = 'no'; answer = 'Interrupted'; detail = 'Something else happens instead.'; }
+                else if (total <= -1) { kind = 'mixed'; answer = 'Altered'; detail = 'The scene happens, but one detail is different.'; }
+                else { kind = 'yes'; answer = 'As expected'; detail = 'Play the scene as you imagined it.'; }
+                const extra = kind !== 'yes' ? 'Spark: ' + spark() : '';
+                showFaces(dice);
+                setResult(kind, answer, `Scene check ${sign(total)}. ${detail}`, extra);
+                log(`Scene check: ${answer} (${sign(total)})${extra ? ' — ' + extra : ''}`);
+            });
+
+            $('spark-btn').addEventListener('click', () => {
+                const s = spark();
+                $('oracle-faces').innerHTML = '';
+                setResult('mixed', s, 'Use it as a prompt for a twist, an NPC goal or a new aspect.', '');
+                log('Spark: ' + s);
+            });
+
+            $('oracle-question').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('oracle-ask').click(); });
+
+            $('log-copy').addEventListener('click', async () => {
+                const items = [...$('oracle-log').querySelectorAll('li')].reverse().map((li) => li.textContent);
+                const text = $('oracle-log').dataset.started === '1' ? items.join('\n') : '';
+                const btn = $('log-copy');
+                try { await navigator.clipboard.writeText(text); btn.textContent = text ? 'Copied!' : 'Nothing to copy'; }
+                catch (e) { btn.textContent = 'Copy failed'; }
+                setTimeout(() => { btn.textContent = 'Copy Log'; }, 1500);
+            });
+            $('log-clear').addEventListener('click', () => {
+                const list = $('oracle-log');
+                list.innerHTML = '<li>Your rolls will appear here.</li>';
+                list.dataset.started = '0';
+            });
+        })();
+    </script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
+</body>
+</html>
