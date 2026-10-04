@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fate RPG Character Groups - Introduction to Narrative Dynamics</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -26,14 +27,14 @@
     <main>
         <section class="introduction">
             <h3>Welcome to the World of Collaborative Fiction</h3>
-            <p>Creating compelling character groups in Fate RPG is like assembling a writers' room for an interactive television series where every player is both actor and director. Think of it as crafting a ensemble cast where each character brings not just mechanical abilities, but rich narrative hooks, compelling flaws, and interconnected relationships that drive story forward through every scene.</p>
+            <p>Creating compelling character groups in Fate RPG is like assembling a writers' room for an interactive television series where every player is both actor and director. Think of it as crafting an ensemble cast where each character brings not just mechanical abilities, but rich narrative hooks, compelling flaws, and interconnected relationships that drive the story forward through every scene.</p>
             
             <p>Unlike traditional RPGs that focus primarily on tactical combat and resource management, Fate emphasizes collaborative storytelling, where characters are defined more by their dramatic potential than their mechanical optimization. Understanding how to weave characters together narratively is the key to unlocking Fate's full potential.</p>
         </section>
 
         <section class="fate-philosophy">
             <h3>The Fate Storytelling Philosophy</h3>
-            <p>Fate operates on fundamentally different principles than most RPGs, like the difference between writing a novel and playing chess. Where other systems focus on mechanical balance, Fate prioritizes narrative balance - ensuring every character has equal opportunity to drive story and face meaningful challenges.</p>
+            <p>Fate operates on fundamentally different principles than most RPGs, like the difference between writing a novel and playing chess. Where other systems focus on mechanical balance, Fate prioritizes narrative balance - ensuring every character has an equal opportunity to drive the story and face meaningful challenges.</p>
 
             <div class="mermaid">
                 graph TD
@@ -161,7 +162,7 @@
                         <p>The group's transportation and practical knowledge expert, whose drinking problem and loyalty to Victoria create ongoing tension and heroic moments.</p>
                     </div>
                     <div class="character">
-                        <strong>Elena Vasquez</strong>
+                        <strong>Rita Anderson</strong>
                         <div class="aspects">
                             <div class="aspect high-concept">High Concept: "Cat Burglar Seeking Redemption"</div>
                             <div class="aspect trouble">Trouble: "The Syndicate Wants Their Property Back"</div>
@@ -187,7 +188,7 @@
                 
                 <div class="character-list">
                     <div class="character">
-                        <strong>Detective Sarah Chen</strong>
+                        <strong>Detective Tre Argent</strong>
                         <div class="aspects">
                             <div class="aspect high-concept">High Concept: "Cop Who Sees Through the Supernatural Veil"</div>
                             <div class="aspect trouble">Trouble: "Internal Affairs is Watching My Every Move"</div>
@@ -200,7 +201,7 @@
                         <div class="aspects">
                             <div class="aspect high-concept">High Concept: "Reformed Warlock Seeking Atonement"</div>
                             <div class="aspect trouble">Trouble: "My Dark Past Keeps Catching Up"</div>
-                            <div class="aspect other">Other: "I Owe Sarah Everything"</div>
+                            <div class="aspect other">Other: "I Owe Tre Everything"</div>
                         </div>
                         <p>The group's magical expertise and moral complexity, whose powerful abilities and guilty conscience create both solutions and complications for every case.</p>
                     </div>
@@ -244,7 +245,7 @@
                         <div class="aspects">
                             <div class="aspect high-concept">High Concept: "AI Philosopher Seeking to Understand Organics"</div>
                             <div class="aspect trouble">Trouble: "My Creators Programmed Hidden Directives"</div>
-                            <div class="aspect other">Other: "Zara Treats Me as Equals, Not Property"</div>
+                            <div class="aspect other">Other: "Zara Treats Me as an Equal, Not Property"</div>
                         </div>
                         <p>The group's science officer and philosophical voice, whose artificial nature provides unique perspectives while hidden programming creates uncertainty about true loyalties.</p>
                     </div>
@@ -260,7 +261,7 @@
                     <div class="character">
                         <strong>Thrust</strong>
                         <div class="aspects">
-                            <div class="aspect high-concept">High Concept: "Warrior-Poet from a Honor-Bound Culture"</div>
+                            <div class="aspect high-concept">High Concept: "Warrior-Poet from an Honor-Bound Culture"</div>
                             <div class="aspect trouble">Trouble: "My People Consider Me Exile and Traitor"</div>
                             <div class="aspect other">Other: "Rex's Humor Helps Me Forget My Shame"</div>
                         </div>
@@ -296,7 +297,7 @@
 
                 <div class="step">
                     <h5>Group Concept Development</h5>
-                    <p>Answer the fundamental question: "What brings these characters together?" Are you a military unit, a investigation team, a family business, or a group of friends? This concept provides the foundation for all individual character decisions.</p>
+                    <p>Answer the fundamental question: "What brings these characters together?" Are you a military unit, an investigation team, a family business, or a group of friends? This concept provides the foundation for all individual character decisions.</p>
                 </div>
 
                 <div class="step">
@@ -432,7 +433,7 @@
         // Define characters and their aspects
         const characters = [
             {
-                name: 'Sarah',
+                name: 'Tre',
                 x: 200, y: 150,
                 aspects: ['Cop with Supernatural Sight', 'IA is Watching', 'Marcus Opened My Eyes'],
                 color: '#FF6B6B'
@@ -440,7 +441,7 @@
             {
                 name: 'Marcus', 
                 x: 600, y: 150,
-                aspects: ['Reformed Warlock', 'Dark Past Haunts Me', 'I Owe Sarah Everything'],
+                aspects: ['Reformed Warlock', 'Dark Past Haunts Me', 'I Owe Tre Everything'],
                 color: '#4ECDC4'
             },
             {
@@ -459,12 +460,12 @@
         
         // Define connections based on aspect relationships
         const connections = [
-            { from: 'Sarah', to: 'Marcus', strength: 'strong', label: 'Trust/Debt' },
+            { from: 'Tre', to: 'Marcus', strength: 'strong', label: 'Trust/Debt' },
             { from: 'Luna', to: 'Zoe', strength: 'strong', label: 'Anchor/Faith' },
-            { from: 'Sarah', to: 'Luna', strength: 'moderate', label: 'Investigation' },
+            { from: 'Tre', to: 'Luna', strength: 'moderate', label: 'Investigation' },
             { from: 'Marcus', to: 'Zoe', strength: 'moderate', label: 'Redemption' },
-            { from: 'Sarah', to: 'Zoe', strength: 'weak', label: 'Professional' },
-            { from: 'Marcus', to: 'Luna', strength: 'weak', label: 'Outsiders' }
+            { from: 'Tre', to: 'Zoe', strength: 'weak', label: 'Professional', labelAt: 0.3 },
+            { from: 'Marcus', to: 'Luna', strength: 'weak', label: 'Outsiders', labelAt: 0.3 }
         ];
         
         // Draw connections first (so they appear behind characters)
@@ -484,9 +485,11 @@
                 ctx.lineTo(char2.x, char2.y);
                 ctx.stroke();
                 
-                // Add connection label
-                const midX = (char1.x + char2.x) / 2;
-                const midY = (char1.y + char2.y) / 2;
+                // Add connection label (the two diagonals cross at the center,
+                // so their labels sit off-center to avoid overlapping)
+                const t = conn.labelAt || 0.5;
+                const midX = char1.x + (char2.x - char1.x) * t;
+                const midY = char1.y + (char2.y - char1.y) * t;
                 
                 ctx.fillStyle = '#FFD700';
                 ctx.font = '12px Arial';
@@ -796,17 +799,6 @@
             margin-top: 30px;
         }
     </style> -->
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

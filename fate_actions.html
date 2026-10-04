@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actions, Outcomes, and Conflicts: The Mechanics of Drama</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -37,25 +38,20 @@
         <section class="outcomes-framework">
             <h2>The Four Outcomes: Beyond Success and Failure</h2>
             
-            <p>Fate uses four possible outcomes that create rich, nuanced results instead of simple binary success/failure. This system ensures that every roll contributes to the story in meaningful ways.</p>
+            <p>Fate uses four possible outcomes—fail, tie, succeed, and succeed with style—that create rich, nuanced results instead of simple binary success/failure. You compare your total to the opposition; each point of difference is a <em>shift</em>. This system ensures that every roll contributes to the story in meaningful ways.</p>
 
             <div class="mermaid">
                 graph TD
                     A[Roll Result] --> B{Compare to Opposition}
-                    B -->|Tie or 1 over| C[Success at a Cost]
-                    B -->|2-3 over| D[Success]
-                    B -->|4+ over| E[Success with Style]
-                    B -->|Any under| F[Failure]
+                    B -->|Below opposition| F[Fail]
+                    B -->|Equal to opposition| C[Tie]
+                    B -->|1-2 shifts over| D[Succeed]
+                    B -->|3+ shifts over| E[Succeed with Style]
                     
-                    C --> C1[You get what you want<br/>But something goes wrong<br/>GM chooses consequence]
-                    D --> D1[You achieve your goal<br/>Clean success<br/>Story moves forward]
-                    E --> E1[You achieve your goal<br/>Plus get a bonus<br/>Boost or extra effect]
-                    F --> F1[You don't get what you want<br/>GM makes a move<br/>Story complicates]
-                    
-                    style C fill:#fff3e0
-                    style D fill:#e8f5e8
-                    style E fill:#e1f5fe
-                    style F fill:#ffebee
+                    C --> C1[You get what you want at a minor cost&lt;br/&gt;or gain a boost, depending on the action]
+                    D --> D1[You achieve your goal&lt;br/&gt;Clean success&lt;br/&gt;Story moves forward]
+                    E --> E1[You achieve your goal&lt;br/&gt;Plus an extra benefit&lt;br/&gt;such as a boost]
+                    F --> F1[You don't get what you want&lt;br/&gt;or you succeed at a serious cost&lt;br/&gt;Story complicates]
             </div>
 
             <h3>Failure: Complications, Not Dead Ends</h3>
@@ -102,13 +98,13 @@
                 <ul>
                     <li><strong>Overcome:</strong> You get a boost aspect in addition to overcoming the obstacle</li>
                     <li><strong>Create Advantage:</strong> You get an extra free invoke on the aspect you created</li>
-                    <li><strong>Attack:</strong> You deal normal stress and get a boost</li>
+                    <li><strong>Attack:</strong> You deal your full stress, or you can reduce the hit by 1 shift to also gain a boost</li>
                     <li><strong>Defend:</strong> You defend successfully and get a boost</li>
                 </ul>
             </div>
 
             <h3>Success at a Cost: Drama from Difficult Choices</h3>
-            <p>This outcome creates some of Fate's most dramatic moments—you get what you want, but there's a price to pay.</p>
+            <p>This outcome creates some of Fate's most dramatic moments—you get what you want, but there's a price to pay. On a tie, an overcome succeeds at a <em>minor</em> cost; on a failure, the GM can offer success at a <em>serious</em> cost instead of a plain failure.</p>
 
             <div class="cost-examples">
                 <h4>Types of Costs</h4>
@@ -190,7 +186,7 @@
                     </tr>
                     <tr>
                         <td>Superb (+5)</td>
-                        <td>Legendary challenges</td>
+                        <td>Extraordinary challenges</td>
                         <td>Talking your way out of execution</td>
                         <td>Climactic moment requiring heroic effort</td>
                     </tr>
@@ -225,7 +221,7 @@
             </div>
 
             <h3>Difficulty Modification: When Circumstances Matter</h3>
-            <p>Base difficulties can be modified by circumstances, equipment, and preparation.</p>
+            <p>Base difficulties can be modified by circumstances, equipment, and preparation. Note that Fate Core mostly handles circumstances through aspects (invoke one for +2) rather than fixed modifiers; the adjustments below are optional table guidelines, not official rules.</p>
 
             <div class="difficulty-modifiers">
                 <h4>Common Difficulty Modifiers</h4>
@@ -292,7 +288,7 @@
                         {text: 'Ideal Conditions (+1)', x: 200, y: 120, color: 'green'},
                         {text: 'Base Difficulty', x: 350, y: 80, color: 'black'},
                         {text: 'Poor Conditions (-1)', x: 500, y: 120, color: 'red'},
-                        {text: 'Active Opposition (-2)', x: 600, y: 100, color: 'red'}
+                        {text: 'Rushed Job (-2)', x: 600, y: 100, color: 'red'}
                     ];
                     
                     modifiers.forEach(mod => {
@@ -325,7 +321,7 @@
                     <li><strong>Environmental Conditions:</strong> Weather, lighting, noise levels</li>
                     <li><strong>Time Pressure:</strong> +1 for plenty of time, -1 to -3 for rushing</li>
                     <li><strong>Preparation:</strong> +1 to +2 for research and planning</li>
-                    <li><strong>Assistance:</strong> +1 for helpful allies or teamwork</li>
+                    <li><strong>Assistance:</strong> +1 per ally helping (Fate Core's teamwork rule)</li>
                     <li><strong>Opposition Awareness:</strong> -1 to -3 if opponents are actively watching</li>
                 </ul>
             </div>
@@ -352,7 +348,7 @@
                 <p><strong>Situation:</strong> The team needs to infiltrate a high-security corporate party to steal data from the CEO's personal computer.</p>
                 
                 <div class="challenge-breakdown">
-                    <h5>Required Elements (Need 4 successes before 3 failures)</h5>
+                    <h5>Required Elements (one overcome roll per obstacle; the overall mix of successes and failures shapes the result)</h5>
                     <ul>
                         <li><strong>Getting Invitations:</strong> Contacts or Deceive vs. Good (+3) - acquire legitimate covers</li>
                         <li><strong>Physical Infiltration:</strong> Burglary or Athletics vs. Fair (+2) - bypass physical security</li>
@@ -365,10 +361,10 @@
                 <div class="challenge-progression">
                     <h5>Example Progression</h5>
                     <p><strong>Round 1:</strong> Marcus uses Contacts to get invitations (Success) - "We're art dealers from Switzerland"</p>
-                    <p><strong>Round 2:</strong> Sarah uses Burglary to disable the office alarms (Failure) - Security systems are more advanced than expected, creating "Enhanced Security Protocols"</p>
-                    <p><strong>Round 3:</strong> Elena uses Rapport at the party (Success at a Cost) - She charms the CEO but he becomes romantically interested, complicating the mission</p>
+                    <p><strong>Round 2:</strong> Tre uses Burglary to disable the office alarms (Failure) - Security systems are more advanced than expected, creating "Enhanced Security Protocols"</p>
+                    <p><strong>Round 3:</strong> Rita uses Rapport at the party (Success at a Cost) - She charms the CEO but he becomes romantically interested, complicating the mission</p>
                     <p><strong>Round 4:</strong> Maya uses Computers to hack the system (Success with Style) - Not only gets the data but plants false evidence</p>
-                    <p><strong>Result:</strong> Mission succeeds, but Elena now has an unwanted admirer, and enhanced security will make future infiltrations harder</p>
+                    <p><strong>Result:</strong> Mission succeeds, but Rita now has an unwanted admirer, and enhanced security will make future infiltrations harder</p>
                 </div>
             </div>
 
@@ -379,7 +375,7 @@
                 <h4>Contest Structure</h4>
                 <ul>
                     <li><strong>Opposing Goals:</strong> Both sides want mutually exclusive outcomes</li>
-                    <li><strong>Victory Conditions:</strong> First to accumulate a certain number of victories wins</li>
+                    <li><strong>Victory Conditions:</strong> First to three victories wins; winning an exchange earns one victory, succeeding with style earns two, and a tie earns none but adds an unexpected twist</li>
                     <li><strong>Escalating Stakes:</strong> Each exchange can raise the tension</li>
                     <li><strong>Narrative Focus:</strong> Emphasize the back-and-forth struggle</li>
                 </ul>
@@ -399,14 +395,14 @@
                 <div class="contest-exchange">
                     <h5>Exchange 2: Dangerous Obstacles</h5>
                     <p><strong>Marcus:</strong> Rolls 0 = Total 2</p>
-                    <p><strong>Assassin:</strong> Rolls +2 = Total 5</p>
+                    <p><strong>Assassin:</strong> Rolls +1 = Total 4</p>
                     <p><strong>Result:</strong> Marcus 1, Assassin 1. "The assassin makes a death-defying leap across a wide gap, forcing Marcus to take a safer but slower route"</p>
                 </div>
 
                 <div class="contest-exchange">
                     <h5>Exchange 3: Environmental Hazards</h5>
                     <p><strong>Marcus (spends Fate Point on "Corporate Security Training"):</strong> Rolls +1 +2 (aspect) = Total 5</p>
-                    <p><strong>Assassin:</strong> Rolls -2 = Total 1</p>
+                    <p><strong>Assassin:</strong> Rolls 0 = Total 3</p>
                     <p><strong>Result:</strong> Marcus 2, Assassin 1. "Marcus uses his tactical training to anticipate the assassin's route and cut them off"</p>
                 </div>
 
@@ -461,17 +457,13 @@
                     C --> D[Choose Action]
                     D --> E[Roll Dice]
                     E --> F[Resolve Outcome]
-                    F --> G{Anyone Taken Out?}
+                    F --> G{One Side Taken Out or Conceded?}
                     G -->|No| H{All Turns Complete?}
                     G -->|Yes| I[Conflict Ends]
                     H -->|No| C
                     H -->|Yes| J[New Exchange Begins]
                     J --> C
-                    I --> K[Determine Consequences]
-                    
-                    style A fill:#e1f5fe
-                    style I fill:#e8f5e8
-                    style K fill:#fff3e0
+                    I --> K[Narrate the Aftermath]
             </div>
 
             <h3>Stress and Consequences: Taking Damage</h3>
@@ -479,7 +471,7 @@
 
             <div class="stress-system">
                 <h4>Stress Tracks</h4>
-                <p>Stress represents fatigue, minor injuries, and temporary setbacks. It goes away after the conflict ends.</p>
+                <p>Stress represents fatigue, minor injuries, and temporary setbacks. It clears at the end of the scene. In Fate Core, every character starts with two physical and two mental boxes, and a high Physique or Will adds more.</p>
                 
                 <div class="stress-track-visual">
                     <h5>Physical Stress Track Example</h5>
@@ -489,7 +481,7 @@
                         <span class="stress-box empty">3</span>
                         <span class="stress-box empty">4</span>
                     </div>
-                    <p>Character has taken 3 points of physical stress (boxes 1 and 2 marked)</p>
+                    <p>Character has checked the 1 and 2 boxes from two separate hits. In Fate Core, a hit checks off one box worth at least its shifts (boxes don't add together); anything you can't cover must go into consequences, or you're taken out.</p>
                 </div>
 
                 <style>
@@ -501,7 +493,7 @@
                     .stress-box {
                         width: 30px;
                         height: 30px;
-                        border: 2px solid #333;
+                        border: 2px solid var(--border-strong);
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -599,7 +591,7 @@
                 <h4>Zone Creation Guidelines</h4>
                 <ul>
                     <li><strong>Communication:</strong> People in the same zone can talk normally</li>
-                    <li><strong>Movement:</strong> You can move one zone with a regular action</li>
+                    <li><strong>Movement:</strong> You can move one zone for free alongside your action, if nothing is in the way</li>
                     <li><strong>Interaction:</strong> You can interact with anything in your zone</li>
                     <li><strong>Range:</strong> Ranged attacks work across zones, melee requires same zone</li>
                     <li><strong>Obstacles:</strong> Barriers between zones might require overcome actions</li>
@@ -670,7 +662,7 @@
             <div class="movement-options">
                 <ul>
                     <li><strong>Free Movement:</strong> Move one zone as part of another action</li>
-                    <li><strong>Sprint:</strong> Use your entire action to move multiple zones</li>
+                    <li><strong>Sprint:</strong> Use your action (an Athletics overcome roll) to move multiple zones</li>
                     <li><strong>Overcome Obstacles:</strong> Roll to move through difficult terrain or barriers</li>
                     <li><strong>Create Advantage:</strong> Use movement to gain better positioning</li>
                 </ul>
@@ -687,19 +679,19 @@
                 <div class="teamwork-type">
                     <h4>Advantages for Allies</h4>
                     <p>Create situational aspects that teammates can invoke</p>
-                    <p><strong>Example:</strong> Sarah creates "Suppressing Fire" that Marcus can invoke for his infiltration attempt</p>
+                    <p><strong>Example:</strong> Tre creates "Suppressing Fire" that Marcus can invoke for his infiltration attempt</p>
                 </div>
 
                 <div class="teamwork-type">
                     <h4>Passing Boosts</h4>
                     <p>Give your success with style boost to an ally</p>
-                    <p><strong>Example:</strong> Elena's research creates a boost that she gives to Maya for her hacking attempt</p>
+                    <p><strong>Example:</strong> Rita's research creates a boost that she gives to Maya for her hacking attempt</p>
                 </div>
 
                 <div class="teamwork-type">
                     <h4>Combined Actions</h4>
-                    <p>Multiple characters contribute to the same task</p>
-                    <p><strong>Example:</strong> Marcus provides muscle while Sarah provides technical expertise to break into a safe</p>
+                    <p>Multiple characters contribute to the same task: each helper with at least Average (+1) in the skill adds +1 to the lead character's roll</p>
+                    <p><strong>Example:</strong> Marcus provides muscle while Tre provides technical expertise to break into a safe</p>
                 </div>
 
                 <div class="teamwork-type">
@@ -716,24 +708,24 @@
 
                 <div class="teamwork-round">
                     <h5>Round 1: Setup</h5>
-                    <p><strong>Elena (Create Advantage with Contacts):</strong> Calls in a favor to get building schematics, creating "Detailed Floor Plans" aspect</p>
+                    <p><strong>Rita (Create Advantage with Contacts):</strong> Calls in a favor to get building schematics, creating "Detailed Floor Plans" aspect</p>
                     <p><strong>Marcus (Create Advantage with Notice):</strong> Studies security patterns, creating "Guard Rotation Timing" aspect</p>
-                    <p><strong>Sarah (Create Advantage with Burglary):</strong> Prepares specialized tools, creating "Professional Equipment" aspect</p>
+                    <p><strong>Tre (Create Advantage with Burglary):</strong> Prepares specialized tools, creating "Professional Equipment" aspect</p>
                 </div>
 
                 <div class="teamwork-round">
                     <h5>Round 2: Infiltration</h5>
                     <p><strong>Marcus (Overcome with Stealth):</strong> Sneaks past guards, invoking "Guard Rotation Timing" for +2</p>
-                    <p><strong>Sarah (Overcome with Burglary):</strong> Picks the server room lock, invoking "Professional Equipment" for +2</p>
-                    <p><strong>Elena (Create Advantage with Computers):</strong> Begins downloading data, creating "Data Transfer in Progress"</p>
+                    <p><strong>Tre (Overcome with Burglary):</strong> Picks the server room lock, invoking "Professional Equipment" for +2</p>
+                    <p><strong>Rita (Create Advantage with Computers):</strong> Begins downloading data, creating "Data Transfer in Progress"</p>
                 </div>
 
                 <div class="teamwork-round">
                     <h5>Round 3: Complications</h5>
                     <p><strong>GM:</strong> Security detects the breach! Guards are converging on your location.</p>
-                    <p><strong>Marcus (Defend with Fight):</strong> Delays the guards in hand-to-hand combat</p>
-                    <p><strong>Sarah (Create Advantage with Deceive):</strong> Triggers false alarms throughout the building, creating "Security Confusion"</p>
-                    <p><strong>Elena (Overcome with Computers):</strong> Completes the download, invoking "Data Transfer in Progress" to finish faster</p>
+                    <p><strong>Marcus (Overcome with Fight):</strong> Holds off the guards in hand-to-hand combat</p>
+                    <p><strong>Tre (Create Advantage with Deceive):</strong> Triggers false alarms throughout the building, creating "Security Confusion"</p>
+                    <p><strong>Rita (Overcome with Computers):</strong> Completes the download, invoking "Data Transfer in Progress" to finish faster</p>
                 </div>
 
                 <p><strong>Result:</strong> The team's coordinated efforts allow them to succeed despite the complications, with each character's abilities contributing to the overall success.</p>
@@ -746,85 +738,85 @@
             <h3>Example 1: The Negotiation (Social Conflict)</h3>
             <div class="scene-example">
                 <h4>Scene Setup</h4>
-                <p>Elena needs to convince the University Board to fund her controversial Atlantis expedition. The Board Chair, Dr. Whitman, is skeptical and has the support of other conservative board members.</p>
+                <p>Rita needs to convince the University Board to fund her controversial Atlantis expedition. The Board Chair, Dr. Whitman, is skeptical and has the support of other conservative board members.</p>
 
                 <div class="conflict-setup">
                     <h5>Participants</h5>
                     <ul>
-                        <li><strong>Elena:</strong> Mental Stress Track (1)(2)(3), Rapport +3, Academics +3</li>
-                        <li><strong>Dr. Whitman:</strong> Mental Stress Track (1)(2)(3), Intimidate +3, Academics +4</li>
+                        <li><strong>Rita:</strong> Mental Stress Track (1)(2)(3), Rapport +3, Will +2, Academics +3</li>
+                        <li><strong>Dr. Whitman:</strong> Mental Stress Track (1)(2)(3), Provoke +3, Will +2, Academics +4</li>
                     </ul>
                 </div>
 
                 <div class="conflict-exchange">
                     <h5>Exchange 1</h5>
-                    <p><strong>Elena (Attack with Rapport):</strong> Presents passionate argument about historical significance</p>
+                    <p><strong>Rita (Attack with Rapport):</strong> Presents passionate argument about historical significance</p>
                     <p><strong>Roll:</strong> +3 (Rapport) + 2 (dice) = +5</p>
                     <p><strong>Dr. Whitman (Defend with Will):</strong> Tries to remain objective</p>
                     <p><strong>Roll:</strong> +2 (Will) + 0 (dice) = +2</p>
-                    <p><strong>Result:</strong> Elena succeeds by 3, dealing 3 mental stress. Dr. Whitman marks stress box (3)</p>
-                    <p><strong>Narration:</strong> "Elena's passion and expertise clearly impress several board members, putting Dr. Whitman on the defensive"</p>
+                    <p><strong>Result:</strong> Rita succeeds by 3, dealing 3 mental stress. Dr. Whitman marks stress box (3)</p>
+                    <p><strong>Narration:</strong> "Rita's passion and expertise clearly impress several board members, putting Dr. Whitman on the defensive"</p>
                 </div>
 
                 <div class="conflict-exchange">
                     <h5>Exchange 2</h5>
-                    <p><strong>Dr. Whitman (Attack with Provoke):</strong> Attacks Elena's academic credibility</p>
+                    <p><strong>Dr. Whitman (Attack with Provoke):</strong> Attacks Rita's academic credibility</p>
                     <p><strong>Roll:</strong> +3 (Provoke) + 1 (dice) = +4</p>
-                    <p><strong>Elena (Defend with Will):</strong> Maintains professional composure</p>
+                    <p><strong>Rita (Defend with Will):</strong> Maintains professional composure</p>
                     <p><strong>Roll:</strong> +2 (Will) + 1 (dice) = +3</p>
-                    <p><strong>Result:</strong> Dr. Whitman succeeds by 1, dealing 1 mental stress. Elena marks stress box (1)</p>
-                    <p><strong>Narration:</strong> "Dr. Whitman brings up Elena's previous 'unsubstantiated claims,' causing some doubt in the room"</p>
+                    <p><strong>Result:</strong> Dr. Whitman succeeds by 1, dealing 1 mental stress. Rita marks stress box (1)</p>
+                    <p><strong>Narration:</strong> "Dr. Whitman brings up Rita's previous 'unsubstantiated claims,' causing some doubt in the room"</p>
                 </div>
 
                 <div class="conflict-exchange">
                     <h5>Exchange 3</h5>
-                    <p><strong>Elena (Create Advantage with Academics):</strong> Presents hard evidence</p>
+                    <p><strong>Rita (Create Advantage with Academics):</strong> Presents hard evidence</p>
                     <p><strong>Roll:</strong> +3 (Academics) + 2 (dice) = +5 vs. Fair (+2) difficulty</p>
                     <p><strong>Result:</strong> Success with Style! Creates "Undeniable Evidence" aspect with 2 free invokes</p>
-                    <p><strong>Narration:</strong> "Elena produces the Atlantis fragments and detailed analysis, stunning the room into silence"</p>
+                    <p><strong>Narration:</strong> "Rita produces the Atlantis fragments and detailed analysis, stunning the room into silence"</p>
                 </div>
 
                 <div class="conflict-exchange">
                     <h5>Exchange 4</h5>
-                    <p><strong>Elena (Attack with Rapport):</strong> Final persuasive push</p>
+                    <p><strong>Rita (Attack with Rapport):</strong> Final persuasive push</p>
                     <p><strong>Roll:</strong> +3 (Rapport) + 0 (dice) + 4 (two free invokes) = +7</p>
                     <p><strong>Dr. Whitman (Defend with Will):</strong> Tries to maintain opposition</p>
                     <p><strong>Roll:</strong> +2 (Will) - 1 (dice) = +1</p>
-                    <p><strong>Result:</strong> Elena succeeds by 6! Dr. Whitman can't absorb this much stress and is taken out</p>
-                    <p><strong>Outcome:</strong> Elena wins! The board approves her expedition funding</p>
+                    <p><strong>Result:</strong> Rita succeeds by 6! Dr. Whitman could only absorb this by taking a serious consequence in front of the whole board, so he doesn't, and is taken out</p>
+                    <p><strong>Outcome:</strong> Rita wins! The board approves her expedition funding</p>
                 </div>
             </div>
 
             <h3>Example 2: The Warehouse Fight (Physical Conflict)</h3>
             <div class="scene-example">
                 <h4>Scene Setup</h4>
-                <p>Marcus and Sarah are ambushed by corporate security while investigating a warehouse. They're outnumbered but need to fight their way to the exit.</p>
+                <p>Marcus and Tre are ambushed by corporate security while investigating a warehouse. They're outnumbered but need to fight their way to the exit.</p>
 
                 <div class="conflict-participants">
                     <h5>Participants</h5>
                     <ul>
                         <li><strong>Marcus:</strong> Physical Stress (1)(2)(3)(4), Fight +4, Athletics +2</li>
-                        <li><strong>Sarah:</strong> Physical Stress (1)(2)(3), Shoot +3, Athletics +2</li>
+                        <li><strong>Tre:</strong> Physical Stress (1)(2)(3), Shoot +3, Athletics +2</li>
                         <li><strong>Security Team (3 guards):</strong> Each has Physical Stress (1)(2), Fight +2, Shoot +2</li>
                     </ul>
                 </div>
 
                 <div class="combat-round">
                     <h5>Round 1: Opening Moves</h5>
-                    <p><strong>Sarah (Create Advantage with Shoot):</strong> Suppressing fire to pin down guards</p>
+                    <p><strong>Tre (Create Advantage with Shoot):</strong> Suppressing fire to pin down guards</p>
                     <p><strong>Roll:</strong> +3 (Shoot) + 1 (dice) = +4 vs. Fair (+2)</p>
                     <p><strong>Result:</strong> Success! Creates "Pinned Down" aspect on the guards</p>
                     
                     <p><strong>Marcus (Attack with Fight):</strong> Closes distance and attacks Guard 1</p>
                     <p><strong>Roll:</strong> +4 (Fight) + 0 (dice) = +4</p>
                     <p><strong>Guard 1 (Defend with Fight):</strong> +2 (Fight) - 2 (dice) = 0</p>
-                    <p><strong>Result:</strong> Marcus succeeds by 4, dealing 4 physical stress. Guard 1 takes stress (1)(2) and a Mild Consequence "Bloodied Nose"</p>
+                    <p><strong>Result:</strong> Marcus succeeds by 4, dealing 4 physical stress. Guard 1 checks his 2-stress box and takes a Mild Consequence (2) "Bloodied Nose" to absorb the rest</p>
                     
-                    <p><strong>Guards 2&3 (Attack with Shoot):</strong> Return fire at Sarah</p>
-                    <p><strong>Guard 2 Roll:</strong> +2 (Shoot) - 1 (dice) - 2 (Pinned Down) = -1</p>
-                    <p><strong>Guard 3 Roll:</strong> +2 (Shoot) + 1 (dice) - 2 (Pinned Down) = +1</p>
-                    <p><strong>Sarah (Defend with Athletics):</strong> +2 (Athletics) + 2 (dice) = +4</p>
-                    <p><strong>Result:</strong> Sarah easily avoids the poorly-aimed shots</p>
+                    <p><strong>Guards 2&3 (Attack with Shoot):</strong> Return fire at Tre</p>
+                    <p><strong>Guard 2 Roll:</strong> +2 (Shoot) - 1 (dice) = +1</p>
+                    <p><strong>Guard 3 Roll:</strong> +2 (Shoot) + 1 (dice) = +3</p>
+                    <p><strong>Tre (Defend with Athletics):</strong> +2 (Athletics) + 2 (dice) = +4 (she still has the free invoke on "Pinned Down" for +2 if she needs it)</p>
+                    <p><strong>Result:</strong> Tre easily avoids the poorly-aimed shots</p>
                 </div>
 
                 <div class="combat-round">
@@ -835,16 +827,16 @@
                     <p><strong>Result:</strong> Succeeds by 3, Guard 1 can't absorb more stress and is taken out</p>
                     <p><strong>Narration:</strong> "Marcus's combat training shows as he systematically dismantles his opponent"</p>
                     
-                    <p><strong>Sarah (Attack with Shoot):</strong> Targets Guard 2</p>
+                    <p><strong>Tre (Attack with Shoot):</strong> Targets Guard 2</p>
                     <p><strong>Roll:</strong> +3 (Shoot) + 2 (dice) = +5</p>
                     <p><strong>Guard 2 (Defend with Athletics):</strong> +1 (Athletics) - 1 (dice) = 0</p>
-                    <p><strong>Result:</strong> Succeeds by 5! Guard 2 takes severe damage and is also taken out</p>
+                    <p><strong>Result:</strong> Succeeds by 5! Guard 2 can't absorb that many shifts and is also taken out</p>
                     
                     <p><strong>Guard 3 (Concede):</strong> "I surrender! Don't shoot!"</p>
-                    <p><strong>Result:</strong> Guard 3 earns a Fate Point and gets to describe how he surrenders</p>
+                    <p><strong>Result:</strong> Guard 3 concedes before anyone rolls against him, so the GM gets a fate point and describes how he surrenders</p>
                 </div>
 
-                <p><strong>Outcome:</strong> Marcus and Sarah win the fight quickly through superior tactics and teamwork. Guard 3's surrender provides an opportunity for interrogation.</p>
+                <p><strong>Outcome:</strong> Marcus and Tre win the fight quickly through superior tactics and teamwork. Guard 3's surrender provides an opportunity for interrogation.</p>
             </div>
         </section>
 
@@ -857,7 +849,7 @@
                 <p><strong>Scenario:</strong> A hacker trying to break into a corporate server while security is closing in.</p>
                 <ul>
                     <li>Failure: What goes wrong and how does it complicate the situation?</li>
-                    <li>Success at a Cost: They get in, but what's the price?</li>
+                    <li>Tie: They get in, but at a minor cost. What's the price?</li>
                     <li>Success: Clean accomplishment of the goal</li>
                     <li>Success with Style: Not only do they succeed, but what extra benefit do they get?</li>
                 </ul>
@@ -1000,7 +992,7 @@
 
             <div class="next-steps">
                 <h3>Ready for Bigger Pictures?</h3>
-                <p>In our next lecture, we'll explore how to structure entire game sessions and campaigns—how to create compelling scenarios, manage pacing, handle player agency, and build long-term stories that showcase Fate's collaborative strengths. You'll learn to think beyond individual scenes to craft memorable gaming experiences.</p>
+                <p>In the next part, we'll explore how to structure entire game sessions and campaigns—how to create compelling scenarios, manage pacing, handle player agency, and build long-term stories that showcase Fate's collaborative strengths. You'll learn to think beyond individual scenes to craft memorable gaming experiences.</p>
             </div>
         </section>
     </main>
@@ -1012,17 +1004,6 @@
 </div>
         <p>Remember: Every roll should make the story more interesting, not less!</p>
     </footer>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

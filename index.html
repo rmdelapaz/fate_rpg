@@ -3,13 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fate Core Fundamentals: Collaborative Storytelling Made Simple</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <title>Fate RPG Guide: Collaborative Storytelling with Fate Core</title>
+    <meta name="description" content="A 12-part guide to the Fate Core roleplaying game: aspects, fate points, the four actions, character creation, 70+ sample characters, a 4dF dice roller, and game mastering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
+    <style>
+        .home { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-bottom: 24px; }
+        .hero {
+            margin-top: 28px;
+            padding: clamp(36px, 7vw, 72px) clamp(20px, 5vw, 56px);
+            border-radius: 20px;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(240, 163, 90, 0.28), transparent 45%),
+                linear-gradient(135deg, var(--hero-1), var(--hero-2));
+            color: #fff;
+            box-shadow: var(--shadow);
+        }
+        .hero h1 { color: #fff; font-size: clamp(2.1rem, 6vw, 3.4rem); margin: 0 0 14px; }
+        .hero p { color: rgba(255, 255, 255, 0.92); font-size: clamp(1.05rem, 2.2vw, 1.22rem); max-width: 64ch; margin: 0 0 24px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+        .btn-hero { display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; background: #fff; color: #0e2c3e; border: 2px solid #fff; }
+        .btn-hero:hover { background: #e6f6f3; color: #0e2c3e; }
+        .btn-hero.ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+        .btn-hero.ghost:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+        .dice { display: flex; gap: 8px; }
+        .die {
+            width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center;
+            background: rgba(255, 255, 255, 0.95); color: #0e2c3e; font: 700 1.6rem/1 "Source Sans 3", sans-serif;
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .section-head { margin: 52px 0 16px; }
+        .section-head h2 { margin: 0 0 8px; }
+        .section-head p { color: var(--muted); max-width: 70ch; margin: 0; }
+        .group-label { font-family: "Cinzel", Georgia, serif; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; margin: 26px 0 10px; font-size: 1rem; }
+
+        .part-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 14px; }
+        .part-card {
+            display: flex; flex-direction: column; gap: 6px;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+            padding: 18px 20px; box-shadow: var(--shadow); text-decoration: none; color: var(--text);
+            border-left: 4px solid var(--accent); transition: transform 0.15s, border-color 0.15s;
+        }
+        .part-card:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--text); }
+        .part-card .num { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+        .part-card h3 { margin: 0; font-size: 1.12rem; color: var(--heading); }
+        .part-card p { margin: 0; color: var(--muted); font-size: 0.97rem; line-height: 1.55; }
+        .part-card.tool { border-left-color: var(--gold); }
+
+        .quick { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 12px; }
+        .quick div { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+        .quick h3 { margin: 0 0 4px; font-size: 1rem; color: var(--heading); }
+        .quick p { margin: 0; color: var(--text); font-size: 0.95rem; line-height: 1.55; }
+
+        .home-footer { text-align: center; color: var(--muted); margin-top: 36px; }
+    </style>
 </head>
 <body>
 <nav class="site-nav">
@@ -18,41 +70,74 @@
     <a href="https://rays-home.netlify.app/contact">Contact</a>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
 </nav>
-    <header>
-        <h1>Fate Core Fundamentals: Collaborative Storytelling Made Simple</h1>
-        <p class="subtitle">Where Fiction Drives Mechanics and Everyone Tells the Story</p>
+
+<div class="home">
+    <header class="hero">
+        <h1>The Fate RPG Guide</h1>
+        <p>Fate Core is like improvisational theater with dice and rules: everyone at the table helps create dramatic stories that grow naturally out of play instead of being forced by complex systems. This 12-part guide takes you from your first roll to running whole campaigns.</p>
+        <div class="hero-actions">
+            <a class="btn-hero" href="/fate_intro.html">Start with Part 1 →</a>
+            <a class="btn-hero ghost" href="/fate_dice_roller.html">Roll Fate Dice</a>
+        </div>
+        <div class="dice" aria-label="Four Fate dice showing plus, blank, minus, plus">
+            <span class="die" aria-hidden="true">+</span><span class="die" aria-hidden="true">&nbsp;</span><span class="die" aria-hidden="true">−</span><span class="die" aria-hidden="true">+</span>
+        </div>
     </header>
 
     <main>
-    <h3>Fate Core RPG</h3>
-            <p>Fate Core is like improvisational theater with dice and rules, where everyone at the table contributes to creating dramatic, engaging stories that emerge naturally from play rather than being forced by complex systems.</p>
-            <ul>
-                <li><a href="/fate_intro.html">Introduction</a></li>
-                <li><a href="/fate_char.html">Character Creation</a></li>
-                <li><a href="/fate_character_examples.html">Character Examples</a></li>
-                <li><a href="/fate_100.html">100 Characters</a></li>
-                <li><a href="/fate_names.html">Character Names</a></li>
-                <li><a href="/fate_groups.html">Character Group Dynamics</a></li>
-                <li><a href="/fate_dice_roller.html">Dice Roller</a></li>
-                <li><a href="/fate_actions.html">Actions</a></li>
-                <li><a href="/fate_adv_techniques.html">Advanced Techniques</a></li>
-                <li><a href="/fate_gm.html">Game Mastery</a></li>
-                <li><a href="/fate_future.html">Future</a></li>
-                <li><a href="/fate_mastery.html">Master Class</a></li>
-                <li><a href="/index.html">Home Page</a></li>
+        <section>
+            <div class="section-head">
+                <h2>Fate at a Glance</h2>
+                <p>Four ideas carry most of the game. Each part of the guide builds on them.</p>
+            </div>
+            <div class="quick">
+                <div><h3>Aspects</h3><p>Short phrases that describe what's true about a character, place or scene, like "Can't Let Go of Unsolved Mysteries."</p></div>
+                <div><h3>Fate Points</h3><p>Spend them to invoke an aspect for +2 or a reroll; earn them when your aspects complicate your life.</p></div>
+                <div><h3>The Four Actions</h3><p>Overcome, create an advantage, attack and defend. Everything you do in play is one of these.</p></div>
+                <div><h3>The Ladder</h3><p>Roll four Fate dice (−4 to +4), add a skill, and read the result on the ladder from Terrible (−2) to Legendary (+8).</p></div>
+            </div>
+        </section>
 
-            </ul>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });
-})();
-</script>
+        <section>
+            <div class="section-head">
+                <h2>The 12 Parts</h2>
+                <p>Read in order for the full picture, or jump to what you need.</p>
+            </div>
+
+            <p class="group-label">Learn the Game</p>
+            <div class="part-grid">
+                <a class="part-card" href="/fate_intro.html"><span class="num">Part 1</span><h3>Fate Core Fundamentals</h3><p>Fiction first: aspects, skills, Fate dice, the four actions and fate points.</p></a>
+                <a class="part-card" href="/fate_char.html"><span class="num">Part 2</span><h3>Character Creation</h3><p>Build characters together through the phase trio, aspects, the skill pyramid, stunts and refresh.</p></a>
+            </div>
+
+            <p class="group-label">Characters &amp; Inspiration</p>
+            <div class="part-grid">
+                <a class="part-card" href="/fate_character_examples.html"><span class="num">Part 3</span><h3>Character Examples</h3><p>Worked characters and adventure groups showing aspects, skills and stunts in action.</p></a>
+                <a class="part-card" href="/fate_100.html"><span class="num">Part 4</span><h3>70+ Sample Characters</h3><p>Ready-to-play heroes, duos and teams across many genres.</p></a>
+                <a class="part-card" href="/fate_names.html"><span class="num">Part 5</span><h3>150 Character Names</h3><p>Names that tell stories, plus naming strategies and a name generator.</p></a>
+                <a class="part-card" href="/fate_groups.html"><span class="num">Part 6</span><h3>Character Group Dynamics</h3><p>Assemble an ensemble whose relationships drive the story.</p></a>
+            </div>
+
+            <p class="group-label">Play</p>
+            <div class="part-grid">
+                <a class="part-card tool" href="/fate_dice_roller.html"><span class="num">Part 7 · Tool</span><h3>Fate Dice Roller</h3><p>Roll 4dF, add your skill and see the result on the ladder.</p></a>
+                <a class="part-card" href="/fate_actions.html"><span class="num">Part 8</span><h3>Actions, Outcomes &amp; Conflicts</h3><p>The four outcomes, setting difficulty, challenges, contests, conflicts and zones.</p></a>
+            </div>
+
+            <p class="group-label">Run &amp; Grow</p>
+            <div class="part-grid">
+                <a class="part-card" href="/fate_adv_techniques.html"><span class="num">Part 9</span><h3>Advanced Techniques</h3><p>The Fate Fractal, extras, genre adaptation and collaborative setting creation.</p></a>
+                <a class="part-card" href="/fate_gm.html"><span class="num">Part 10</span><h3>Game Mastering &amp; Campaigns</h3><p>Scenarios from character threads, NPCs, pacing and long-term campaign structure.</p></a>
+                <a class="part-card" href="/fate_future.html"><span class="num">Part 11</span><h3>Fate Beyond the Table</h3><p>Communities, education, therapeutic play and transmedia storytelling.</p></a>
+                <a class="part-card" href="/fate_mastery.html"><span class="num">Part 12</span><h3>Master Class</h3><p>Complex conflicts, meaningful consequences, custom stunts and campaign mastery.</p></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="home-footer">
+        <p>Remember: in Fate, the story you tell together matters more than the rules.</p>
+    </footer>
+</div>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

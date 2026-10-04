@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Mastering and Campaign Structure: Facilitating Collaborative Stories</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -44,16 +45,11 @@
     A --> D[Play to Find Out]
     A --> E[Never Say No — Say Yes But]
 
-    B --> B1[Want to see them succeed\nMake them look awesome\nCelebrate their victories]
-    C --> C1[Create interesting problems\nOffer meaningful choices\nKeep things moving]
-    D --> D1[Don't plan outcomes\nBe surprised by results\nAdapt to player creativity]
-    E --> E1[Build on player ideas\nAdd complications, not roadblocks\nMaintain story momentum]
+    B --> B1[Want to see them succeed&lt;br/&gt;Make them look awesome&lt;br/&gt;Celebrate their victories]
+    C --> C1[Create interesting problems&lt;br/&gt;Offer meaningful choices&lt;br/&gt;Keep things moving]
+    D --> D1[Don't plan outcomes&lt;br/&gt;Be surprised by results&lt;br/&gt;Adapt to player creativity]
+    E --> E1[Build on player ideas&lt;br/&gt;Add complications, not roadblocks&lt;br/&gt;Maintain story momentum]
 
-    style A fill:#e1f5fe
-    style B fill:#e8f5e8
-    style C fill:#fff3e0
-    style D fill:#f3e5f5
-    style E fill:#fffde7
 </div>
 
 
@@ -173,7 +169,7 @@
             </div>
 
             <h3>The Diamond Structure</h3>
-            <p>Fate scenarios work best with a diamond structure that provides multiple paths to the climax.</p>
+            <p>One useful way to shape a Fate scenario is a diamond structure that provides multiple paths to the climax.</p>
 
             <div class="diamond-structure">
                 <canvas id="diamondChart" width="600" height="400"></canvas>
@@ -248,7 +244,7 @@
                     ctx.fillText('Single dramatic opening', points.top.x, points.top.y + 25);
                     ctx.fillText('Investigation route', points.left.x, points.left.y + 25);
                     ctx.fillText('Action route', points.right.x, points.right.y + 25);
-                    ctx.fillText('All paths converge', points.bottom.x, points.bottom.y - 25);
+                    ctx.fillText('All paths converge', points.bottom.x, points.bottom.y + 25);
                     ctx.fillText('Decision shapes approach', centerX, centerY + 25);
                     
                     // Title
@@ -267,17 +263,17 @@
                     <h5>Character Aspects as Story Seeds</h5>
                     <ul>
                         <li><strong>Marcus:</strong> "My Former Team is Hunting Me" → Corporate security has new intel on his location</li>
-                        <li><strong>Elena:</strong> "Academic Rivals Want to Discredit My Theories" → Rival archaeologist is working with the corporation</li>
-                        <li><strong>Sarah:</strong> "The Network Owes Me Favors" → Her hacker contacts discover something big</li>
+                        <li><strong>Rita:</strong> "Academic Rivals Want to Discredit My Theories" → Rival archaeologist is working with the corporation</li>
+                        <li><strong>Tre:</strong> "The Network Owes Me Favors" → Her hacker contacts discover something big</li>
                         <li><strong>Maya:</strong> "Paranoid About Government Surveillance" → She detects unusual data mining patterns</li>
                     </ul>
                 </div>
 
                 <div class="scenario-development">
                     <h5>Weaving Threads Together</h5>
-                    <p><strong>The Hook:</strong> Sarah's contact discovers that someone is systematically acquiring ancient artifacts with unusual properties—and they're using Elena's research to find them.</p>
+                    <p><strong>The Hook:</strong> Tre's contact discovers that someone is systematically acquiring ancient artifacts with unusual properties—and they're using Rita's research to find them.</p>
                     
-                    <p><strong>The Complication:</strong> The corporation has hired Elena's academic rival to provide legitimacy, and they're using Marcus's former security team to "acquire" artifacts from private collectors.</p>
+                    <p><strong>The Complication:</strong> The corporation has hired Rita's academic rival to provide legitimacy, and they're using Marcus's former security team to "acquire" artifacts from private collectors.</p>
                     
                     <p><strong>The Stakes:</strong> The artifacts aren't just valuable—they're components of some kind of ancient technology that the corporation plans to weaponize.</p>
                 </div>
@@ -318,14 +314,14 @@
                         <li>Museum security systems (passive)</li>
                         <li>Night guards on patrol (active)</li>
                         <li>Time pressure (the museum opens to public tomorrow)</li>
-                        <li>Dr. Whitman, Elena's rival, might show up unexpectedly</li>
+                        <li>Dr. Whitman, Rita's rival, might show up unexpectedly</li>
                     </ul>
                 </div>
 
                 <div class="scene-aspects">
                     <h5>Aspects in Play</h5>
                     <ul>
-                        <li><strong>Character:</strong> Elena's "Brilliant Archaeologist" expertise</li>
+                        <li><strong>Character:</strong> Rita's "Brilliant Archaeologist" expertise</li>
                         <li><strong>Situational:</strong> "State-of-the-Art Security," "Priceless Artifacts Everywhere"</li>
                         <li><strong>Environmental:</strong> "Marble Floors Echo," "Skylights and Shadows"</li>
                     </ul>
@@ -462,7 +458,7 @@
                     <ul>
                         <li><strong>High Concept:</strong> "Corporate Scientist with a Conscience"</li>
                         <li><strong>Trouble:</strong> "They Know I Know Too Much"</li>
-                        <li><strong>Key Skills:</strong> Science +4, Investigate +3, Will +3</li>
+                        <li><strong>Key Skills:</strong> Lore +4, Investigate +3, Will +3</li>
                     </ul>
                 </div>
 
@@ -470,10 +466,10 @@
                     <h4>Supporting NPCs (Partial Stats)</h4>
                     <p><strong>Who:</strong> Important but not central characters</p>
                     <p><strong>Stats:</strong> 2-3 aspects, key skills only</p>
-                    <p><strong>Example:</strong> Detective Rodriguez, Sarah's police contact</p>
+                    <p><strong>Example:</strong> Detective Rodriguez, Tre's police contact</p>
                     <ul>
                         <li><strong>Aspects:</strong> "By-the-Book Cop," "Suspicious of Freelancers"</li>
-                        <li><strong>Key Skills:</strong> Investigation +3, Contacts +2</li>
+                        <li><strong>Key Skills:</strong> Investigate +3, Contacts +2</li>
                     </ul>
                 </div>
 
@@ -565,7 +561,7 @@
                         <li>Connect to ongoing storylines and character aspects</li>
                         <li>Provide immediate engagement and forward momentum</li>
                     </ul>
-                    <p><strong>Example:</strong> Elena receives a panicked call from Dr. Cross—someone broke into her lab and stole her research</p>
+                    <p><strong>Example:</strong> Rita receives a panicked call from Dr. Cross—someone broke into her lab and stole her research</p>
                 </div>
 
                 <div class="session-beat">
@@ -994,7 +990,7 @@
 
             <div class="next-steps">
                 <h3>Mastering the Craft</h3>
-                <p>In our next lecture, we'll explore advanced Fate techniques and customization options—how to modify the system for different genres, create custom extras and powers, and adapt Fate to unique campaign concepts. You'll learn to think of Fate not just as a game system, but as a flexible toolkit for creating exactly the gaming experience you want.</p>
+                <p>In the next part, we'll explore the future of Fate gaming—emerging trends in narrative gaming, how to build lasting gaming communities, and techniques for becoming a better collaborative storyteller. You'll learn to think beyond individual campaigns to create ongoing gaming experiences that evolve and grow over years of shared creativity.</p>
             </div>
         </section>
     </main>
@@ -1006,17 +1002,6 @@
 </div>
         <p>Remember: The best stories are told together, not dictated from above!</p>
     </footer>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

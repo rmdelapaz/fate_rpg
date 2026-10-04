@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Techniques and Customization: Making Fate Your Own</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -37,7 +38,7 @@
         <section class="fate-fractal">
             <h2>The Fate Fractal: Everything is a Character</h2>
             
-            <p>The Fate Fractal is Fate's most powerful conceptual tool—the idea that everything important in your game can be treated like a character with aspects, skills, and stress tracks. This principle allows you to model anything from individual items to entire civilizations using the same basic mechanics.</p>
+            <p>The Fate Fractal (also called the Bronze Rule) is Fate's most powerful conceptual tool—the idea that everything important in your game can be treated like a character with aspects, skills, and stress tracks. This principle allows you to model anything from individual items to entire civilizations using the same basic mechanics.</p>
 
             <div class="mermaid">
                 graph TD
@@ -48,20 +49,13 @@
                     A --> F[Supernatural Powers]
                     A --> G[Abstract Concepts]
                     
-                    B --> B1[Traditional PCs and NPCs<br/>Aspects, skills, stress]
-                    C --> C1[Corporations, governments<br/>Institutional aspects and resources]
-                    D --> D1[Cities, buildings, realms<br/>Environmental traits and dangers]
-                    E --> E1[Cars, ships, mechs<br/>Performance and damage]
-                    F --> F1[Magic systems, psionics<br/>Power aspects and limitations]
-                    G --> G1[Relationships, reputations<br/>Social dynamics and influence]
+                    B --> B1[Traditional PCs and NPCs&lt;br/&gt;Aspects, skills, stress]
+                    C --> C1[Corporations, governments&lt;br/&gt;Institutional aspects and resources]
+                    D --> D1[Cities, buildings, realms&lt;br/&gt;Environmental traits and dangers]
+                    E --> E1[Cars, ships, mechs&lt;br/&gt;Performance and damage]
+                    F --> F1[Magic systems, psionics&lt;br/&gt;Power aspects and limitations]
+                    G --> G1[Relationships, reputations&lt;br/&gt;Social dynamics and influence]
                     
-                    style A fill:#e1f5fe
-                    style B fill:#e8f5e8
-                    style C fill:#fff3e0
-                    style D fill:#f3e5f5
-                    style E fill:#fffde7
-                    style F fill:#fce4ec
-                    style G fill:#e0f2f1
             </div>
 
             <h3>Organizations as Characters</h3>
@@ -501,8 +495,8 @@
         <section class="collaborative-setting-creation">
             <h2>Collaborative Setting Creation</h2>
             
-            <h3>The Diamond City Method</h3>
-            <p>A structured approach to building campaign settings collaboratively with your players.</p>
+            <h3>The Fate Core Game Creation Method</h3>
+            <p>A structured approach to building campaign settings collaboratively with your players, adapted from the game creation steps in Fate Core.</p>
 
             <div class="diamond-city-process">
                 <h4>Step-by-Step Setting Creation</h4>
@@ -618,7 +612,7 @@
                             <li><strong>Angry:</strong> +2 to attacks, -2 to careful actions</li>
                             <li><strong>Tired:</strong> -1 to all physical actions</li>
                             <li><strong>Hurt:</strong> -2 to all actions until treated</li>
-                            <li><strong>Afraid:</strong> Cannot take attacks actions against source of fear</li>
+                            <li><strong>Afraid:</strong> Cannot take attack actions against source of fear</li>
                             <li><strong>Guilty:</strong> Compelled to make amends or self-sacrifice</li>
                         </ul>
                     </div>
@@ -774,7 +768,7 @@
 
             <div class="activity">
                 <h3>Activity 4: Collaborative Setting Creation</h3>
-                <p>Use the Diamond City method to create a campaign setting:</p>
+                <p>Use the game creation method above to create a campaign setting:</p>
                 <ul>
                     <li>Define the big picture (genre, scope, power level)</li>
                     <li>Create two compelling issues that could drive multiple storylines</li>
@@ -807,7 +801,7 @@
                 <li><strong>Fate Space Toolkit:</strong> Science fiction adaptations</li>
                 <li><strong>Atomic Robo:</strong> Science action with custom mechanics</li>
                 <li><strong>Dresden Files Accelerated:</strong> Urban fantasy with simplified rules</li>
-                <li><strong>War of Ashes:</strong> Fantasy with fate dice alternatives</li>
+                <li><strong>War of Ashes: Fate of Agaptus:</strong> Comedic fantasy with its own customized Fate rules</li>
             </ul>
 
             <h3>Community Resources</h3>
@@ -917,7 +911,7 @@
 
             <div class="next-steps">
                 <h3>Your Fate Journey Continues</h3>
-                <p>In our final lecture, we'll explore the future of Fate gaming—emerging trends in narrative gaming, how to build lasting gaming communities, and techniques for becoming a better collaborative storyteller. You'll learn to think beyond individual campaigns to create ongoing gaming experiences that evolve and grow over years of shared creativity.</p>
+                <p>In the next part, we'll turn to game mastering and campaign structure—how to build scenarios from character aspects, manage NPCs and pacing, keep the Fate point economy healthy, and sustain a long campaign. You'll learn to act as a facilitator who sets up interesting situations and lets the players' choices shape the story.</p>
             </div>
         </section>
     </main>
@@ -929,17 +923,6 @@
 </div>
         <p>Remember: The best rule is the one that helps tell your story!</p>
     </footer>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

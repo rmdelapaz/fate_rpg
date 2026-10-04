@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fate Core Fundamentals: Collaborative Storytelling Made Simple</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -49,11 +50,7 @@
                     F --> G[Determine Dramatic Stakes]
                     G --> H[Use Mechanics to Resolve]
                     H --> I[Return to Fiction]
-                    
-                    style A fill:#ffebee
-                    style E fill:#e8f5e8
-                    style F fill:#e1f5fe
-                    style I fill:#f3e5f5
+
             </div>
 
             <h3>Core Design Principles</h3>
@@ -62,7 +59,7 @@
                 <div class="principle">
                     <h4>Proactive, Competent, Dramatic</h4>
                     <p>Fate characters are heroes who take action, succeed at what they do, and face meaningful choices</p>
-                    <p><strong>Example:</strong> You're not "Bob the Level 3 Fighter"—you're "Detective Sarah Chen, Hard-Boiled Investigator who Never Backs Down from the Truth"</p>
+                    <p><strong>Example:</strong> You're not "Bob the Level 3 Fighter"—you're "Detective Tre Argent, Hard-Boiled Investigator who Never Backs Down from the Truth"</p>
                 </div>
 
                 <div class="principle">
@@ -209,7 +206,7 @@
                 <h4>Fate Dice Symbols</h4>
                 <ul>
                     <li><strong>+ (Plus):</strong> Positive result, adds +1</li>
-                    <li><strong>- (Minus):</strong> Negative result, subtracts -1</li>
+                    <li><strong>- (Minus):</strong> Negative result, subtracts 1</li>
                     <li><strong>□ (Blank):</strong> Neutral result, adds 0</li>
                 </ul>
 
@@ -218,7 +215,7 @@
                 <div class="dice_examples">
                     <p><strong>Example 1:</strong> + + □ - = (+1) + (+1) + (0) + (-1) = +1</p>
                     <p><strong>Example 2:</strong> + - - □ = (+1) + (-1) + (-1) + (0) = -1</p>
-                    <p><strong>Example 3:</strong> + + + + = (+1) + (+1) + (+1) + (+1) = +4 (Legendary luck!)</p>
+                    <p><strong>Example 3:</strong> + + + + = (+1) + (+1) + (+1) + (+1) = +4 (the best possible roll—a 1-in-81 chance!)</p>
                 </div>
             </div>
 
@@ -245,37 +242,37 @@
                     <tr>
                         <td>+6</td>
                         <td>Fantastic</td>
-                        <td>Amazing success, clearly superhuman</td>
+                        <td>Amazing, among the very best</td>
                     </tr>
                     <tr>
                         <td>+5</td>
                         <td>Superb</td>
-                        <td>Excellent performance, peak human</td>
+                        <td>Excellent, elite performance</td>
                     </tr>
-                    <tr style="background-color: #e8f5e8;">
+                    <tr class="row-tint callout-green">
                         <td>+4</td>
                         <td>Great</td>
                         <td>Very good, professional level</td>
                     </tr>
-                    <tr style="background-color: #e1f5fe;">
+                    <tr class="row-tint callout-blue">
                         <td>+3</td>
                         <td>Good</td>
                         <td>Above average, competent</td>
                     </tr>
-                    <tr style="background-color: #fff3e0;">
+                    <tr class="row-tint callout-orange">
                         <td>+2</td>
                         <td>Fair</td>
                         <td>Decent, getting by</td>
                     </tr>
-                    <tr style="background-color: #f3e5f5;">
+                    <tr class="row-tint callout-purple">
                         <td>+1</td>
                         <td>Average</td>
-                        <td>Below average, struggling</td>
+                        <td>Ordinary, typical competence</td>
                     </tr>
                     <tr>
                         <td>+0</td>
                         <td>Mediocre</td>
-                        <td>Just barely adequate</td>
+                        <td>Untrained, unremarkable</td>
                     </tr>
                     <tr>
                         <td>-1</td>
@@ -301,13 +298,13 @@
 
                 <div class="resolution_example">
                     <h4>Example: Sneaking Past Guards</h4>
-                    <p><strong>Character:</strong> Detective Sarah Chen wants to sneak into a warehouse</p>
+                    <p><strong>Character:</strong> Detective Tre Argent wants to sneak into a warehouse</p>
                     <p><strong>Skill:</strong> Stealth at Good (+3)</p>
                     <p><strong>Dice Roll:</strong> + □ - + = +1</p>
                     <p><strong>Total:</strong> +3 (skill) + 1 (dice) = +4 (Great)</p>
                     <p><strong>Opposition:</strong> Guards' Notice at Fair (+2)</p>
                     <p><strong>Result:</strong> Great (+4) vs Fair (+2) = Success with 2 shifts</p>
-                    <p><strong>Fiction:</strong> Sarah not only sneaks past undetected, but finds an ideal hiding spot with a perfect view of the criminal meeting</p>
+                    <p><strong>Fiction:</strong> Tre not only sneaks past undetected, but finds an ideal hiding spot with a perfect view of the criminal meeting</p>
                 </div>
             </div>
         </section>
@@ -320,20 +317,15 @@
             <div class="mermaid">
                 graph TD
                     A[Character Action] --> B{What are you trying to do?}
-                    B -->|Find out information| C[Overcome]
+                    B -->|Get past an obstacle| C[Overcome]
                     B -->|Change or create something| D[Create Advantage]
                     B -->|Hurt someone/something| E[Attack]
                     B -->|Protect yourself| F[Defend]
                     
-                    C --> C1[Roll skill vs. difficulty<br/>Success = you learn/achieve<br/>Failure = complication]
-                    D --> D1[Roll skill vs. difficulty<br/>Success = create aspect<br/>Failure = opponent gets aspect]
-                    E --> E1[Roll skill vs. defense<br/>Success = deal stress<br/>Failure = no effect]
-                    F --> F1[Roll skill vs. attack<br/>Success = prevent damage<br/>Failure = take stress]
-                    
-                    style C fill:#e8f5e8
-                    style D fill:#e1f5fe
-                    style E fill:#ffebee
-                    style F fill:#fff3e0
+                    C --> C1[Roll skill vs. difficulty&lt;br/&gt;Success = you achieve your goal&lt;br/&gt;Failure = fail, or succeed at a serious cost]
+                    D --> D1[Roll skill vs. difficulty&lt;br/&gt;Success = aspect + free invoke&lt;br/&gt;Failure = no aspect, or the foe gets the free invoke]
+                    E --> E1[Roll skill vs. defense&lt;br/&gt;Success = deal stress&lt;br/&gt;Failure = no effect]
+                    F --> F1[Roll skill vs. attack&lt;br/&gt;Success = prevent the harm&lt;br/&gt;Failure = take the hit]
             </div>
 
             <h3>Overcome: Getting Past Obstacles</h3>
@@ -351,9 +343,10 @@
                 <div class="overcome_resolution">
                     <h5>Overcome Outcomes</h5>
                     <ul>
-                        <li><strong>Success:</strong> You achieve your goal cleanly</li>
-                        <li><strong>Success at a Cost:</strong> You achieve your goal, but there's a complication</li>
-                        <li><strong>Failure:</strong> You don't achieve your goal, and there are consequences</li>
+                        <li><strong>Fail:</strong> You don't achieve your goal, or you succeed at a serious cost</li>
+                        <li><strong>Tie:</strong> You achieve your goal at a minor cost</li>
+                        <li><strong>Succeed:</strong> You achieve your goal cleanly</li>
+                        <li><strong>Succeed with Style (3+ shifts):</strong> You achieve your goal and gain a boost</li>
                     </ul>
                 </div>
             </div>
@@ -372,7 +365,7 @@
 
                 <div class="advantage_mechanics">
                     <h5>Aspect Creation and Free Invokes</h5>
-                    <p>When you successfully create an advantage, you create a situational aspect and get a <strong>free invoke</strong>—a one-time bonus you can use later for dramatic effect.</p>
+                    <p>When you successfully create an advantage, you create a situational aspect and get a <strong>free invoke</strong>—a one-time +2 (or reroll) you can use later without spending a Fate Point. Succeed with style and you get two free invokes.</p>
                 </div>
             </div>
 
@@ -442,22 +435,29 @@
                         const endX = centerX + Math.cos(endAngle) * radius;
                         const endY = centerY + Math.sin(endAngle) * radius;
                         
+                        // Shorten the arrow so it starts and ends at the circle edges (radius 35)
+                        const dirAngle = Math.atan2(endY - startY, endX - startX);
+                        const fromX = startX + Math.cos(dirAngle) * 38;
+                        const fromY = startY + Math.sin(dirAngle) * 38;
+                        const toX = endX - Math.cos(dirAngle) * 38;
+                        const toY = endY - Math.sin(dirAngle) * 38;
+
                         // Draw arrow
                         ctx.beginPath();
-                        ctx.moveTo(startX, startY);
-                        ctx.lineTo(endX, endY);
+                        ctx.moveTo(fromX, fromY);
+                        ctx.lineTo(toX, toY);
                         ctx.strokeStyle = '#333';
                         ctx.lineWidth = 3;
                         ctx.stroke();
                         
                         // Draw arrowhead
-                        const arrowAngle = Math.atan2(endY - startY, endX - startX);
+                        const arrowAngle = dirAngle;
                         const arrowLength = 15;
                         ctx.beginPath();
-                        ctx.moveTo(endX, endY);
-                        ctx.lineTo(endX - arrowLength * Math.cos(arrowAngle - 0.3), endY - arrowLength * Math.sin(arrowAngle - 0.3));
-                        ctx.moveTo(endX, endY);
-                        ctx.lineTo(endX - arrowLength * Math.cos(arrowAngle + 0.3), endY - arrowLength * Math.sin(arrowAngle + 0.3));
+                        ctx.moveTo(toX, toY);
+                        ctx.lineTo(toX - arrowLength * Math.cos(arrowAngle - 0.3), toY - arrowLength * Math.sin(arrowAngle - 0.3));
+                        ctx.moveTo(toX, toY);
+                        ctx.lineTo(toX - arrowLength * Math.cos(arrowAngle + 0.3), toY - arrowLength * Math.sin(arrowAngle + 0.3));
                         ctx.stroke();
                     });
                     
@@ -559,8 +559,8 @@
                 <h4>Create Advantage: Setting Up Success</h4>
                 <p><strong>Maya:</strong> "I want to hack into the security system to create a distraction. I'll use my Computers skill to create the aspect 'Security System Glitching.'"</p>
                 <p><strong>GM:</strong> "Roll Computers against Great (+4) difficulty—their security is top-notch."</p>
-                <p><strong>Maya:</strong> "I have Good (+3) Computers, and I'll invoke my 'Ace Hacker Fighting the System' aspect for +2. That's +5 total, plus my dice roll of +1 = +6 Fantastic!"</p>
-                <p><strong>GM:</strong> "Incredible success! Not only do you create 'Security System Glitching,' but you get two free invokes. The cameras start showing old footage, and the guards' radios are full of static."</p>
+                <p><strong>Maya:</strong> "I have Good (+3) Computers and rolled +1—that's only Great (+4), a tie. I'll spend a Fate Point to invoke my 'Ace Hacker Fighting the System' aspect for +2. That makes +6 Fantastic!"</p>
+                <p><strong>GM:</strong> "Success by two shifts! You create 'Security System Glitching' with a free invoke. The cameras start showing old footage, and the guards' radios are full of static."</p>
 
                 <h4>Overcome: Getting Past Obstacles</h4>
                 <p><strong>Alex:</strong> "While Maya has the guards distracted, I'll use Stealth to sneak past them to the office."</p>
@@ -718,7 +718,7 @@
 
             <div class="next_steps">
                 <h3>Ready for More?</h3>
-                <p>In our next lecture, we'll dive deep into character creation—how to build compelling aspects that drive story, how to choose skills that reflect your character concept, and how stunts can make your character unique. You'll learn to create characters that are mechanically effective and narratively compelling.</p>
+                <p>In the next part, we'll dive deep into character creation—how to build compelling aspects that drive story, how to choose skills that reflect your character concept, and how stunts can make your character unique. You'll learn to create characters that are mechanically effective and narratively compelling.</p>
             </div>
         </section>
     </main>
@@ -730,17 +730,6 @@
 </div>
         <p>Remember: In Fate, the story you tell together is more important than the rules!</p>
     </footer>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

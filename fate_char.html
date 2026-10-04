@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Creation and Development: Building Stories in Human Form</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -41,40 +42,31 @@
 
             <div class="mermaid">
                 flowchart TD
-                    A[Character Creation Process] --> B[Phase One: High Concept]
-                    B --> C[Phase Two: Trouble]
-                    C --> D[Phase Three: First Adventure]
-                    D --> E[Phase Four: Guest Star]
-                    E --> F[Phase Five: Guest Star Redux]
+                    A[Character Creation Process] --> B[High Concept]
+                    B --> C[Trouble]
+                    C --> D[Phase One: Your Adventure]
+                    D --> E[Phase Two: Crossing Paths]
+                    E --> F[Phase Three: Crossing Paths Again]
                     F --> G[Skills and Stunts]
                     G --> H[Refresh and Final Details]
                     
-                    B --> B1[Core identity<br/>What defines you?]
-                    C --> C1[Central conflict<br/>What complicates your life?]
-                    D --> D1[Your background<br/>First big adventure]
-                    E --> E1[Connect to another PC<br/>Shared story]
-                    F --> F1[Connect to third PC<br/>More relationships]
-                    G --> G1[Mechanical competencies<br/>Special abilities]
-                    H --> H1[Fate Point refresh<br/>Final polish]
-                    
-                    style A fill:#e1f5fe
-                    style B fill:#fff3e0
-                    style C fill:#ffebee
-                    style D fill:#e8f5e8
-                    style E fill:#f3e5f5
-                    style F fill:#fffde7
-                    style G fill:#e0f2f1
-                    style H fill:#fce4ec
+                    B --> B1[Core identity&lt;br/&gt;What defines you?]
+                    C --> C1[Central conflict&lt;br/&gt;What complicates your life?]
+                    D --> D1[Your background&lt;br/&gt;First big adventure]
+                    E --> E1[Connect to another PC&lt;br/&gt;Shared story]
+                    F --> F1[Connect to a third PC&lt;br/&gt;More relationships]
+                    G --> G1[Mechanical competencies&lt;br/&gt;Special abilities]
+                    H --> H1[Fate Point refresh&lt;br/&gt;Final polish]
             </div>
 
-            <h3>The Five-Phase Method: Building Connected Stories</h3>
+            <h3>Aspects Plus the Phase Trio: Building Connected Stories</h3>
             <p>Fate's phase-based character creation ensures that every character has built-in connections to other characters and meaningful background that can drive future stories.</p>
 
             <div class="phase-explanation">
-                <h4>Why Five Phases Work</h4>
+                <h4>Why This Structure Works</h4>
                 <ul>
-                    <li><strong>Individual Identity:</strong> Phases 1-3 establish who you are independently</li>
-                    <li><strong>Group Connections:</strong> Phases 4-5 create relationships with other player characters</li>
+                    <li><strong>Individual Identity:</strong> High concept, trouble, and Phase One establish who you are independently</li>
+                    <li><strong>Group Connections:</strong> Phases Two and Three create relationships with other player characters</li>
                     <li><strong>Story Hooks:</strong> Each phase creates potential plot threads for the GM</li>
                     <li><strong>Collaborative World-Building:</strong> Players contribute to setting details through character backgrounds</li>
                 </ul>
@@ -84,7 +76,7 @@
         <section class="aspects-deep-dive">
             <h2>Mastering Aspects: The Art of Dual-Purpose Traits</h2>
             
-            <h3>Phase One: High Concept</h3>
+            <h3>Your High Concept</h3>
             <p>Your High Concept is the elevator pitch for your character—who they are in one punchy phrase that immediately communicates their role, abilities, and place in the world.</p>
 
             <div class="high-concept-examples">
@@ -121,7 +113,7 @@
                 </div>
             </div>
 
-            <h3>Phase Two: Trouble</h3>
+            <h3>Your Trouble</h3>
             <p>Your Trouble aspect is what makes your character's life interesting and complicated. It's not a weakness—it's a source of drama that creates story opportunities.</p>
 
             <div class="trouble-categories">
@@ -158,41 +150,41 @@
                 </div>
             </div>
 
-            <h3>Phases Three Through Five: Building Connections</h3>
+            <h3>The Phase Trio: Building Connections</h3>
             <p>These phases create your character's background while building relationships with other player characters.</p>
 
             <div class="phase-walkthrough">
                 <h4>Example: Creating Marcus Kane</h4>
                 
                 <div class="character-phase">
-                    <h5>Phase One: High Concept</h5>
+                    <h5>High Concept</h5>
                     <p><strong>"Corporate Security Chief Turned Whistleblower"</strong></p>
                     <p>Marcus was head of security for NeoGen Corporation until he discovered their illegal experiments. Now he's on the run with stolen evidence.</p>
                 </div>
 
                 <div class="character-phase">
-                    <h5>Phase Two: Trouble</h5>
+                    <h5>Trouble</h5>
                     <p><strong>"My Former Team is Hunting Me"</strong></p>
                     <p>The security team Marcus used to lead is now trying to capture him. They know all his tricks and training.</p>
                 </div>
 
                 <div class="character-phase">
-                    <h5>Phase Three: First Adventure</h5>
+                    <h5>Phase One: Your Adventure</h5>
                     <p><strong>Adventure Title:</strong> "The NeoGen Files"</p>
                     <p><strong>Story:</strong> Marcus steals evidence of illegal human experimentation and has to escape corporate assassins while getting the data to journalists.</p>
                     <p><strong>Aspect:</strong> <strong>"The Evidence is My Life Insurance"</strong></p>
                 </div>
 
                 <div class="character-phase">
-                    <h5>Phase Four: Guest Star</h5>
-                    <p><strong>Whose Adventure:</strong> Sarah Chen's "The Underground Railroad" (she's a hacker freeing AI slaves)</p>
-                    <p><strong>Marcus's Role:</strong> Provides security expertise and muscle when Sarah's liberation mission goes wrong</p>
-                    <p><strong>Aspect:</strong> <strong>"I Owe Sarah Chen My Life"</strong></p>
+                    <h5>Phase Two: Crossing Paths</h5>
+                    <p><strong>Whose Adventure:</strong> Tre Argent's "The Underground Railroad" (she's a hacker freeing AI slaves)</p>
+                    <p><strong>Marcus's Role:</strong> Provides security expertise and muscle when Tre's liberation mission goes wrong</p>
+                    <p><strong>Aspect:</strong> <strong>"I Owe Tre Argent My Life"</strong></p>
                 </div>
 
                 <div class="character-phase">
-                    <h5>Phase Five: Guest Star Redux</h5>
-                    <p><strong>Whose Adventure:</strong> Dr. Elena Vasquez's "The Memory Thief" (psychic vampires stealing memories)</p>
+                    <h5>Phase Three: Crossing Paths Again</h5>
+                    <p><strong>Whose Adventure:</strong> Dr. Rita Anderson's "The Memory Thief" (psychic vampires stealing memories)</p>
                     <p><strong>Marcus's Role:</strong> His corporate security background helps identify the vampires' corporate front organization</p>
                     <p><strong>Aspect:</strong> <strong>"Corporate Paranoia Saved Us All"</strong></p>
                 </div>
@@ -356,7 +348,7 @@
                     
                     // Fair (+2)
                     startY += blockHeight + blockSpacing;
-                    x = 175;
+                    x = 205;
                     skills.fair.forEach((skill, index) => {
                         const blockX = x + index * 85;
                         ctx.fillStyle = colors.fair;
@@ -371,7 +363,7 @@
                     
                     // Average (+1)
                     startY += blockHeight + blockSpacing;
-                    x = 125;
+                    x = 180;
                     skills.average.forEach((skill, index) => {
                         const blockX = x + index * 75;
                         ctx.fillStyle = colors.average;
@@ -493,7 +485,7 @@
                         <li><strong>3 stunts:</strong> Refresh 3 (no penalty for first three stunts)</li>
                         <li><strong>4 stunts:</strong> Refresh 2 (fourth stunt costs 1 refresh)</li>
                         <li><strong>5 stunts:</strong> Refresh 1 (fifth stunt costs another refresh)</li>
-                        <li><strong>6+ stunts:</strong> Still Refresh 1 (minimum refresh, but you're very specialized)</li>
+                        <li><strong>6+ stunts:</strong> Not possible at a default refresh of 3—refresh can't drop below 1</li>
                     </ul>
                 </div>
             </div>
@@ -502,25 +494,25 @@
             <p>More stunts make you more capable in specific situations, but fewer Fate Points mean less flexibility during play. This creates an interesting character design choice.</p>
 
             <div class="power-trade-off">
-                <h4>High Refresh Characters (1-2 stunts)</h4>
+                <h4>High Refresh Characters (3 free stunts, refresh 3)</h4>
                 <ul>
                     <li><strong>Advantages:</strong> More Fate Points for flexibility, can invoke aspects frequently</li>
                     <li><strong>Playstyle:</strong> Adaptable generalists who excel through clever aspect use</li>
                     <li><strong>Example:</strong> Jack-of-all-trades investigator who succeeds through determination and creativity</li>
                 </ul>
 
-                <h4>High Stunt Characters (4-6 stunts)</h4>
+                <h4>High Stunt Characters (5 stunts, refresh 1)</h4>
                 <ul>
                     <li><strong>Advantages:</strong> Specialized abilities, consistent mechanical bonuses</li>
                     <li><strong>Playstyle:</strong> Focused specialists who excel in their area of expertise</li>
                     <li><strong>Example:</strong> Master martial artist with multiple fighting techniques but limited Fate Points</li>
                 </ul>
 
-                <h4>Balanced Characters (3 stunts)</h4>
+                <h4>Balanced Characters (4 stunts, refresh 2)</h4>
                 <ul>
                     <li><strong>Advantages:</strong> Good mix of specialization and flexibility</li>
                     <li><strong>Playstyle:</strong> Competent in their niche with enough Fate Points for key moments</li>
-                    <li><strong>Example:</strong> Marcus Kane with his three security-focused stunts and 3 refresh</li>
+                    <li><strong>Example:</strong> Marcus Kane if he bought a fourth security-focused stunt, keeping 2 refresh</li>
                 </ul>
             </div>
         </section>
@@ -538,44 +530,40 @@
                     A --> C[Significant Milestones]
                     A --> D[Major Milestones]
                     
-                    B --> B1[End of session<br/>Small changes<br/>Switch skills/stunts]
-                    C --> C1[End of scenario<br/>Moderate growth<br/>Raise skills/add stunts]
-                    D --> D1[End of arc<br/>Major changes<br/>New aspects/paradigm shifts]
-                    
-                    style B fill:#e8f5e8
-                    style C fill:#e1f5fe
-                    style D fill:#fff3e0
+                    B --> B1[End of session&lt;br/&gt;Small changes&lt;br/&gt;Swap skills, stunts, aspect wording]
+                    C --> C1[End of scenario&lt;br/&gt;Moderate growth&lt;br/&gt;Gain a skill point]
+                    D --> D1[End of arc&lt;br/&gt;Major changes&lt;br/&gt;Extra refresh, rename high concept]
             </div>
 
             <h4>Minor Milestones (End of Each Session)</h4>
             <p>Small adjustments that reflect what your character learned during play</p>
             <ul>
                 <li><strong>Switch values:</strong> Swap the ratings of any two skills</li>
-                <li><strong>Replace stunt:</strong> Change one stunt for a different one</li>
-                <li><strong>Rename aspect:</strong> Change the wording of an aspect to better reflect your character</li>
+                <li><strong>Replace stunt:</strong> Change one stunt for a different one (or buy a new one by spending refresh)</li>
+                <li><strong>Rename aspect:</strong> Rewrite one aspect other than your high concept to better reflect your character</li>
             </ul>
 
             <div class="milestone-example">
                 <h5>Minor Milestone Example</h5>
-                <p>After a session where Marcus had to do a lot of research instead of fighting, the player swaps his Fair (+2) Athletics with his Average (+1) Investigate, reflecting how the character adapted to the situation.</p>
+                <p>After a session where Marcus had to do a lot of research instead of fighting, the player swaps his Good (+3) Notice with his Fair (+2) Investigate, reflecting how the character adapted to the situation.</p>
             </div>
 
             <h4>Significant Milestones (End of Each Scenario)</h4>
             <p>Meaningful growth that reflects completing a story arc</p>
             <ul>
                 <li><strong>Everything from minor milestones, plus:</strong></li>
-                <li><strong>Raise skill:</strong> Increase one skill by one step (respecting pyramid)</li>
-                <li><strong>Add stunt:</strong> Gain a new stunt (reducing refresh if necessary)</li>
-                <li><strong>Remove mild consequences:</strong> Clear persistent minor injuries or problems</li>
+                <li><strong>Gain a skill point:</strong> Raise one skill by one step, or add a new skill at Average (+1)—keeping your skill pyramid valid</li>
+                <li><strong>Recover from moderate consequences:</strong> Clear a moderate consequence that has had time to heal</li>
             </ul>
 
             <h4>Major Milestones (End of Major Story Arcs)</h4>
             <p>Fundamental character changes that reflect major story developments</p>
             <ul>
                 <li><strong>Everything from significant milestones, plus:</strong></li>
-                <li><strong>Change aspect:</strong> Replace any aspect except High Concept with something completely new</li>
-                <li><strong>Rearrange skills:</strong> Keep same skill points but redistribute them</li>
-                <li><strong>Increase refresh:</strong> Gain one refresh (and thus one more stunt slot)</li>
+                <li><strong>Rename high concept:</strong> Your core identity can change to reflect the story so far</li>
+                <li><strong>Raise the skill cap:</strong> Advance a skill beyond the current cap</li>
+                <li><strong>Recover from severe consequences:</strong> Clear a severe consequence that has had time to heal</li>
+                <li><strong>Increase refresh:</strong> Gain one refresh (which you can keep or trade for a new stunt)</li>
             </ul>
 
             <div class="advancement-example">
@@ -607,10 +595,10 @@
                 
                 <div class="relationship-category">
                     <h5>PC-to-PC Relationships</h5>
-                    <p>Built during phases 4 and 5 of character creation</p>
+                    <p>Built during Phases Two and Three of character creation</p>
                     <ul>
-                        <li><strong>Professional:</strong> "Sarah saved my life during the data heist"</li>
-                        <li><strong>Personal:</strong> "Elena reminds me of my late daughter"</li>
+                        <li><strong>Professional:</strong> "Tre saved my life during the data heist"</li>
+                        <li><strong>Personal:</strong> "Rita reminds me of my late daughter"</li>
                         <li><strong>Conflicted:</strong> "I respect Jack's skills but question his methods"</li>
                         <li><strong>Mentor/Student:</strong> "Maya taught me everything I know about hacking"</li>
                     </ul>
@@ -643,46 +631,46 @@
             <p>Relationship aspects create both opportunities and complications, just like any other aspect.</p>
 
             <div class="relationship-examples">
-                <h4>Example: "I Owe Sarah Chen My Life"</h4>
+                <h4>Example: "I Owe Tre Argent My Life"</h4>
                 
                 <div class="relationship-usage">
                     <h5>Helpful Invocations</h5>
                     <ul>
-                        <li><strong>Motivation:</strong> +2 to rescue Sarah when she's in danger</li>
-                        <li><strong>Trust:</strong> +2 to understand Sarah's plans or motives</li>
+                        <li><strong>Motivation:</strong> +2 to rescue Tre when she's in danger</li>
+                        <li><strong>Trust:</strong> +2 to understand Tre's plans or motives</li>
                         <li><strong>Cooperation:</strong> +2 when working together on tasks</li>
-                        <li><strong>Information:</strong> +2 when Sarah shares important knowledge</li>
+                        <li><strong>Information:</strong> +2 when Tre shares important knowledge</li>
                     </ul>
                 </div>
 
                 <div class="relationship-usage">
                     <h5>Dramatic Compels</h5>
                     <ul>
-                        <li><strong>Obligation:</strong> Drop everything to help Sarah even when it's inconvenient</li>
-                        <li><strong>Guilt:</strong> Hesitate to disagree with Sarah's plans</li>
-                        <li><strong>Vulnerability:</strong> Enemies target Sarah to get to Marcus</li>
-                        <li><strong>Conflict:</strong> Sarah asks for help that conflicts with other duties</li>
+                        <li><strong>Obligation:</strong> Drop everything to help Tre even when it's inconvenient</li>
+                        <li><strong>Guilt:</strong> Hesitate to disagree with Tre's plans</li>
+                        <li><strong>Vulnerability:</strong> Enemies target Tre to get to Marcus</li>
+                        <li><strong>Conflict:</strong> Tre asks for help that conflicts with other duties</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section class="complete-example">
-            <h2>Complete Character: Dr. Elena Vasquez</h2>
+            <h2>Complete Character: Dr. Rita Anderson</h2>
             
             <p>Let's build a complete character using all the techniques we've discussed:</p>
 
             <div class="character-sheet">
-                <h3>Dr. Elena Vasquez</h3>
+                <h3>Dr. Rita Anderson</h3>
                 
                 <div class="character-aspects">
                     <h4>Aspects</h4>
                     <ul>
                         <li><strong>High Concept:</strong> "Brilliant Archaeologist Seeking Lost Civilizations"</li>
                         <li><strong>Trouble:</strong> "Academic Rivals Want to Discredit My Theories"</li>
-                        <li><strong>Phase 3:</strong> "The Atlantis Fragments Changed Everything"</li>
-                        <li><strong>Phase 4:</strong> "Marcus Kane Guards More Than Just My Body"</li>
-                        <li><strong>Phase 5:</strong> "Sarah Chen Believes in My Research"</li>
+                        <li><strong>Phase One:</strong> "The Atlantis Fragments Changed Everything"</li>
+                        <li><strong>Phase Two:</strong> "Marcus Kane Guards More Than Just My Body"</li>
+                        <li><strong>Phase Three:</strong> "Tre Argent Believes in My Research"</li>
                     </ul>
                 </div>
 
@@ -712,16 +700,16 @@
 
                 <div class="character-background">
                     <h4>Background Synopsis</h4>
-                    <p>Dr. Elena Vasquez is a tenured professor of archaeology whose controversial theories about advanced ancient civilizations have made her enemies in academia. When she discovered fragments proving that Atlantis was real, rival archaeologists began actively working to discredit her. She's formed an unlikely alliance with Marcus Kane, who protects her during dangerous expeditions, and Sarah Chen, who helps her research digital archives that others can't or won't access.</p>
+                    <p>Dr. Rita Anderson is a tenured professor of archaeology whose controversial theories about advanced ancient civilizations have made her enemies in academia. When she discovered fragments proving that Atlantis was real, rival archaeologists began actively working to discredit her. She's formed an unlikely alliance with Marcus Kane, who protects her during dangerous expeditions, and Tre Argent, who helps her research digital archives that others can't or won't access.</p>
                 </div>
             </div>
 
-            <h3>How Elena's Character Drives Story</h3>
+            <h3>How Rita's Character Drives Story</h3>
             <div class="story-generation">
                 <ul>
                     <li><strong>Her High Concept</strong> creates opportunities for exploration and discovery</li>
                     <li><strong>Her Trouble</strong> ensures that academic politics complicate her research</li>
-                    <li><strong>Her relationships</strong> with Marcus and Sarah create a natural adventuring team</li>
+                    <li><strong>Her relationships</strong> with Marcus and Tre create a natural adventuring team</li>
                     <li><strong>Her skills</strong> make her invaluable for knowledge-based challenges</li>
                     <li><strong>Her stunts</strong> give her unique capabilities in her area of expertise</li>
                 </ul>
@@ -732,13 +720,13 @@
             <h2>Practice Activities</h2>
             
             <div class="activity">
-                <h3>Activity 1: Five-Phase Character Creation</h3>
-                <p>Create a character using the full five-phase process:</p>
+                <h3>Activity 1: Full Character Creation</h3>
+                <p>Create a character using the full aspect and phase trio process:</p>
                 <ul>
                     <li>Choose a genre that interests you (cyberpunk, fantasy, modern supernatural, etc.)</li>
                     <li>Write your High Concept and Trouble aspects</li>
-                    <li>Create a first adventure for Phase 3</li>
-                    <li>Imagine two other player characters and write guest star phases connecting to them</li>
+                    <li>Create your own adventure for Phase One</li>
+                    <li>Imagine two other player characters and write Phases Two and Three (crossing paths) connecting to them</li>
                     <li>Test each aspect with the "double-edged sword" test</li>
                 </ul>
             </div>
@@ -811,7 +799,7 @@
                 <p><strong>Symptoms:</strong> Character seems isolated from other PCs and the world</p>
                 <p><strong>Solutions:</strong></p>
                 <ul>
-                    <li>Use phases 4 and 5 to build PC relationships</li>
+                    <li>Use Phases Two and Three to build PC relationships</li>
                     <li>Create aspects that reference other people or organizations</li>
                     <li>Develop contacts through skills like Contacts or Resources</li>
                     <li>Build shared history with other characters</li>
@@ -878,7 +866,7 @@
 
             <div class="next-steps">
                 <h3>Ready for Action?</h3>
-                <p>In our next lecture, we'll explore how to use these characters in play—the mechanics of actions and outcomes, how conflicts work, and how to create dramatic, engaging scenes that showcase your character's abilities and relationships. You'll learn how Fate's rules create space for creativity while maintaining dramatic tension.</p>
+                <p>In the next part, we'll explore how to use these characters in play—the mechanics of actions and outcomes, how conflicts work, and how to create dramatic, engaging scenes that showcase your character's abilities and relationships. You'll learn how Fate's rules create space for creativity while maintaining dramatic tension.</p>
             </div>
         </section>
     </main>
@@ -890,17 +878,6 @@
 </div>
         <p>Remember: A great character is a story waiting to happen!</p>
     </footer>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>

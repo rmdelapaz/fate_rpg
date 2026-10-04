@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fate RPG Character Examples and Adventure Groups</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/site.js?v=1"></script>
+    <script type="module" src="/js/diagrams.js?v=1"></script>
+    <link rel="stylesheet" href="/styles/main.css?v=2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
 <nav class="site-nav">
@@ -33,16 +34,13 @@
                     graph TD
                         A[Character Concept] --> B[High Concept Aspect]
                         A --> C[Trouble Aspect]
-                        B --> D[Skill Selection]
-                        C --> D
-                        D --> E[Stunts & Extras]
-                        E --> F[Phase Trio]
+                        B --> F[Phase Trio]
+                        C --> F
                         F --> G[Three More Aspects]
-                        G --> H[Refresh & Stress]
+                        G --> D[Skill Selection]
+                        D --> E[Stunts & Extras]
+                        E --> H[Refresh & Stress]
                         H --> I[Complete Character]
-                        
-                        style A fill:#E67E22
-                        style I fill:#27AE60
                 </div>
 
                 <p>The character creation process flows like collaborative storytelling—each phase building connections to other characters while the aspect system ensures every trait serves both mechanical and narrative purposes.</p>
@@ -88,7 +86,7 @@
                         <p><strong>Other Aspects:</strong> "My Crew is My Family", "Never Leave a Friend Behind", "Haunted by the Massacre at Port Royal"</p>
                         <p><strong>Skills:</strong> Great (+4) Pilot, Good (+3) Fight & Shoot, Fair (+2) Rapport, Athletics, Notice</p>
                         <p><strong>Stunts:</strong> Death From Above (Pilot), Riposte (Fight), Quick Draw (Shoot)</p>
-                        <p><strong>Stress:</strong> Physical 2, Mental 3</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 2</p>
                         <p><strong>Refresh:</strong> 3</p>
                     </div>
                     <p><strong>Role in Group:</strong> The daring leader—turning impossible odds into opportunities through sheer audacity and aerial mastery. Her trouble with military hierarchy creates constant complications while her loyalty to crew drives heroic sacrifices.</p>
@@ -115,9 +113,9 @@
                         <p><strong>High Concept:</strong> Brilliant But Reckless Inventor</p>
                         <p><strong>Trouble:</strong> Science Without Ethics or Restraint</p>
                         <p><strong>Other Aspects:</strong> "Powered by Coffee and Curiosity", "My Inventions Have a Mind of Their Own", "Protecting My Research From Corporate Thieves"</p>
-                        <p><strong>Skills:</strong> Great (+4) Crafts, Good (+3) Lore & Investigation, Fair (+2) Athletics, Rapport, Will</p>
+                        <p><strong>Skills:</strong> Great (+4) Crafts, Good (+3) Lore & Investigate, Fair (+2) Athletics, Rapport, Will</p>
                         <p><strong>Stunts:</strong> Gadgeteer (Crafts), Duct Tape Repairs (Crafts), Walking Library (Lore)</p>
-                        <p><strong>Stress:</strong> Physical 2, Mental 4</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 3</p>
                         <p><strong>Refresh:</strong> 3</p>
                     </div>
                     <p><strong>Role in Group:</strong> The mad genius—solving problems through impossible inventions and scientific breakthroughs. His ethical blind spots create moral dilemmas while his gadgets provide miraculous solutions to impossible challenges.</p>
@@ -131,7 +129,7 @@
                         <p><strong>Other Aspects:</strong> "Every Life Has Value", "Deadly Grace in Motion", "Protecting the Innocent from My Past"</p>
                         <p><strong>Skills:</strong> Great (+4) Stealth, Good (+3) Fight & Athletics, Fair (+2) Empathy, Notice, Will</p>
                         <p><strong>Stunts:</strong> Assassin's Strike (Fight), Vanish (Stealth), Killer Instinct (Notice)</p>
-                        <p><strong>Stress:</strong> Physical 3, Mental 3</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 3</p>
                         <p><strong>Refresh:</strong> 3</p>
                     </div>
                     <p><strong>Role in Group:</strong> The shadow guardian—protecting others from threats they never see coming. Her violent past provides both deadly skills and constant moral conflict as former allies become current enemies.</p>
@@ -145,7 +143,7 @@
                         <p><strong>Other Aspects:</strong> "A Friend in Every Port", "Words Are Mightier Than Swords", "The Truth is a Luxury I Can't Afford"</p>
                         <p><strong>Skills:</strong> Great (+4) Rapport, Good (+3) Deceive & Contacts, Fair (+2) Will, Empathy, Lore</p>
                         <p><strong>Stunts:</strong> Best Foot Forward (Rapport), Lies Upon Lies (Deceive), The Weight of Reputation (Contacts)</p>
-                        <p><strong>Stress:</strong> Physical 2, Mental 4</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 3</p>
                         <p><strong>Refresh:</strong> 3</p>
                     </div>
                     <p><strong>Role in Group:</strong> The social butterfly—turning enemies into allies through charm and manipulation. Her tendency to make promises she can't keep creates complications while her network of contacts provides crucial information and resources.</p>
@@ -159,7 +157,7 @@
                         <p><strong>Other Aspects:</strong> "Reading the Winds of Fate", "Child of Sky and Lightning", "The Price of Power Grows Daily"</p>
                         <p><strong>Skills:</strong> Great (+4) Lore, Good (+3) Will & Athletics, Fair (+2) Fight, Notice, Rapport</p>
                         <p><strong>Stunts:</strong> Weather Control (Lore), Lightning Reflexes (Athletics), Storm Sight (Notice)</p>
-                        <p><strong>Stress:</strong> Physical 3, Mental 4</p>
+                        <p><strong>Stress:</strong> Physical 2, Mental 4</p>
                         <p><strong>Refresh:</strong> 3</p>
                     </div>
                     <p><strong>Role in Group:</strong> The elemental conduit—channeling nature's fury to protect allies and devastate enemies. Their spiritual obligations create ongoing tension between personal desires and cosmic responsibilities.</p>
@@ -271,7 +269,7 @@
 
             <section class="fate-dice-system">
                 <h2>Fate Dice and The Ladder</h2>
-                <p>Fate uses four-sided dice (dF) that show +, -, or blank faces, creating results from -4 to +4 that modify skills on the adjective ladder. This system emphasizes narrative outcomes over mathematical precision, making every roll a story beat.</p>
+                <p>Fate uses four six-sided Fate dice (4dF), each with two +, two −, and two blank faces, creating results from -4 to +4 that modify skills on the adjective ladder. This system emphasizes narrative outcomes over mathematical precision, making every roll a story beat.</p>
 
                 <div class="ladder-system">
                     <h3>The Fate Ladder</h3>
@@ -286,7 +284,7 @@
                         </div>
                         <div class="ladder-rung">
                             <h4>+6 Fantastic</h4>
-                            <p>Beyond normal human capability</p>
+                            <p>Among the very best anywhere</p>
                         </div>
                         <div class="ladder-rung">
                             <h4>+5 Superb</h4>
@@ -333,7 +331,7 @@
                     
                     <div class="stunt-category">
                         <h4>Rule Exception Stunts</h4>
-                        <p><strong>Riposte:</strong> Use Fight to defend, then immediately attack on success</p>
+                        <p><strong>Riposte:</strong> When you succeed with style defending with Fight, deal a 2-shift hit to your attacker instead of taking a boost</p>
                         <p><strong>Lies Upon Lies:</strong> Use Deceive instead of Rapport for first impressions</p>
                         <p><strong>Danger Sense:</strong> Use Notice instead of Athletics to defend against ambushes</p>
                     </div>
@@ -359,9 +357,9 @@
                         B --> D[Issues & Threats]
                         B --> E[Locations & NPCs]
                         
-                        C --> F[Phase One: Background]
-                        C --> G[Phase Two: Adventure]
-                        C --> H[Phase Three: Crossover]
+                        C --> F[Phase One: Your Adventure]
+                        C --> G[Phase Two: Crossing Paths]
+                        C --> H[Phase Three: Crossing Paths Again]
                         
                         F --> I[Character Connections]
                         G --> I
@@ -370,9 +368,6 @@
                         D --> J[Ongoing Campaign]
                         E --> J
                         I --> J
-                        
-                        style A fill:#E67E22
-                        style J fill:#27AE60
                 </div>
 
                 <div class="phase-trio">
@@ -470,7 +465,7 @@
             <footer>
 <div class="page-nav">
     <a class="prev" href="/fate_char.html">Character Creation</a>
-    <a class="next" href="/fate_100.html">100 Characters</a>
+    <a class="next" href="/fate_100.html">Sample Characters</a>
 </div>
                 <p>Remember: Fate is about collaborative storytelling where every character contributes to dramatic tension and narrative momentum. The best characters are those whose aspects create both opportunities for heroism and complications that drive the story ever forward.</p>
             </footer>
@@ -529,7 +524,7 @@
         aspectCtx.fillStyle = '#2C3E50';
         aspectCtx.font = '14px Arial';
         aspectCtx.textAlign = 'center';
-        aspectCtx.fillText('Aspect Usage During Play', 260, 30);
+        aspectCtx.fillText('Aspect Usage During Play (illustrative)', 260, 30);
         aspectCtx.save();
         aspectCtx.translate(15, 150);
         aspectCtx.rotate(-Math.PI/2);
@@ -543,8 +538,8 @@
         // Draw network diagram for character relationships
         const characters = [
             { name: 'Leader', x: 200, y: 80, connections: [1, 2, 3, 4] },
-            { name: 'Specialist 1', x: 120, y: 140, connections: [0, 2] },
-            { name: 'Specialist 2', x: 280, y: 140, connections: [0, 3] },
+            { name: 'Specialist 1', x: 120, y: 140, connections: [0, 2, 3] },
+            { name: 'Specialist 2', x: 280, y: 140, connections: [0, 3, 4] },
             { name: 'Support 1', x: 120, y: 220, connections: [0, 1, 4] },
             { name: 'Support 2', x: 280, y: 220, connections: [0, 2, 3] }
         ];
@@ -638,17 +633,6 @@
         fateCtx.fillText('Probability (%)', 0, 0);
         fateCtx.restore();
     </script>
-<script>
-(function(){
-  if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');
-  var b=document.getElementById('theme-toggle');
-  if(b){b.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
-  b.addEventListener('click',function(){
-    var d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('theme','light');this.textContent='🌙';}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');this.textContent='☀️';}
-  });}
-})();
-</script>
+<div class="site-footer">&copy; 2026 Ray de la Paz. The Fate RPG Guide. All rights reserved. &middot; <a href="https://rays-home.netlify.app/">Ray's House of Fun</a><br>Fate&trade; is a trademark of Evil Hat Productions, LLC. This guide is an unofficial fan resource.</div>
 </body>
 </html>
