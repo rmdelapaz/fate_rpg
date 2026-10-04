@@ -19,53 +19,65 @@
         }
         .container h2, .container h3 { border: 0; margin-top: 0; }
         .container h2::after { display: none; }
-        .info-section, .dice-section, .results {
+        .container h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); }
+        body > .container > h1 { padding: clamp(16px, 3.5vw, 26px) 20px; margin-bottom: 16px; }
+        .roller-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 16px; align-items: start; }
+        @media (max-width: 760px) { .roller-layout { grid-template-columns: 1fr; } }
+        .roll-pane, .ladder, .info-section {
             background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-            padding: clamp(18px, 4vw, 28px); margin: 18px 0; box-shadow: var(--shadow);
+            box-shadow: var(--shadow); padding: clamp(16px, 3vw, 22px);
         }
-        .info-section { text-align: left; border-left: 5px solid var(--accent); }
+        .info-section { text-align: left; border-left: 5px solid var(--accent); margin: 16px 0; }
         .info-section p { margin: 0; }
-        .dice-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px 0 8px; flex-wrap: wrap; }
+        .results { margin: 0 0 14px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .dice-section { border-top: 1px solid var(--border); padding-top: 14px; }
+        .dice-controls { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .dice-label { font-weight: 700; color: var(--heading); }
+        .roll-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
         .dice-count {
-            width: 80px; min-height: 44px; text-align: center; font: 700 1.2rem "Source Sans 3", sans-serif;
+            width: 72px; min-height: 44px; text-align: center; font: 700 1.2rem "Source Sans 3", sans-serif;
             background: var(--surface-2); color: var(--heading); border: 2px solid var(--border-strong); border-radius: 10px;
         }
         .dice-btn, .roll-btn, .clear-btn { font: inherit; font-weight: 700; cursor: pointer; border-radius: 12px; transition: background 0.15s, transform 0.05s; }
-        .dice-btn { min-width: 48px; min-height: 44px; font-size: 1.3rem; background: var(--surface-2); color: var(--heading); border: 2px solid var(--border-strong); }
+        .dice-btn { min-width: 46px; min-height: 44px; font-size: 1.3rem; background: var(--surface-2); color: var(--heading); border: 2px solid var(--border-strong); }
         .dice-btn:hover { border-color: var(--accent); }
         .roll-btn {
-            display: inline-block; margin: 16px 8px 4px; padding: 14px 44px; font-size: 1.4rem; letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 12px 40px; font-size: 1.3rem; letter-spacing: 0.08em; text-transform: uppercase; min-height: 52px;
             background: var(--accent); color: var(--accent-ink); border: 2px solid var(--accent);
         }
         .roll-btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-        .clear-btn { margin: 16px 8px 4px; padding: 12px 24px; background: transparent; color: var(--text); border: 2px solid var(--border-strong); }
+        .clear-btn { padding: 10px 22px; background: transparent; color: var(--text); border: 2px solid var(--border-strong); min-height: 52px; }
         .clear-btn:hover { border-color: var(--accent); }
         .roll-btn:active, .dice-btn:active, .clear-btn:active { transform: translateY(1px); }
 
         .result-total {
-            font: 700 clamp(2.2rem, 7vw, 3rem)/1.1 "Source Sans 3", sans-serif; margin: 0 0 16px; padding: 16px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+            min-height: 112px; padding: 12px; margin: 0 0 12px;
             border-radius: 14px; border: 2px solid var(--border-strong); background: var(--surface-2); color: var(--heading);
         }
+        .total-num { font: 700 clamp(2.4rem, 8vw, 3.2rem)/1 "Source Sans 3", sans-serif; }
+        .total-name { font-family: "Cinzel", Georgia, serif; font-weight: 700; font-size: 1.1rem; }
+        .results:not(.has-roll) .total-name { font-family: inherit; font-weight: 600; font-size: 1rem; color: var(--muted); }
         .result-total.positive { color: var(--success); border-color: var(--success); background: color-mix(in srgb, var(--success) 10%, var(--surface)); }
         .result-total.negative { color: var(--danger); border-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--surface)); }
-        .result-total.neutral { color: var(--gold); border-color: var(--gold); background: color-mix(in srgb, var(--gold) 10%, var(--surface)); }
-        .dice-display { display: flex; justify-content: center; gap: 12px; margin: 12px 0 18px; flex-wrap: wrap; }
+        .has-roll .result-total.neutral { color: var(--gold); border-color: var(--gold); background: color-mix(in srgb, var(--gold) 10%, var(--surface)); }
+        .dice-display { display: flex; justify-content: center; gap: 10px; margin: 0 0 12px; flex-wrap: wrap; min-height: 56px; }
         .die {
-            width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font: 700 2rem/1 "Source Sans 3", sans-serif; background: #fff; color: #1b2a33; border: 3px solid #b5c4bf;
+            width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font: 700 1.9rem/1 "Source Sans 3", sans-serif; background: #fff; color: #1b2a33; border: 3px solid #b5c4bf;
             box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
         }
         .die.positive { background: #1f7a3d; color: #fff; border-color: #165c2d; }
         .die.negative { background: #b42318; color: #fff; border-color: #8a1b12; }
         .die.blank { background: #e7eceb; color: #1b2a33; border-color: #b5c4bf; }
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 18px; }
-        .stat { background: var(--surface-2); border-radius: 12px; padding: 12px; }
-        .stat-number { font: 700 1.8rem/1.1 "Source Sans 3", sans-serif; color: var(--accent); }
-        .stat-label { font-size: 0.9rem; color: var(--muted); }
-        .ladder { background: var(--surface-2); border-radius: 12px; padding: 16px 20px; text-align: left; }
-        .ladder h3 { text-align: center; margin: 0 0 10px; }
-        .ladder-item { display: flex; justify-content: space-between; padding: 5px 10px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .stat { background: var(--surface-2); border-radius: 10px; padding: 8px; }
+        .stat-number { font: 700 1.4rem/1.1 "Source Sans 3", sans-serif; color: var(--accent); }
+        .stat-label { font-size: 0.85rem; color: var(--muted); }
+        .ladder { text-align: left; }
+        .ladder h3 { text-align: center; margin: 0 0 8px; }
+        .ladder-item { display: flex; justify-content: space-between; padding: 4px 10px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
         .ladder-item:last-child { border-bottom: 0; }
         .ladder-item.current { background: var(--accent); color: var(--accent-ink); border-radius: 8px; font-weight: 700; }
     </style>
@@ -79,46 +91,38 @@
 </nav>
     <div class="container">
         <h1>Fate RPG Dice Roller</h1>
-        
-        <div class="info-section">
-            <h3>How Fate Dice Work</h3>
-            <p>Fate uses Fudge dice (dF) with faces showing +1, 0, and -1. Each face appears twice, so every die is equally likely to show −1, 0, or +1. A standard roll is 4 dice (4dF), giving a total from −4 to +4 that you add to your skill rating. Totals below −2 (Terrible) fall off the bottom of the ladder shown here.</p>
-        </div>
-        
-        <div class="dice-section">
-            <h2>Roll Fate Dice</h2>
-            <div class="dice-controls">
-                <span class="dice-label">Number of Dice:</span>
-                <button class="dice-btn" onclick="changeDiceCount(-1)">-</button>
-                <input type="number" class="dice-count" id="dice-count" value="4" min="1" max="20">
-                <button class="dice-btn" onclick="changeDiceCount(1)">+</button>
-            </div>
-            
-            <button class="roll-btn" onclick="rollDice()">Roll</button>
-            <button class="clear-btn" onclick="clearResults()">Clear</button>
-        </div>
-        
-        <div id="results" class="results" style="display: none;">
-            <div class="result-total" id="total-result">+0</div>
-            
-            <div class="dice-display" id="dice-display"></div>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number" id="positive-count">0</div>
-                    <div class="stat-label">Positive (+)</div>
+
+        <div class="roller-layout">
+            <section class="roll-pane" aria-labelledby="roll-heading">
+                <h2 id="roll-heading" class="sr-only">Roll result</h2>
+                <div id="results" class="results" aria-live="polite">
+                    <div class="result-total neutral" id="total-result">
+                        <span class="total-num" id="total-num">—</span>
+                        <span class="total-name" id="total-name">Press Roll to throw the dice</span>
+                    </div>
+                    <div class="dice-display" id="dice-display" aria-label="Dice faces"></div>
+                    <div class="stats">
+                        <div class="stat"><div class="stat-number" id="positive-count">0</div><div class="stat-label">Plus (+)</div></div>
+                        <div class="stat"><div class="stat-number" id="blank-count">0</div><div class="stat-label">Blank (0)</div></div>
+                        <div class="stat"><div class="stat-number" id="negative-count">0</div><div class="stat-label">Minus (−)</div></div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number" id="blank-count">0</div>
-                    <div class="stat-label">Blank (0)</div>
+
+                <div class="dice-section">
+                    <div class="dice-controls">
+                        <label class="dice-label" for="dice-count">Dice</label>
+                        <button class="dice-btn" onclick="changeDiceCount(-1)" aria-label="One fewer die">−</button>
+                        <input type="number" class="dice-count" id="dice-count" value="4" min="1" max="20">
+                        <button class="dice-btn" onclick="changeDiceCount(1)" aria-label="One more die">+</button>
+                    </div>
+                    <div class="roll-actions">
+                        <button class="roll-btn" onclick="rollDice()">Roll</button>
+                        <button class="clear-btn" onclick="clearResults()">Clear</button>
+                    </div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number" id="negative-count">0</div>
-                    <div class="stat-label">Negative (-)</div>
-                </div>
-            </div>
-            
-            <div class="ladder">
+            </section>
+
+            <aside class="ladder" aria-label="The Fate ladder">
                 <h3>Fate Ladder</h3>
                 <div class="ladder-item"><span>+8</span><span>Legendary</span></div>
                 <div class="ladder-item"><span>+7</span><span>Epic</span></div>
@@ -131,10 +135,14 @@
                 <div class="ladder-item"><span>+0</span><span>Mediocre</span></div>
                 <div class="ladder-item"><span>-1</span><span>Poor</span></div>
                 <div class="ladder-item"><span>-2</span><span>Terrible</span></div>
-            </div>
+            </aside>
+        </div>
+
+        <div class="info-section">
+            <h3>How Fate Dice Work</h3>
+            <p>Fate uses Fudge dice (dF) with faces showing +1, 0, and -1. Each face appears twice, so every die is equally likely to show −1, 0, or +1. A standard roll is 4 dice (4dF), giving a total from −4 to +4 that you add to your skill rating. Totals below −2 (Terrible) fall off the bottom of the ladder shown here.</p>
         </div>
     </div>
-    
     <script>
         function changeDiceCount(change) {
             const input = document.getElementById('dice-count');
@@ -175,7 +183,8 @@
             const diceDisplay = document.getElementById('dice-display');
             
             // Show total with appropriate styling
-            totalDiv.textContent = total >= 0 ? `+${total}` : `${total}`;
+            document.getElementById('total-num').textContent = total >= 0 ? `+${total}` : `${total}`;
+            document.getElementById('total-name').textContent = ladderName(total);
             totalDiv.className = 'result-total';
             if (total > 0) {
                 totalDiv.classList.add('positive');
@@ -213,7 +222,14 @@
             // Highlight current level on ladder
             highlightLadder(total);
             
-            resultsDiv.style.display = 'block';
+            resultsDiv.classList.add('has-roll');
+        }
+
+        const LADDER = { 8: 'Legendary', 7: 'Epic', 6: 'Fantastic', 5: 'Superb', 4: 'Great', 3: 'Good', 2: 'Fair', 1: 'Average', 0: 'Mediocre', '-1': 'Poor', '-2': 'Terrible' };
+        function ladderName(total) {
+            if (total > 8) return 'Beyond Legendary';
+            if (total < -2) return 'Below Terrible';
+            return LADDER[total];
         }
         
         function highlightLadder(total) {
@@ -233,7 +249,14 @@
         }
         
         function clearResults() {
-            document.getElementById('results').style.display = 'none';
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.remove('has-roll');
+            document.getElementById('total-result').className = 'result-total neutral';
+            document.getElementById('total-num').textContent = '—';
+            document.getElementById('total-name').textContent = 'Press Roll to throw the dice';
+            document.getElementById('dice-display').innerHTML = '';
+            ['positive-count', 'blank-count', 'negative-count'].forEach(id => { document.getElementById(id).textContent = '0'; });
+            document.querySelectorAll('.ladder-item').forEach(item => item.classList.remove('current'));
             document.getElementById('dice-count').value = 4;
         }
         
