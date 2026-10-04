@@ -257,7 +257,7 @@ main div[class] div[class*="result"]:not(:empty) {
 main div[class] div[class] > :last-child { margin-bottom: 0; }
 
 /* grids of cards look better side by side on wide screens */
-main div[class$="-examples"], main div[class$="-types"], main div[class$="-categories"], main div.culture-pillars {
+main div[class$="-examples"]:has(> div), main div[class$="-types"]:has(> div), main div[class$="-categories"]:has(> div), main div.culture-pillars:has(> div) {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 12px;
 }
 main div[class$="-examples"] > :is(h3, h4, h5, p, ul, ol),
@@ -462,3 +462,8 @@ main tr.row-tint td { background: color-mix(in srgb, var(--c) 11%, var(--surface
 main div:has(> svg):not(.mermaid),
 main div:has(> svg):not(.mermaid) :is(h1, h2, h3, h4, h5, h6, p, li, strong, em, span, label, small) { color: #1b2a33; }
 main div:has(> svg):not(.mermaid) a { color: #0b5d57; }
+
+/* Wide Mermaid diagrams scroll instead of shrinking to unreadable sizes */
+.mermaid.is-wide { text-align: left; -webkit-overflow-scrolling: touch; }
+.mermaid.is-wide svg { margin: 0; }
+.diagram-hint { font-size: 0.85rem; color: var(--muted); margin: 1rem 0 -0.6rem; }
