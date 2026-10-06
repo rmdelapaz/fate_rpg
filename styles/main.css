@@ -267,6 +267,9 @@ main div[class$="-types"] > :is(h3, h4, h5, p, ul, ol),
 main div[class$="-categories"] > :is(h3, h4, h5, p, ul, ol),
 main div.culture-pillars > :is(h3, h4, h5, p, ul, ol) { grid-column: 1 / -1; }
 main div[class$="-examples"] > div, main div[class$="-types"] > div, main div[class$="-categories"] > div, main div.culture-pillars > div { margin: 0 !important; min-width: 0; }
+/* Balance small card grids: a lone card uses the full width; two or four cards sit two per row */
+main div:is([class$="-examples"], [class$="-types"], [class$="-categories"]) > div:only-of-type { grid-column: 1 / -1; }
+main div:is([class$="-examples"], [class$="-types"], [class$="-categories"]):has(> div:nth-of-type(2):last-of-type, > div:nth-of-type(4):last-of-type):not(:has(> div canvas)) { grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); }
 
 /* An inner "-grid" wrapper of cards inside a card grid spans the whole row and lays its own cards out
    side by side (zero specificity, so a page's own grid rules still win) */
