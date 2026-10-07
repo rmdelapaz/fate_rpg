@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fate Character Sheets</title>
-    <meta name="description" content="Fillable Fate Core character sheets: aspects, the skill pyramid, stunts, refresh, stress and consequences. Save in your browser, print 5×8 cards, export JSON.">
+    <meta name="description" content="Fillable Fate Core character sheets: aspects, the skill pyramid, stunts, refresh, stress and consequences. Save in your browser, print 5×8 cards, export JSON, or load the 71 sample characters in one click.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -150,6 +150,7 @@
             <button type="button" id="blankBtn">📄 Print Blank</button>
             <button type="button" id="exportBtn">📤 Export</button>
             <button type="button" id="importBtn">📥 Import</button>
+            <button type="button" id="sampleBtn">🗂️ Load sample characters</button>
             <input type="file" id="importFile" accept=".json,application/json">
         </div>
         <p class="sheet-status" id="status" role="status" aria-live="polite"></p>
@@ -261,6 +262,7 @@
         <div class="sheet-help">
             <p><strong>How it works.</strong> A sheet auto-saves in this browser once it has a name. Renaming a sheet renames its save. <strong>Copy</strong> duplicates the current sheet. <strong>Print</strong> makes an 8×5 inch card, and two fit on a US Letter page. <strong>Print Blank</strong> prints an empty character card and an empty NPC card. <strong>Export</strong> downloads every sheet as a JSON file, and <strong>Import</strong> merges sheets from one. A sheet with the same name is replaced. Nothing leaves your browser.</p>
             <p><strong>Stress follows Fate Core.</strong> Physical and mental stress start with two boxes. An Average or Fair Physique (or Will) adds a third box, and Good or better adds a fourth. The sheet works out your boxes from the skill pyramid and shows the ones you don't have as dashed. A Superb (+5) Physique or Will, which you can only reach through advancement, also gives an extra mild consequence; use the fourth consequence line for it. Each box absorbs as many shifts as its number. For how stress and consequences play out, see <a href="/fate_actions.html">Actions, Outcomes &amp; Conflicts</a>; for building the character, see <a href="/fate_char.html">Character Creation</a>.</p>
+            <p><strong>Sample sheets.</strong> <strong>Load sample characters</strong> adds all 71 characters from <a href="/fate_100.html">Sample Characters</a> (the ten solo characters and every member of the 17 teams, with the team name and roster in Notes &amp; Extras), replacing any saved sheet with the same name just as Import does and leaving your other sheets alone; you can also <a href="/fate_sample_sheets.json" download>download the sample sheet file</a> and import it yourself.</p>
         </div>
 
         <div class="print-container" id="printContainer"></div>
@@ -519,7 +521,41 @@
             setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
             say('Exported ' + n + (n === 1 ? ' sheet.' : ' sheets.'));
         });
+        // Merge a {name: sheet} object into saved sheets; a sheet with the same name is replaced and other sheets are kept.
+        // Returns { count, added, replaced } (replaced = names already saved before the merge), or null if storage failed.
+        function mergeSheets(data) {
+            var all = load(), before = {}, seen = {}, count = 0, replaced = 0;
+            Object.keys(all).forEach(function (k) { before[k] = true; });
+            Object.keys(data).forEach(function (k) {
+                var d = sanitize(data[k]); if (!d) return;
+                var name = nameOf(d).slice(0, 200);
+                if (!safeName(name)) return;
+                d[d.mode === 'npc' ? 'npcName' : 'pcName'] = name;
+                if (!seen[name]) { seen[name] = true; count++; if (before[name]) replaced++; }
+                all[name] = d;
+            });
+            if (!count) return { count: 0, added: 0, replaced: 0 };
+            if (!store(all)) return null;
+            if (currentKey && seen[currentKey] && all[currentKey]) fill(all[currentKey]);   // the open sheet was replaced: show the new copy
+            refreshSelect(currentKey || '');
+            return { count: count, added: count - replaced, replaced: replaced };
+        }
         $('importBtn').addEventListener('click', function () { $('importFile').click(); });
+        $('sampleBtn').addEventListener('click', function () {
+            var btn = this;
+            flush(); disarm(); btn.disabled = true; say('Loading the sample sheets…');
+            fetch('/fate_sample_sheets.json', { cache: 'no-cache' })
+                .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+                .then(function (data) {
+                    if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('bad file');
+                    var res = mergeSheets(data);
+                    if (!res) return;
+                    if (!res.count) { say('No valid sheets found in the sample file.'); return; }
+                    say('Loaded ' + res.count + ' sample sheets: ' + res.added + ' added, ' + res.replaced + ' replaced.');
+                })
+                .catch(function () { say('Could not load the sample sheets. Check your connection, or download the file and use Import.'); })
+                .then(function () { btn.disabled = false; });
+        });
         $('importFile').addEventListener('change', function (ev) {
             var file = ev.target.files && ev.target.files[0];
             ev.target.value = '';
@@ -531,23 +567,17 @@
                 try {
                     var data = JSON.parse(r.result);
                     if (!data || typeof data !== 'object' || Array.isArray(data)) { say('That is not a sheet file.'); return; }
-                    var all = load(), count = 0;
-                    Object.keys(data).forEach(function (k) {
-                        var d = sanitize(data[k]); if (!d) return;
-                        var name = nameOf(d).slice(0, 200);
-                        if (!safeName(name)) return;
-                        all[name] = d; count++;
-                    });
-                    if (!count) { say('No valid sheets found in that file.'); return; }
-                    if (!store(all)) return;
-                    refreshSelect(currentKey || ''); say('Imported ' + count + (count === 1 ? ' sheet.' : ' sheets.'));
+                    var res = mergeSheets(data);
+                    if (!res) return;
+                    if (!res.count) { say('No valid sheets found in that file.'); return; }
+                    say('Imported ' + res.count + (res.count === 1 ? ' sheet' : ' sheets') + ': ' + res.added + ' added, ' + res.replaced + ' replaced.');
                 } catch (e) { say('Could not read that file.'); }
             };
             r.onerror = function () { say('Could not read that file.'); };
             r.readAsText(file);
         });
 
-        window.fateSheets = { boxesFor: boxesFor, sanitize: sanitize };
+        window.fateSheets = { boxesFor: boxesFor, sanitize: sanitize, fields: { pc: PC_FIELDS, npc: NPC_FIELDS } };
         applyMode(); clearAll(); refreshSelect('');
     })();
     </script>
